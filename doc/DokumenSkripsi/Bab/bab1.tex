@@ -5,40 +5,78 @@
 \section{Latar Belakang}
 \label{sec:label}
 
-Bagian ini akan diisi dengan apa yang melatarbelakangi pembuatan template skripsi ini.
-Termasuk juga masalah-masalah yang akan dihadapi untuk membuatnya, termasuk kurangnya kemampuan penguasaan \LaTeX{} sehingga template ini dibuat dengan mengandalkan berbagai contoh yang tersebar di dunia maya, yang digabung-gabung menjadi satu jua.
-Bagian lain juga akan dilengkapi, untuk sementara diisi dengan lorem ipsum versi bahasa inggris.
+\textit{World Schools Debating Championships} (WSDC) merupakan sebuah turnamen debat bahasa inggris tahunan untuk tim-tim tingkat sekolah menengah yang mewakili berbagai negara \footnote{\textit{`WSDC'} https://wsdcdebate.org/history, Diakses pada 8 Juli 2021.}. Pada awalnya, kompetisi universitas dunia akan diselenggarakan di Sydney pada bulan juli 1988. Anggota Federasi Debat Australia menyadari bahwa tidak ada acara serupa untuk siswa sekolah menengah. Namun kejuaraan universitas dunia ini menunjukkan potensi yang sangat besar untuk kompetisi debat internasional yang melibatkan siswa dari seluruh dunia. Pada tahun 1991, kejuaraan diadakan di Edinburgh. Dan sejak saat itu nama World Schools Debating Championships digunakan dan berlangsung hingga saat ini. 
 
-\dtext{5-10}
+Ionic merupakan \textit{framework open source} yang memudahkan pembangunan aplikasi \textit{Progressive Web Apps}(PWA) dan perangkat bergerak dengan performa tinggi, yang dapat membuat tampilan terlihat dan terasa lebih indah untuk dilihat di \textit{platform} atau perangkat apapun \footnote{\textit{`IONIC'} https://ionicframework.com/what-is-ionic, Diakses pada 8 Juli 2021. \label{ref:ionicwebsite}}. Ionic memiliki banyak sekali \textit{front-end library} dan \textit{User Interface}(UI) {\it Components} untuk memudahkan perancangan aplikasi yang memiliki kinerja tinggi menggunakan teknologi web seperti HTML, CSS, dan Javascript. HTML (\textit{Hyper Text Markup Language}) adalah bahasa markup yang mendefinisikan struktur suatu konten aplikasi \footnote{\textit{`HTML'}, https://developer.mozilla.org/en-US/docs/Learn/Getting\textunderscore started\textunderscore with\textunderscore the\textunderscore web/HTML\textunderscore basics Diakses pada 18 Juli 2021 \label{ref:htmldefinition}}. Untuk melengkapi HTML, menggunakan CSS sebagai pelengkap yang mempresentasikan tampilan HTML ke layar atau ke media lain. CSS juga dapat menghemat banyak pekerjaan, dan dapat mengontrol tata letak beberapa halaman sekaligus. Selain itu ada juga Javascript, yaitu bahasa skrip atau pemrograman yang memungkinkan kita untuk mengimplementasikan fitur-fitur yang kompleks pada halaman web, menampilkan pembaruan konten sesuai dengan waktu yang diinginkan secara interaktif, animasi 2 dimensi atau grafik 3 dimensi, video, dan lain-lain. \footnote{\textit{`What is Javascript?'} \\ https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First\textunderscore steps/What\textunderscore is\textunderscore JavaScript, \\ Diakses pada 8 Juli 2021.} Ketiga elemen ini digunakan dalam \textit{framework} Ionic yang akan dikerjakan.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.12]{Gambar/ionicLogo.png}
+    \caption{Logo Ionic \ref{ref:ionicwebsite}}
+    \label{fig:ionic-logo}
+\end{figure}
+
+\newpage
+
+Terdapat beberapa kerangka Javascript yang dapat diimplementasikan menggunakan \textit{framework Ionic}, seperti Angular, React, dan Vue. Angular merupakan sebuah \textit{development platform}, yang dibangun di atas TypeScript \footnote{\textit{`What is Angular?'}, https://angular.io/guide/what-is-angular Diakses pada 18 Juli 2021}. Angular meliputi kerangka kerja berbasis komponen untuk membangun aplikasi web yang skalabel, kumpulan \textit{library} yang terintegrasi dengan baik yang mencakup berbagai fitur termasuk perutean, manajemen formulir, komunikasi klien-server, dan masih banyak lagi. Angular pun merupakan serangkaian alat pengembang untuk membantu mengembangkan, menguji, dan memperbarui kode yang dibuat. React adalah \textit{library}  JavaScript deklaratif, efisien, dan fleksibel untuk membangun antarmuka pengguna \footnote{\textit{`React.js'}, https://www.geeksforgeeks.org/react-js-introduction-working/ Diakses pada 18 Juli 2021}. Sedangkan Vue merupakan \textit{framework}  progresif untuk membangun antarmuka pengguna, yang dirancang dari bawah ke atas agar dapat diadopsi secara bertahap \footnote{\textit{`Vue.js'}, https://vuejs.org/v2/guide/ Diakses pada 18 Juli 2021}. Inti dari \textit{library} ini ada pada lapisan tampilan, dan mudah diambil dan diintegrasikan dengan \textit{library} lain atau proyek yang sudah ada. 
+
+WSDC yang diselenggarakan pada tahun 2017 memiliki sebuah aplikasi bernama WSDC 2017 Bali \ref{fig:wsdcapp}  menggunakan \textit{framework} Ionic 3. Terdapat beberapa fungsi penting di dalam aplikasi ini, diantaranya adalah jadwal untuk kegiatan peserta, berita acara, pemberitahuan mengenai kegiatan acara kepada peserta, lokasi kegiatan acara yang sedang berlangsung, dan notifikasi acara. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.12]{Gambar/WSDC2017-App.jpg}
+    \caption{Aplikasi WSDC 2017 Bali di Perangkat Android}
+    \label{fig:wsdcapp}
+\end{figure}
+
+Aplikasi ini dibangun pada tahun 2017 menggunakan Ionic versi 3, dan sudah tidak mendapatkan pembaruan lagi. Tetapi, versi Ionic semakin berkembang, dan saat ini telah mencapai versi 5. Maka dari itu, pada skripsi ini akan dibuat sebuah aplikasi pembaruan dari aplikasi WSDC 2017 Bali sebelumnya, dengan \textit{framework} Ionic yang lebih baru. \textit{Framework} yang lebih baru memungkinkan perawatan yang lebih efisien, serta dukungan teknologi yang lebih terbarukan. Kemudian, aplikasi ini nantinya tidak hanya akan berguna bagi WSDC saja, melainkan dapat menjadi aplikasi modular yang bisa digunakan untuk acara-acara lain.
+
+
+\newpage
 \section{Rumusan Masalah}
 \label{sec:rumusan}
-Bagian ini akan diisi dengan penajaman dari masalah-masalah yang sudah diidentifikasi di bagian sebelumnya. 
+Rumusan masalah yang akan dibahas pada skripsi ini adalah sebagai berikut :
+\begin{itemize}
+	\item Fitur-fitur apa yang akan tersedia di aplikasi WSDC terbaru?
+	\item Bagaimana membangun aplikasik {\it android} WSDC menggunakan {\it framework} Ionic versi 5?
+	\item Bagaimana melakukan migrasi Ionic versi 3 ke Ionic versi 5?
+\end{itemize}
 
-\dtext{6}
 
 \section{Tujuan}
 \label{sec:tujuan}
-Akan dipaparkan secara lebih terperinci dan tersturkur apa yang menjadi tujuan pembuatan template skripsi ini
+Tujuan yang ingin dicapai dari penulisan skripsi ini adalah sebagai berikut :
+\begin{itemize}
+	\item Mendefinisikan fitur-fitur yang akan tersedia di aplikas WSDC terbaru.
+	\item Membangun aplikasi {\it android} WSDC menggunakan {\it framework} Ionic versi 5.
+	\item Melakukan migrasi Ionic versi 3 ke Ionic versi 5.
+\end{itemize}
 
-\dtext{7}
 
 \section{Batasan Masalah}
 \label{sec:batasan}
-Untuk mempermudah pembuatan template ini, tentu ada hal-hal yang harus dibatasi, misalnya saja bahwa template ini bukan berupa style \LaTeX{} pada umumnya (dengan alasannya karena belum mampu jika diminta membuat seperti itu)
+Dalam skripsi ini dibuat batasan-batasan masalah dalam pembuatan perangkat lunak.  Batasan-batasan masalah yang ditetapkan adalah sebagai berikut:
 
-\dtext{8}
+\begin{enumerate}
+    \item Aplikasi ini tidak akan memiliki fitur notifikasi.
+    \item Aplikasi hanya akan berjalan pada \textit{platform mobile} berbasis android. 
+\end{enumerate}
+
 
 \section{Metodologi}
 \label{sec:metlit}
-Tentunya akan diisi dengan metodologi yang serius sehingga templatenya terkesan lebih serius.
+% Tentunya akan diisi dengan metodologi yang serius sehingga templatenya terkesan lebih serius.
 
-\dtext{9}
+% \dtext{9}
 
-\section{Sistematika Pembahasan}
-\label{sec:sispem}
-Rencananya Bab 2 akan berisi petunjuk penggunaan template dan dasar-dasar \LaTeX.
-Mungkin bab 3,4,5 dapt diisi oleh ketiga jurusan, misalnya peraturan dasar skripsi atau pedoman penulisan, tentu jika berkenan.
-Bab 6 akan diisi dengan kesimpulan, bahwa membuat template ini ternyata sungguh menghabiskan banyak waktu.
+Langkah-langkah yang dilakukan dalam skripsi ini adalah:
 
-\dtext{10}
+\begin{enumerate}
+		\item Melakukan studi mengenai {\it framework} Ionic versi 3 dan versi 5.
+		\item Menganalisis aplikasi WSDC yang sudah ada.
+		\item Mempelajari bagaimana cara melakukan migrasi Ionic versi 3 ke versi 5.
+		\item Mendesain kelas aplikasi.
+		\item Membangun aplikasi WSDC dengan {\it framework} Ionic versi 5. 
+		\item Melakukan pengujian dan eksperimen.
+		\item Menulis dokumen skripsi.
+	\end{enumerate}
