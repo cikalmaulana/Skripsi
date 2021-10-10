@@ -2,20 +2,51 @@
 \chapter{Landasan Teori}
 \label{chap:teori}
 
-\section{Skripsi}
-\label{sec:skripsi} 
+Pada bab ini akan menjelaskan dasar-dasar teori mengenai Ionic, berikut dengan cara untuk melakukan migrasi dari Ionic 3 ke Ionic 5. Akan dibahas pula aplikasi WSDC 2017 Bali saat ini. RxJs, dan Angular.
+
+\section{WSDC 2017 Bali}
+\label{sec:wsdc2017bali}
+
+Aplikasi WSDC 2017 Bali digunakan untuk menunjang keberlangsungan acara WSDC 2017 yang diselenggarakan di Bali, Indonesia. Aplikasi WSDC 2017 Bali dapat diunduh untuk sistem operasi {\it android} melalui URL https://play.google.com/store/apps/details?id=org.wsdc2017indonesia.app&hl=en&gl=US . 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.12]{Gambar/WSDC2017-App.jpg}
+    \caption{Halaman utama aplikasi WSDC 2017 Bali pada Perangkat Android}
+    \label{fig:wsdcapp}
+\end{figure}
+
+Fitur-fitur yang terdapat di aplikasi WSDC 2017 Bali yaitu:
+
+\begin{enumerate}
+	\item {\it Announcements} : Pengguna dapat melihat pemberitahuan tentang berjalannya acara WSDC 2017 Bali.
+	
+\end{enumerate}
+
+\section{Ionic}
+\label{sec:ionic} 
  
-Rencananya akan diisi dengan penjelasan umum mengenai buku skripsi.
+Ionic merupakan {\it Software Development Kit} (SDK) {\it open source} yang digunakan untuk pengembangan aplikasi seluler yang bersifat hibrida pada tahun 2013 oleh Max Lynch, Ben Sperry, dan Adam Bradley, dibangun menggunakan AngularJS dan Apache Cordova \footnote{\textit{'Ionic'}, https://en.wikipedia.org/wiki/Ionic\textunderscore(mobileg\textunderscore app framework) Diakses pada 2 Oktober 2021}. Ionic memiliki berbagai macam \textit{front-end library} dan \textit{User Interface}(UI) {\it Components} yang digunakan untuk  perancangan aplikasi menggunakan teknologi web seperti HTML, CSS, dan Javascript, dengan integrasi untuk berbagai \textit{framework} seperti Angular, React, dan Vue. Saat pertama kali dibuat, Ionic menggunakan AngularJS. Namun, seiring waktu saat Angular versi 2 yang menggunakan Typescript dirilis, Ionic versi 2 dan selanjutnya menggunakan Angular. Lalu, pada tahun 2019, Ionic mendukung penggunaan \textit{framework} lain selain Angular, yaitu React dan Vue.
 
-\dtext{11-12} 
+\section{Migrasi Ionic 3 ke Ionic 5}
+\label{sec:migrasi}
+Aplikasi WSDC Bali 2017 saat ini menggunakan {\it framework} Ionic versi 3 yang sudah tidak didukung lagi. Maka dari itu dilakukan pembaruan aplikasi WSDC Bali 2017 ke dalam {\it framework} Ionic versi 5. Dalam melakukan migrasi tersebut terbagi menjadi dua tahap, yaitu melakukan migrasi dari Ionic 3 ke Ionic 4. Kemudian dilakukan migrasi kembali dari Ionic 4 ke Ionic 5.
 
-\section{\LaTeX}
-\label{sec:latex}
+\subsection{RxJS}
+\label{subsec:rxjs}
 
-Mengapa menggunakan \LaTeX{} untuk buku skripsi dan apa keunggulan/kerugiannya bagi mahasiswa dan pembuat template. 
+\subsection{Migrasi Ionic 3 ke Ionic 4}
+\label{subsec:migrasi3ke4}
+Dalam melakukan migrasi dari Ionic 3 ke Ionic 4 memerlukan beberapa tahapan. Tahapan-tahapan tersebut adalah
+\begin{enumerate}
+	\item Membuat projek baru dengan Ionic 4 \\
+	Pertama, 
+	\item Salin semua Angular {\it services}
+	Kedua, menyalin seluruh isi dari 
+\end{enumerate}
 
-\dtext{13-14}
-
+\subsection{Migrasi Ionic 4 ke Ionic 5}
+\label{subsec:migrasi4ke5}
 
 \section{Template Skripsi FTIS UNPAR}
 \label{sec:template}
