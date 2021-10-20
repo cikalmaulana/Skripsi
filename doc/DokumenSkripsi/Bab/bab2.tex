@@ -2,12 +2,12 @@
 \chapter{Landasan Teori}
 \label{chap:teori}
 
-Pada bab ini akan menjelaskan dasar-dasar teori mengenai Ionic, berikut dengan cara untuk melakukan migrasi dari Ionic 3 ke Ionic 5. Akan dibahas pula aplikasi WSDC 2017 Bali saat ini. RxJs, dan Angular.
+Pada bab ini akan menjelaskan dasar-dasar teori mengenai Ionic, berikut dengan cara untuk melakukan migrasi dari Ionic 3 ke Ionic 5. Akan dibahas pula aplikasi WSDC 2017 Bali saat ini. Cordova, dan Angular.
 
 \section{WSDC 2017 Bali}
 \label{sec:wsdc2017bali}
 
-Aplikasi WSDC 2017 Bali digunakan untuk menunjang keberlangsungan acara WSDC 2017 yang diselenggarakan di Bali, Indonesia. Aplikasi WSDC 2017 Bali dapat diunduh untuk sistem operasi {\it android} melalui URL https://play.google.com/store/apps/details?id=org.wsdc2017indonesia.app&hl=en&gl=US . 
+Aplikasi WSDC 2017 Bali digunakan untuk menunjang keberlangsungan acara WSDC 2017 yang diselenggarakan di Bali, Indonesia (Gambar \ref{fig:wsdcapp}). Aplikasi WSDC 2017 Bali dapat diunduh untuk sistem operasi {\it android} melalui URL \url{https://play.google.com/store/apps/details?id=org.wsdc2017indonesia.app&hl=en&gl=US}. Aplikasi ini dikembangkan oleh PT DNArtworks Komunikasi Visual yang rilis di Play Store pada tanggal 30 Juli 2017, dengan versi terakhir adalah versi 1.1.2 yang rilis pada 1 Agustus 2017. Selain rilis pada perangkat {\it android}, aplikasi ini juga rilis untuk perangkat bergerak berbasis sistem operasi iOS. Namun saat ini aplikasi tersebut sudah diturunkan dari App Store pada perangkat berbasis sistem opearsi iOS. Untuk kepentingan skripsi ini, peneliti memiliki akses ke dalam kode program aplikasi WSDC 2017 Bali.
 
 \begin{figure}[H]
     \centering
@@ -16,37 +16,141 @@ Aplikasi WSDC 2017 Bali digunakan untuk menunjang keberlangsungan acara WSDC 201
     \label{fig:wsdcapp}
 \end{figure}
 
-Fitur-fitur yang terdapat di aplikasi WSDC 2017 Bali yaitu:
+Fitur-fitur yang terdapat di aplikasi WSDC 2017 Bali saat ini yaitu:
 
 \begin{enumerate}
 	\item {\it Announcements} : Pengguna dapat melihat pemberitahuan tentang berjalannya acara WSDC 2017 Bali.
-	
+
+	\begin{figure}[H]
+	    \centering
+	    \includegraphics[scale=0.12]{Gambar/Announcements.jpg}
+	    \caption{Halaman {\it Announcements} aplikasi WSDC 2017 Bali pada Perangkat Android}
+	    \label{fig:wsdcappannouncements}
+	\end{figure}
+
+	\item {\it Schedule} : Pengguna atau peserta WSDC 2017 Bali dapat melihat jadwal acara yang akan maupun sudah diadakan.
+
+	\begin{figure}[H]
+	    \centering
+	    \includegraphics[scale=0.3]{Gambar/Schedule.jpg}
+	    \caption{Halaman {\it Schedule} aplikasi WSDC 2017 Bali pada Perangkat Android}
+	    \label{fig:wsdcappschedule}
+	\end{figure}
+
+	\item {\it Venues} : Pengguna atau peserta WSDC 2017 Bali dapat melihat berbagai macam lokasi acara, mulai dari lokasi upacara, lokasi kompetisi, dan lokasi wisata edukasi. Masing-masing dari lokasi tersebut dapat menunjukan arah dan jarak dari lokasi tempat pengguna berada.
+
+	\begin{figure}[H]
+	    \centering
+	    \includegraphics[scale=0.3]{Gambar/Venues.jpg}
+	    \caption{Halaman {\it Venues} aplikasi WSDC 2017 Bali pada Perangkat Android}
+	    \label{fig:wsdcappvenues}
+	\end{figure}
+
+	\item Info : Pengguna dapat melihat informasi terkait dengan tim pengembang dari aplikasi WSDC 2017 Bali, kontak-kontak penting yang dapat dihubungi, dan kata-kata penting dalam bahasa Indonesia.
+
+	\begin{figure}[H]
+	    \centering
+	    \includegraphics[scale=0.12]{Gambar/Info.jpg}
+	    \caption{Halaman Info plikasi WSDC 2017 Bali pada Perangkat Android}
+	    \label{fig:wsdcappinfo}
+	\end{figure}
 \end{enumerate}
 
 \section{Ionic}
 \label{sec:ionic} 
  
-Ionic merupakan {\it Software Development Kit} (SDK) {\it open source} yang digunakan untuk pengembangan aplikasi seluler yang bersifat hibrida pada tahun 2013 oleh Max Lynch, Ben Sperry, dan Adam Bradley, dibangun menggunakan AngularJS dan Apache Cordova \footnote{\textit{'Ionic'}, https://en.wikipedia.org/wiki/Ionic\textunderscore(mobileg\textunderscore app framework) Diakses pada 2 Oktober 2021}. Ionic memiliki berbagai macam \textit{front-end library} dan \textit{User Interface}(UI) {\it Components} yang digunakan untuk  perancangan aplikasi menggunakan teknologi web seperti HTML, CSS, dan Javascript, dengan integrasi untuk berbagai \textit{framework} seperti Angular, React, dan Vue. Saat pertama kali dibuat, Ionic menggunakan AngularJS. Namun, seiring waktu saat Angular versi 2 yang menggunakan Typescript dirilis, Ionic versi 2 dan selanjutnya menggunakan Angular. Lalu, pada tahun 2019, Ionic mendukung penggunaan \textit{framework} lain selain Angular, yaitu React dan Vue.
+Ionic merupakan sebuah kerangka kerja {\it open source} lintas platform yang memungkinkan untuk mengembangkan aplikasi hibrida yang bekerja pada berbagai macam platform seluler seperti {\it android}, iOS, dan Windows~\cite{waranashiwar:18:ionic}. Ionic memiliki berbagai macam \textit{front-end library} dan \textit{User Interface}(UI) {\it Components} yang digunakan untuk  perancangan aplikasi menggunakan teknologi web seperti HTML, CSS, dan Javascript, dengan integrasi untuk berbagai \textit{framework} seperti Angular, React, dan Vue. Saat pertama kali dibuat, Ionic menggunakan AngularJS. Namun, seiring waktu saat Angular versi 2 yang menggunakan Typescript dirilis, Ionic versi 2 dan selanjutnya menggunakan Angular. Lalu, pada tahun 2019, Ionic mendukung penggunaan \textit{framework} lain selain Angular, yaitu React dan Vue.
 
-\section{Migrasi Ionic 3 ke Ionic 5}
-\label{sec:migrasi}
-Aplikasi WSDC Bali 2017 saat ini menggunakan {\it framework} Ionic versi 3 yang sudah tidak didukung lagi. Maka dari itu dilakukan pembaruan aplikasi WSDC Bali 2017 ke dalam {\it framework} Ionic versi 5. Dalam melakukan migrasi tersebut terbagi menjadi dua tahap, yaitu melakukan migrasi dari Ionic 3 ke Ionic 4. Kemudian dilakukan migrasi kembali dari Ionic 4 ke Ionic 5.
+%\subsection{Instalasi}
+%\label{subsec:instalasi}
+%Aplikasi Ionic dibuat dan dikembangkan melalui perintah {\it command-line}. Pada skripsi ini akan melakukan penginstalan melalui metode Ionic CLI, yang akan menjadi alat utama untuk menjalankan aplikasi. Langkah-langkah instalasi Ionic CLI yaitu :
+%\begin{enumerate}
+	%\item Instalasi Node.js \\
+	%Sebelum memulai instalasi Ionic, diperlukan penginstalan Node.js pada komputer. 
+%\end{enumerate}
 
-\subsection{RxJS}
-\label{subsec:rxjs}
+\subsection{Migrasi Ionic 3 ke Ionic 5}
+\label{subsec:migrasi}
+%Aplikasi WSDC Bali 2017 saat ini menggunakan {\it framework} Ionic versi 3 yang sudah tidak didukung lagi. Maka dari itu dilakukan pembaruan aplikasi WSDC 2017 Bali ke dalam {\it framework} Ionic versi 5. 
 
-\subsection{Migrasi Ionic 3 ke Ionic 4}
-\label{subsec:migrasi3ke4}
-Dalam melakukan migrasi dari Ionic 3 ke Ionic 4 memerlukan beberapa tahapan. Tahapan-tahapan tersebut adalah
+Untuk melakukan migrasi dari Ionic 3 ke Ionic 5 memerlukan dua tahap, yaitu migrasi dari Ionic 3 ke Ionic 4, dan migrasi Ionic 4 ke Ionic 5. Migrasi tersebut adalah sebagai berikut:
+
 \begin{enumerate}
-	\item Membuat projek baru dengan Ionic 4 \\
-	Pertama, 
-	\item Salin semua Angular {\it services}
-	Kedua, menyalin seluruh isi dari 
+	\item Migrasi Ionic 3 ke Ionic 4 \\
+	Terdapat beberapa perubahan baik itu nama maupun letak dari suatu fungsi atau berkas. Perubahan tersebut yaitu:
+	\begin{itemize}
+		\item Perbedaan Direktori Berkas \\
+		Terjadi perubahaan direktori pada berkas di Ionic 3 dan Ionic 4. Daftar perubahan direktori berkas adalah sebagai berikut:
+		\begin{itemize}
+			\item {\it Pages} \\
+			Ionic 3 : src/pages  \\
+			Ionic 4 : src/app/pages
+
+			\item {\it Global Styling} \\
+			Ionic 3 : src/app/app.scss \\
+			Ionic 4 : src/global.scss
+		\end{itemize}
+
+		\item {\it Component Imports} \\
+		Perubahan terjadi pada saat mengimpor {\it component}. Sebagai contoh, pada Ionic 3 untuk mengimpor {\it component toast controller} maka susunan kode nya adalah 
+		\begin{lstlisting}[language=HTML,frame=none,caption=Import Component Ionic 3,label=lst:componentimportionic3]
+       		import { ToastController } from 'ionic-angular';
+    		\end{lstlisting}. Sedangkan pada Ionic 4 susunan kode nya adalah 
+		\begin{lstlisting}[language=HTML,frame=none,caption=Import Component Ionic 4,label=lst:componentimportionic4]
+	       	import { ToastController } from 'ionic-angular';
+	   	 \end{lstlisting}.
+		
+		\item RxJS \\
+	\end{itemize}
+
+	Ada beberapa langkah untuk melakukan migrasi dari Ionic 3 ke dalam Ionic 4, yaitu:
+	
+	\begin{enumerate}
+		\item Membuat Projek Baru \\
+		Pembuatan projek baru Ionic 4 akan sama dengan pembuatan projek baru Ionic 5. Maka dari itu karena penulis memiliki Ionic 5 di dalam CLI akan membuat projek Ionic 5 secara otomatis alih-alih membuat projek Ionic 4. Langkah-langkah untuk membuat projek Ionic baru antara lain :
+		\begin{enumerate}
+			\item Ionic Start \\
+			Untuk membuat projek baru menggunakan {\it Command Line} Windows. Kode \ref{kode:startionic} merupakan perintah untuk memulai sebuah projek Ionic baru.
+			\begin{lstlisting}[language=bash, label=kode:startionic]
+			  ionic start WSDC
+			\end{lstlisting} 
+			\item Memilih {\it Framework} \\
+			Setelah itu akan ada pilihan untuk memilih {\it framework} yang akan digunakan (Gambar \ref{fig:memilihframework}). Pada skripsi ini akan menggunakan {\it framework} Angular.
+			\begin{figure}[H]
+			    \centering
+			    \includegraphics[scale=0.6]{Gambar/ssmemilhframework.png}
+			    \caption{Pemilihan {\it template} Pada Command Line}
+			    \label{fig:memilihframework}
+			\end{figure}			
+			\item Memilih {\it Template} \\
+			Lalu setelah itu ada pemilihan {\it template} untuk memilih {\it template} awal yang akan digunakan (Gambar \ref{fig:memilihtemplate}). Pada skripsi ini untuk {\it template} awal akan menggunakan {\it blank}.
+			\begin{figure}[H]
+			    \centering
+			    \includegraphics[scale=0.6]{Gambar/ssmemilihtemplate.png}
+			    \caption{Pemilihan {\it template} Pada Command Line}
+			    \label{fig:memilihtemplate}
+			\end{figure}
+			\item Memasang {\it Dependencies} \\
+			Akan ada proses mengunduh berkas {\it dependencies framework} Ionic dan memasangnya di komputer (Gambar \ref{fig:ssunduhinstalionic}). Setelah proses menunduh dan memasang selesai, projek Ionic baru sudah dapat digunakan sepenuhnya.
+			\begin{figure}[H]
+			    \centering
+			    \includegraphics[scale=0.6]{Gambar/ssunduhinstalionic.png}
+			    \caption{Proses Pengunduhan dan Instalasi {\it Dependencies} Ionic}
+			    \label{fig:ssunduhinstalionic}
+			\end{figure}
+		\end{enumerate}
+	\end{enumerate}
+	\item Menyalin {\it Root-level Items} \\
+	
 \end{enumerate}
 
-\subsection{Migrasi Ionic 4 ke Ionic 5}
-\label{subsec:migrasi4ke5}
+%3 ke 4, 4 ke 5
+%perubahan nama package
+%bab 3 : 3 statusnya gimana, gabisa dijalanin karena apa, errornya gimana, 
+%bab 2 : migrasi, actual migrationnya yg dipraktekan yg dikerjakan
+%bab 2 : dasar teori, bahas wsdc app, ionic nya sendiri,
+%bab 3 dan 4 : mengira ngira apa saja yg akan dikerjakan dari dasar dasar di bab 2
+%
 
 \section{Template Skripsi FTIS UNPAR}
 \label{sec:template}
