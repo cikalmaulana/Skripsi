@@ -1,4 +1,5 @@
 %versi 3 (22-07-2020)
+\setcounter{secnumdepth}{4}
 \chapter{Landasan Teori}
 \label{chap:teori}
 
@@ -88,18 +89,28 @@ Fitur-fitur yang terdapat di aplikasi WSDC 2017 Bali saat ini yaitu :
 \label{sec:ionicframework} 
  
 Ionic Framework merupakan sebuah kerangka kerja {\it open source} lintas platform yang memungkinkan untuk mengembangkan aplikasi hibrida yang bekerja pada berbagai macam platform seluler seperti {\it android}, iOS, dan Windows~\cite{waranashiwar:18:ionic}. Ionic memiliki berbagai macam \textit{front-end library} dan \textit{User Interface}(UI) {\it Components} yang digunakan untuk  perancangan aplikasi menggunakan teknologi web seperti HTML, CSS, dan Javascript, dengan integrasi untuk berbagai \textit{framework} seperti Angular, React, dan Vue. Saat pertama kali dibuat, Ionic menggunakan AngularJS. Namun, seiring saat Angular versi 2 yang menggunakan Typescript dirilis, Ionic versi 2 dan selanjutnya menggunakan Angular. Lalu, pada tahun 2019, Ionic mendukung penggunaan \textit{framework} lain selain Angular, yaitu React dan Vue. Di dalam Ionic, Angular digunakan untuk membangun aplikasi dan perutean, sehingga aplikasi dapat sejalan dengan ekosistem Angular lainnya. Ionic menyediakan {\it toolkit} Angular untuk membangun aplikasi dan terintegrasi dengan Angular CLI resmi yang menyediakan fitur khusus untuk aplikasi Ionic Angular. Pada saat skripsi ini dibuat, Ionic versi terbaru adalah Ionic versi 5, sedangkan Angular yang digunakan adalah Angular versi 12. 
+
+\subsection{Native API}
+\label{subsec:nativeApi}
+Native API memungkinkan pengembangan aplikasi langsung terintegrasi ke dalam {\it platform}. Pengembang dapat membuat aplikasi pada perangkat {\it mobile} untuk dapat diimplementasikan ke berbagai {\it platform}, seperti IOS, dan Android, setelah pengembangan selesai di dalam {\it framework native} tanpa perlu perubahan, dan tidak mempengaruhi peforma dari aplikasi tersebut~\cite{griffith:17:mobile}. 
+
+Ionic mendukung komunikasi dengan menggunakan Native API yang terintegrasi untuk menambahkan fungsionalitas ke dalam aplikasi Ionic apapun dengan menggunakan Capacitor atau Cordova. Dengan terpasangnya Ionic Native, maka aplikasi akan memiliki antar muka yang diperlukan untuk berinteraksi dengan salah satu plug-in, yaitu Capacitor atau Cordova.
+
+\subsubsection{Capacitor}
+\label{subsec:capacitor}
+Penjelasan singkat mengenai capacitor di ionic
+
+\subsubsection{Cordova}
+\label{subsec:cordova}
+Penjelasan lebih lengkap mengenai cordova, karena akan dipakai nantinya di aplikasi WSDC
+
+\subsection{UI Component}
+\label{subsec:uiComponent}
+Penjelasan apa saja ui component yang ada pada Ionic
 %2.2.1 Native API
 %2.2.1.1 Capacitor
 %2.2.1.2 Cordova
 %2.2.2 UI Component 
-
-%\subsection{Instalasi}
-%\label{subsec:instalasi}
-%Aplikasi Ionic dibuat dan dikembangkan melalui perintah {\it command-line}. Pada skripsi ini akan melakukan penginstalan melalui metode Ionic CLI, yang akan menjadi alat utama untuk menjalankan aplikasi. Langkah-langkah instalasi Ionic CLI yaitu :
-%\begin{enumerate}
-	%\item Instalasi Node.js \\
-	%Sebelum memulai instalasi Ionic, diperlukan penginstalan Node.js pada komputer. 
-%\end{enumerate}
 
 \subsection{Migrasi Ionic 3 ke Ionic 5}
 \label{subsec:migrasi}
@@ -107,127 +118,142 @@ Ionic Framework merupakan sebuah kerangka kerja {\it open source} lintas platfor
 
 Untuk melakukan migrasi dari Ionic 3 ke Ionic 5 memerlukan dua tahap, yaitu migrasi dari Ionic 3 ke Ionic 4, dan migrasi Ionic 4 ke Ionic 5. Tahapan migrasi tersebut adalah sebagai berikut:
 
+%---START ENUM SECTION MIGRASI IONIC 3 KE IONIC 5---%
 \begin{enumerate}
 	\item Migrasi Ionic 3 ke Ionic 4 \\
 	Ada beberapa langkah untuk melakukan migrasi dari Ionic 3 ke dalam Ionic 4, yaitu:
 	
+
+	%---START ENUM MIGRASI IONIC 3 KE IONIC 4---%
 	\begin{enumerate}
-		\item Membuat Projek Baru \\
-		Langkah-langkah untuk membuat projek Ionic baru antara lain :
-		\begin{enumerate}
-			\item Ionic Start \\
-			Untuk membuat projek baru menggunakan {\it Command Line} Windows, dengan mengetikan perintah \textbf{ionic start WSDC}.
-			\item Memilih {\it Framework} \\
-			Setelah itu akan ada pilihan untuk memilih {\it framework} yang akan digunakan (Gambar \ref{fig:memilihframework}). Pada skripsi ini akan menggunakan {\it framework} Angular.
-			\begin{figure}[H]
-			    \centering
-			    \includegraphics[scale=0.6]{Gambar/ssmemilhframework.png}
-			    \caption{Pemilihan {\it template} Pada Command Line}
-			    \label{fig:memilihframework}
-			\end{figure}			
-			\item Memilih {\it Template} \\
-			Lalu setelah itu ada pemilihan {\it template} untuk memilih {\it template} awal yang akan digunakan (Gambar \ref{fig:memilihtemplate}). Pada skripsi ini untuk {\it template} awal akan menggunakan {\it blank}.
-			\begin{figure}[H]
-			    \centering
-			    \includegraphics[scale=0.6]{Gambar/ssmemilihtemplate.png}
-			    \caption{Pemilihan {\it template} Pada Command Line}
-			    \label{fig:memilihtemplate}
-			\end{figure}
-			\item Memasang {\it Dependencies} \\
-			Akan ada proses mengunduh berkas {\it dependencies framework} Ionic dan memasangnya di komputer (Gambar \ref{fig:ssunduhinstalionic}). Setelah proses pengunduhan dan pemasangan selesai, projek Ionic baru sudah dapat digunakan sepenuhnya.
-			\begin{figure}[H]
-			    \centering
-			    \includegraphics[scale=0.6]{Gambar/ssunduhinstalionic.png}
-			    \caption{Proses Pengunduhan dan Instalasi {\it Dependencies} Ionic}
-			    \label{fig:ssunduhinstalionic}
-			\end{figure}
-		\end{enumerate}
+		\item Membuat Projek Ionic Baru \\
+		Untuk membuat projek Ionic baru tanpa {\it template} apapun dengan menggunakan perintah \textbf{ionic start myApp blank} dan memilih Angular sebagai {\it framework}nya.
+		\begin{lstlisting}[language=php, caption=Perintah Membuat Projek Ionic Baru]
+			ionic start myApp blank
+		\end{lstlisting}
+		
 		\item Menyalin {\it Root-level Items} \\
 		Menyalin seluruh {\it Root-level Items} pada Ionic versi 3 dengan direktori yang sama atau dengan beberapa perubahan. Terdapat beberapa perubahan baik itu nama maupun letak dari suatu fungsi atau berkas. Perubahan tersebut yaitu:
+
+		%---START ITEMIZE MENYALIN ROOT LEVEL---%
 		\begin{itemize}
+
 			\item Angular
+			%---START ITEMIZE ANGULAR---%
 			\begin{itemize}
 				\item HttpClient \\
 				Pada Angular versi 4 keatas, objek {\it response} secara {\it default} merupakan JSON, jadi tidak perlu diubah kembali menjadi JSON.
 			\end{itemize}
-			\newpage
-			\item {\it Imports}
+			%---END ITEMIZE ANGULAR---%
+
+
+			\item {\it Imports} \\
 			Terjadi perubahaan dalam mengimpor {\it package} di Ionic 3 dan Ionic 4. Daftar perubahan tersebut adalah sebagai berikut :
+			%---START ITEMIZE IMPORT---%
 			\begin{itemize}
 				\item Angular HTTP \\
-				Ionic 3 : @angular/http\\
-				Ionic 4 : @angular/common/http
+				Pada Ionic 3 : @angular/http\\
+				Terdapat perubahan pada Ionic 4 menjadi : @angular/common/http
 	
 				\item Ionic Angular \\
-				Ionic 3 : ionic-angular  \\
-				Ionic 4 : @ionic/angular
+				Pada Ionic 3 : ionic-angular  \\
+				Terdapat perubahan pada Ionic 4 menjadi : @ionic/angular
 	
 				\item {\it In App Browser} \\
-				Ionic 3 : @ionic-native/in-app-browser \\
-				Ionic 4 : @ionic-native/in-app-browser/ngx
+				Pada Ionic 3 : @ionic-native/in-app-browser \\
+				Terdapat perubahan pada Ionic 4 menjadi : @ionic-native/in-app-browser/ngx
 			\end{itemize}
+			%---END ITEMIZE IMPORT---%
 	
-			\item Ionic {\it Component}
+
+			\item Ionic {\it Component} \\
 			Terjadi perubahaan pada Ionic {\it Component} di Ionic 3 dan Ionic 4. Daftar perubahan tersebut adalah sebagai berikut :
+			%---START ITEMIZE COMPONENT---%
 			\begin{itemize}
 				\item {\it Button} \\
-				Ionic 3 : <button>  \\
-				Ionic 4 : <ion-button>
+				Pada Ionic 3 : <button>  \\
+				Terdapat perubahan pada Ionic 4 menjadi : <ion-button>
 			\end{itemize}
+			%---END ITEMIZE COMPONENT---%
 	
+
 			\item Perbedaan Direktori Berkas \\
 			Terjadi perubahaan direktori pada berkas di Ionic 3 dan Ionic 4. Daftar perubahan tersebut adalah sebagai berikut :
+			%---START ITEMIZE PERBEDAAN DIREKTORI BERKAS---%
 			\begin{itemize}
 				\item {\it Global Styling} \\
-				Ionic 3 : src/app/app.scss \\
-				Ionic 4 : src/global.scss
+				Pada Ionic 3 : src/app/app.scss \\
+				Terdapat perubahan pada Ionic 4 menjad : src/global.scss
 
 				\item {\it Pages} \\
-				Ionic 3 : src/pages  \\
-				Ionic 4 : src/app/pages
+				Pada Ionic 3 : src/pages  \\
+				Terdapat perubahan pada Ionic 4 menjad : src/app/pages
 			\end{itemize}
+			%---END ITEMIZE PERBEDAAN DIREKTORI BERKAS---%
 	
-			\item Penamaan Berkas
+
+			\item Penamaan Berkas \\
 			Terjadi perubahaan penamaan pada berkas di Ionic 3 dan Ionic 4. Daftar perubahan tersebut adalah sebagai berikut:
+			%---START ITEMIZE PENAMAAN BERKAS---%
 			\begin{itemize}
 				\item {\it Page} \\
 				Contoh perbedaan nama {\it file} pada folder Pages adalah sebagai berikut :\\
-				Ionic 3 : home.html  \\
-				Ionic 4 : home.page.html
+				Pada Ionic 3 : home.html  \\
+				Terdapat perubahan pada Ionic 4 menjad : home.page.html
 	
 				\item {\it App} \\
 				Contoh perbedaan nama {\it file} pada direktori App adalah sebagai berikut : \\
-				Ionic 3 : app.html \\
-				Ionic 4 : app-component.html
+				Pada Ionic 3 : app.html \\
+				Terdapat perubahan pada Ionic 4 menjad : app-component.html
 			\end{itemize}
+			%---END ITEMIZE PENAMAAN BERKAS---%
+
 
 			\item {\it Routing}
+			%---START ITEMIZE ROUTING---%
 			\begin{itemize}
 				\item {\it Selector} \\
 				Contoh perbedaan {\it selector} pada halaman Home adalah sebagai berikut :\\
-				Ionic 3 : page-home  \\
-				Ionic 4 : app-home
+				Pada Ionic 3 : page-home  \\
+				Terdapat perubahan pada Ionic 4 menjad : app-home
 			\end{itemize}
-			
-			
+			%---END ITEMIZE ROUTING---%
+
+
 		\end{itemize}
-		\newpage
+		%---END ITEMIZE MENYALIN ROOT LEVEL---%
+
+
 		\item Menyalin Bagian-bagian Aplikasi \\
 		Menyalin keseluruhan bagian yang ada pada aplikasi WSDC 2017 Bali, baik itu halaman maupun fitur yang ada, dengan ketentuan sebagai berikut :
+
+		%---START ITEMIZE MENYALIN BAGIAN BAGIAN APLIKASi---%
 		\begin{itemize}
 			\item Shadow DOM sudah aktif secara {\it default}.
 			\item Halaman atau komponen Sass tidak lagi dibungkus dengan tag halaman / komponen dan harus menggunakan opsi styleUrls milik Angular dari dekorator @Component.
 			\item RxJS \\
 			Pada Ionic 3, RxJS yang digunakan adalah versi 5. Sedangkan pada Ionic 4, RxJS yang digunakan adalah versi 6. Terdapat beberapa perbedaan diantara kedua versi tersebut, diantaranya yaitu :
+			%---START ITEMIZE RXJS---%
 			\begin{itemize}
 				\item {\it Operator} \\
 				Dalam pemanggilan operator, sejak RxJS versi 6 perlu menambahkan .pipe untuk menggunakan operator apapun.
 			\end{itemize}
+			%---END ITEMIZE RXJS---%
+
+
 			\item {\it Lifecycle Hooks} tertentu harus digantikan dengan Angular Hooks.
 		\end{itemize}
+		%---END ITEMIZE MENYALIN BAGIAN BAGIAN APLIKASi---%
+
+
 	\end{enumerate}
+	%---END ENUM MIGRASI IONIC 3 KE IONIC 4---%
+
+
 	\item Migrasi Ionic 4 ke Ionic 5 \\
 	Migrasi aplikasi dari Ionic 4 ke Ionic 5 memerlukan beberapa pembaruan mengenai properti API, CSS, dan {\it package} dan {\it dependencies} yang terpasang. Perubahan-perubahan tersebut yaitu :
+
+	%---START ITEMIZE MIGRASI IONIC 4 KE IONIC 5---%
 	\begin{itemize}
 		\item API
 		\begin{itemize}
@@ -244,7 +270,12 @@ Untuk melakukan migrasi dari Ionic 3 ke Ionic 5 memerlukan dua tahap, yaitu migr
 		\item {\it Package} dan {\it Dependencies} \\
 		Pada skripsi ini, aplikasi menggunakan {\it framework} Angular. Untuk melakukan pembaruan terhadap {\it package} dan {\it dependencies} terbaru, dapat dilakukan dengan cara menjalankan \textbf{npm install @ionic/angular@latest @ionic/angular-toolkit@latest --save} pada {\it command line}.
 	\end{itemize}
+	%---END ITEMIZE MIGRASI IONIC 4 KE IONIC 5---%
+
+
 \end{enumerate}
+%---END ENUM SECTION MIGRASI IONIC 3 KE IONIC 5---%
+
 
 \subsection{Cordova}
 \label{subsec:cordova}
