@@ -87,14 +87,11 @@ Fitur-fitur yang terdapat di aplikasi WSDC 2017 Bali saat ini yaitu :
 \section{Ionic {\it Framework}}
 \label{sec:ionicframework} 
  
-Ionic merupakan sebuah kerangka kerja {\it open source} lintas platform yang memungkinkan untuk mengembangkan aplikasi hibrida yang bekerja pada berbagai macam platform seluler seperti {\it android}, iOS, dan Windows~\cite{waranashiwar:18:ionic}. Ionic memiliki berbagai macam \textit{front-end library} dan \textit{User Interface}(UI) {\it Components} yang digunakan untuk  perancangan aplikasi menggunakan teknologi web seperti HTML, CSS, dan Javascript, dengan integrasi untuk berbagai \textit{framework} seperti Angular, React, dan Vue. Saat pertama kali dibuat, Ionic menggunakan AngularJS. Namun, seiring saat Angular versi 2 yang menggunakan Typescript dirilis, Ionic versi 2 dan selanjutnya menggunakan Angular. Lalu, pada tahun 2019, Ionic mendukung penggunaan \textit{framework} lain selain Angular, yaitu React dan Vue.
-
+Ionic Framework merupakan sebuah kerangka kerja {\it open source} lintas platform yang memungkinkan untuk mengembangkan aplikasi hibrida yang bekerja pada berbagai macam platform seluler seperti {\it android}, iOS, dan Windows~\cite{waranashiwar:18:ionic}. Ionic memiliki berbagai macam \textit{front-end library} dan \textit{User Interface}(UI) {\it Components} yang digunakan untuk  perancangan aplikasi menggunakan teknologi web seperti HTML, CSS, dan Javascript, dengan integrasi untuk berbagai \textit{framework} seperti Angular, React, dan Vue. Saat pertama kali dibuat, Ionic menggunakan AngularJS. Namun, seiring saat Angular versi 2 yang menggunakan Typescript dirilis, Ionic versi 2 dan selanjutnya menggunakan Angular. Lalu, pada tahun 2019, Ionic mendukung penggunaan \textit{framework} lain selain Angular, yaitu React dan Vue. Di dalam Ionic, Angular digunakan untuk membangun aplikasi dan perutean, sehingga aplikasi dapat sejalan dengan ekosistem Angular lainnya. Ionic menyediakan {\it toolkit} Angular untuk membangun aplikasi dan terintegrasi dengan Angular CLI resmi yang menyediakan fitur khusus untuk aplikasi Ionic Angular. Pada saat skripsi ini dibuat, Ionic versi terbaru adalah Ionic versi 5, sedangkan Angular yang digunakan adalah Angular versi 12. 
 %2.2.1 Native API
 %2.2.1.1 Capacitor
 %2.2.1.2 Cordova
-%2.2.2 UI Component
-
-Pada skripsi ini akan menggunakan {\it framework} Angular. Versi Angular yang terpasang pada aplikasi WSDC 2017 Bali saat ini adalah versi 4.1.3. Sedangkan pada skripsi ini akan menggunakan Angular versi 12.  Di dalam Ionic, Angular digunakan untuk membangun aplikasi dan perutean, sehingga aplikasi dapat sejalan dengan ekosistem Angular lainnya. Ionic menyediakan @ionic/angular-toolkit untuk membangun aplikasi dan terintegrasi dengan Angular CLI resmi yang menyediakan fitur yang khusus untuk aplikasi @ionic/angular.
+%2.2.2 UI Component 
 
 %\subsection{Instalasi}
 %\label{subsec:instalasi}
@@ -108,7 +105,7 @@ Pada skripsi ini akan menggunakan {\it framework} Angular. Versi Angular yang te
 \label{subsec:migrasi}
 %Aplikasi WSDC Bali 2017 saat ini menggunakan {\it framework} Ionic versi 3 yang sudah tidak didukung lagi. Maka dari itu dilakukan pembaruan aplikasi WSDC 2017 Bali ke dalam {\it framework} Ionic versi 5. 
 
-Untuk melakukan migrasi dari Ionic 3 ke Ionic 5 memerlukan dua tahap, yaitu migrasi dari Ionic 3 ke Ionic 4, dan migrasi Ionic 4 ke Ionic 5. Migrasi tersebut adalah sebagai berikut:
+Untuk melakukan migrasi dari Ionic 3 ke Ionic 5 memerlukan dua tahap, yaitu migrasi dari Ionic 3 ke Ionic 4, dan migrasi Ionic 4 ke Ionic 5. Tahapan migrasi tersebut adalah sebagai berikut:
 
 \begin{enumerate}
 	\item Migrasi Ionic 3 ke Ionic 4 \\
@@ -128,7 +125,6 @@ Untuk melakukan migrasi dari Ionic 3 ke Ionic 5 memerlukan dua tahap, yaitu migr
 			    \caption{Pemilihan {\it template} Pada Command Line}
 			    \label{fig:memilihframework}
 			\end{figure}			
-			\newpage
 			\item Memilih {\it Template} \\
 			Lalu setelah itu ada pemilihan {\it template} untuk memilih {\it template} awal yang akan digunakan (Gambar \ref{fig:memilihtemplate}). Pada skripsi ini untuk {\it template} awal akan menggunakan {\it blank}.
 			\begin{figure}[H]
@@ -152,7 +148,7 @@ Untuk melakukan migrasi dari Ionic 3 ke Ionic 5 memerlukan dua tahap, yaitu migr
 			\item Angular
 			\begin{itemize}
 				\item HttpClient \\
-				Pada Angular versi 4 keatas, objek {\it response} secara {\it default} merupakan JSON, jadi tidak perlu dirubah kembali menjadi JSON.
+				Pada Angular versi 4 keatas, objek {\it response} secara {\it default} merupakan JSON, jadi tidak perlu diubah kembali menjadi JSON.
 			\end{itemize}
 			\newpage
 			\item {\it Imports}
