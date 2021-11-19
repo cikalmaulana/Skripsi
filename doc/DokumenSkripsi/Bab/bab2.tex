@@ -102,7 +102,20 @@ Penjelasan singkat mengenai capacitor di ionic
 
 \subsubsection{Cordova}
 \label{subsec:cordova}
-Cordova merupakan {\it framework open source} yang dapat membuat pengembang untuk menggunakan teknologi seperti HTML, JavaScript, dan CSS untuk membangun aplikasi untuk perangkat bergerak yang dapat berjalan pada beberapa sistem operasi {\it mobile}~\cite{gonsalves:18:evaluating}. 
+Cordova merupakan {\it framework open source} yang dapat membuat pengembang untuk menggunakan teknologi seperti HTML, JavaScript, dan CSS untuk membangun aplikasi untuk perangkat bergerak yang dapat berjalan pada beberapa sistem operasi {\it mobile}~\cite{gonsalves:18:evaluating}. Cordova menyediakan antarmuka antara WebView dan lapisan {\it native} pada perangkat~\cite{griffith:17:mobile}. Selain dapat bekerja pada dua platform seluler Android dan IOS, Cordova juga dapat digunakan pada platform seluler seperti Windows Phone, Blackberry, dan FireOS.
+
+Untuk mengonfigurasi proyek Cordova, saat ini dapat menggunakan {\it Command Line Tool} (CLI). CLI membuat proyek dasar dan mengonfigurasinya agar berfungsi dengan platform seluler apa pun yang didukung yang dapat digunakan. Cordova CLI juga dapat membuat pengembang memliki integrasi dan pengelolaan {\it plug in}. Selain itu, CLI juga dapat mengkompilasi aplikasi untuk berjalan pada simulator atau pada perangkat yang sebenarnya. Serupa dengan Capacitor, Cordova membuat pengembang dapat mengakses fitur {\it native} dari sebuah perangkat, seperti kamera, papan ketik, dan geolokasi, menggunakan {\it plugin}. Ionic {\it Framework} telah terdapat berbagai macam TypeScript {\it wrapper} untuk {\it plugins} Cordova.  Untuk dapat menggunakan Cordova Plugins, yaitu dengan memasang Cordova Plugins terlebih dahulu (Kode~\ref{lst:installCordova}), dan memperbaruinya ke versi terakhir (Kode~\ref{lst:updateCordova}) yang dapat dilakukan melalui CLI. Setiap {\it plugins} memiliki dua komponen, yaitu kode {\it native} (Cordova), dan kode TypeScript (Ionic Native). {\it Plugins} Cordova juga dibungkus di dalam Promise atau Observable untuk menyediakan antarmuka plugin.
+
+\begin{lstlisting}[language=html, label={lst:installCordova}, caption=Kode untuk Memasang Cordova Plugins]
+		npm install cordova-plugin-name
+		npx cap sync
+\end{lstlisting} 
+
+\begin{lstlisting}[language=php, label={lst:updateCordova}, caption=Kode untuk Memperbarui Cordova Plugins]
+		npm install cordova-plugin-name@2
+		npx cap update
+\end{lstlisting} 
+
 
 \subsection{UI Component}
 \label{subsec:uiComponent}
@@ -491,24 +504,77 @@ Untuk melakukan migrasi dari Ionic 3 ke Ionic 5 memerlukan dua tahap, yaitu migr
 
 
 	\item Migrasi Ionic 4 ke Ionic 5 \\
-	Migrasi aplikasi dari Ionic 4 ke Ionic 5 memerlukan beberapa pembaruan mengenai properti API, CSS, dan {\it package} dan {\it dependencies} yang terpasang. Perubahan-perubahan tersebut yaitu :
+	Migrasi aplikasi dari Ionic 4 ke Ionic 5 memerlukan beberapa pembaruan mengenai properti API, CSS, dan {\it package dependencies} yang terpasang. Perubahan-perubahan tersebut yaitu :
 
 	%---START ITEMIZE MIGRASI IONIC 4 KE IONIC 5---%
 	\begin{itemize}
-		\item API
+		\item CSS
 		\begin{itemize}
-			\item {\it Component}
-			%\begin{itemize}
-				%\item {\it Button} \\
-				%Terjadi perubahan penulisan pada kelas activated, dari \textbf{.activated} di Ionic 4 menjadi \textbf{.ion-activated}.
-			%\end{itemize}
-			\item {\it Color}
-			
+			\item CSS {\it Utilities} \\
+			Karena pada versi sebelumnya, yaitu Ionic versi 4, terdapat masalah dengan menggunakan atribut CSS dengan {\it framework} yang menggunakan JSX dan TypeScript, Ionic {\it Framework} menambahkan dukungan untuk beberapa {\it framework}, dan pada Ionic 5 menambahkan kelas CSS. Ionic versi 5 menghapus atribut CSS dan mendukung konsistensi. Selain itu, Ionic versi 5 juga mengubah ke kelas dengan diawali dengan ion untuk menghindari konflik dengan atribut asli dan CSS dari pengguna (Kode~\ref{lst:CSSUtilities}).
+		\begin{lstlisting}[language=php, label={lst:CSSUtilities}, caption=Contoh Kode Kelas CSS {\it Utility} pada Ionic 5]
+			<ion-header class="ion-text-center"></ion-header>
+			<ion-content class="ion-padding"></ion-content>
+			<ion-label class="ion-text-wrap"></ion-label>
+			<ion-item class="ion-wrap"></ion-item>
+		\end{lstlisting} 
+  
+			\item {\it Display Classes} \\ 
+			Kelas dari {\it responsive display} yang ditemukan di dalam berkas display.css memiliki kueri media yang diperbarui untuk lebih mencerminkan bagaimana cara kerjanya.
+
+			\item {\it Activated, Focused, Hover States} \\
+			Kelas .activated secara otomatis ditambahkan ke komponen yang dapat diklik, mengalami perubahan nama menjadi .ion-activated. Selain itu juga memperbarui komponen Action Sheet sehingga variabel akan diawali dengan {\it button}. Hal ini dapat memungkinkan aplikasi tetap memiliki kontrol atas {\it opacity} jika diinginkan, tetapi saat memperbarui status, hanya perlu mengatur variabel utama, yaitu -background-activated, -background-focused, -background-hover. Hal tersebut penting saat mengubah tema global, karena memperbarui warna {\it toolbar} akan secara otomatis memperbarui {\it hover states} untuk semua {\it buttons} di {\it toolbar} (Kode~\ref{lst:hoverStates}). 
+		\begin{lstlisting}[language=php, label={lst:hoverStates}, caption=Contoh Kode {\it Hover States} pada Ionic 5]
+			/* Setting the button background on hover to solid red */
+				ion-button {
+					--background-hover: red;
+					--background-hover-opacity: 1;
+				}
+
+		/* Setting the action sheet button background on focus to an opaque green */
+			ion-action-sheet {
+				--button-background-focus: green;
+				--button-background-focus-opacity: 0.5;
+			}
+
+		/*
+ 		* Setting the fab button background on hover to match the text color with
+ 		* the default --background-hover-opacity on md
+		 */
+			.md ion-fab-button {
+				--color: #222;
+				--background-hover: #222;
+			}
+		\end{lstlisting} 
+
+			\item {\it Distributed Sass} \\
+			Berkas scss telah dihapus dari dist/. Sebagai gantinya, variabel CSS harus digunakan untuk tema.
+
 		\end{itemize}
-		%\item CSS \\
+
+		\item {\it Components}
+		\begin{itemize}
+			\item {\it Back Button}
+			\item {\it Back}
+			\item {\it Card}
+			\item {\it Controllers}
+			\item {\it Header / Footer}
+			\item {\it List Header}
+			\item {\it Menu}
+			\item {\it Searchbar}
+			\item {\it Select Option}
+			\item {\it Toast}
+		\end{itemize}
+
+		\item {\it Colors}
+		
+		\item {\it Events}
 		
 		\item {\it Package} dan {\it Dependencies} \\
-		Pada skripsi ini, aplikasi menggunakan {\it framework} Angular. Untuk melakukan pembaruan terhadap {\it package} dan {\it dependencies} terbaru, dapat dilakukan dengan cara menjalankan \textbf{npm install @ionic/angular@latest @ionic/angular-toolkit@latest --save} pada {\it command line}.
+		Untuk memasang {\it package} dan {\it dependencies} pada Angular, dapat memanfaatkan npm pada CLI, dengan menjalankan pemasangan pada {\it package} ionic-angular  (Kode~\ref{lst:packageDependenciesInstall}). Namun jika ingin membuat proyek baru, dapat dibuat dari CLI dan aplikasi yang ada dapat dimigrasikan secara manual.
+		\begin{lstlisting}[language=php, label={lst:packageDependenciesInstall}, caption=Kode untuk Memasang {\it Package} dan {\it Dependencies} pada Angular]
+			npm install @ionic/angular@latest @ionic/angular-toolkit@latest --save
+		\end{lstlisting} 
 	\end{itemize}
 	%---END ITEMIZE MIGRASI IONIC 4 KE IONIC 5---%
 
