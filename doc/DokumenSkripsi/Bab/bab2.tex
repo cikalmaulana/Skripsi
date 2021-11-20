@@ -124,8 +124,6 @@ Untuk mengonfigurasi proyek Cordova, saat ini dapat menggunakan {\it Command Lin
 	\item Action Sheet \\
 	Merupakan dialog yang menampilkan serangkaian opsi, yang muncul diatas konten aplikasi dan harus ditutup secara manual oleh pengguna sebelum pengguna dapat melanjutkan interaksi dengan aplikasi. Untuk menutup Action Sheet terdapat beberapa cara, termasuk mengetuk latar belakang atau menekan tombol escape di desktop.
 
-\newpage
-
 	\item Alert \\
 	Alert merupakan dialog yang menampilkan informasi kepada pengguna, atau mengumpulkan informasi dari pengguna menggunakan input. Alert muncul di atas konten aplikasi, dan harus ditutup secara manual oleh pengguna sebelum pengguna dapat melanjutkan interaksi dengan aplikasi. Secara opsional, terdapat header, sub header, dan pesan yang ada pada Alert.
 	\item Badge \\
@@ -154,8 +152,6 @@ Untuk mengonfigurasi proyek Cordova, saat ini dapat menggunakan {\it Command Lin
 	\end{lstlisting} 
 	\item Content\\
 	Komponen content merupakan penyedia area konten yang bisa digunakan untuk mengontrol area yang dapat digulir. Dalam satu tampilan, setidaknya terdapat satu buah content. Content juga dapat dimodifikasi padding, margin, dan lainnya menggunakan {\it global style} yang berada di CSS Utilites atau mengubahnya secara individual dengan menggunakan CSS. Penggunaan Content dengan menggunakan {\it tag} <ion-content> (Kode~\ref{lst:contentComponent}).
-
-\newpage
 
 	\begin{lstlisting}[language=php, label={lst:contentComponent}, caption=Potongan Kode Program dari Content Component]
 			<ion-content
@@ -319,9 +315,12 @@ Untuk melakukan migrasi dari Ionic 3 ke Ionic 5 memerlukan dua tahap, yaitu migr
 					import { IonInput, IonList, IonSlides } from '@ionic/angular';
 				\end{lstlisting}
 
-				\item Ionic Angular \\
-				Pada Ionic 3 : ionic-angular  \\
-				Terdapat perubahan pada Ionic 4 menjadi : @ionic/angular
+				\item Package Name \\
+				Terdapat perubahan pada Ionic 4, dimana nama {\it package} diubah menjadi @ionic/angular. Untuk dapat menggunakannya dengan cara mencopot pemasangan Ionic 3 dan memasang Ionic 4 dengan nama {\it package} yang baru (Kode~\ref{lst:packageNameIonic4}).
+				\begin{lstlisting}[language=php, label={lst:packageNameIonic4}, caption=Penggunaan Button pada Ionic 4]
+					npm uninstall ionic-angular
+					npm install @ionic/angular>
+				\end{lstlisting}
 			\end{itemize}
 			%---END ITEMIZE IMPORT---%
 	
@@ -362,14 +361,14 @@ Untuk melakukan migrasi dari Ionic 3 ke Ionic 5 memerlukan dua tahap, yaitu migr
 			%---END ITEMIZE PENAMAAN BERKAS---%
 
 
-			\item {\it Routing}
+			%\item {\it Routing}
 			%---START ITEMIZE ROUTING---%
-			\begin{itemize}
-				\item {\it Selector} \\
-				Contoh perbedaan {\it selector} pada halaman Home adalah sebagai berikut :\\
-				Pada Ionic 3 : page-home  \\
-				Terdapat perubahan pada Ionic 4 menjad : app-home
-			\end{itemize}
+			%\begin{itemize}
+			%	\item {\it Selector} \\
+			%	Contoh perbedaan {\it selector} pada halaman Home adalah sebagai berikut :\\
+			%	Pada Ionic 3 : page-home  \\
+			%	Terdapat perubahan pada Ionic 4 menjad : app-home
+			%\end{itemize}
 			%---END ITEMIZE ROUTING---%
 
 			
@@ -552,23 +551,82 @@ Untuk melakukan migrasi dari Ionic 3 ke Ionic 5 memerlukan dua tahap, yaitu migr
 
 		\end{itemize}
 
-		\item {\it Components}
+		\item {\it Components}\\
+		Terdapat perubahan beberapa komponen pada Ionic 5, yaitu :
 		\begin{itemize}
-			\item {\it Back Button}
-			\item {\it Back}
-			\item {\it Card}
-			\item {\it Controllers}
-			\item {\it Header / Footer}
+			\item {\it Back Button} dan {\it Button} \\
+			Perubahan terdapat pada penambahan penamaan kelas .activated yang secara otomatis ditambahkan ke komponen yang dapat di klik, menjadi .ion-activated.
+			\item {\it Controllers}\\
+			Terdapat beberapa komponen yang dihapus dari Ionic sebagai elemen, yaitu ion-action-sheet-controller, ion-alert-controller, ion-loading-controller, ion-menu-controller, ion-modal-controller, ion-picker-controller, ion-popover-controller, dan ion- toast-controller. Sebagai gantinya, maka harus diimpor dari @ionic/core. 
+			\item {\it Header / Footer}\\
+			Atribut no-border dihapus, dan sebagai gantinya yaitu dengan menggunakan kelas ion-no-border.
 			\item {\it List Header}
-			\item {\it Menu}
-			\item {\it Searchbar}
-			\item {\it Select Option}
-			\item {\it Toast}
+			Konten teks apa pun di dalam <ion-list-header> harus dibungkus dengan <ion-label> sesuai dengan gaya desain yang baru (Kode~\ref{lst:listHeader}). Jika label tidak ada, maka perataan tombol di header bisa saja terlihat tidak aktif.
+			\begin{lstlisting}[language=php, label={lst:listHeader}, caption=Kode Program untuk List Header]
+				<ion-list-header>
+					<ion-label>New This Week</ion-label>
+					<ion-button>See All</ion-button>
+				</ion-list-header>
+			\end{lstlisting}
+			\item {\it Menu}\\
+			Fungsi swipeEnable() telah dihapus di Angular, sebagai gantinya menggunakan swipeGesture(). Lalu nilai {\it left} dan {\it right} telah dihapus, gunakan {\it start} dan {\it end} sebagai gantinya. Selain itu ada penghapusan atribut utama, sebagai gantinya yaitu dengan menggunakan content-id (untuk vanila JS/Vue) dan contentId (untuk Angular/React) (Kode~\ref{lst:menu}).
+			\begin{lstlisting}[language=php, label={lst:menu}, caption=Kode Program untuk Menu]
+				<ion-menu content-id="main"></ion-menu>
+				<ion-content id="main">...</ion-content>
+			\end{lstlisting}
+			\item {\it Select Option} \\
+			Properti {\it selected} telah dihapus. Sebagai gantinya harus mengatur properti nilai pada ion-select induk agar sesuai dengan opsi terpilih yang diinginkan (Kode~\ref{lst:selectOption}).
+			\begin{lstlisting}[language=php, label={lst:selectOption}, caption=Kode Program untuk Select Option]
+				<ion-select value="two">
+					<ion-select-option value="one">One</ion-select-option>
+					<ion-select-option value="two">Two</ion-select-option>
+				</ion-select>
+			\end{lstlisting}
+			\item {\it Toast} \\
+			Properti {\it close button} seperti showCloseButton dan closeButtonText telah dihapus. Sebagai gantinya, gunakan {\it buttons array} untuk fungsi batal (Kode~\ref{lst:toast}.
+			\begin{lstlisting}[language=php, label={lst:toast}, caption=Kode Program untuk Toast]
+				async presentToast() {
+					const toast = await this.toastController.create({
+						message: 'Your settings have been saved.',
+						buttons: [
+						{
+							text: 'Close',
+							role: 'cancel',
+							handler: () => {
+							console.log('Close clicked');
+						}
+						}
+						]
+					});
+					toast.present();
+				}
+			\end{lstlisting}
 		\end{itemize}
+		Selain yang sudah disebutkan, terdapat beberapa komponen lain yang mendapat perubahan di Ionic 5, namun tidak ditulis di dalam dokumen skripsi ini. Komponen tersebut antara lain Action Sheet, Anchor, Card, FAB, Item, Menu Button, Nav Link, Radio, Segment, Segment Button, Skeleton Text, Split Pane, dan Tabs~\footnote{\textit{`Breaking Changes'} https://github.com/ionic-team/ionic-framework/blob/main/BREAKING.md, Diakses pada 20 November 2021. \label{ref:breakingChangesIonic5}}.
 
-		\item {\it Colors}
+		\item {\it Colors} \\
+		Terdapat perubahan terhadap warna bawaan milik ionic (Tabel~\ref{table:colors}).
+		\begin{table}[H]
+		\centering
+			\begin{tabular}{|l|l|}
+				\hline
+				Nama Warna & Kode HEX \\ \hline
+				primary    & \#3880ff \\ \hline
+				secondary  & \#3dc2ff \\ \hline
+				tertiary   & \#5260ff \\ \hline
+				success    & \#2dd36f \\ \hline
+				warning    & \#ffc409 \\ \hline
+				danger     & \#eb445a \\ \hline
+				light      & \#f4f5f8 \\ \hline
+				medium     & \#92949c \\ \hline
+				dark       & \#222428 \\ \hline
+			\end{tabular}
+			\caption{Tabel Perubahan Warna Bawaan di Ionic 5}
+			\label{table:colors}
+		\end{table}
 		
-		\item {\it Events}
+		\item {\it Events} \\
+		Pada Ionic 5, {\it Events service} di @ionic/angular telah dihapus. Sebagai gantinya gunakan Observables untuk arsitektur pub/sub, dan Redux untuk {\it advanced state management}.
 		
 		\item {\it Package} dan {\it Dependencies} \\
 		Untuk memasang {\it package} dan {\it dependencies} pada Angular, dapat memanfaatkan npm pada CLI, dengan menjalankan pemasangan pada {\it package} ionic-angular  (Kode~\ref{lst:packageDependenciesInstall}). Namun jika ingin membuat proyek baru, dapat dibuat dari CLI dan aplikasi yang ada dapat dimigrasikan secara manual.
