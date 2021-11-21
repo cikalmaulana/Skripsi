@@ -8,7 +8,7 @@ Pada bab ini akan menjelaskan dasar-dasar teori mengenai Ionic, berikut dengan c
 \section{WSDC 2017 Bali}
 \label{sec:wsdc2017bali}
 
-Aplikasi WSDC 2017 Bali digunakan untuk menunjang keberlangsungan acara WSDC 2017 yang diselenggarakan di Bali, Indonesia (Gambar \ref{fig:wsdcapp}). Aplikasi WSDC 2017 Bali dapat diunduh untuk sistem operasi {\it android} melalui URL \url{https://play.google.com/store/apps/details?id=org.wsdc2017indonesia.app&hl=en&gl=US}. Aplikasi ini dibangun dan dikembangkan oleh PT DNArtworks Komunikasi Visual yang rilis di Play Store pada tanggal 30 Juli 2017, dengan versi terakhir adalah versi 1.1.2 yang rilis pada 1 Agustus 2017. Selain rilis pada perangkat {\it android}, aplikasi ini juga rilis untuk perangkat bergerak berbasis sistem operasi iOS. Namun saat ini aplikasi tersebut sudah diturunkan dari App Store pada perangkat berbasis sistem opearsi iOS. Untuk membuka dan memakai aplikasi WSDC 2017 Bali saat ini, pengguna tidak diperlukan {\it login} agar dapat mengakses seluruh fitur yang tersedia. Lalu, untuk kepentingan skripsi ini, peneliti memiliki akses ke dalam kode program aplikasi WSDC 2017 Bali.
+Aplikasi WSDC 2017 Bali digunakan untuk menunjang keberlangsungan acara WSDC 2017 yang diselenggarakan di Bali, Indonesia (Gambar \ref{fig:wsdcapp}). Aplikasi WSDC 2017 Bali dapat diunduh untuk sistem operasi {\it android} melalui URL \url{https://play.google.com/store/apps/details?id=org.wsdc2017indonesia.app&hl=en&gl=US}. Aplikasi ini dibangun dan dikembangkan oleh PT DNArtworks Komunikasi Visual yang rilis di Play Store pada tanggal 30 Juli 2017, dengan versi terakhir adalah versi 1.1.2 yang rilis pada 1 Agustus 2017. Selain rilis pada perangkat {\it android}, aplikasi ini juga rilis untuk perangkat bergerak berbasis sistem operasi IOS. Namun saat ini aplikasi tersebut sudah diturunkan dari App Store pada perangkat berbasis sistem opearsi IOS. Untuk membuka dan memakai aplikasi WSDC 2017 Bali saat ini, pengguna tidak diperlukan {\it login} agar dapat mengakses seluruh fitur yang tersedia. Lalu, untuk kepentingan skripsi ini, peneliti memiliki akses ke dalam kode program aplikasi WSDC 2017 Bali.
 
 \begin{figure}[H]
      \centering
@@ -41,15 +41,15 @@ Fitur-fitur yang terdapat di aplikasi WSDC 2017 Bali saat ini yaitu :
 \begin{enumerate}
 	\item {\it Announcements} : Pengguna dapat melihat pemberitahuan tentang berjalannya acara WSDC 2017 Bali (Gambar~\ref{fig:wsdcAppAnnouncements}).
 
-	\item {\it Schedule} : Pengguna atau peserta WSDC 2017 Bali dapat melihat jadwal acara yang sudah diadakan (Gambar~\ref{fig:wsdcAppSchedule}).
+	\item {\it Schedule} : Pengguna dapat melihat jadwal acara WSDC 2017 Bali yang sudah diadakan (Gambar~\ref{fig:wsdcAppSchedule}).
 
-	\item {\it Venues} : Pengguna atau peserta WSDC 2017 Bali dapat melihat berbagai macam lokasi acara, mulai dari lokasi upacara, lokasi kompetisi, dan lokasi wisata edukasi. Masing-masing dari lokasi tersebut dapat menunjukan arah dan jarak dari lokasi tempat pengguna berada (Gambar~\ref{fig:wsdcAppVenues}).
+	\item {\it Venues} : Pengguna dapat melihat berbagai macam lokasi acara WSDC 2017 Bali, mulai dari lokasi upacara, lokasi kompetisi, dan lokasi wisata edukasi. Masing-masing dari lokasi tersebut dapat menunjukan arah dan jarak dari lokasi tempat pengguna berada (Gambar~\ref{fig:wsdcAppVenues}).
 
 	\item Info : Pengguna dapat melihat informasi terkait dengan tim pengembang dari aplikasi WSDC 2017 Bali, kontak-kontak penting yang dapat dihubungi, dan kosa kata penting dalam Bahasa Indonesia (Gambar~\ref{fig:wsdcAppInfo}).
 
-	\item {\it Draw} : Pengguna dapat melihat melihat pembagian {\it venue} dan kubu proposisi atau oposisi dari hasil pengundian untuk para negara peserta (Gambar~\ref{fig:wsdcAppDraw}).
+	\item {\it Draw} : Pengguna dapat melihat melihat pembagian {\it venue} dan kubu proposisi atau oposisi dari hasil pengundian untuk para negara peserta WSDC 2017 Bali (Gambar~\ref{fig:wsdcAppDraw}).
 
-	\item {\it Result} : Pengguna dapat melihat informasi terkait hasil dari pertandingan pada semi final, perempat final, dan perdelapan final (Gambar~\ref{fig:wsdcAppResult}).
+	\item {\it Result} : Pengguna dapat melihat informasi terkait hasil dari pertandingan pada semi final, perempat final, dan perdelapan final WSDC 2017 Bali (Gambar~\ref{fig:wsdcAppResult}).
 \end{enumerate}
 
 \begin{figure}[H]
@@ -85,26 +85,26 @@ Fitur-fitur yang terdapat di aplikasi WSDC 2017 Bali saat ini yaitu :
 
 
 
-\section{Ionic {\it Framework}}
+\section{Ionic Framework}
 \label{sec:ionicframework} 
  
-Ionic Framework merupakan sebuah kerangka kerja {\it open source} lintas platform yang memungkinkan untuk mengembangkan aplikasi hibrida yang bekerja pada berbagai macam platform seluler seperti {\it android}, iOS, dan Windows~\cite{waranashiwar:18:ionic}. Ionic memiliki berbagai macam \textit{front-end library} dan \textit{User Interface}(UI) {\it Components} yang digunakan untuk  perancangan aplikasi menggunakan teknologi web seperti HTML, CSS, dan Javascript, dengan integrasi untuk berbagai \textit{framework} seperti Angular, React, dan Vue. Saat pertama kali dibuat, Ionic menggunakan AngularJS. Namun, seiring saat Angular versi 2 yang menggunakan Typescript dirilis, Ionic versi 2 dan selanjutnya menggunakan Angular. Lalu, pada tahun 2019, Ionic mendukung penggunaan \textit{framework} lain selain Angular, yaitu React dan Vue. Di dalam Ionic, Angular digunakan untuk membangun aplikasi dan perutean, sehingga aplikasi dapat sejalan dengan ekosistem Angular lainnya. Ionic menyediakan {\it toolkit} Angular untuk membangun aplikasi dan terintegrasi dengan Angular CLI resmi yang menyediakan fitur khusus untuk aplikasi Ionic Angular. Pada saat skripsi ini dibuat, Ionic versi terbaru adalah Ionic versi 5, sedangkan Angular yang digunakan adalah Angular versi 12. 
+Ionic Framework merupakan sebuah kerangka kerja {\it open source} lintas platform yang memungkinkan untuk mengembangkan aplikasi hibrida yang bekerja pada berbagai macam platform seluler seperti {\it android}, iOS, dan Windows~\cite{waranashiwar:18:ionic}. Ionic memiliki berbagai macam \textit{front-end library} dan komponen \textit{User Interface}(UI) yang digunakan untuk  perancangan aplikasi menggunakan teknologi web seperti HTML, CSS, dan Javascript, dengan integrasi untuk berbagai \textit{framework} seperti Angular, React, dan Vue. Saat pertama kali dibuat, Ionic menggunakan AngularJS. Namun, seiring saat Angular versi 2 yang menggunakan Typescript dirilis, Ionic versi 2 dan selanjutnya menggunakan Angular. Lalu, pada tahun 2019, Ionic mendukung penggunaan \textit{framework} lain selain Angular, yaitu React dan Vue. Di dalam Ionic, Angular digunakan untuk membangun aplikasi dan perutean, sehingga aplikasi dapat sejalan dengan ekosistem Angular lainnya. Ionic menyediakan {\it toolkit} Angular untuk membangun aplikasi dan terintegrasi dengan Angular CLI resmi yang menyediakan fitur khusus untuk aplikasi Ionic Angular. Pada saat skripsi ini dibuat, Ionic versi terbaru adalah Ionic versi 5, sedangkan Angular yang digunakan adalah Angular versi 12. 
 
 \subsection{Native API}
 \label{subsec:nativeApi}
-Native API memungkinkan pengembangan aplikasi langsung terintegrasi ke dalam {\it platform}. Pengembang dapat membuat aplikasi pada perangkat {\it mobile} untuk dapat diimplementasikan ke berbagai {\it platform}, seperti IOS, dan Android, setelah pengembangan selesai di dalam {\it framework native} tanpa perlu perubahan, dan tidak mempengaruhi peforma dari aplikasi tersebut~\cite{griffith:17:mobile}. 
+Native API memungkinkan pengembangan aplikasi langsung terintegrasi ke dalam platform. Pengembang dapat membuat aplikasi pada perangkat {\it mobile} untuk dapat diimplementasikan ke berbagai {\it platform}, seperti IOS dan Android, setelah pengembangan selesai di dalam {\it framework native} tanpa perlu perubahan, dan tidak mempengaruhi peforma dari aplikasi tersebut~\cite{griffith:17:mobile}. 
 
-Ionic mendukung komunikasi dengan menggunakan Native API yang terintegrasi untuk menambahkan fungsionalitas ke dalam aplikasi Ionic apapun dengan menggunakan Capacitor atau Cordova. Dengan terpasangnya Ionic Native, maka aplikasi akan memiliki antar muka yang diperlukan untuk berinteraksi dengan salah satu plug-in, yaitu Capacitor atau Cordova.
+Ionic mendukung komunikasi dengan menggunakan Native API yang terintegrasi untuk menambahkan fungsionalitas ke dalam aplikasi Ionic apapun dengan menggunakan Capacitor atau Cordova. Dengan terpasangnya Ionic Native, maka aplikasi akan memiliki antar muka yang diperlukan untuk berinteraksi dengan salah satu {\it plug-in}, yaitu Capacitor atau Cordova.
 
 \subsubsection{Capacitor}
 \label{subsec:capacitor}
-Penjelasan singkat mengenai capacitor di ionic
+Tujuan dari Capacitor adalah untuk menyediakan akses ke perangkat {\it native} dan fitur platform, serta untuk menyediakan satu set API untuk mengembangkan aplikasi seluler secara hibrida, {\it Progressive Web Apps} berbasis web, dan aplikasi komputer berbasis Electron~\cite{tor:19:software}. Capacitor merupakan penerus dari Cordova, dengan tujuan untuk memungkinkan aplikasi web modern berjalan di semua platform utama. Capacitor juga mendapat dukungan terhadap banyak {\it plugi-n} Cordova.
 
 \subsubsection{Cordova}
 \label{subsec:cordova}
 Cordova merupakan {\it framework open source} yang dapat membuat pengembang untuk menggunakan teknologi seperti HTML, JavaScript, dan CSS untuk membangun aplikasi untuk perangkat bergerak yang dapat berjalan pada beberapa sistem operasi {\it mobile}~\cite{gonsalves:18:evaluating}. Cordova menyediakan antarmuka antara WebView dan lapisan {\it native} pada perangkat~\cite{griffith:17:mobile}. Selain dapat bekerja pada dua platform seluler Android dan IOS, Cordova juga dapat digunakan pada platform seluler seperti Windows Phone, Blackberry, dan FireOS.
 
-Untuk mengonfigurasi proyek Cordova, saat ini dapat menggunakan {\it Command Line Tool} (CLI). CLI membuat proyek dasar dan mengonfigurasinya agar berfungsi dengan platform seluler apa pun yang didukung yang dapat digunakan. Cordova CLI juga dapat membuat pengembang memliki integrasi dan pengelolaan {\it plug in}. Selain itu, CLI juga dapat mengkompilasi aplikasi untuk berjalan pada simulator atau pada perangkat yang sebenarnya. Serupa dengan Capacitor, Cordova membuat pengembang dapat mengakses fitur {\it native} dari sebuah perangkat, seperti kamera, papan ketik, dan geolokasi, menggunakan {\it plugin}. Ionic {\it Framework} telah terdapat berbagai macam TypeScript {\it wrapper} untuk {\it plugins} Cordova.  Untuk dapat menggunakan Cordova Plugins, yaitu dengan memasang Cordova Plugins terlebih dahulu (Kode~\ref{lst:installCordova}), dan memperbaruinya ke versi terakhir (Kode~\ref{lst:updateCordova}) yang dapat dilakukan melalui CLI. Setiap {\it plugins} memiliki dua komponen, yaitu kode {\it native} (Cordova), dan kode TypeScript (Ionic Native). {\it Plugins} Cordova juga dibungkus di dalam Promise atau Observable untuk menyediakan antarmuka plugin.
+Untuk mengonfigurasi proyek Cordova, saat ini dapat menggunakan {\it Command Line Tool} (CLI). CLI membuat proyek dasar dan mengonfigurasinya agar berfungsi dengan platform seluler apa pun yang didukung yang dapat digunakan. Cordova CLI juga dapat membuat pengembang memliki integrasi dan pengelolaan {\it plug-in}. Selain itu, CLI juga dapat mengkompilasi aplikasi untuk berjalan pada simulator atau pada perangkat {\it native}. Serupa dengan Capacitor, Cordova membuat pengembang dapat mengakses fitur {\it native} dari sebuah perangkat, seperti kamera, papan ketik, dan geolokasi, menggunakan {\it plugin}. {\it Framework} Ionic telah terdapat berbagai macam TypeScript {\it wrapper} untuk {\it plugins} Cordova.  Untuk dapat menggunakan Cordova Plugins, yaitu dengan memasang Cordova Plugins terlebih dahulu (Kode~\ref{lst:installCordova}), dan memperbaruinya ke versi terakhir (Kode~\ref{lst:updateCordova}) yang dapat dilakukan melalui CLI. Setiap {\it plugins} memiliki dua komponen, yaitu kode {\it native} (Cordova), dan kode TypeScript (Ionic Native). Cordova Plugins juga dibungkus di dalam Promise atau Observable untuk menyediakan antarmuka {\it plug-in}.
 
 \begin{lstlisting}[language=html, label={lst:installCordova}, caption=Kode untuk Memasang Cordova Plugins]
 		npm install cordova-plugin-name
@@ -119,10 +119,10 @@ Untuk mengonfigurasi proyek Cordova, saat ini dapat menggunakan {\it Command Lin
 
 \subsection{UI Component}
 \label{subsec:uiComponent}
-{\it Framework} Ionic menggunakan kemampuan Angular memperluas kosakata HTML yaitu menyertakan {\it tag} khusus untuk menciptakan seluruh rangkaian komponen~\cite{griffith:17:mobile}. Semua komponen memiliki awalan ion, sehingga dapat dikenali dalam markup. Sama seperti {\it tag} HTML standar, komponen Ionic juga dapat menerima berbagai macam atribut sebagai pengaturan dari {\it tag} tersebut, seperti mengatur id atau mendefinisikan kelas CSS tambahan. Terdapat beberapa komponen yang ada pada {\it framework} Ionic yaitu :
+{\it Framework} Ionic menggunakan kemampuan Angular dalam memperluas kosakata HTML, yaitu menyertakan {\it tag} khusus untuk menciptakan seluruh rangkaian komponen~\cite{griffith:17:mobile}. Semua komponen memiliki awalan ion, sehingga dapat dikenali dalam markup. Sama seperti {\it tag} HTML standar, komponen Ionic juga dapat menerima berbagai macam atribut sebagai pengaturan dari {\it tag} tersebut, seperti mengatur id atau mendefinisikan kelas CSS tambahan. Terdapat beberapa komponen yang ada pada {\it framework} Ionic yaitu :
 \begin{itemize}
 	\item Action Sheet \\
-	Merupakan dialog yang menampilkan serangkaian opsi, yang muncul diatas konten aplikasi dan harus ditutup secara manual oleh pengguna sebelum pengguna dapat melanjutkan interaksi dengan aplikasi. Untuk menutup Action Sheet terdapat beberapa cara, termasuk mengetuk latar belakang atau menekan tombol escape di desktop.
+	Merupakan dialog yang menampilkan serangkaian opsi, yang muncul di atas konten aplikasi dan harus ditutup secara manual oleh pengguna sebelum pengguna dapat melanjutkan interaksi dengan aplikasi. Untuk menutup Action Sheet terdapat beberapa cara, termasuk mengetuk latar belakang atau menekan tombol escape di desktop.
 
 	\item Alert \\
 	Alert merupakan dialog yang menampilkan informasi kepada pengguna, atau mengumpulkan informasi dari pengguna menggunakan input. Alert muncul di atas konten aplikasi, dan harus ditutup secara manual oleh pengguna sebelum pengguna dapat melanjutkan interaksi dengan aplikasi. Secara opsional, terdapat header, sub header, dan pesan yang ada pada Alert.
@@ -132,10 +132,13 @@ Untuk mengonfigurasi proyek Cordova, saat ini dapat menggunakan {\it Command Lin
 			<ion-badge>99</ion-badge>
 	\end{lstlisting} 
 	\item Button \\
-	Merupakan elemen yang dapat diklik, biasanya digunakan dalam formulir atau dimanapun yang membutuhkan fungsionalitas tombol. Button biasanya menampilkan teks, ikon, atau bisa juga keduanya. Button dapat pula menggunakan atribut untuk menampilkannya dengan penampilan tertentu. Penggunaan Button dengan menggunakan {\it tag} <ion-button>  (Kode~\ref{lst:buttonComponent}).
+	Merupakan elemen yang dapat diklik, biasanya digunakan dalam formulir atau di mana pun yang membutuhkan fungsionalitas tombol. Button biasanya menampilkan teks, ikon, atau bisa juga keduanya. Button dapat pula menggunakan atribut untuk menampilkannya dengan penampilan tertentu. Penggunaan Button dengan menggunakan {\it tag} <ion-button>  (Kode~\ref{lst:buttonComponent}).
 	\begin{lstlisting}[language=php, label={lst:buttonComponent}, caption=Potongan Kode Program dari Button Component]
 			<ion-button>Default</ion-button>
 	\end{lstlisting} 
+
+\newpage
+
 	\item Card \\
 	Merupakan bagian standar dari tampilan antarmuka yang berfungsi sebagai titik masuk ke dalam informasi yang lebih detail. Card dapat menjadi satu komponen, tetapi sering kali terdiri dari beberapa header, judul, sub judul, dan konten. Penggunaan Card dengan menggunakan {\it tag} <ion-card> yang dapat berisi {\it header}, {\it subtitle}, {\it title}, dan {\it content} (Kode~\ref{lst:cardComponent}).
 	\begin{lstlisting}[language=php, label={lst:cardComponent}, caption=Potongan Kode Program dari Card Component]
@@ -172,7 +175,7 @@ Untuk mengonfigurasi proyek Cordova, saat ini dapat menggunakan {\it Command Lin
 			<ion-datetime displayFormat="MM DD YY" placeholder="Select Date"></ion-datetime>
 		\end{lstlisting} 
 	\item Infinite Scroll	\\
-	Komponen Infinite Scroll memanggil sebuah action yang akan dilakukan ketika pengguna menggulir dengan jarak tertentu dari bawah atau atas halaman. Penggunaan Infinite Scroll dengan menggunakan {\it tag} <ion-infinite-scroll> (Kode~\ref{InfiteScrollComponent}).
+	Komponen Infinite Scroll memanggil sebuah action yang akan dilakukan ketika pengguna menggulir dengan jarak tertentu dari bawah atau atas halaman. Penggunaan Infinite Scroll dengan menggunakan {\it tag} <ion-infinite-scroll> (Kode~\ref{lst:InfiteScrollComponent}). \newpage
 	\begin{lstlisting}[language=php, label={lst:InfiteScrollComponent}, caption=Potongan Kode Program dari Infinite Scroll Component]
 			<ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
 				<ion-infinite-scroll-content
@@ -182,7 +185,7 @@ Untuk mengonfigurasi proyek Cordova, saat ini dapat menggunakan {\it Command Lin
 			</ion-infinite-scroll>
 	\end{lstlisting} 
 	\item Item \\
-	Item merupakan elemen yang dapat berisi teks, ikon, avatar, gambar, masukan, dan elemen asli atau kustom lainnya. Biasanya, item ditempatkan di dalam sebuah {\it list} bersamaan dengan item lainnya dengan {\it tag} <ion-item> (Kode~\ref{lst:itemComponent}). Dapat dilakukan {\it swipe}, dihapus, disusun ulang, diedit, dan lainnya.
+	Item merupakan elemen yang dapat berisi teks, ikon, avatar, gambar, masukan, dan elemen asli atau kustom lainnya. Biasanya, item ditempatkan di dalam sebuah {\it list} bersamaan dengan item lainnya dengan {\it tag} <ion-item> (Kode~\ref{lst:itemComponent}). Dapat dilakukan {\it swipe}, dihapus, disusun ulang, dan diedit.
 	\begin{lstlisting}[language=php, label={lst:itemComponent}, caption=Potongan Kode Program dari Item Component]
 			<ion-item>
 				<ion-label>
@@ -192,8 +195,6 @@ Untuk mengonfigurasi proyek Cordova, saat ini dapat menggunakan {\it Command Lin
 	\end{lstlisting} 
 	\item Menu \\
 	Komponen menu merupakan panel navigasi samping yang dapat dilakukan {\it slides} dari sisi pada tampilan halaman saat ini menggunakan {\it tag} <ion-menu> (Kode~\ref{lst:menuComponent}). Pada dasarnya, Menu muncul dari kiri, tetapi sisi kemunculan menu dapat diganti. 
-
-\newpage
 
 	\begin{lstlisting}[language=php, label={lst:menuComponent}, caption=Potongan Kode Program dari Menu Component]
 		<ion-menu side="start" menuId="first" contentId="main">
@@ -214,7 +215,7 @@ Untuk mengonfigurasi proyek Cordova, saat ini dapat menggunakan {\it Command Lin
 		</ion-menu>
 	\end{lstlisting} 
 	\item Modal \\
-	Modal merupakan kotak dialog yang muncul diatas konten aplikasi lain, dan harus diutup secara manual oleh pengguna sebelum pengguna dapat melanjutkan menggunakan aplikasi. Modal berguna sebagai komponen pilihan ketika ada banyak opsi untuk dipilih, atau memfilter isi di dalam daftar, serta beberapa kasus serupa lainnya (Kode~\ref{lst:modalComponent}).
+	Modal merupakan kotak dialog yang muncul diatas konten aplikasi lain, dan harus diutup secara manual oleh pengguna sebelum pengguna dapat melanjutkan menggunakan aplikasi. Modal berguna sebagai komponen pilihan ketika ada banyak opsi untuk dipilih, atau melakukan penyaringan isi di dalam daftar, serta beberapa kasus serupa lainnya (Kode~\ref{lst:modalComponent}).
 		\begin{lstlisting}[language=php, label={lst:modalComponent}, caption=Kode Program dari Modal]
 			import { Component, Input } from '@angular/core';
 
@@ -228,7 +229,7 @@ Untuk mengonfigurasi proyek Cordova, saat ini dapat menggunakan {\it Command Lin
 			}
 		\end{lstlisting} 
 	\item Navigation \\
-	Navigation adalah komponen mandiri yang digunakan untuk membuat komponen baru ke dalam {\it stack}. Navigation tidak terikat kepada router tertentu, menakibatkan jika kita membuat komponen Navigation dan melakukan {\it push} komponen lain ke dalam {\it stack}, komponen tersebut tidak akan mempengaruhi router aplikasi secara keseluruhan. Sesuai dengan kasus penggunaan dimana ketika pengguna bisa memilih modal, yang membutuhkan sub-navigasinya sendiri, tanpa membuatnya terikat ke URL aplikasi. 
+	Navigation adalah komponen mandiri yang digunakan untuk membuat komponen baru ke dalam {\it stack}. Navigation tidak terikat kepada {\it router} tertentu, mengakibatkan jika kita membuat komponen Navigation dan melakukan {\it push} komponen lain ke dalam {\it stack}, komponen tersebut tidak akan mempengaruhi router aplikasi secara keseluruhan. Sesuai dengan kasus penggunaan dimana ketika pengguna bisa memilih modal, yang membutuhkan sub-navigasinya sendiri, tanpa membuatnya terikat ke URL aplikasi. 
 	\item Tabs \\
 	Tabs merupakan navigasi {\it top-level} yang mengimplementasi sebuah {\it tab-based navigation}. Tabs dapat digunakan dengan {\it tag} <ion-tabs> (Kode~\ref{lst:tabsComponent}) yang tidak memliki {\it styling} apapun dan bekerja sebagai {\it router outlet} untuk menangani navigasi. 
 		\begin{lstlisting}[language=php, label={lst:tabsComponent}, caption=Kode Program dari Tabs]
@@ -248,10 +249,8 @@ Untuk mengonfigurasi proyek Cordova, saat ini dapat menggunakan {\it Command Lin
 			</ion-tabs>
 		\end{lstlisting}
 
-\newpage
-
 	\item Toolbar \\
-	Toolbar dapat diposisikan di atas ataupun di bawah konten. Ketika toolbar ditempatkan di header <ion-header> akan muncul di bagian atas konten, sedangkan ketika ditempatkan di footer <ion-footer> akan muncul tetap di bagian bawah. Toolbar menggunakan {\it tag} <ion-toolbar>, yang di dalamnya dapat berisi button, dan dapat menggunakan border (Kode~\ref{lst:datetimeComponen}).
+	Toolbar dapat diposisikan di atas ataupun di bawah konten. Ketika toolbar ditempatkan di header <ion-header> akan muncul di bagian atas konten, sedangkan ketika ditempatkan di footer <ion-footer> akan muncul tetap di bagian bawah. Toolbar menggunakan {\it tag} <ion-toolbar>, yang di dalamnya dapat berisi button, dan dapat menggunakan border (Kode~\ref{lst:datetimeComponent}).
 		\begin{lstlisting}[language=php, label={lst:datetimeComponent}, caption=Kode Program dari Toolbar dengan Button di Dalamnya]
 			<ion-toolbar>
 				<ion-buttons slot="start">
@@ -287,8 +286,8 @@ Untuk melakukan migrasi dari Ionic 3 ke Ionic 5 memerlukan dua tahap, yaitu migr
 			ionic start myApp blank
 		\end{lstlisting}
 
-		\item Menyalin Angular {\it services} \\
-		Menyalin Angular {\it services} yang pada Ionic 3 berada di \textbf{src/providers}, menjadi \textbf{src/app/services} pada Ionic 4.
+		\item Menyalin Angular Services \\
+		Menyalin Angular Services yang pada Ionic 3 berada di \textbf{src/providers}, menjadi \textbf{src/app/services} pada Ionic 4.
 
 		\item Menyalin {\it Root-level Items} \\
 		Menyalin seluruh {\it Root-level Items} pada Ionic versi 3 dengan direktori yang sama atau dengan beberapa perubahan. Terdapat beberapa perubahan baik itu nama maupun letak dari suatu fungsi atau berkas. Perubahan tersebut yaitu:
@@ -317,7 +316,7 @@ Untuk melakukan migrasi dari Ionic 3 ke Ionic 5 memerlukan dua tahap, yaitu migr
 
 				\item Package Name \\
 				Terdapat perubahan pada Ionic 4, dimana nama {\it package} diubah menjadi @ionic/angular. Untuk dapat menggunakannya dengan cara mencopot pemasangan Ionic 3 dan memasang Ionic 4 dengan nama {\it package} yang baru (Kode~\ref{lst:packageNameIonic4}).
-				\begin{lstlisting}[language=php, label={lst:packageNameIonic4}, caption=Penggunaan Button pada Ionic 4]
+				\begin{lstlisting}[language=php, label={lst:packageNameIonic4}, caption=Pencopotan Ionic 3 dan Pemasangan Ionic 4 dengan nama {\it package} baru]
 					npm uninstall ionic-angular
 					npm install @ionic/angular>
 				\end{lstlisting}
@@ -349,14 +348,14 @@ Untuk melakukan migrasi dari Ionic 3 ke Ionic 5 memerlukan dua tahap, yaitu migr
 			%---START ITEMIZE PENAMAAN BERKAS---%
 			\begin{itemize}
 				\item {\it Page} \\
-				Contoh perbedaan nama {\it file} pada folder Pages adalah sebagai berikut :\\
+				Terdapat perbedaan nama {\it file} pada folder Pages. Perbedaan tersebut adalah sebagai berikut :\\
 				Pada Ionic 3 : home.html  \\
-				Terdapat perubahan pada Ionic 4 menjad : home.page.html
+				Terdapat perubahan pada Ionic 4 menjadi : home.page.html
 	
 				\item {\it App} \\
-				Contoh perbedaan nama {\it file} pada direktori App adalah sebagai berikut : \\
+				Terdapat perbedaan nama {\it file} pada direktori App. Perbedaan tersebut adalah sebagai berikut : \\
 				Pada Ionic 3 : app.html \\
-				Terdapat perubahan pada Ionic 4 menjad : app-component.html
+				Terdapat perubahan pada Ionic 4 menjadi : app-component.html
 			\end{itemize}
 			%---END ITEMIZE PENAMAAN BERKAS---%
 
@@ -386,20 +385,11 @@ Untuk melakukan migrasi dari Ionic 3 ke Ionic 5 memerlukan dua tahap, yaitu migr
 			\item Shadow DOM sudah aktif secara {\it default}.
 			\item Halaman atau komponen Sass tidak lagi dibungkus dengan tag halaman / komponen dan harus menggunakan opsi styleUrls milik Angular dari dekorator @Component.
 			\item RxJS \\
-			Pada Ionic 3, RxJS yang digunakan adalah versi 5. Sedangkan pada Ionic 4, RxJS yang digunakan adalah versi 6. Terdapat beberapa perbedaan diantara kedua versi tersebut, diantaranya yaitu :
-			%---START ITEMIZE RXJS---%
-			\begin{itemize}
-				\item {\it Operator} \\
-				Dalam pemanggilan operator, sejak RxJS versi 6 perlu menambahkan .pipe untuk menggunakan operator apapun.
-			\end{itemize}
-			%---END ITEMIZE RXJS---%
+			Pada Ionic 3, RxJS yang digunakan adalah versi 5. Sedangkan pada Ionic 4, RxJS yang digunakan adalah versi 6.
 
-
-			\item {\it Lifecycle Hooks} tertentu harus digantikan dengan Angular Hooks.
+			\item Lifecycle Hooks tertentu harus digantikan dengan Angular Hooks.
 			\item Perubahan markup yang mungkin saja dibutuhkan. \\
 			Sejak Ionic 4 dipindahkan ke elemen kustom, terdapat perubahan yang signifikan terkait dengan markup untuk setiap komponen. Semua perubahan ini dibuat untuk mengikuti spesifikasi dari elemen kustom. Komponen-komponen yang berubah tersebut yaitu :
-
-\newpage
 
 			\begin{itemize}
 				\item {\it Button} \\
@@ -438,46 +428,54 @@ Untuk melakukan migrasi dari Ionic 3 ke Ionic 5 memerlukan dua tahap, yaitu migr
 				Terdapat beberapa perubahan nama pada Ionic 4, yaitu :
 				\begin{itemize}
 					\item Perubahan Nama Properti
+					Terdapat perubahan nama properti pada Ionic 4. Perubahan-perubahan tersebut adalah sebagai berikut : 
 						\begin{itemize}
 							\item swipeEnable \\
+							Terdapat perubahan swipeEnable pada Ionic 4. Perubahan tersebut adalah sebagai berikut : \\
 							Pada Ionic 3 : swipeEnabled \\
 							Sedangkan pada Ionic 4 menjadi : swipeGesture
 
 							\item content \\
+							Terdapat perubahan content pada Ionic 4. Perubahan tersebut adalah sebagai berikut : \\
 							Pada Ionic 3 : content \\
 							Sedangkan pada Ionic 4 menjadi : contentId
 						\end{itemize}	
 					
 
 					\item Perubahan Nama Events
+					Terdapat perubahan nama {\it events} pada Ionic 4. Perubahan-perubahan tersebut adalah sebagai berikut :
 						\begin{itemize}
 							\item ionClose \\
+							Terdapat perubahan ionClose pada Ionic 4. Perubahan tersebut adalah sebagai berikut : \\
 							Pada Ionic 3 : ionClose \\
 							Sedangkan pada Ionic 4 menjadi : ionDidClose
 
 							\item ionOpen \\
+							Terdapat perubahan ionOpen pada Ionic 4. Perubahan tersebut adalah sebagai berikut : \\
 							Pada Ionic 3 : ionOpen \\
 							Sedangkan pada Ionic 4 menjadi : ionDidOpen
 						\end{itemize}	
 				\end{itemize}
 
-\newpage
-
 				\item Nav \\
-				Terdapat beberapa perubahan Nav pada Ionic 4, yaitu :
+				Terdapat perubahan Nav pada Ionic 4. Perubahan-perubahan tersebut adalah sebagai berikut :
 				\begin{itemize}
 					\item Perubahan Nama Method 
+					Terdapat perubahan nama {\it method} pada Ionic 4. Perubahan-perubahan tersebut adalah sebagai berikut :
 					\begin{itemize}
 						\item remove \\
+						Terdapat perubahan remove pada Ionic 4. Perubahan tersebut adalah sebagai berikut :\\
 						Pada Ionic 3 : remove \\
 						Sedangkan pada Ionic 4 untuk menghindari konflik dengan HTML, berubah menjadi : removeIndex 
 
 						\item getActiveChildNavs \\
+						Terdapat perubahan getActiveChildNavs pada Ionic 4. Perubahan tersebut adalah sebagai berikut :\\
 						Pada Ionic 3 : getActiveChildNavs \\
 						Sedangkan pada Ionic 4 menjadi : getChildNavs
 					\end{itemize}
 
 					\item Perubahan Nama Prop \\
+					Terdapat perubahan nama prop pada Ionic 4. Perubahan tersebut adalah sebagai berikut :\\
 					Pada Ionic 3 : swipeBackEnabled   \\
 					Sedangkan pada Ionic 4 menjadi : swipeGesture
 				\end{itemize}	
@@ -510,7 +508,7 @@ Untuk melakukan migrasi dari Ionic 3 ke Ionic 5 memerlukan dua tahap, yaitu migr
 		\item CSS
 		\begin{itemize}
 			\item CSS {\it Utilities} \\
-			Karena pada versi sebelumnya, yaitu Ionic versi 4, terdapat masalah dengan menggunakan atribut CSS dengan {\it framework} yang menggunakan JSX dan TypeScript, Ionic {\it Framework} menambahkan dukungan untuk beberapa {\it framework}, dan pada Ionic 5 menambahkan kelas CSS. Ionic versi 5 menghapus atribut CSS dan mendukung konsistensi. Selain itu, Ionic versi 5 juga mengubah ke kelas dengan diawali dengan ion untuk menghindari konflik dengan atribut asli dan CSS dari pengguna (Kode~\ref{lst:CSSUtilities}).
+			Karena pada versi sebelumnya, yaitu Ionic versi 4, terdapat masalah dengan menggunakan atribut CSS dengan {\it framework} yang menggunakan JSX dan TypeScript, Ionic {\it Framework} menambahkan dukungan untuk beberapa {\it framework}, dan pada Ionic 5 menambahkan kelas CSS. Ionic versi 5 menghapus atribut CSS dan mendukung konsistensi. Selain itu, Ionic versi 5 juga mengubah ke kelas dengan diawali ion untuk menghindari konflik dengan atribut asli dan CSS dari pengguna (Kode~\ref{lst:CSSUtilities}).
 		\begin{lstlisting}[language=php, label={lst:CSSUtilities}, caption=Contoh Kode Kelas CSS {\it Utility} pada Ionic 5]
 			<ion-header class="ion-text-center"></ion-header>
 			<ion-content class="ion-padding"></ion-content>
@@ -551,39 +549,39 @@ Untuk melakukan migrasi dari Ionic 3 ke Ionic 5 memerlukan dua tahap, yaitu migr
 
 		\end{itemize}
 
-		\item {\it Components}\\
+		\item Komponen\\
 		Terdapat perubahan beberapa komponen pada Ionic 5, yaitu :
 		\begin{itemize}
-			\item {\it Back Button} dan {\it Button} \\
+			\item Back Button dan Button  \\
 			Perubahan terdapat pada penambahan penamaan kelas .activated yang secara otomatis ditambahkan ke komponen yang dapat di klik, menjadi .ion-activated.
-			\item {\it Controllers}\\
+			\item Controllers\\
 			Terdapat beberapa komponen yang dihapus dari Ionic sebagai elemen, yaitu ion-action-sheet-controller, ion-alert-controller, ion-loading-controller, ion-menu-controller, ion-modal-controller, ion-picker-controller, ion-popover-controller, dan ion- toast-controller. Sebagai gantinya, maka harus diimpor dari @ionic/core. 
-			\item {\it Header / Footer}\\
+			\item Header dan Footer\\
 			Atribut no-border dihapus, dan sebagai gantinya yaitu dengan menggunakan kelas ion-no-border.
-			\item {\it List Header}
-			Konten teks apa pun di dalam <ion-list-header> harus dibungkus dengan <ion-label> sesuai dengan gaya desain yang baru (Kode~\ref{lst:listHeader}). Jika label tidak ada, maka perataan tombol di header bisa saja terlihat tidak aktif.
+			\item List Header\\
+			Konten berupa teks apa pun di dalam <ion-list-header> harus dibungkus dengan <ion-label> sesuai dengan gaya desain yang baru (Kode~\ref{lst:listHeader}). Jika label tidak ada, maka perataan tombol di header bisa saja terlihat tidak aktif. \newpage
 			\begin{lstlisting}[language=php, label={lst:listHeader}, caption=Kode Program untuk List Header]
 				<ion-list-header>
 					<ion-label>New This Week</ion-label>
 					<ion-button>See All</ion-button>
 				</ion-list-header>
 			\end{lstlisting}
-			\item {\it Menu}\\
-			Fungsi swipeEnable() telah dihapus di Angular, sebagai gantinya menggunakan swipeGesture(). Lalu nilai {\it left} dan {\it right} telah dihapus, gunakan {\it start} dan {\it end} sebagai gantinya. Selain itu ada penghapusan atribut utama, sebagai gantinya yaitu dengan menggunakan content-id (untuk vanila JS/Vue) dan contentId (untuk Angular/React) (Kode~\ref{lst:menu}).
+			\item Menu\\
+			Fungsi swipeEnable() telah dihapus di Angular, sebagai gantinya menggunakan swipeGesture(). Lalu nilai {\it left} dan {\it right} telah dihapus, gunakan {\it start} dan {\it end} sebagai gantinya. Selain itu ada penghapusan atribut utama, sebagai gantinya yaitu dengan menggunakan content-id (untuk vanila JS atau Vue) dan contentId (untuk Angular atau React) (Kode~\ref{lst:menu}).
 			\begin{lstlisting}[language=php, label={lst:menu}, caption=Kode Program untuk Menu]
 				<ion-menu content-id="main"></ion-menu>
 				<ion-content id="main">...</ion-content>
 			\end{lstlisting}
-			\item {\it Select Option} \\
-			Properti {\it selected} telah dihapus. Sebagai gantinya harus mengatur properti nilai pada ion-select induk agar sesuai dengan opsi terpilih yang diinginkan (Kode~\ref{lst:selectOption}).
+			\item Select Option \\
+			Properti selected telah dihapus. Sebagai gantinya harus mengatur properti nilai pada ion-select induk agar sesuai dengan opsi terpilih yang diinginkan (Kode~\ref{lst:selectOption}).
 			\begin{lstlisting}[language=php, label={lst:selectOption}, caption=Kode Program untuk Select Option]
 				<ion-select value="two">
 					<ion-select-option value="one">One</ion-select-option>
 					<ion-select-option value="two">Two</ion-select-option>
 				</ion-select>
 			\end{lstlisting}
-			\item {\it Toast} \\
-			Properti {\it close button} seperti showCloseButton dan closeButtonText telah dihapus. Sebagai gantinya, gunakan {\it buttons array} untuk fungsi batal (Kode~\ref{lst:toast}.
+			\item Toast \\
+			Properti close button seperti showCloseButton dan closeButtonText telah dihapus. Sebagai gantinya, gunakan buttons array untuk fungsi batal (Kode~\ref{lst:toast}.
 			\begin{lstlisting}[language=php, label={lst:toast}, caption=Kode Program untuk Toast]
 				async presentToast() {
 					const toast = await this.toastController.create({
@@ -602,9 +600,9 @@ Untuk melakukan migrasi dari Ionic 3 ke Ionic 5 memerlukan dua tahap, yaitu migr
 				}
 			\end{lstlisting}
 		\end{itemize}
-		Selain yang sudah disebutkan, terdapat beberapa komponen lain yang mendapat perubahan di Ionic 5, namun tidak ditulis di dalam dokumen skripsi ini. Komponen tersebut antara lain Action Sheet, Anchor, Card, FAB, Item, Menu Button, Nav Link, Radio, Segment, Segment Button, Skeleton Text, Split Pane, dan Tabs~\footnote{\textit{`Breaking Changes'} https://github.com/ionic-team/ionic-framework/blob/main/BREAKING.md, Diakses pada 20 November 2021. \label{ref:breakingChangesIonic5}}.
-
-		\item {\it Colors} \\
+		Selain yang sudah disebutkan, terdapat beberapa komponen lain yang mendapat perubahan di Ionic 5, namun tidak ditulis di dalam dokumen skripsi ini. Komponen-komponen tersebut antara lain Action Sheet, Anchor, Card, FAB, Item, Menu Button, Nav Link, Radio, Segment, Segment Button, Skeleton Text, Split Pane, dan Tabs~\footnote{\textit{`Breaking Changes'} https://github.com/ionic-team/ionic-framework/blob/main/BREAKING.md, Diakses pada 20 November 2021. \label{ref:breakingChangesIonic5}}.
+\newpage
+		\item Warna \\
 		Terdapat perubahan terhadap warna bawaan milik ionic (Tabel~\ref{table:colors}).
 		\begin{table}[H]
 		\centering
@@ -621,12 +619,12 @@ Untuk melakukan migrasi dari Ionic 3 ke Ionic 5 memerlukan dua tahap, yaitu migr
 				medium     & \#92949c \\ \hline
 				dark       & \#222428 \\ \hline
 			\end{tabular}
-			\caption{Tabel Perubahan Warna Bawaan di Ionic 5}
+			\caption{Tabel Warna Bawaan di Ionic 5}
 			\label{table:colors}
 		\end{table}
 		
-		\item {\it Events} \\
-		Pada Ionic 5, {\it Events service} di @ionic/angular telah dihapus. Sebagai gantinya gunakan Observables untuk arsitektur pub/sub, dan Redux untuk {\it advanced state management}.
+		\item Events \\
+		Pada Ionic 5, Events services di @ionic/angular telah dihapus. Sebagai gantinya gunakan Observables untuk arsitektur pub/sub, dan Redux untuk {\it advanced state management}.
 		
 		\item {\it Package} dan {\it Dependencies} \\
 		Untuk memasang {\it package} dan {\it dependencies} pada Angular, dapat memanfaatkan npm pada CLI, dengan menjalankan pemasangan pada {\it package} ionic-angular  (Kode~\ref{lst:packageDependenciesInstall}). Namun jika ingin membuat proyek baru, dapat dibuat dari CLI dan aplikasi yang ada dapat dimigrasikan secara manual.
