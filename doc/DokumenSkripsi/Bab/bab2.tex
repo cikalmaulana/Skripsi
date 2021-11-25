@@ -8,7 +8,7 @@ Pada bab ini akan menjelaskan dasar-dasar teori mengenai Ionic, berikut dengan c
 \section{WSDC 2017 Bali}
 \label{sec:wsdc2017bali}
 
-Aplikasi WSDC 2017 Bali digunakan untuk menunjang keberlangsungan acara WSDC 2017 yang diselenggarakan di Bali, Indonesia (Gambar \ref{fig:wsdcapp}). Aplikasi WSDC 2017 Bali dapat diunduh untuk sistem operasi {\it android} melalui URL \url{https://play.google.com/store/apps/details?id=org.wsdc2017indonesia.app&hl=en&gl=US}. Aplikasi ini dibangun dan dikembangkan oleh PT DNArtworks Komunikasi Visual yang rilis di Play Store pada tanggal 30 Juli 2017, dengan versi terakhir adalah versi 1.1.2 yang rilis pada 1 Agustus 2017. Selain rilis pada perangkat {\it android}, aplikasi ini juga rilis untuk perangkat bergerak berbasis sistem operasi IOS. Namun saat ini aplikasi tersebut sudah diturunkan dari App Store pada perangkat berbasis sistem opearsi IOS. Untuk membuka dan memakai aplikasi WSDC 2017 Bali saat ini, pengguna tidak diperlukan {\it login} agar dapat mengakses seluruh fitur yang tersedia. Lalu, untuk kepentingan skripsi ini, peneliti memiliki akses ke dalam kode program aplikasi WSDC 2017 Bali.
+Aplikasi WSDC 2017 Bali digunakan untuk menunjang keberlangsungan acara WSDC 2017 yang diselenggarakan di Bali, Indonesia. Aplikasi WSDC 2017 Bali dapat diunduh untuk sistem operasi {\it android} melalui URL \url{https://play.google.com/store/apps/details?id=org.wsdc2017indonesia.app}. Aplikasi ini dibangun dan dikembangkan oleh PT DNArtworks Komunikasi Visual yang rilis di Play Store pada tanggal 30 Juli 2017, dengan versi terakhir adalah versi 1.1.2 yang rilis pada 1 Agustus 2017. Selain rilis pada perangkat {\it android}, aplikasi ini juga rilis untuk perangkat bergerak berbasis sistem operasi IOS. Namun saat ini aplikasi tersebut sudah diturunkan dari App Store pada perangkat berbasis sistem opearsi IOS. Untuk membuka dan memakai aplikasi WSDC 2017 Bali saat ini, pengguna tidak diperlukan {\it login} agar dapat mengakses seluruh fitur yang tersedia. Lalu, untuk kepentingan skripsi ini, peneliti memiliki akses ke dalam kode program aplikasi WSDC 2017 Bali.
 
 \begin{figure}[H]
      \centering
@@ -39,6 +39,8 @@ Aplikasi WSDC 2017 Bali digunakan untuk menunjang keberlangsungan acara WSDC 201
 Fitur-fitur yang terdapat di aplikasi WSDC 2017 Bali saat ini yaitu :
 
 \begin{enumerate}
+	\item {\it Newsletter} : Pengguna dapat mengunduh dan berita-berita terkait acara WSDC 2017 Bali (Gambar~\ref{fig:wsdcapp}).
+
 	\item {\it Announcements} : Pengguna dapat melihat pemberitahuan tentang berjalannya acara WSDC 2017 Bali (Gambar~\ref{fig:wsdcAppAnnouncements}).
 
 	\item {\it Schedule} : Pengguna dapat melihat jadwal acara WSDC 2017 Bali yang sudah diadakan (Gambar~\ref{fig:wsdcAppSchedule}).
@@ -107,13 +109,13 @@ Cordova merupakan {\it framework open source} yang dapat membuat pengembang untu
 Untuk mengonfigurasi proyek Cordova, saat ini dapat menggunakan {\it Command Line Tool} (CLI). CLI membuat proyek dasar dan mengonfigurasinya agar berfungsi dengan platform seluler apa pun yang didukung yang dapat digunakan. Cordova CLI juga dapat membuat pengembang memliki integrasi dan pengelolaan {\it plug-in}. Selain itu, CLI juga dapat mengkompilasi aplikasi untuk berjalan pada simulator atau pada perangkat {\it native}. Serupa dengan Capacitor, Cordova membuat pengembang dapat mengakses fitur {\it native} dari sebuah perangkat, seperti kamera, papan ketik, dan geolokasi, menggunakan {\it plugin}. {\it Framework} Ionic telah terdapat berbagai macam TypeScript {\it wrapper} untuk {\it plugins} Cordova.  Untuk dapat menggunakan Cordova Plugins, yaitu dengan memasang Cordova Plugins terlebih dahulu (Kode~\ref{lst:installCordova}), dan memperbaruinya ke versi terakhir (Kode~\ref{lst:updateCordova}) yang dapat dilakukan melalui CLI. Setiap {\it plugins} memiliki dua komponen, yaitu kode {\it native} (Cordova), dan kode TypeScript (Ionic Native). Cordova Plugins juga dibungkus di dalam Promise atau Observable untuk menyediakan antarmuka {\it plug-in}.
 
 \begin{lstlisting}[language=html, label={lst:installCordova}, caption=Kode untuk Memasang Cordova Plugins]
-		npm install cordova-plugin-name
-		npx cap sync
+npm install cordova-plugin-name
+npx cap sync
 \end{lstlisting} 
 
 \begin{lstlisting}[language=php, label={lst:updateCordova}, caption=Kode untuk Memperbarui Cordova Plugins]
-		npm install cordova-plugin-name@2
-		npx cap update
+npm install cordova-plugin-name@2
+npx cap update
 \end{lstlisting} 
 
 
@@ -129,135 +131,131 @@ Untuk mengonfigurasi proyek Cordova, saat ini dapat menggunakan {\it Command Lin
 	\item Badge \\
 	Merupakan elemen {\it inline block} yang biasanya muncul di dekat elemen lain, berisi angka atau karakter lain, yang digunakan sebagai pemberitahuan bahwa ada item tambahan yang terkait dengan suatu elemen dan menunjukan berapa banyak item yang ada. Penggunaan Badge dengan menggunakan {\it tag} <ion-badge> (Kode~\ref{lst:badgeComponent}).
 	\begin{lstlisting}[language=php, label={lst:badgeComponent}, caption=Potongan Kode Program dari Badge Component]
-			<ion-badge>99</ion-badge>
+<ion-badge>99</ion-badge>
 	\end{lstlisting} 
 	\item Button \\
-	Merupakan elemen yang dapat diklik, biasanya digunakan dalam formulir atau di mana pun yang membutuhkan fungsionalitas tombol. Button biasanya menampilkan teks, ikon, atau bisa juga keduanya. Button dapat pula menggunakan atribut untuk menampilkannya dengan penampilan tertentu. Penggunaan Button dengan menggunakan {\it tag} <ion-button>  (Kode~\ref{lst:buttonComponent}).
+	Merupakan elemen yang dapat diklik, biasanya digunakan dalam formulir atau di mana pun yang membutuhkan fungsionalitas tombol. Button biasanya menampilkan teks, ikon, atau bisa juga keduanya. Button dapat pula menggunakan atribut untuk menampilkannya dengan penampilan tertentu. Penggunaan Button dengan menggunakan {\it tag} <ion-button>  (Kode~\ref{lst:buttonComponent}). \newpage
 	\begin{lstlisting}[language=php, label={lst:buttonComponent}, caption=Potongan Kode Program dari Button Component]
-			<ion-button>Default</ion-button>
+<ion-button>Default</ion-button>
 	\end{lstlisting} 
-
-\newpage
 
 	\item Card \\
 	Merupakan bagian standar dari tampilan antarmuka yang berfungsi sebagai titik masuk ke dalam informasi yang lebih detail. Card dapat menjadi satu komponen, tetapi sering kali terdiri dari beberapa header, judul, sub judul, dan konten. Penggunaan Card dengan menggunakan {\it tag} <ion-card> yang dapat berisi {\it header}, {\it subtitle}, {\it title}, dan {\it content} (Kode~\ref{lst:cardComponent}).
 	\begin{lstlisting}[language=php, label={lst:cardComponent}, caption=Potongan Kode Program dari Card Component]
-			<ion-card>
-				<ion-card-header>
-					<ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-					<ion-card-title>Card Title</ion-card-title>
-				</ion-card-header>
+<ion-card>
+	<ion-card-header>
+		<ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+		<ion-card-title>Card Title</ion-card-title>
+	</ion-card-header>
 				
-				<ion-card-content>
-					Card Content
-				</ion-card-content>
-			</ion-card>
+	<ion-card-content>
+		Card Content
+	</ion-card-content>
+</ion-card>
 	\end{lstlisting} 
 	\item Content\\
 	Komponen content merupakan penyedia area konten yang bisa digunakan untuk mengontrol area yang dapat digulir. Dalam satu tampilan, setidaknya terdapat satu buah content. Content juga dapat dimodifikasi padding, margin, dan lainnya menggunakan {\it global style} yang berada di CSS Utilites atau mengubahnya secara individual dengan menggunakan CSS. Penggunaan Content dengan menggunakan {\it tag} <ion-content> (Kode~\ref{lst:contentComponent}).
 
 	\begin{lstlisting}[language=php, label={lst:contentComponent}, caption=Potongan Kode Program dari Content Component]
-			<ion-content
-				[scrollEvents]="true"
-				(ionScrollStart)="logScrollStart()"
-				(ionScroll)="logScrolling($event)"
-				(ionScrollEnd)="logScrollEnd()">
-					<h1>Main Content</h1>
+<ion-content
+	[scrollEvents]="true"
+	(ionScrollStart)="logScrollStart()"
+	(ionScroll)="logScrolling($event)"
+	(ionScrollEnd)="logScrollEnd()">
+		<h1>Main Content</h1>
 			
-					<div slot="fixed">
-						<h1>Fixed Content</h1>
-					</div>
-			</ion-content>
+			<div slot="fixed">
+				<h1>Fixed Content</h1>
+			</div>
+</ion-content>
 	\end{lstlisting} 
 	\item Date and Time Pickers\\
 	Datetime merupakan penampil antarmuka untuk pengguna memilih tanggal dan waktu. Terdapat kolom yang dapat digulir yang dapat digunakan untuk memilih tahun, bulan, hari, jam, dan menit secara individual. Komponen ini menampilkan nilai di dua tempat, yaitu di komponen <ion-datetime> (Kode~\ref{lst:datetimeComponent}), dan di antarmuka pemilih yang ditampilkan dari bawah layar.
 		\begin{lstlisting}[language=php, label={lst:datetimeComponent}, caption=Kode Program dari Datetime Component dengan Format Bulan-Hari-Tahun]
-			<ion-datetime displayFormat="MM DD YY" placeholder="Select Date"></ion-datetime>
+<ion-datetime displayFormat="MM DD YY" placeholder="Select Date"></ion-datetime>
 		\end{lstlisting} 
 	\item Infinite Scroll	\\
-	Komponen Infinite Scroll memanggil sebuah action yang akan dilakukan ketika pengguna menggulir dengan jarak tertentu dari bawah atau atas halaman. Penggunaan Infinite Scroll dengan menggunakan {\it tag} <ion-infinite-scroll> (Kode~\ref{lst:InfiteScrollComponent}). \newpage
+	Komponen Infinite Scroll memanggil sebuah action yang akan dilakukan ketika pengguna menggulir dengan jarak tertentu dari bawah atau atas halaman. Penggunaan Infinite Scroll dengan menggunakan {\it tag} <ion-infinite-scroll> (Kode~\ref{lst:InfiteScrollComponent}). 
 	\begin{lstlisting}[language=php, label={lst:InfiteScrollComponent}, caption=Potongan Kode Program dari Infinite Scroll Component]
-			<ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
-				<ion-infinite-scroll-content
-					 loadingSpinner="bubbles"
-					 loadingText="Loading more data...">
-				</ion-infinite-scroll-content>
-			</ion-infinite-scroll>
+<ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+	<ion-infinite-scroll-content
+		loadingSpinner="bubbles"
+		loadingText="Loading more data...">
+	</ion-infinite-scroll-content>
+</ion-infinite-scroll>
 	\end{lstlisting} 
 	\item Item \\
 	Item merupakan elemen yang dapat berisi teks, ikon, avatar, gambar, masukan, dan elemen asli atau kustom lainnya. Biasanya, item ditempatkan di dalam sebuah {\it list} bersamaan dengan item lainnya dengan {\it tag} <ion-item> (Kode~\ref{lst:itemComponent}). Dapat dilakukan {\it swipe}, dihapus, disusun ulang, dan diedit.
 	\begin{lstlisting}[language=php, label={lst:itemComponent}, caption=Potongan Kode Program dari Item Component]
-			<ion-item>
-				<ion-label>
-					Item
-				</ion-label>
-			</ion-item>
+<ion-item>
+	<ion-label>
+		Item
+	</ion-label>
+</ion-item>
 	\end{lstlisting} 
 	\item Menu \\
 	Komponen menu merupakan panel navigasi samping yang dapat dilakukan {\it slides} dari sisi pada tampilan halaman saat ini menggunakan {\it tag} <ion-menu> (Kode~\ref{lst:menuComponent}). Pada dasarnya, Menu muncul dari kiri, tetapi sisi kemunculan menu dapat diganti. 
 
 	\begin{lstlisting}[language=php, label={lst:menuComponent}, caption=Potongan Kode Program dari Menu Component]
-		<ion-menu side="start" menuId="first" contentId="main">
-			<ion-header>
-				<ion-toolbar color="primary">
-					<ion-title>Start Menu</ion-title>
-				</ion-toolbar>
-			</ion-header>
-			<ion-content>
-				<ion-list>
-					<ion-item>Menu Item</ion-item>
-					<ion-item>Menu Item</ion-item>
-					<ion-item>Menu Item</ion-item>
-					<ion-item>Menu Item</ion-item>
-					<ion-item>Menu Item</ion-item>
-				</ion-list>
-			</ion-content>
-		</ion-menu>
+<ion-menu side="start" menuId="first" contentId="main">
+	<ion-header>
+		<ion-toolbar color="primary">
+			<ion-title>Start Menu</ion-title>
+		</ion-toolbar>
+	</ion-header>
+	<ion-content>
+		<ion-list>
+			<ion-item>Menu Item</ion-item>
+			<ion-item>Menu Item</ion-item>
+			<ion-item>Menu Item</ion-item>
+			<ion-item>Menu Item</ion-item>
+			<ion-item>Menu Item</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-menu>
 	\end{lstlisting} 
 	\item Modal \\
 	Modal merupakan kotak dialog yang muncul diatas konten aplikasi lain, dan harus diutup secara manual oleh pengguna sebelum pengguna dapat melanjutkan menggunakan aplikasi. Modal berguna sebagai komponen pilihan ketika ada banyak opsi untuk dipilih, atau melakukan penyaringan isi di dalam daftar, serta beberapa kasus serupa lainnya (Kode~\ref{lst:modalComponent}).
 		\begin{lstlisting}[language=php, label={lst:modalComponent}, caption=Kode Program dari Modal]
-			import { Component, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
-			@Component({
-			  	selector: 'modal-page',
-			})
-			export class ModalPage {
-			
-			  	constructor() {}
-			
-			}
+@Component({
+	selector: 'modal-page',
+})
+export class ModalPage {	
+	constructor() {}		
+}
 		\end{lstlisting} 
 	\item Navigation \\
 	Navigation adalah komponen mandiri yang digunakan untuk membuat komponen baru ke dalam {\it stack}. Navigation tidak terikat kepada {\it router} tertentu, mengakibatkan jika kita membuat komponen Navigation dan melakukan {\it push} komponen lain ke dalam {\it stack}, komponen tersebut tidak akan mempengaruhi router aplikasi secara keseluruhan. Sesuai dengan kasus penggunaan dimana ketika pengguna bisa memilih modal, yang membutuhkan sub-navigasinya sendiri, tanpa membuatnya terikat ke URL aplikasi. 
 	\item Tabs \\
 	Tabs merupakan navigasi {\it top-level} yang mengimplementasi sebuah {\it tab-based navigation}. Tabs dapat digunakan dengan {\it tag} <ion-tabs> (Kode~\ref{lst:tabsComponent}) yang tidak memliki {\it styling} apapun dan bekerja sebagai {\it router outlet} untuk menangani navigasi. 
 		\begin{lstlisting}[language=php, label={lst:tabsComponent}, caption=Kode Program dari Tabs]
-			<ion-tabs>
-				<ion-tab-bar slot="bottom">
-					<ion-tab-button tab="schedule">
-						<ion-icon name="calendar"></ion-icon>
-						<ion-label>Schedule</ion-label>
-						<ion-badge>6</ion-badge>
-					</ion-tab-button>
-				
-					<ion-tab-button tab="speakers">
-						<ion-icon name="person-circle"></ion-icon>
-						<ion-label>Speakers</ion-label>
-					</ion-tab-button>
-				</ion-tab-bar>
-			</ion-tabs>
+<ion-tabs>
+	<ion-tab-bar slot="bottom">
+		<ion-tab-button tab="schedule">
+			<ion-icon name="calendar"></ion-icon>
+			<ion-label>Schedule</ion-label>
+			<ion-badge>6</ion-badge>
+		</ion-tab-button>
+
+		<ion-tab-button tab="speakers">
+			<ion-icon name="person-circle"></ion-icon>
+			<ion-label>Speakers</ion-label>
+		</ion-tab-button>
+	</ion-tab-bar>
+</ion-tabs>
 		\end{lstlisting}
 
 	\item Toolbar \\
 	Toolbar dapat diposisikan di atas ataupun di bawah konten. Ketika toolbar ditempatkan di header <ion-header> akan muncul di bagian atas konten, sedangkan ketika ditempatkan di footer <ion-footer> akan muncul tetap di bagian bawah. Toolbar menggunakan {\it tag} <ion-toolbar>, yang di dalamnya dapat berisi button, dan dapat menggunakan border (Kode~\ref{lst:datetimeComponent}).
 		\begin{lstlisting}[language=php, label={lst:datetimeComponent}, caption=Kode Program dari Toolbar dengan Button di Dalamnya]
-			<ion-toolbar>
-				<ion-buttons slot="start">
-					<ion-back-button></ion-back-button>
-				</ion-buttons>
-				<ion-title>Back Button</ion-title>
-			</ion-toolbar>
+<ion-toolbar>
+	<ion-buttons slot="start">
+		<ion-back-button></ion-back-button>
+	</ion-buttons>
+	<ion-title>Back Button</ion-title>
+</ion-toolbar>
 		\end{lstlisting} 
 \end{itemize}
 	Selain komponen-komponen yang telah disebutkan, tertapat beberapa komponen lainnya yang tidak disebutkan disini. Komponen-komponen tersebut yaitu Checkbox, Chip, Floating Action Button, Grid, Icon, Input, List, Popover, Progress Indicator, Radio, Refresher, Reorder, Routing, Searchbar, Segment, Select, Slides, Toast, dan Toggle~\footnote{\textit{`UI Components'} https://ionicframework.com/docs/components, Diakses pada 14 November 2021. \label{ref:uiComponents}}.
@@ -283,7 +281,7 @@ Untuk melakukan migrasi dari Ionic 3 ke Ionic 5 memerlukan dua tahap, yaitu migr
 		\item Membuat Proyek Ionic Baru \\
 		Untuk membuat projek Ionic baru tanpa {\it template} apapun dengan menggunakan perintah \textbf{ionic start myApp blank} dan memilih Angular sebagai {\it framework}nya~\ref{lst:createNewProject}.
 		\begin{lstlisting}[language=php, label={lst:createNewProject}, caption=Perintah Membuat Proyek Ionic Baru]
-			ionic start myApp blank
+ionic start myApp blank
 		\end{lstlisting}
 
 		\item Menyalin Angular Services \\
@@ -311,14 +309,14 @@ Untuk melakukan migrasi dari Ionic 3 ke Ionic 5 memerlukan dua tahap, yaitu migr
 				\item Component Imports \\
 				Untuk kepentingan konsistensi dengan {\it framework} lain, maka untuk mengimpor komponen Ionic diawali dengan ion~\ref{lst:componentImportIonic4}.
 				\begin{lstlisting}[language=php, label={lst:componentImportIonic4}, caption=Impor Komponen pada Ionic 4]
-					import { IonInput, IonList, IonSlides } from '@ionic/angular';
+import { IonInput, IonList, IonSlides } from '@ionic/angular';
 				\end{lstlisting}
 
 				\item Package Name \\
 				Terdapat perubahan pada Ionic 4, dimana nama {\it package} diubah menjadi @ionic/angular. Untuk dapat menggunakannya dengan cara mencopot pemasangan Ionic 3 dan memasang Ionic 4 dengan nama {\it package} yang baru (Kode~\ref{lst:packageNameIonic4}).
 				\begin{lstlisting}[language=php, label={lst:packageNameIonic4}, caption=Pencopotan Ionic 3 dan Pemasangan Ionic 4 dengan nama {\it package} baru]
-					npm uninstall ionic-angular
-					npm install @ionic/angular>
+npm uninstall ionic-angular
+npm install @ionic/angular>
 				\end{lstlisting}
 			\end{itemize}
 			%---END ITEMIZE IMPORT---%
@@ -395,33 +393,33 @@ Untuk melakukan migrasi dari Ionic 3 ke Ionic 5 memerlukan dua tahap, yaitu migr
 				\item {\it Button} \\
 				Terdapat perbedaan pada {\it tag} untuk membuat Button, yang semula pada Ionic 3 adalah <button> menjadi <ion-button> pada Ionic 4~\ref{lst:buttonIonic4}.
 				\begin{lstlisting}[language=php, label={lst:buttonIonic4}, caption=Penggunaan Button pada Ionic 4]
-					<ion-button (click)="doSomething()">
-						Default Button
-					</ion-button>
+<ion-button (click)="doSomething()">
+	Default Button
+</ion-button>
 				\end{lstlisting}
 
 				\item Floating Action Button (FAB) \\
 				Terdapat perbedaan pada {\it tag} di dalam <ion-fab>, yang semula pada Ionic 3 adalah <button> menjadi <ion-fab-button> pada Ionic 4~\ref{lst:fabIonic4}.
 				\begin{lstlisting}[language=php, label={lst:fabIonic4}, caption=Penggunaan Floating Action Button pada Ionic 4]
-					<ion-fab>
-						<ion-fab-button>
-							<ion-icon name="add"></ion-icon>
-						</ion-fab-button>
-						<ion-fab-list>
-							<ion-fab-button>
-								<ion-icon name="logo-facebook"></ion-icon>
-							</ion-fab-button>
-  						</ion-fab-list>
-					</ion-fab>
+<ion-fab>
+	<ion-fab-button>
+		<ion-icon name="add"></ion-icon>
+	</ion-fab-button>
+	<ion-fab-list>
+		<ion-fab-button>
+			<ion-icon name="logo-facebook"></ion-icon>
+		</ion-fab-button>
+	</ion-fab-list>
+</ion-fab>
 				\end{lstlisting}
 
 				\item Label \\
 				Pada Ionic 4, atribut untuk mengatur posisi dari label digabungkan dengan atribut {\it position}~\ref{lst:atributIonic4}.
 				\begin{lstlisting}[language=php, label={lst:atributIonic4}, caption=Penggunaan Atribut {\it Position} pada Ionic 4]
-					<ion-item>
-						<ion-label position="floating">Floating Label</ion-label>
-						<!-- input -->
-					</ion-item>
+<ion-item>
+	<ion-label position="floating">Floating Label</ion-label>
+	<!-- input -->
+</ion-item>
 				\end{lstlisting}
 
 				\item Menu \\
@@ -483,12 +481,12 @@ Untuk melakukan migrasi dari Ionic 3 ke Ionic 5 memerlukan dua tahap, yaitu migr
 				\item Navbar \\
 				Pada Ionic 4, terdapat penghapusan terhadap komponen <ion-navbar> karena untuk menjaga agar selalu menggunakan <ion-toolbar> dengan {\it back button} yang eksplisit~\ref{lst:navbarIonic4}.
 				\begin{lstlisting}[language=php, label={lst:navbarIonic4}, caption=Penggunaan Navbar pada Ionic 4 dengan {\it Back Button}]
-					<ion-toolbar>
-						<ion-buttons slot="start">
-							<ion-back-button></ion-back-button>
-						</ion-buttons>
-						<ion-title>My Navigation Bar</ion-title>
-					</ion-toolbar>
+<ion-toolbar>
+	<ion-buttons slot="start">
+		<ion-back-button></ion-back-button>
+	</ion-buttons>
+	<ion-title>My Navigation Bar</ion-title>
+</ion-toolbar>
 				\end{lstlisting}
 			\end{itemize}
 			Selain yang telah disebutkan, terdapat beberapa perubahan lainnya yang tidak ditulis seperti Action Sheet, Alert, Colors, Content, Datetime, Dynamic Mode, Fixed Content, Grid, Icon, Infinite Scroll, Item, Item Divider, Item Options, Item Sliding, List Header, Loading, Modal, Option, Overlays, Popover, Radio, Range, Refresher, Scroll, Segment Button, Select, Show When, Hide When, Spinner, Tabs, Typography, Therming, Toast, dan Toolbar~\footnote{\textit{`Breaking Changes'} https://github.com/ionic-team/ionic-framework/blob/main/angular/BREAKING.md, Diakses pada 13 November 2021. \label{ref:breakingChanges}}.
@@ -510,38 +508,38 @@ Untuk melakukan migrasi dari Ionic 3 ke Ionic 5 memerlukan dua tahap, yaitu migr
 			\item CSS {\it Utilities} \\
 			Karena pada versi sebelumnya, yaitu Ionic versi 4, terdapat masalah dengan menggunakan atribut CSS dengan {\it framework} yang menggunakan JSX dan TypeScript, Ionic {\it Framework} menambahkan dukungan untuk beberapa {\it framework}, dan pada Ionic 5 menambahkan kelas CSS. Ionic versi 5 menghapus atribut CSS dan mendukung konsistensi. Selain itu, Ionic versi 5 juga mengubah ke kelas dengan diawali ion untuk menghindari konflik dengan atribut asli dan CSS dari pengguna (Kode~\ref{lst:CSSUtilities}).
 		\begin{lstlisting}[language=php, label={lst:CSSUtilities}, caption=Contoh Kode Kelas CSS {\it Utility} pada Ionic 5]
-			<ion-header class="ion-text-center"></ion-header>
-			<ion-content class="ion-padding"></ion-content>
-			<ion-label class="ion-text-wrap"></ion-label>
-			<ion-item class="ion-wrap"></ion-item>
+<ion-header class="ion-text-center"></ion-header>
+<ion-content class="ion-padding"></ion-content>
+<ion-label class="ion-text-wrap"></ion-label>
+<ion-item class="ion-wrap"></ion-item>
 		\end{lstlisting} 
   
 			\item {\it Display Classes} \\ 
 			Kelas dari {\it responsive display} yang ditemukan di dalam berkas display.css memiliki kueri media yang diperbarui untuk lebih mencerminkan bagaimana cara kerjanya.
-
+\newpage
 			\item {\it Activated, Focused, Hover States} \\
 			Kelas .activated secara otomatis ditambahkan ke komponen yang dapat diklik, mengalami perubahan nama menjadi .ion-activated. Selain itu juga memperbarui komponen Action Sheet sehingga variabel akan diawali dengan {\it button}. Hal ini dapat memungkinkan aplikasi tetap memiliki kontrol atas {\it opacity} jika diinginkan, tetapi saat memperbarui status, hanya perlu mengatur variabel utama, yaitu -background-activated, -background-focused, -background-hover. Hal tersebut penting saat mengubah tema global, karena memperbarui warna {\it toolbar} akan secara otomatis memperbarui {\it hover states} untuk semua {\it buttons} di {\it toolbar} (Kode~\ref{lst:hoverStates}). 
 		\begin{lstlisting}[language=php, label={lst:hoverStates}, caption=Contoh Kode {\it Hover States} pada Ionic 5]
-			/* Setting the button background on hover to solid red */
-				ion-button {
-					--background-hover: red;
-					--background-hover-opacity: 1;
-				}
+/* Setting the button background on hover to solid red */
+ion-button {
+	--background-hover: red;
+	--background-hover-opacity: 1;
+}
 
-		/* Setting the action sheet button background on focus to an opaque green */
-			ion-action-sheet {
-				--button-background-focus: green;
-				--button-background-focus-opacity: 0.5;
-			}
+/* Setting the action sheet button background on focus to an opaque green */
+ion-action-sheet {
+	--button-background-focus: green;
+	--button-background-focus-opacity: 0.5;
+}
 
-		/*
- 		* Setting the fab button background on hover to match the text color with
- 		* the default --background-hover-opacity on md
-		 */
-			.md ion-fab-button {
-				--color: #222;
-				--background-hover: #222;
-			}
+/*
+* Setting the fab button background on hover to match the text color with
+* the default --background-hover-opacity on md
+*/
+.md ion-fab-button {
+	--color: #222;
+	--background-hover: #222;
+}
 		\end{lstlisting} 
 
 			\item {\it Distributed Sass} \\
@@ -559,45 +557,45 @@ Untuk melakukan migrasi dari Ionic 3 ke Ionic 5 memerlukan dua tahap, yaitu migr
 			\item Header dan Footer\\
 			Atribut no-border dihapus, dan sebagai gantinya yaitu dengan menggunakan kelas ion-no-border.
 			\item List Header\\
-			Konten berupa teks apa pun di dalam <ion-list-header> harus dibungkus dengan <ion-label> sesuai dengan gaya desain yang baru (Kode~\ref{lst:listHeader}). Jika label tidak ada, maka perataan tombol di header bisa saja terlihat tidak aktif. \newpage
+			Konten berupa teks apa pun di dalam <ion-list-header> harus dibungkus dengan <ion-label> sesuai dengan gaya desain yang baru (Kode~\ref{lst:listHeader}). Jika label tidak ada, maka perataan tombol di header bisa saja terlihat tidak aktif. 
 			\begin{lstlisting}[language=php, label={lst:listHeader}, caption=Kode Program untuk List Header]
-				<ion-list-header>
-					<ion-label>New This Week</ion-label>
-					<ion-button>See All</ion-button>
-				</ion-list-header>
+<ion-list-header>
+	<ion-label>New This Week</ion-label>
+	<ion-button>See All</ion-button>
+</ion-list-header>
 			\end{lstlisting}
 			\item Menu\\
 			Fungsi swipeEnable() telah dihapus di Angular, sebagai gantinya menggunakan swipeGesture(). Lalu nilai {\it left} dan {\it right} telah dihapus, gunakan {\it start} dan {\it end} sebagai gantinya. Selain itu ada penghapusan atribut utama, sebagai gantinya yaitu dengan menggunakan content-id (untuk vanila JS atau Vue) dan contentId (untuk Angular atau React) (Kode~\ref{lst:menu}).
 			\begin{lstlisting}[language=php, label={lst:menu}, caption=Kode Program untuk Menu]
-				<ion-menu content-id="main"></ion-menu>
-				<ion-content id="main">...</ion-content>
+<ion-menu content-id="main"></ion-menu>
+<ion-content id="main">...</ion-content>
 			\end{lstlisting}
 			\item Select Option \\
 			Properti selected telah dihapus. Sebagai gantinya harus mengatur properti nilai pada ion-select induk agar sesuai dengan opsi terpilih yang diinginkan (Kode~\ref{lst:selectOption}).
 			\begin{lstlisting}[language=php, label={lst:selectOption}, caption=Kode Program untuk Select Option]
-				<ion-select value="two">
-					<ion-select-option value="one">One</ion-select-option>
-					<ion-select-option value="two">Two</ion-select-option>
-				</ion-select>
+<ion-select value="two">
+	<ion-select-option value="one">One</ion-select-option>
+	<ion-select-option value="two">Two</ion-select-option>
+</ion-select>
 			\end{lstlisting}
 			\item Toast \\
 			Properti close button seperti showCloseButton dan closeButtonText telah dihapus. Sebagai gantinya, gunakan buttons array untuk fungsi batal (Kode~\ref{lst:toast}.
 			\begin{lstlisting}[language=php, label={lst:toast}, caption=Kode Program untuk Toast]
-				async presentToast() {
-					const toast = await this.toastController.create({
-						message: 'Your settings have been saved.',
-						buttons: [
-						{
-							text: 'Close',
-							role: 'cancel',
-							handler: () => {
-							console.log('Close clicked');
-						}
-						}
-						]
-					});
-					toast.present();
-				}
+async presentToast() {
+	const toast = await this.toastController.create({
+		message: 'Your settings have been saved.',
+		buttons: [	
+		{
+			text: 'Close',
+			role: 'cancel',
+			handler: () => {
+			console.log('Close clicked');	
+		}
+		}
+		]
+	});
+toast.present();
+}
 			\end{lstlisting}
 		\end{itemize}
 		Selain yang sudah disebutkan, terdapat beberapa komponen lain yang mendapat perubahan di Ionic 5, namun tidak ditulis di dalam dokumen skripsi ini. Komponen-komponen tersebut antara lain Action Sheet, Anchor, Card, FAB, Item, Menu Button, Nav Link, Radio, Segment, Segment Button, Skeleton Text, Split Pane, dan Tabs~\footnote{\textit{`Breaking Changes'} https://github.com/ionic-team/ionic-framework/blob/main/BREAKING.md, Diakses pada 20 November 2021. \label{ref:breakingChangesIonic5}}.
@@ -629,7 +627,7 @@ Untuk melakukan migrasi dari Ionic 3 ke Ionic 5 memerlukan dua tahap, yaitu migr
 		\item {\it Package} dan {\it Dependencies} \\
 		Untuk memasang {\it package} dan {\it dependencies} pada Angular, dapat memanfaatkan npm pada CLI, dengan menjalankan pemasangan pada {\it package} ionic-angular  (Kode~\ref{lst:packageDependenciesInstall}). Namun jika ingin membuat proyek baru, dapat dibuat dari CLI dan aplikasi yang ada dapat dimigrasikan secara manual.
 		\begin{lstlisting}[language=php, label={lst:packageDependenciesInstall}, caption=Kode untuk Memasang {\it Package} dan {\it Dependencies} pada Angular]
-			npm install @ionic/angular@latest @ionic/angular-toolkit@latest --save
+npm install @ionic/angular@latest @ionic/angular-toolkit@latest --save
 		\end{lstlisting} 
 	\end{itemize}
 	%---END ITEMIZE MIGRASI IONIC 4 KE IONIC 5---%
