@@ -6,18 +6,18 @@ Pada bab ini akan dijelaskan analisis aplikasi WSDC 2017 Bali saat ini dan aplik
 
 \section{Analisis Sistem Kini}
 \label{sec:analisisSistemKini}
-Aplikasi WSDC 2017 Bali digunakan untuk menunjang keberlangsungan acara WSDC 2017 yang diselenggarakan di Bali, Indonesia. Aplikasi WSDC 2017 Bali dapat diunduh untuk sistem operasi {\it android} melalui URL \url{https://play.google.com/store/apps/details?id=org.wsdc2017indonesia.app&hl=en&gl=US}. Aplikasi ini dibangun dan dikembangkan oleh PT DNArtworks Komunikasi Visual yang rilis di Play Store pada tanggal 30 Juli 2017, dengan versi terakhir adalah versi 1.1.2 yang rilis pada 1 Agustus 2017. Selain rilis pada perangkat berbasis sistem operasi Android, aplikasi WSDC 2017 Bali juga sempat rilis untuk perangkat berbasis sistem operasi IOS. Namun, pada saat ini aplikasi WSDC 2017 Bali di perangkat berbasis sitem operasi IOS sudah diturunkan dari toko aplikasi App Store pada perangkat berbasis sitem operasi IOS. Untuk dapat mengakses aplikasi WSDC 2017 Bali, tidak diperlukan login. Pengguna dapat langsung membuka aplikasi dan akan ditampilkan halaman utama dari aplikasi WSDC 2017 Bali. Pada halaman utama pengguna dapat melihat berita-berita terkait acara WSDC 2017 Bali dan tombol {\it read more} yang apabila ditekan akan mengarahkan pengguna untuk mengunduh berita terkait acara WSDC 2017 Bali dengan format pdf. Aplikasi WSDC 2017 Bali dapat digunakan untuk melihat berita acara, pengumuman, jadwal peserta, lokasi acara, hasil pengundian, info, serta pengumuman pemenang dari acara WSDC 2017 Bali (Gambar~\ref{fig:useCaseDiagram}).
+Aplikasi WSDC 2017 Bali digunakan untuk menunjang keberlangsungan acara WSDC 2017 yang diselenggarakan di Bali, Indonesia. Pada halaman utama, pengguna dapat melihat berita-berita terkait acara WSDC 2017 Bali dan tombol {\it read more} yang apabila ditekan akan mengarahkan pengguna untuk ke halaman Google Drive dan melihat berita terkait acara WSDC 2017 Bali dengan format pdf. Aplikasi WSDC 2017 Bali dapat digunakan untuk melihat berita acara, pengumuman, jadwal peserta, lokasi acara, hasil pengundian, info, serta pengumuman pemenang dari acara WSDC 2017 Bali (Gambar~\ref{fig:useCaseDiagram}). 
 
 Aplikasi WSDC 2017 Bali dibangun menggunakan {\it framework} Ionic versi 3, dan Angular versi 4.1.3. Lalu untuk membangun aplikasi WSDC 2017 Bali agar dapat berjalan secara {\it native}, digunakanlah Cordova. Dengan digunakannya Cordova dan Ionic Framework, maka memungkinkan aplikasi WSDC 2017 Bali menggunakan teknologi HTML, dan CSS. Penggunaan Cordova juga memungkinkan aplikasi WSDC 2017 Bali kompatibel dengan perangkat berbasis Android dan IOS, tanpa perlu mengimplementasikannya kembali ke dalam bahasa masing-masing platform.
 
 \begin{figure}[H]
 		\centering
 	    \includegraphics[scale=0.4]{Gambar/useCaseDiagram.png}
-	    \caption{Diagram {\it Use Case} Aplikasi WSDC 2017 Bali}
+	    \caption{{\it Use Case Diagram} Aplikasi WSDC 2017 Bali}
 	    \label{fig:useCaseDiagram}
 \end{figure}
 
-Terdapat fitur-fitur yang ada pada aplikasi WSDC 2017 Bali. Fitur-fitur tersebut adalah sebagai berikut :
+Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu yang terdapat pada aplikasi WSDC 2017 Bali. Untuk mengakses {\it sidebar}, pengguna dapat menekan tombol navigasi berada di sebelah kiri atas aplikasi WSDC 2017 Bali. Selain itu dapat pula dengan cara mengusap layar dari kiri ke kanan. Untuk menutup {\it sidebar}, pengguna dapat menekan area di luar {\it sidebar}, atau dengan cara menekan tombol silang di sebelah kiri atas {\it sidebar}. Terdapat fitur-fitur yang ada pada aplikasi WSDC 2017 Bali yang dapat diakses melalui {\it sidebar}. Fitur-fitur tersebut adalah sebagai berikut :
 \begin{enumerate}
 	\item Halaman Utama : Pengguna dapat melihat halaman utama aplikasi WSDC 2017 Bali yang berisi berita acara WSDC 2017 Bali, serta pemberitahuan terakhir terkait acara WSDC 2017 Bali.
 	\begin{itemize}
@@ -26,7 +26,7 @@ Terdapat fitur-fitur yang ada pada aplikasi WSDC 2017 Bali. Fitur-fitur tersebut
 		\item Deskripsi: Pengguna melihat halaman awal yang berisi berita acara WSDC 2017 Bali dengan urutan paling atas adalah berita yang lebih baru terbit, dan sebuah {\it card} yang berisi pengumuman terakhir terkait acara WSDC 2017 Bali.
 		\item Kondisi Awal: Pengguna belum membuka aplikasi WSDC 2017 Bali.
 		\item Kondisi Akhir: Aplikasi menampilkan halaman utama aplikasi WSDC 2017 Bali.
-		\item Skenario Pengguna:\\
+		\item Skenario utama:\\
 		\begin{table}[H]
 			\centering
 			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
@@ -35,6 +35,8 @@ Terdapat fitur-fitur yang ada pada aplikasi WSDC 2017 Bali. Fitur-fitur tersebut
 				1  & Pengguna membuka aplikasi WSDC 2017 Bali & Aplikasi WSDC 2017 Bali menampilkan halaman selamat datang. \\ \hline
 				   &                                          & Aplikasi WSDC 2017 Bali menampilkan halaman utama           \\ \hline
 			\end{tabular}
+			\caption{Tabel Skenario dari Halaman Utama}
+			\label{table:skenarioHalamanUtama}
 		\end{table}
 	\end{itemize}
 	\item Berita : Pengguna dapat melihat berita acara WSDC 2017 Bali dengan format pdf.
@@ -52,6 +54,8 @@ Terdapat fitur-fitur yang ada pada aplikasi WSDC 2017 Bali. Fitur-fitur tersebut
 				No & Aksi Aktor                               & Reaksi Sistem                                          \\ \hline
 				1  & Pengguna menekan tombol {\it read more} pada berita di halaman utama aplikasi WSDC 2017 Bali. & Aplikasi WSDC 2017 Bali mengarahkan pengguna ke halaman Google Drive yang mengampilkan berita acara WSDC 2017 Bali \\ \hline
 			\end{tabular}
+			\caption{Tabel Skenario dari Berita}
+			\label{table:skenarioBerita}
 		\end{table}
 	\end{itemize}
 	\item Pemberitahuan : Pengguna dapat melihat pemberitahuan mengenai keberlangsungan acara WSDC 2017 Bali.
@@ -70,6 +74,8 @@ Terdapat fitur-fitur yang ada pada aplikasi WSDC 2017 Bali. Fitur-fitur tersebut
 				1  & Pengguna menekan tombol {\it hamburger} di pojok kiri atas aplikasi WSDC 2017 Bali. & Aplikasi WSDC 2017 Bali menampilkan {\it side bar} \\ \hline
 				2  & Pengguna menekan tombol Announcement & Aplikasi WSDC 2017 Bali menampilkan halaman pengumuman. \\ \hline
 			\end{tabular}
+			\caption{Tabel Skenario dari Halaman Pemberitahuan}
+			\label{table:skenarioHalamanPemberitahuan}
 		\end{table}
 	\end{itemize}
 	\item Jadwal : Pengguna dapat melihat jadwal acara WSDC 2017 Bali yang ditampilkan berdasarkan tanggal dan hari.
@@ -89,6 +95,8 @@ Terdapat fitur-fitur yang ada pada aplikasi WSDC 2017 Bali. Fitur-fitur tersebut
 				2  & Pengguna menekan tombol Schedule & Aplikasi WSDC 2017 Bali menampilkan halaman jadwal. \\ \hline
 				3  & Pengguna menekan tanggal yang berada di atas halaman jadwal & Aplikasi WSDC 2017 Bali menampilkan jadwal berdasarkan tanggal yang dipilih oleh pengguna dengan detail waktu, lokasi, dan nama kegiatan. \\ \hline
 			\end{tabular}
+			\caption{Tabel Skenario dari Halaman Jadwal}
+			\label{table:skenarioHalamanJadwal}
 		\end{table}
 	\end{itemize}
 	\item {\it Venues} : Pengguna dapat melihat lokasi dari berlangsungnya acara WSDC 2017 Bali.
@@ -109,6 +117,8 @@ Terdapat fitur-fitur yang ada pada aplikasi WSDC 2017 Bali. Fitur-fitur tersebut
 				2  & Pengguna menekan tombol Venues & Aplikasi WSDC 2017 Bali menampilkan halaman Venues yang berisi {\it Ceremony Venues}, {\it Competition Venues}, {\it Delegates Accomodation}, dan {\it Educational Tour}.\\ \hline
 				3  & Pengguna menekan kategori {\it venues} yang diinginkan. & Aplikasi WSDC 2017 Bali menampilkan peta, nama lokasi acara dengan disertai penanda yang ada di dalam peta, dan jarak antara lokasi pengguna saat ini dan lokasi acara.\\ \hline
 			\end{tabular}
+			\caption{Tabel Skenario dari Halaman {\it Venues}}
+			\label{table:skenarioHalamanVenues}
 		\end{table}
 	\end{itemize}
 	\item {\it Draw} : Pengguna dapat melihat pembagian {\it venue} dan kubu proposisi dan oposisi dari hasil pengundian untuk para negara peserta WSDC 2017 Bali.
@@ -127,6 +137,8 @@ Terdapat fitur-fitur yang ada pada aplikasi WSDC 2017 Bali. Fitur-fitur tersebut
 				1  & Pengguna menekan tombol {\it hamburger} di pojok kiri atas aplikasi WSDC 2017 Bali. & Aplikasi WSDC 2017 Bali menampilkan {\it side bar} \\ \hline
 				2  & Pengguna menekan tombol Draw & Aplikasi WSDC 2017 Bali menampilkan halaman Draw yang dapat digulir kebawah untuk menampilkan keseluruhan tabel. \\ \hline
 			\end{tabular}
+			\caption{Tabel Skenario dari Halaman {\it Draw}}
+			\label{table:skenarioHalamanDraw}
 		\end{table}
 	\end{itemize}
 	\item Hasil : Pengguna dapat melihat pemenang dari kompetisi WSDC 2017 Bali.
@@ -145,6 +157,8 @@ Terdapat fitur-fitur yang ada pada aplikasi WSDC 2017 Bali. Fitur-fitur tersebut
 				1  & Pengguna menekan tombol {\it hamburger} di pojok kiri atas aplikasi WSDC 2017 Bali. & Aplikasi WSDC 2017 Bali menampilkan {\it side bar} \\ \hline
 				2  & Pengguna menekan tombol Result & Aplikasi WSDC 2017 Bali menampilkan halaman Result yang berisi pemenang dari babak semifinal, perempatfinal, dan perlapanfinal. \\ \hline
 			\end{tabular}
+			\caption{Tabel Skenario dari Halaman Hasil}
+			\label{table:skenarioHalamanHasil}
 		\end{table}
 	\end{itemize}
 	\item Info : Pengguna dapat melihat info-info seputar kontak-kontak penting yang dapat dihubungi, kosa kata dalam Bahasa Indonesia sehari-hari, serta {\it credits} kepada pembuat aplikasi WSDC 2017 Bali.
@@ -163,6 +177,8 @@ Terdapat fitur-fitur yang ada pada aplikasi WSDC 2017 Bali. Fitur-fitur tersebut
 				1  & Pengguna menekan tombol {\it hamburger} di pojok kiri atas aplikasi WSDC 2017 Bali. & Aplikasi WSDC 2017 Bali menampilkan {\it side bar} \\ \hline
 				2  & Pengguna menekan tombol Info & Aplikasi WSDC 2017 Bali menampilkan halaman Info \\ \hline
 			\end{tabular}
+			\caption{Tabel Skenario dari Halaman Info}
+			\label{table:skenarioHalamanInfo}
 		\end{table}
 	\end{itemize}
 \end{enumerate}
