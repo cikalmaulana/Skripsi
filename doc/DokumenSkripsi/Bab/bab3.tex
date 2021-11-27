@@ -19,9 +19,78 @@ Aplikasi WSDC 2017 Bali dibangun menggunakan {\it framework} Ionic versi 3, dan 
 
 Terdapat fitur-fitur yang ada pada aplikasi WSDC 2017 Bali. Fitur-fitur tersebut adalah sebagai berikut :
 \begin{enumerate}
-	\item Halaman Utama
-	\item Pemberitahuan
-	\item Jadwal 
+	\item Halaman Utama : Pengguna dapat melihat halaman utama aplikasi WSDC 2017 Bali yang berisi berita acara WSDC 2017 Bali, serta pemberitahuan terakhir terkait acara WSDC 2017 Bali.
+	\begin{itemize}
+		\item Nama: Melihat Halaman Utama WSDC 2017 Bali.
+		\item Aktor: Pengguna Aplikasi WSDC 2017 Bali.
+		\item Deskripsi: Pengguna melihat halaman awal yang berisi berita acara WSDC 2017 Bali dengan urutan paling atas adalah berita yang lebih baru terbit, dan sebuah {\it card} yang berisi pengumuman terakhir terkait acara WSDC 2017 Bali.
+		\item Kondisi Awal: Pengguna belum membuka aplikasi WSDC 2017 Bali.
+		\item Kondisi Akhir: Aplikasi menampilkan halaman utama aplikasi WSDC 2017 Bali.
+		\item Skenario Pengguna:\\
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
+				\hline
+				No & Aksi Aktor                               & Reaksi Sistem                                          \\ \hline
+				1  & Pengguna membuka aplikasi WSDC 2017 Bali & Aplikasi WSDC 2017 Bali menampilkan halaman selamat datang. \\ \hline
+				   &                                          & Aplikasi WSDC 2017 Bali menampilkan halaman utama           \\ \hline
+			\end{tabular}
+		\end{table}
+	\end{itemize}
+	\item Berita : Pengguna dapat melihat berita acara WSDC 2017 Bali dengan format pdf.
+	\begin{itemize}
+		\item Nama: Melihat Berita Acara WSDC 2017 Bali.
+		\item Aktor: Pengguna aplikasi WSDC 2017 Bali.
+		\item Deskripsi: Melihat berita acara dengan format pdf yang berisi kejadian kejadian pada WSDC 2017 Bali di tanggal tertentu sesuai dengan berita yang diklik.
+		\item Kondisi Awal: Pengguna telah membuka halaman utama aplikasi WSDC 2017 Bali.
+		\item Kondisi Akhir : Berkas berita WSDC 2017 Bali dengan format pdf dapat dilihat dan dibaca.
+		\item Skenario Utama: \\
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
+				\hline
+				No & Aksi Aktor                               & Reaksi Sistem                                          \\ \hline
+				1  & Pengguna menekan tombol {\it read more} pada berita di halaman utama aplikasi WSDC 2017 Bali. & Aplikasi WSDC 2017 Bali mengarahkan pengguna ke halaman Google Drive yang mengampilkan berita acara WSDC 2017 Bali \\ \hline
+			\end{tabular}
+		\end{table}
+	\end{itemize}
+	\item Pemberitahuan : Pengguna dapat melihat pemberitahuan mengenai keberlangsungan acara WSDC 2017 Bali.
+	\begin{itemize}
+		\item Nama: Melihat pemberitahuan acara WSDC 2017 Bali.
+		\item Aktor: Pengguna aplikasi WSDC 2017 Bali.
+		\item Deskripsi: Melihat pemberitahuan acara WSDC 2017 Bali yang tersusun menurun berdasarkan jam dan tanggal diberikannya pengumuman tersebut.
+		\item Kondisi Awal: Pengguna telah membuka aplikasi WSDC 2017 Bali.
+		\item Kondisi Akhir: Halaman pemberitahuan terbuka dan menampilkan pemberitahuan acara WSDC 2017 bali yang tersusun menurun berdasarkan jam dan tanggal.
+		\item Skenario utama: \\
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
+				\hline
+				No & Aksi Aktor                               & Reaksi Sistem                                          \\ \hline
+				1  & Pengguna menekan tombol {\it hamburger} di pojok kiri atas aplikasi WSDC 2017 Bali. & Aplikasi WSDC 2017 Bali menampilkan {\it side bar} \\ \hline
+				2  & Pengguna menekan tombol Announcement & Aplikasi WSDC 2017 Bali menampilkan halaman pengumuman. \\ \hline
+			\end{tabular}
+		\end{table}
+	\end{itemize}
+	\item Jadwal : Pengguna dapat melihat jadwal acara WSDC 2017 Bali yang ditampilkan berdasarkan tanggal dan hari.
+	\begin{itemize}
+		\item Nama: Melihat jadwal acara WSDC 2017 Bali.
+		\item Aktor: Pengguna aplikasi WSDC 2017 Bali.
+		\item Deskripsi: Melihat jadwal acara WSDC 2017 Bali yang ditampilkan berdasarkan tanggal dan hari, serta dapat berpindah pindah tanggal agar dapat melihat ada jadwal apa saja pada hari itu. Untuk setiap harinya terdapat nama kegiatan, waktu yang menunjukan pukul berapa acara tersebut mulai dan selesai, serta lokasi kegiatan acara tersebut.
+		\item Kondisi awal: Pengguna telah membuka aplikasi WSDC 2017 Bali.
+		\item Kondisi akhir: Halaman jadwal terbuka dan menampilkan jadwal acara yang ditampilkan berdasarkan tanggal dan hari, serta dapat melihat acara dengan detail waktu, tempat, dan nama kegiatan.
+		\item Skenario utama: \\
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
+				\hline
+				No & Aksi Aktor                               & Reaksi Sistem                                          \\ \hline
+				1  & Pengguna menekan tombol {\it hamburger} di pojok kiri atas aplikasi WSDC 2017 Bali. & Aplikasi WSDC 2017 Bali menampilkan {\it side bar} \\ \hline
+				2  & Pengguna menekan tombol Schedule & Aplikasi WSDC 2017 Bali menampilkan halaman jadwal. \\ \hline
+				3  & Pengguna menekan tanggal yang berada di atas halaman jadwal & Aplikasi WSDC 2017 Bali menampilkan jadwal berdasarkan tanggal yang dipilih oleh pengguna dengan detail waktu, lokasi, dan nama kegiatan. \\ \hline
+			\end{tabular}
+		\end{table}
+	\end{itemize}
 	\item {\it Venues}
 	\item {\it Draw}
 	\item Hasil
