@@ -91,7 +91,26 @@ Terdapat fitur-fitur yang ada pada aplikasi WSDC 2017 Bali. Fitur-fitur tersebut
 			\end{tabular}
 		\end{table}
 	\end{itemize}
-	\item {\it Venues}
+	\item {\it Venues} : Pengguna dapat melihat lokasi dari berlangsungnya acara WSDC 2017 Bali.
+	\begin{itemize}
+		\item Nama: Melihat lokasi acara WSDC 2017 Bali.
+		\item Aktor: Pengguna aplikasi WSDC 2017 Bali.
+		\item Deskripsi: Pengguna dapat melihat lokasi dari berlangsungnya acara WSDC 2017 Bali, yang dibagi menjadi 4 kategroi, yaitu: {\it Ceremony Venues}, {\it Competition Venues}, {\it Delegates Accomodation}, dan {\it Educational Tour}. Masing masing dari lokasi tersebut akan menampikan peta, dan lokasi acara yang dituju dengan penanda yang ada di dalam peta. Serta dapat menampilkan jarak pengguna saat ini terhadap lokasi yang ingin dituju.
+		\item Kondisi awal: Pengguna telah membuka aplikasi WSDC 2017 Bali.
+		\item Kondisi akhir: Halaman {\it venues} yang sesuai dengan keinginan pengguna terbuka.
+		\item Pengecualian: Aplikasi WSDC 2017 Bali tidak akan menampilkan jarak antara lokasi pengguna saat ini ke lokasi yang ingin dituju, jika pengguna berada di luar pulau Bali.
+		\item Skenario utama: \\
+		 \begin{table}[H]
+			\centering
+			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
+				\hline
+				No & Aksi Aktor                               & Reaksi Sistem                                          \\ \hline
+				1  & Pengguna menekan tombol {\it hamburger} di pojok kiri atas aplikasi WSDC 2017 Bali. & Aplikasi WSDC 2017 Bali menampilkan {\it side bar} \\ \hline
+				2  & Pengguna menekan tombol Venues & Aplikasi WSDC 2017 Bali menampilkan halaman Venues yang berisi {\it Ceremony Venues}, {\it Competition Venues}, {\it Delegates Accomodation}, dan {\it Educational Tour}.\\ \hline
+				3  & Pengguna menekan kategori {\it venues} yang diinginkan. & Aplikasi WSDC 2017 Bali menampilkan peta, nama lokasi acara dengan disertai penanda yang ada di dalam peta, dan jarak antara lokasi pengguna saat ini dan lokasi acara.\\ \hline
+			\end{tabular}
+		\end{table}
+	\end{itemize}
 	\item {\it Draw}
 	\item Hasil
 	\item Info
