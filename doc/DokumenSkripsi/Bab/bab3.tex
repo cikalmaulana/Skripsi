@@ -23,7 +23,7 @@ Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu 
 	\begin{itemize}
 		\item Nama: Melihat Halaman Utama WSDC 2017 Bali.
 		\item Aktor: Pengguna Aplikasi WSDC 2017 Bali.
-		\item Deskripsi: Pengguna melihat halaman awal yang berisi berita acara WSDC 2017 Bali dengan urutan paling atas adalah berita yang lebih baru terbit, dan sebuah {\it card} yang berisi pengumuman terakhir terkait acara WSDC 2017 Bali.
+		\item Deskripsi: Pengguna melihat halaman awal yang berisi berita acara WSDC 2017 Bali dengan urutan paling atas adalah berita yang lebih baru terbit, dan sebuah {\it card} yang berisi pengumuman terakhir terkait acara WSDC 2017 Bal, yang dapat diklik dan mengarahkan pengguna ke halaman Pemberitahuan.
 		\item Kondisi Awal: Pengguna belum membuka aplikasi WSDC 2017 Bali.
 		\item Kondisi Akhir: Aplikasi menampilkan halaman utama aplikasi WSDC 2017 Bali.
 		\item Skenario utama:\\
@@ -33,7 +33,8 @@ Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu 
 				\hline
 				No & Aksi Aktor                               & Reaksi Sistem                                          \\ \hline
 				1  & Pengguna membuka aplikasi WSDC 2017 Bali & Aplikasi WSDC 2017 Bali menampilkan halaman selamat datang. \\ \hline
-				   &                                          & Aplikasi WSDC 2017 Bali menampilkan halaman utama           \\ \hline
+				2  &                                          & Aplikasi WSDC 2017 Bali menampilkan halaman utama           \\ \hline
+				3  & Pengguna mengklik {\it card} Announcements & Aplikasi WSDC 2017 Bali menampilkan halaman Pemberitahuan. \\ \hline
 			\end{tabular}
 			\caption{Tabel Skenario dari Halaman Utama}
 			\label{table:skenarioHalamanUtama}
@@ -197,7 +198,20 @@ Ionic, seperti yang telah dibahas pada landasan teori~\ref{}, memungkinkan untuk
 
 \subsection{Analisis Kebutuhan Sistem Kini}
 \label{sec:analisisKebutuhanSistem}
-Aplikasi WSDC 2017 Bali yang akan dibangun akan menggunakan Ionic Framework versi 5. 
+Aplikasi WSDC 2017 Bali yang akan dibangun akan mengadopsi desain dan tata letak yang sama persis dengan aplikasi WSDC 2017 Bali saat ini. Namun dengan perubahan penggunaan Ionic Framework yang digunakan, yaitu versi 5, serta Angular versi 12. Di Ionic Framework terbaru saat ini, aplikasi WSDC 2017 Bali yang akan dibangun, memanfaatkan fasilitas yang disediakan oleh Ionic Framework, yaitu UI Component, CSS, dan API. 
+
+Bagian-bagian dari UI Component yang akan digunakan pada aplikasi WSDC 2017 Bali yang akan dibangun diantaranya yaitu :
+
+\begin{itemize}
+	\item Button \\
+	Komponen ini akan digunakan untuk membuat suatu elemen yang dapat diklik. Contoh dari penggunaan Button adalah pada halaman Berita, yang penggunaannya dapat dilihat pada sub bab~\ref{sec:analisisSistemKin} bagian Berita, yaitu untuk mengklik tombol {\it read more} dan mengarahkan pengguna ke aplikasi penampil pdf.
+	\item Card \\
+	Komponen ini akan digunakan sebagai tampilan antar muka, yang dapat menjadi titik masuk ke dalam informasi yang lebih detail. Contoh dari pneggunaan Card adalah pada halaman utama, yaitu pengguna dapat menekan Card Announcements, dan akan diarahkan ke halaman Pengumuman. Contoh dari penggunaan Card pada halaman utama dapat dilihat pada sub bab~\ref{sec:analisisSistemKin}.
+	\item Content \\
+	Komponen ini akan digunakan sebagai penyedia area konten yang digunakan untuk mengontrol area yang dapat digulir. Penggunaan Content ada pada setiap halaman, agar halaman tersebut dapat digulir dan menampilkan isi konten dari halaman tersebut.
+	\item Menu \\
+	Komponen ini akan digunakan sebagai tempat bagi pengguna untuk mengakses berbagai halaman yang tersedia. Pada aplikasi WSDC 2017 Bali saat ini, terdapat sebuah menu berjenis side-menu, yang berisi tombol untuk bernavigasi ke halaman-halaman yang ada. 
+\end{itemize}
 
 \subsection{Permasalahan Pengembangan Sistem Kini}
 \label{sec:analisisPermasalahanSistemKini}
