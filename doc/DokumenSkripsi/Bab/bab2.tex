@@ -226,8 +226,23 @@ export class ModalPage {
 	constructor() {}		
 }
 		\end{lstlisting} 
+\newpage
 	\item Navigation \\
 	Navigation adalah komponen mandiri yang digunakan untuk membuat komponen baru ke dalam {\it stack}. Navigation tidak terikat kepada {\it router} tertentu, mengakibatkan jika kita membuat komponen Navigation dan melakukan {\it push} komponen lain ke dalam {\it stack}, komponen tersebut tidak akan mempengaruhi router aplikasi secara keseluruhan. Sesuai dengan kasus penggunaan dimana ketika pengguna bisa memilih modal, yang membutuhkan sub-navigasinya sendiri, tanpa membuatnya terikat ke URL aplikasi. 
+
+	\item Segment \\
+	Segment berfungsi untuk menampilkan pilihan tombol bagi pengguna untuk beralih di antara tampilan berbeda di dalam satu halaman yang sama. Segment menampilkan sekelompok tombol-tombol yang dapat diklik, dalam baris horizontal. Penggunaan Segment dengan menggunakan {\it tag} <ion-segment> (Kode~\ref{lst:segmentComponent}).
+	\begin{lstlisting}[language=php, label={lst:segmentComponent}, caption=Kode Program dari Segment]
+<ion-segment (ionChange)="segmentChanged($event)">
+	<ion-segment-button value="friends">
+		<ion-label>Friends</ion-label>
+	</ion-segment-button>
+	<ion-segment-button value="enemies">
+		<ion-label>Enemies</ion-label>
+	</ion-segment-button>
+</ion-segment>
+	\end{lstlisting}
+	
 	\item Tabs \\
 	Tabs merupakan navigasi {\it top-level} yang mengimplementasi sebuah {\it tab-based navigation}. Tabs dapat digunakan dengan {\it tag} <ion-tabs> (Kode~\ref{lst:tabsComponent}) yang tidak memliki {\it styling} apapun dan bekerja sebagai {\it router outlet} untuk menangani navigasi. 
 		\begin{lstlisting}[language=php, label={lst:tabsComponent}, caption=Kode Program dari Tabs]
@@ -399,7 +414,7 @@ npm install @ionic/angular>
 				\end{lstlisting}
 
 				\item Floating Action Button (FAB) \\
-				Terdapat perbedaan pada {\it tag} di dalam <ion-fab>, yang semula pada Ionic 3 adalah <button> menjadi <ion-fab-button> pada Ionic 4~\ref{lst:fabIonic4}.
+				Terdapat perbedaan pada {\it tag} di dalam <ion-fab>, yang semula pada Ionic 3 adalah <button> menjadi <ion-fab-button> pada Ionic 4~\ref{lst:fabIonic4}. \newpage
 				\begin{lstlisting}[language=php, label={lst:fabIonic4}, caption=Penggunaan Floating Action Button pada Ionic 4]
 <ion-fab>
 	<ion-fab-button>
@@ -454,7 +469,7 @@ npm install @ionic/angular>
 							Sedangkan pada Ionic 4 menjadi : ionDidOpen
 						\end{itemize}	
 				\end{itemize}
-
+				\newpage
 				\item Nav \\
 				Terdapat perubahan Nav pada Ionic 4. Perubahan-perubahan tersebut adalah sebagai berikut :
 				\begin{itemize}
@@ -497,7 +512,7 @@ npm install @ionic/angular>
 	\end{enumerate}
 	%---END ENUM MIGRASI IONIC 3 KE IONIC 4---%
 
-
+\newpage
 	\item Migrasi Ionic 4 ke Ionic 5 \\
 	Migrasi aplikasi dari Ionic 4 ke Ionic 5 memerlukan beberapa pembaruan mengenai properti API, CSS, dan {\it package dependencies} yang terpasang. Perubahan-perubahan tersebut yaitu :
 
@@ -516,7 +531,7 @@ npm install @ionic/angular>
   
 			\item {\it Display Classes} \\ 
 			Kelas dari {\it responsive display} yang ditemukan di dalam berkas display.css memiliki kueri media yang diperbarui untuk lebih mencerminkan bagaimana cara kerjanya.
-\newpage
+
 			\item {\it Activated, Focused, Hover States} \\
 			Kelas .activated secara otomatis ditambahkan ke komponen yang dapat diklik, mengalami perubahan nama menjadi .ion-activated. Selain itu juga memperbarui komponen Action Sheet sehingga variabel akan diawali dengan {\it button}. Hal ini dapat memungkinkan aplikasi tetap memiliki kontrol atas {\it opacity} jika diinginkan, tetapi saat memperbarui status, hanya perlu mengatur variabel utama, yaitu -background-activated, -background-focused, -background-hover. Hal tersebut penting saat mengubah tema global, karena memperbarui warna {\it toolbar} akan secara otomatis memperbarui {\it hover states} untuk semua {\it buttons} di {\it toolbar} (Kode~\ref{lst:hoverStates}). 
 		\begin{lstlisting}[language=php, label={lst:hoverStates}, caption=Contoh Kode {\it Hover States} pada Ionic 5]
@@ -578,6 +593,7 @@ ion-action-sheet {
 	<ion-select-option value="two">Two</ion-select-option>
 </ion-select>
 			\end{lstlisting}
+\newpage
 			\item Toast \\
 			Properti close button seperti showCloseButton dan closeButtonText telah dihapus. Sebagai gantinya, gunakan buttons array untuk fungsi batal (Kode~\ref{lst:toast}.
 			\begin{lstlisting}[language=php, label={lst:toast}, caption=Kode Program untuk Toast]
@@ -599,7 +615,6 @@ toast.present();
 			\end{lstlisting}
 		\end{itemize}
 		Selain yang sudah disebutkan, terdapat beberapa komponen lain yang mendapat perubahan di Ionic 5, namun tidak ditulis di dalam dokumen skripsi ini. Komponen-komponen tersebut antara lain Action Sheet, Anchor, Card, FAB, Item, Menu Button, Nav Link, Radio, Segment, Segment Button, Skeleton Text, Split Pane, dan Tabs~\footnote{\textit{`Breaking Changes'} https://github.com/ionic-team/ionic-framework/blob/main/BREAKING.md, Diakses pada 20 November 2021. \label{ref:breakingChangesIonic5}}.
-\newpage
 		\item Warna \\
 		Terdapat perubahan terhadap warna bawaan milik ionic (Tabel~\ref{table:colors}).
 		\begin{table}[H]
