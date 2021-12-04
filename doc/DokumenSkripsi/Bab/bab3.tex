@@ -122,6 +122,7 @@ Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu 
 			\label{table:skenarioHalamanVenues}
 		\end{table}
 	\end{itemize}
+\newpage
 	\item {\it Draw} : Pengguna dapat melihat pembagian {\it venue} dan kubu proposisi dan oposisi dari hasil pengundian untuk para negara peserta WSDC 2017 Bali.
 	\begin{itemize}
 		\item Nama: Melihat halaman {\it draw}
@@ -162,6 +163,7 @@ Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu 
 			\label{table:skenarioHalamanHasil}
 		\end{table}
 	\end{itemize}
+\newpage
 	\item Info : Pengguna dapat melihat info-info seputar kontak-kontak penting yang dapat dihubungi, kosa kata dalam Bahasa Indonesia sehari-hari, serta {\it credits} kepada pembuat aplikasi WSDC 2017 Bali.
 	\begin{itemize}
 		\item Nama: Melihat halaman Info.
@@ -189,36 +191,37 @@ Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu 
 
 Aplikasi yang ada pada saat ini menggunakan Ionic Framework versi 3, yang sudah tidak lagi didukung oleh Ionic. Maka dari itu, aplikasi WSDC 2017 Bali akan dibangun ulang  menggunakan Ionic Framework versi terbaru saat ini, yaitu Ionic Framework versi 5. Proses untuk melakukan pembangunan ulang aplikasi dari Ionic Framework versi 3 ke Ionic Framework versi 5 telah dijelaskan pada subbab~\ref{subsec:migras}. Pada subbab ini akan dijelaskan analisis untuk pengembangan kebutuhan apilkasi WSDC 2017 Bali untuk membuat aplikasi tersebut dapat berjalan menggunakan Ionic Framework versi 5.
 
-\subsection{Analisis Ionic 5}
-\label{sec:analisisIonic5}
-Ionic, seperti yang telah dibahas pada landasan teori~\ref{}, memungkinkan untuk dapat membuat sebuah aplikasi {\it native}.
-
-\subsection{Analisis Cordova}
-\label{sec:analisisIonicCordova}
-
-\subsection{Analisis Kebutuhan Sistem Kini}
+\subsection{Analisis Kebutuhan Sistem Usulan}
 \label{sec:analisisKebutuhanSistem}
-Aplikasi WSDC 2017 Bali yang akan dibangun akan mengadopsi desain dan tata letak yang sama persis dengan aplikasi WSDC 2017 Bali saat ini. Namun dengan perubahan penggunaan Ionic Framework yang digunakan, yaitu versi 5, serta Angular versi 12. Di Ionic Framework terbaru saat ini, aplikasi WSDC 2017 Bali yang akan dibangun, memanfaatkan fasilitas yang disediakan oleh Ionic Framework, yaitu UI Component, CSS, dan API. 
+Aplikasi WSDC 2017 Bali yang akan dibangun akan mengadopsi desain dan tata letak yang sama persis dengan aplikasi WSDC 2017 Bali saat ini. Namun dengan perubahan penggunaan Ionic Framework yang digunakan, yaitu versi 5, serta Angular versi 12. Di Ionic Framework terbaru saat ini, aplikasi WSDC 2017 Bali yang akan dibangun, memanfaatkan fasilitas yang disediakan oleh Ionic Framework, yaitu UI Component, dan CSS Utilities. 
 
 Bagian-bagian dari UI Component yang akan digunakan pada aplikasi WSDC 2017 Bali yang akan dibangun diantaranya yaitu :
-
+\newpage
 \begin{itemize}
 	\item Button \\
-	Komponen ini akan digunakan untuk membuat suatu elemen yang dapat diklik. Contoh dari penggunaan Button adalah pada halaman Berita, yang penggunaannya dapat dilihat pada sub bab~\ref{sec:analisisSistemKin} bagian Berita, yaitu untuk mengklik tombol {\it read more} dan mengarahkan pengguna ke aplikasi penampil pdf.
+	Komponen ini akan digunakan untuk membuat suatu elemen yang dapat diklik. Contoh dari penggunaan Button adalah pada halaman Berita, yang penggunaannya dapat dilihat pada sub bab~\ref{sec:analisisSistemKini} bagian Berita, yaitu untuk mengklik tombol {\it read more} dan mengarahkan pengguna ke aplikasi penampil pdf.
 	\item Card \\
-	Komponen ini akan digunakan sebagai tampilan antar muka, yang dapat menjadi titik masuk ke dalam informasi yang lebih detail. Contoh dari pneggunaan Card adalah pada halaman utama, yaitu pengguna dapat menekan Card Announcements, dan akan diarahkan ke halaman Pengumuman. Contoh dari penggunaan Card pada halaman utama dapat dilihat pada sub bab~\ref{sec:analisisSistemKin}.
+	Komponen ini akan digunakan sebagai tampilan antar muka, yang dapat menjadi titik masuk ke dalam informasi yang lebih detail. Contoh dari pneggunaan Card adalah pada halaman utama, yaitu pengguna dapat menekan Card Announcements, dan akan diarahkan ke halaman Pengumuman. Contoh dari penggunaan Card pada halaman utama dapat dilihat pada sub bab~\ref{sec:analisisSistemKini}.
 	\item Content \\
 	Komponen ini akan digunakan sebagai penyedia area konten yang digunakan untuk mengontrol area yang dapat digulir. Penggunaan Content ada pada setiap halaman, agar halaman tersebut dapat digulir dan menampilkan isi konten dari halaman tersebut.
+	\item Item \\
+	Komponen ini akan digunakan sebagai pembungkus dari komponen-komponen lain di dalam sebuah halaman. Item akan berisi teks, gambar, atau elemen lainnya.
 	\item Menu \\
 	Komponen ini akan digunakan sebagai tempat bagi pengguna untuk mengakses berbagai halaman yang tersedia. Pada aplikasi WSDC 2017 Bali saat ini, terdapat sebuah menu berjenis side-menu, yang berisi tombol untuk bernavigasi ke halaman-halaman yang ada. 
+	\item Segment \\
+	Komponen ini akan digunakan untuk pengguna agar dapat berpindah tampilan di dalam halaman yang sama. Seperti pada tampilan halaman jadwal yang ada pada aplikasi WSDC 2017 Bali saat ini, dimana pengguna dapat berpindah hari untuk mengetahui jadwal kegiatan pada hari tertentu yang dipilih oleh pengguna, namun masih berada di halaman yang sama, yaitu halaman Schedule.
+	\item Toolbar \\
+	Komponen ini akan digunakan sebagai header dari aplikasi WSDC 2017 Bali. Dalam Toolbar, akan terdapat tombol navigasi yang dapat diklik, untuk menampilkan side-menu, yang dapat digunakan pengguna untuk bernavigasi antar halaman. Lalu terdapat pula tulisan nama halaman yang saat ini sedang dibuka oleh pengguna, serta logo WSDC 2017 Bali.
 \end{itemize}
 
-\subsection{Permasalahan Pengembangan Sistem Kini}
+Lalu, aplikasi WSDC 2017 Bali yang akan dibangun juga akan memanfaatkan CSS Utilities yang disediakan oleh Ionic Framework. CSS Utilities milik Ionic Framework menyediakan satu set kelas CSS yang akan digunakan pada elemen-elemen di dalam aplikasi, untuk memodifikasi teks, penempatan elemen, atau penyesuaian dari padding dan margin.
+
+\subsection{Permasalahan Pengembangan Sistem Usulan}
 \label{sec:analisisPermasalahanSistemKini}
 Saat sedang melakukan proses migrasi aplikasi WSDC 2017 Bali dari Ionic Framework versi 3 ke Ionic Framework versi 5, terdapat beberapa kendala dan permasalahan yang dialami. Kendala-kendala tersebut adalah sebagai berikut : 
 \begin{itemize}
-	\item Seperti yang disebutkan pada landasan teori~\ref{} sebelum melakukan migrasi dari Ionic Framework versi 3 ke Ionic Framework versi 5 terlebih dahulu melakukan migrasi dari Ionic Framework versi 3 ke Ionic Framework versi 4. Namun karena tidak tersedianya perintah untuk membuat aplikasi dengan menggunakan Ionic Framework versi 4, maka penulis langsung melakukan migrasi dari Ionic Framework versi 3 ke Ionic Framework versi 5. Dalam melakukan hal ini, penulis berlandaskan bahwa susunan kelas Ionic Framework versi 4 dan versi 5 tidaklah berubah sama sekali. Yang mengalami perubahan hanyalah pembaruan properti mengenai API, CSS, dan {\it package dependencies} yang terpasang, yang telah dijelaskan pada landasan teori~\ref{}.
-	\item Beberapa halaman seperti halaman Draw dan Result pada aplikasi WSDC 2017 Bali saat ini tidak dapat diakses dikarenakan server yang tersedia tidak dapat diakses. Namun masalah ini telah terselesaikan.
+	\item Seperti yang disebutkan pada landasan teori (Sub Bab~\ref{subsec:migrasi}) sebelum melakukan migrasi dari Ionic Framework versi 3 ke Ionic Framework versi 5 terlebih dahulu melakukan migrasi dari Ionic Framework versi 3 ke Ionic Framework versi 4. Namun karena tidak tersedianya perintah untuk membuat aplikasi dengan menggunakan Ionic Framework versi 4, maka penulis langsung melakukan migrasi dari Ionic Framework versi 3 ke Ionic Framework versi 5. Dalam melakukan hal ini, penulis berlandaskan bahwa susunan kelas Ionic Framework versi 4 dan versi 5 tidaklah berubah sama sekali. Yang mengalami perubahan hanyalah pembaruan properti mengenai API, CSS, dan {\it package dependencies} yang terpasang, yang telah dijelaskan pada landasan teori (Sub Bab~\ref{subsec:migrasi}).
+	\item Halaman Draw dan Result pada aplikasi WSDC 2017 Bali saat ini tidak dapat diakses dikarenakan data pada server yang tersedia tidak dapat diakses. Namun masalah ini telah terselesaikan.
 \end{itemize}
 %Analisis cara kerja ionicnya
 %Analisis cara kerja cordova
