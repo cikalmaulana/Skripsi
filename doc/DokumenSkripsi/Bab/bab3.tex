@@ -6,9 +6,9 @@ Pada bab ini akan dijelaskan analisis aplikasi WSDC 2017 Bali saat ini dan aplik
 
 \section{Analisis Sistem Kini}
 \label{sec:analisisSistemKini}
-Aplikasi WSDC 2017 Bali digunakan untuk menunjang keberlangsungan acara WSDC 2017 yang diselenggarakan di Bali, Indonesia. Pada halaman utama, pengguna dapat melihat berita-berita terkait acara WSDC 2017 Bali dan tombol {\it read more} yang apabila ditekan akan mengarahkan pengguna untuk ke halaman Google Drive dan melihat berita terkait acara WSDC 2017 Bali dengan format pdf. Aplikasi WSDC 2017 Bali dapat digunakan untuk melihat berita acara, pengumuman, jadwal peserta, lokasi acara, hasil pengundian, info, serta pengumuman pemenang dari acara WSDC 2017 Bali (Gambar~\ref{fig:useCaseDiagram}). 
+Aplikasi WSDC 2017 Bali digunakan untuk menunjang keberlangsungan acara WSDC 2017 yang diselenggarakan di Bali, Indonesia. Pada halaman utama, pengguna dapat melihat berita-berita terkait acara WSDC 2017 Bali dan tombol {\it read more} yang apabila ditekan akan mengarahkan pengguna untuk melihat berita terkait acara WSDC 2017 Bali dengan format pdf. Aplikasi WSDC 2017 Bali dapat digunakan untuk melihat berita acara, pengumuman, jadwal peserta, lokasi acara, hasil pengundian, info, serta pengumuman pemenang dari acara WSDC 2017 Bali (Gambar~\ref{fig:useCaseDiagram}). 
 
-Aplikasi WSDC 2017 Bali dibangun menggunakan {\it framework} Ionic versi 3, dan Angular versi 4.1.3. Lalu untuk membangun aplikasi WSDC 2017 Bali agar dapat berjalan secara {\it native}, digunakanlah Cordova. Dengan digunakannya Cordova dan Ionic Framework, maka memungkinkan aplikasi WSDC 2017 Bali menggunakan teknologi HTML, dan CSS. Penggunaan Cordova juga memungkinkan aplikasi WSDC 2017 Bali kompatibel dengan perangkat berbasis Android dan IOS, tanpa perlu mengimplementasikannya kembali ke dalam bahasa masing-masing platform.
+Aplikasi WSDC 2017 Bali dibangun menggunakan {\it framework} Ionic versi 3, dan Angular versi 4.1.3. Dengan digunakannya Ionic Framework, maka memungkinkan aplikasi WSDC 2017 Bali menggunakan teknologi web seperti HTML, dan CSS. Lalu untuk membangun aplikasi WSDC 2017 Bali agar dapat berjalan secara {\it native}, digunakanlah Cordova. Penggunaan Cordova memungkinkan aplikasi WSDC 2017 Bali kompatibel dengan perangkat berbasis Android dan IOS, tanpa perlu mengimplementasikannya kembali ke dalam bahasa masing-masing platform.
 
 \begin{figure}[H]
 		\centering
@@ -53,17 +53,18 @@ Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu 
 			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
 				\hline
 				No & Aksi Aktor                               & Reaksi Sistem                                          \\ \hline
-				1  & Pengguna menekan tombol {\it read more} pada berita di halaman utama aplikasi WSDC 2017 Bali. & Aplikasi WSDC 2017 Bali mengarahkan pengguna ke halaman Google Drive yang mengampilkan berita acara WSDC 2017 Bali \\ \hline
+				1  & Pengguna menekan tombol {\it read more} pada berita di halaman utama aplikasi WSDC 2017 Bali. & Aplikasi WSDC 2017 Bali mengarahkan pengguna ke halaman Google Drive yang menampilkan berita acara WSDC 2017 Bali \\ \hline
+				2  &  & Aplikasi WSDC 2017 Bali menampilkan berita acara WSDC 2017 Bali \\ \hline
 			\end{tabular}
 			\caption{Tabel Skenario dari Berita}
 			\label{table:skenarioBerita}
 		\end{table}
 	\end{itemize}
-	\item Pemberitahuan : Pengguna dapat melihat pemberitahuan mengenai keberlangsungan acara WSDC 2017 Bali.
+	\item Pengumuman : Pengguna dapat melihat pengumuman mengenai keberlangsungan acara WSDC 2017 Bali.
 	\begin{itemize}
 		\item Nama: Melihat pemberitahuan acara WSDC 2017 Bali.
 		\item Aktor: Pengguna aplikasi WSDC 2017 Bali.
-		\item Deskripsi: Melihat pemberitahuan acara WSDC 2017 Bali yang tersusun menurun berdasarkan jam dan tanggal diberikannya pengumuman tersebut.
+		\item Deskripsi: Melihat pemberitahuan acara WSDC 2017 Bali yang tersusun menurun berdasarkan jam dan tanggal dirilisnya pengumuman tersebut.
 		\item Kondisi Awal: Pengguna telah membuka aplikasi WSDC 2017 Bali.
 		\item Kondisi Akhir: Halaman pemberitahuan terbuka dan menampilkan pemberitahuan acara WSDC 2017 bali yang tersusun menurun berdasarkan jam dan tanggal.
 		\item Skenario utama: \\
@@ -72,7 +73,7 @@ Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu 
 			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
 				\hline
 				No & Aksi Aktor                               & Reaksi Sistem                                          \\ \hline
-				1  & Pengguna menekan tombol {\it hamburger} di pojok kiri atas aplikasi WSDC 2017 Bali. & Aplikasi WSDC 2017 Bali menampilkan {\it side bar} \\ \hline
+				1  & Pengguna menekan tombol {\it hamburger} di pojok kiri atas aplikasi WSDC 2017 Bali. & Aplikasi WSDC 2017 Bali menampilkan {\it sidebar} \\ \hline
 				2  & Pengguna menekan tombol Announcement & Aplikasi WSDC 2017 Bali menampilkan halaman pengumuman. \\ \hline
 			\end{tabular}
 			\caption{Tabel Skenario dari Halaman Pemberitahuan}
@@ -83,7 +84,7 @@ Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu 
 	\begin{itemize}
 		\item Nama: Melihat jadwal acara WSDC 2017 Bali.
 		\item Aktor: Pengguna aplikasi WSDC 2017 Bali.
-		\item Deskripsi: Melihat jadwal acara WSDC 2017 Bali yang ditampilkan berdasarkan tanggal dan hari, serta dapat berpindah pindah tanggal agar dapat melihat ada jadwal apa saja pada hari itu. Untuk setiap harinya terdapat nama kegiatan, waktu yang menunjukan pukul berapa acara tersebut mulai dan selesai, serta lokasi kegiatan acara tersebut.
+		\item Deskripsi: Melihat jadwal acara WSDC 2017 Bali yang ditampilkan berdasarkan tanggal dan hari, serta dapat berpindah pindah tanggal agar dapat melihat jadwal apa saja yang tersedia pada hari itu. Untuk setiap harinya terdapat nama kegiatan, waktu yang menunjukan pukul berapa acara tersebut mulai dan selesai, serta lokasi kegiatan acara tersebut.
 		\item Kondisi awal: Pengguna telah membuka aplikasi WSDC 2017 Bali.
 		\item Kondisi akhir: Halaman jadwal terbuka dan menampilkan jadwal acara yang ditampilkan berdasarkan tanggal dan hari, serta dapat melihat acara dengan detail waktu, tempat, dan nama kegiatan.
 		\item Skenario utama: \\
@@ -114,7 +115,7 @@ Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu 
 			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
 				\hline
 				No & Aksi Aktor                               & Reaksi Sistem                                          \\ \hline
-				1  & Pengguna menekan tombol {\it hamburger} di pojok kiri atas aplikasi WSDC 2017 Bali. & Aplikasi WSDC 2017 Bali menampilkan {\it side bar} \\ \hline
+				1  & Pengguna menekan tombol {\it hamburger} di pojok kiri atas aplikasi WSDC 2017 Bali. & Aplikasi WSDC 2017 Bali menampilkan {\it sidebar} \\ \hline
 				2  & Pengguna menekan tombol Venues & Aplikasi WSDC 2017 Bali menampilkan halaman Venues yang berisi {\it Ceremony Venues}, {\it Competition Venues}, {\it Delegates Accomodation}, dan {\it Educational Tour}.\\ \hline
 				3  & Pengguna menekan kategori {\it venues} yang diinginkan. & Aplikasi WSDC 2017 Bali menampilkan peta, nama lokasi acara dengan disertai penanda yang ada di dalam peta, dan jarak antara lokasi pengguna saat ini dan lokasi acara.\\ \hline
 			\end{tabular}
@@ -123,11 +124,11 @@ Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu 
 		\end{table}
 	\end{itemize}
 \newpage
-	\item {\it Draw} : Pengguna dapat melihat pembagian {\it venue} dan kubu proposisi dan oposisi dari hasil pengundian untuk para negara peserta WSDC 2017 Bali.
+	\item {\it Draw} : Pengguna dapat melihat pembagian {\it venue} serta pembagian kubu proposisi dan oposisi dari hasil pengundian untuk para negara peserta WSDC 2017 Bali.
 	\begin{itemize}
 		\item Nama: Melihat halaman {\it draw}
 		\item Aktor: Pengguna aplikasi WSDC 2017 Bali.
-		\item Deskripsi: Pengguna dapat melihat hasil dari pengundian kubu untuk negara peserta WSDC 2017 Bali, serta lokasi {\it venue} untuk kedua kubu tersebut. Aplikasi WSDC 2017 Bali akan menampilkan nama-nama negara peserta dengan benderanya masing-masing yang terbagi menjadi dua kubu di dalam satu tabel, kubu oposisi dan kubu proposisi.
+		\item Deskripsi: Pengguna dapat melihat hasil dari pengundian kubu untuk negara peserta WSDC 2017 Bali, yaitu kubu proposisi dan oposisi, serta lokasi {\it venue} untuk kedua kubu tersebut. Aplikasi WSDC 2017 Bali akan menampilkan nama-nama negara peserta dengan benderanya masing-masing yang terbagi menjadi dua kubu di dalam satu tabel, kubu oposisi dan kubu proposisi.
 		\item Kondisi awal: Pengguna telah membuka aplikasi WSDC 2017 Bali.
 		\item Kondisi akhir: Halaman {\it draw} terbuka.
 		\item Skenario utama: \\
@@ -147,7 +148,7 @@ Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu 
 	\begin{itemize}
 		\item Nama : Melihat halaman Hasil.
 		\item Aktor: Pengguna aplikasi WSDC 2017 Bali.
-		\item Deskripsi: Pengguna dapat melihat pemenang dari kompetisi WSDC 2017 Bali, yang terdiri dari babak semifinal, perempatfinal, dan perlapanfinal. Dari masing-masing babak, ditampilkan negara-negara yang berpartisipasi, serta skor dari negara-negara tersebut. 
+		\item Deskripsi: Pengguna dapat melihat pemenang dari kompetisi WSDC 2017 Bali, yang terdiri dari babak semifinal, perempatfinal, dan perdelapanfinal. Dari masing-masing babak, ditampilkan negara-negara yang berpartisipasi, serta skor dari negara-negara tersebut. 
 		\item Kondisi awal: Pengguna telah membuka aplikasi WSDC 2017 Bali.
 		\item Kondisi akhir: Halaman Hasil terbuka.
 		\item Skenario utama: \\
@@ -157,7 +158,7 @@ Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu 
 				\hline
 				No & Aksi Aktor                               & Reaksi Sistem                                          \\ \hline
 				1  & Pengguna menekan tombol {\it hamburger} di pojok kiri atas aplikasi WSDC 2017 Bali. & Aplikasi WSDC 2017 Bali menampilkan {\it side bar} \\ \hline
-				2  & Pengguna menekan tombol Result & Aplikasi WSDC 2017 Bali menampilkan halaman Result yang berisi pemenang dari babak semifinal, perempatfinal, dan perlapanfinal. \\ \hline
+				2  & Pengguna menekan tombol Result & Aplikasi WSDC 2017 Bali menampilkan halaman Result yang berisi pemenang dari babak semifinal, perempatfinal, dan perdelapanfinal. \\ \hline
 			\end{tabular}
 			\caption{Tabel Skenario dari Halaman Hasil}
 			\label{table:skenarioHalamanHasil}
@@ -189,11 +190,11 @@ Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu 
 \section{Analisis Sistem Usulan}
 \label{sec:analisisSistemUsulan}
 
-Aplikasi yang ada pada saat ini menggunakan Ionic Framework versi 3, yang sudah tidak lagi didukung oleh Ionic. Maka dari itu, aplikasi WSDC 2017 Bali akan dibangun ulang  menggunakan Ionic Framework versi terbaru saat ini, yaitu Ionic Framework versi 5. Proses untuk melakukan pembangunan ulang aplikasi dari Ionic Framework versi 3 ke Ionic Framework versi 5 telah dijelaskan pada subbab~\ref{subsec:migras}. Pada subbab ini akan dijelaskan analisis untuk pengembangan kebutuhan apilkasi WSDC 2017 Bali untuk membuat aplikasi tersebut dapat berjalan menggunakan Ionic Framework versi 5.
+Aplikasi yang ada pada saat ini menggunakan Ionic Framework versi 3, yang sudah tidak lagi didukung oleh Ionic. Maka dari itu, aplikasi WSDC 2017 Bali akan dibangun ulang  menggunakan Ionic Framework versi terbaru saat ini, yaitu Ionic Framework versi 5. Proses untuk melakukan pembangunan ulang aplikasi dari Ionic Framework versi 3 ke Ionic Framework versi 5 telah dijelaskan pada sub bab~\ref{subsec:migrasi}. Pada sub bab ini akan dijelaskan analisis untuk pengembangan kebutuhan apilkasi WSDC 2017 Bali agar aplikasi tersebut dapat berjalan menggunakan Ionic Framework versi 5.
 
 \subsection{Analisis Kebutuhan Sistem Usulan}
 \label{sec:analisisKebutuhanSistem}
-Aplikasi WSDC 2017 Bali yang akan dibangun akan mengadopsi desain dan tata letak yang sama persis dengan aplikasi WSDC 2017 Bali saat ini. Namun dengan perubahan penggunaan Ionic Framework yang digunakan, yaitu versi 5, serta Angular versi 12. Di Ionic Framework terbaru saat ini, aplikasi WSDC 2017 Bali yang akan dibangun, memanfaatkan fasilitas yang disediakan oleh Ionic Framework, yaitu UI Component, dan CSS Utilities. 
+Aplikasi WSDC 2017 Bali yang akan dibangun akan mengadopsi desain dan tata letak yang sama persis dengan aplikasi WSDC 2017 Bali saat ini. Namun dengan perubahan penggunaan Ionic Framework yang digunakan, yaitu versi 5, serta Angular versi 12. Di Ionic Framework terbaru saat ini, aplikasi WSDC 2017 Bali yang akan dibangun akan memanfaatkan fasilitas yang disediakan oleh Ionic Framework, yaitu UI Component, dan CSS Utilities. 
 
 Bagian-bagian dari UI Component yang akan digunakan pada aplikasi WSDC 2017 Bali yang akan dibangun diantaranya yaitu :
 \newpage
@@ -204,21 +205,23 @@ Bagian-bagian dari UI Component yang akan digunakan pada aplikasi WSDC 2017 Bali
 	Komponen ini akan digunakan sebagai tampilan antar muka, yang dapat menjadi titik masuk ke dalam informasi yang lebih detail. Contoh dari pneggunaan Card adalah pada halaman utama, yaitu pengguna dapat menekan Card Announcements, dan akan diarahkan ke halaman Pengumuman. Contoh dari penggunaan Card pada halaman utama dapat dilihat pada sub bab~\ref{sec:analisisSistemKini}.
 	\item Content \\
 	Komponen ini akan digunakan sebagai penyedia area konten yang digunakan untuk mengontrol area yang dapat digulir. Penggunaan Content ada pada setiap halaman, agar halaman tersebut dapat digulir dan menampilkan isi konten dari halaman tersebut.
+	\item Icon \\
+	Komponen ini akan digunakan untuk merepresentasikan sebuah halaman yang ada pada side-menu.
 	\item Item \\
 	Komponen ini akan digunakan sebagai pembungkus dari komponen-komponen lain di dalam sebuah halaman. Item akan berisi teks, gambar, atau elemen lainnya.
 	\item Menu \\
-	Komponen ini akan digunakan sebagai tempat bagi pengguna untuk mengakses berbagai halaman yang tersedia. Pada aplikasi WSDC 2017 Bali saat ini, terdapat sebuah menu berjenis side-menu, yang berisi tombol untuk bernavigasi ke halaman-halaman yang ada. 
+	Komponen ini akan digunakan sebagai tempat bagi pengguna untuk mengakses berbagai halaman yang tersedia. Pada aplikasi WSDC 2017 Bali saat ini, terdapat sebuah menu berjenis \textit{side bar}, yang berisi tombol untuk bernavigasi ke halaman-halaman yang ada. 
 	\item Segment \\
 	Komponen ini akan digunakan untuk pengguna agar dapat berpindah tampilan di dalam halaman yang sama. Seperti pada tampilan halaman jadwal yang ada pada aplikasi WSDC 2017 Bali saat ini, dimana pengguna dapat berpindah hari untuk mengetahui jadwal kegiatan pada hari tertentu yang dipilih oleh pengguna, namun masih berada di halaman yang sama, yaitu halaman Schedule.
 	\item Toolbar \\
-	Komponen ini akan digunakan sebagai header dari aplikasi WSDC 2017 Bali. Dalam Toolbar, akan terdapat tombol navigasi yang dapat diklik, untuk menampilkan side-menu, yang dapat digunakan pengguna untuk bernavigasi antar halaman. Lalu terdapat pula tulisan nama halaman yang saat ini sedang dibuka oleh pengguna, serta logo WSDC 2017 Bali.
+	Komponen ini akan digunakan sebagai header dari aplikasi WSDC 2017 Bali. Dalam Toolbar, akan terdapat tombol navigasi yang dapat diklik untuk menampilkan side-menu yang dapat digunakan pengguna untuk bernavigasi antar halaman. Lalu terdapat pula tulisan nama halaman yang saat ini sedang dibuka oleh pengguna, serta logo WSDC 2017 Bali.
 \end{itemize}
 
 Lalu, aplikasi WSDC 2017 Bali yang akan dibangun juga akan memanfaatkan CSS Utilities yang disediakan oleh Ionic Framework. CSS Utilities milik Ionic Framework menyediakan satu set kelas CSS yang akan digunakan pada elemen-elemen di dalam aplikasi, untuk memodifikasi teks, penempatan elemen, atau penyesuaian dari padding dan margin.
 
 \subsection{Permasalahan Pengembangan Sistem Usulan}
 \label{sec:analisisPermasalahanSistemKini}
-Saat sedang melakukan proses migrasi aplikasi WSDC 2017 Bali dari Ionic Framework versi 3 ke Ionic Framework versi 5, terdapat beberapa kendala dan permasalahan yang dialami. Kendala-kendala tersebut adalah sebagai berikut : 
+Saat sedang melakukan proses migrasi aplikasi WSDC 2017 Bali dari Ionic Framework versi 3 ke Ionic Framework versi 5, terdapat beberapa kendala yang dialami. Kendala-kendala tersebut adalah sebagai berikut : 
 \begin{itemize}
 	\item Seperti yang disebutkan pada landasan teori (Sub Bab~\ref{subsec:migrasi}) sebelum melakukan migrasi dari Ionic Framework versi 3 ke Ionic Framework versi 5 terlebih dahulu melakukan migrasi dari Ionic Framework versi 3 ke Ionic Framework versi 4. Namun karena tidak tersedianya perintah untuk membuat aplikasi dengan menggunakan Ionic Framework versi 4, maka penulis langsung melakukan migrasi dari Ionic Framework versi 3 ke Ionic Framework versi 5. Dalam melakukan hal ini, penulis berlandaskan bahwa susunan kelas Ionic Framework versi 4 dan versi 5 tidaklah berubah sama sekali. Yang mengalami perubahan hanyalah pembaruan properti mengenai API, CSS, dan {\it package dependencies} yang terpasang, yang telah dijelaskan pada landasan teori (Sub Bab~\ref{subsec:migrasi}).
 	\item Halaman Draw dan Result pada aplikasi WSDC 2017 Bali saat ini tidak dapat diakses dikarenakan data pada server yang tersedia tidak dapat diakses. Namun masalah ini telah terselesaikan.
