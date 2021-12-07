@@ -311,21 +311,12 @@ ionic start myApp blank
 		Menyalin seluruh {\it Root-level Items} pada Ionic versi 3 dengan direktori yang sama atau dengan beberapa perubahan. Terdapat beberapa perubahan baik itu nama maupun letak dari suatu fungsi atau berkas. Perubahan tersebut yaitu:
 
 		%---START ITEMIZE MENYALIN ROOT LEVEL---%
-		\begin{itemize}
-
-			%\item Angular
-			%---START ITEMIZE ANGULAR---%
-			%\begin{itemize}
-			%	\item HttpClient \\
-			%	Pada Angular versi 4 keatas, objek {\it response} secara {\it default} merupakan JSON, jadi tidak perlu diubah kembali menjadi JSON.
-			%\end{itemize}
-			%---END ITEMIZE ANGULAR---%
-
-
+		\begin{enumerate}
+		
 			\item {\it Imports} \\
 			Terjadi perubahaan dalam mengimpor {\it package} di Ionic 3 dan Ionic 4. Daftar perubahan tersebut adalah sebagai berikut :
 			%---START ITEMIZE IMPORT---%
-			\begin{itemize}	
+			\begin{enumerate}	
 				\item Component Imports \\
 				Untuk kepentingan konsistensi dengan {\it framework} lain, maka untuk mengimpor komponen Ionic diawali dengan ion~\ref{lst:componentImportIonic4}.
 				\begin{lstlisting}[language=php, label={lst:componentImportIonic4}, caption=Impor Komponen pada Ionic 4]
@@ -338,33 +329,12 @@ import { IonInput, IonList, IonSlides } from '@ionic/angular';
 npm uninstall ionic-angular
 npm install @ionic/angular>
 				\end{lstlisting}
-			\end{itemize}
-			%---END ITEMIZE IMPORT---%
-	
-			%---START ITEMIZE COMPONENT---%
-			
-			%---END ITEMIZE COMPONENT---%
-	
-
-			%\item Perbedaan Direktori Berkas \\
-			%Terjadi perubahaan direktori pada berkas di Ionic 3 dan Ionic 4. Daftar perubahan tersebut adalah sebagai berikut :
-			%---START ITEMIZE PERBEDAAN DIREKTORI BERKAS---%
-			%\begin{itemize}
-			%	\item {\it Global Styling} \\
-			%	Pada Ionic 3 : src/app/app.scss \\
-			%	Terdapat perubahan pada Ionic 4 menjad : src/global.scss
-
-			%	\item {\it Pages} \\
-			%	Pada Ionic 3 : src/pages  \\
-			%	Terdapat perubahan pada Ionic 4 menjad : src/app/pages
-			%\end{itemize}
-			%---END ITEMIZE PERBEDAAN DIREKTORI BERKAS---%
-	
+			\end{enumerate}
 
 			\item Penamaan Berkas \\
 			Terjadi perubahaan penamaan pada berkas di Ionic 3 dan Ionic 4. Daftar perubahan tersebut adalah sebagai berikut:
 			%---START ITEMIZE PENAMAAN BERKAS---%
-			\begin{itemize}
+			\begin{enumerate}
 				\item {\it Page} \\
 				Terdapat perbedaan nama {\it file} pada folder Pages. Perbedaan tersebut adalah sebagai berikut :\\
 				Pada Ionic 3 : home.html  \\
@@ -374,7 +344,7 @@ npm install @ionic/angular>
 				Terdapat perbedaan nama {\it file} pada direktori App. Perbedaan tersebut adalah sebagai berikut : \\
 				Pada Ionic 3 : app.html \\
 				Terdapat perubahan pada Ionic 4 menjadi : app-component.html
-			\end{itemize}
+			\end{enumerate}
 			%---END ITEMIZE PENAMAAN BERKAS---%
 
 
@@ -389,7 +359,7 @@ npm install @ionic/angular>
 			%---END ITEMIZE ROUTING---%
 
 			
-		\end{itemize}
+		\end{enumerate}
 		
 		%---END ITEMIZE MENYALIN ROOT LEVEL---%
 
