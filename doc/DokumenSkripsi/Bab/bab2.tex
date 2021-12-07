@@ -183,6 +183,11 @@ npx cap update
 		loadingText="Loading more data...">
 	</ion-infinite-scroll-content>
 </ion-infinite-scroll>
+	\end{lstlisting}
+	\item Icon \\
+	Icon merupakan komponen yang berupa gambar kecil, yang merepresentasikan sebuah berkas, dan folder di dalam aplikasi. Penggunaan Icon adalah dengan menggunakan {\it tag} <ion-icon> (Kode~\ref{lst:iconComponent}).
+	\begin{lstlisting}[language=php, label={lst:iconComponent}, caption=Potongan Kode Program dari Icon Home]
+<ion-icon name="home"></ion-icon>
 	\end{lstlisting} 
 	\item Item \\
 	Item merupakan elemen yang dapat berisi teks, ikon, avatar, gambar, masukan, dan elemen asli atau kustom lainnya. Biasanya, item ditempatkan di dalam sebuah {\it list} bersamaan dengan item lainnya dengan {\it tag} <ion-item> (Kode~\ref{lst:itemComponent}). Dapat dilakukan {\it swipe}, dihapus, disusun ulang, dan diedit.
@@ -226,7 +231,7 @@ export class ModalPage {
 	constructor() {}		
 }
 		\end{lstlisting} 
-\newpage
+
 	\item Navigation \\
 	Navigation adalah komponen mandiri yang digunakan untuk membuat komponen baru ke dalam {\it stack}. Navigation tidak terikat kepada {\it router} tertentu, mengakibatkan jika kita membuat komponen Navigation dan melakukan {\it push} komponen lain ke dalam {\it stack}, komponen tersebut tidak akan mempengaruhi router aplikasi secara keseluruhan. Sesuai dengan kasus penggunaan dimana ketika pengguna bisa memilih modal, yang membutuhkan sub-navigasinya sendiri, tanpa membuatnya terikat ke URL aplikasi. 
 
@@ -557,7 +562,7 @@ ion-action-sheet {
 }
 		\end{lstlisting} 
 
-			\item {\it Distributed Sass} \\
+			\item {\it Distributed Scss} \\
 			Berkas scss telah dihapus dari dist/. Sebagai gantinya, variabel CSS harus digunakan untuk tema.
 
 		\end{itemize}
