@@ -65,15 +65,21 @@ Tipe Laporan : {\bf \tipePR} -
 		}
 		
 \section{Latar Belakang}
-\textit{World Schools Debating Championships} (WSDC) merupakan sebuah turnamen debat bahasa inggris tahunan untuk tim-tim tingkat sekolah menengah yang mewakili berbagai negara. Pada awalnya, kompetisi universitas dunia akan diselenggarakan di Sydney pada bulan juli 1988. Anggota Federasi Debat Australia menyadari bahwa tidak ada acara serupa untuk siswa sekolah menengah. Namun kejuaraan universitas dunia ini menunjukkan potensi yang sangat besar untuk kompetisi debat internasional yang melibatkan siswa dari seluruh dunia. Pada tahun 1991, kejuaraan diadakan di Edinburgh. Dan sejak saat itu nama World Schools Debating Championships digunakan dan berlangsung hingga saat ini. 
+\textit{World Schools Debating Championships} (WSDC) merupakan sebuah turnamen debat bahasa inggris tahunan untuk tim-tim tingkat sekolah menengah yang mewakili berbagai negara. WSDC pada tahun 2017 diselenggarakan di Bali, Indonesia. Untuk menunjang acara tersebut, terdapat sebuah aplikasi bernama WSDC 2017 Bali. Aplikasi ini memiliki fitur-fitur yang dapat digunakan oleh pengguna, yaitu : 
 
-Ionic merupakan sebuah kerangka kerja {\it open source} lintas platform yang memungkinkan untuk mengembangkan aplikasi hibrida yang bekerja pada berbagai macam platform seluler seperti {\it android}, iOS, dan Windows. Ionic memiliki berbagai macam \textit{front-end library} dan \textit{User Interface}(UI) {\it Components} yang digunakan untuk  perancangan aplikasi menggunakan teknologi web seperti HTML, {\it Cascading Style Sheets} CSS, dan Javascript. 
+\begin{enumerate}
+	\item Halaman Utama yang berisi berita acara serta pemberitahuan terakhir acara WSDC 2017 Bali.
+	\item Halaman Berita yang digunakan untuk melihat berita acara WSDC 2017 Bali.
+	\item Halaman pengumuman untuk melihat pengumuman mengenai acara WSDC 2017 Bali.
+	\item Halaman jadwal untuk melihat jadwal acara WSDC 2017 Bali.
+	\item Halaman \textit{Venues} yang digunakan untuk melihat lokasi dari acara WSDC 2017 Bali.
+	\item Halaman Draw untuk melihat pembagian \textit{venue} serta pembagian kubu proposisi dan oposisi dari hasil pengundian untuk para negara peserta WSDC 2017 Bali.
+	\item Halaman Info untuk melihat daftar pemenang dari kompetisi WSDC 2017 Bali.
+\end{enumerate}
 
-Pada Ionic 5, terdapat beberapa kerangka Javascript yang dapat diimplementasikan menggunakan \textit{framework} Ionic, seperti Angular, React, dan Vue. Angular pada awalnya diciptakan oleh karyawan Google, Misko Hevert dan Adam Abrons pada tahun 2008, yang masih bernama AngularJS dan dikembangkan dalam JavaScript. Pada saat itu sebagian besar situs web menggunakan aplikasi multi-halaman, yaitu ketika pengguna mengklik tautan, maka browser harus mengambil dokumen HTML yang diminta dari server. React adalah \textit{library} JavaScript {\it open source} untuk membangun antarmuka pengguna, dikelola oleh Facebook, dapat digunakan dalam berbagai skenario termasuk aplikasi iOS dan Android. Sedangkan Vue merupakan \textit{framework}  progresif untuk membangun antarmuka pengguna untuk web, yang dapat digunakan baik untuk projek kecil dan untuk {\it Single-Page Applications} (SPAs).
+Aplikasi ini dikembangkan oleh PT DNArtworks menggunakan \textit{framework} Ionic versi 3. Ionic Framework merupakan sebuah kerangka kerja {\it open source} lintas platform yang memungkinkan untuk mengembangkan aplikasi hibrida yang bekerja pada berbagai macam platform seluler seperti {\it android}, iOS, dan Windows. Ionic memiliki berbagai macam \textit{front-end library} dan \textit{User Interface}(UI) {\it Components} yang digunakan untuk  perancangan aplikasi menggunakan teknologi web seperti HTML, {\it Cascading Style Sheets} CSS, dan Javascript. 
 
-WSDC yang diselenggarakan di Bali, Indonesia pada tahun 2017 memiliki sebuah aplikasi bernama WSDC 2017 Bali yang dikembangkan oleh PT DNArtworks menggunakan \textit{framework} Ionic 3 untuk menunjang acara tersebut. Terdapat beberapa fungsi penting di dalam aplikasi ini, diantaranya adalah jadwal untuk kegiatan peserta, berita tentang acara WSDC yang sedang berlangsung, pemberitahuan mengenai kegiatan acara kepada peserta, informasi lokasi dan penunjuk arah ke lokasi kegiatan acara yang sedang berlangsung, dan notifikasi untuk peserta. 
-
-Aplikasi WSDC 2017 Bali yang dibangun pada tahun 2017 oleh PT DNArtworks menggunakan Ionic versi 3. Sedangkan Ionic versi 3 saat ini sudah tidak mendapat pembaruan lagi. Saat ini Ionic semakin berkembang dan sudah mencapai Ionic versi 5. Maka dari itu, pada skripsi ini akan dibuat sebuah aplikasi pembaruan dari aplikasi WSDC 2017 Bali saat ini, dengan menggunakan \textit{framework} Ionic versi 5. \textit{Framework} yang lebih baru memungkinkan perawatan yang lebih efisien, serta dukungan teknologi yang lebih terbarukan.
+Aplikasi WSDC 2017 Bali dibangun menggunakan Ionic versi 3. Sedangkan Ionic versi 3 saat ini sudah tidak mendapat pembaruan lagi. Saat ini Ionic semakin berkembang dan sudah mencapai Ionic versi 5. Maka dari itu, pada skripsi ini akan dibuat sebuah aplikasi pembaruan dari aplikasi WSDC 2017 Bali, dengan menggunakan \textit{framework} Ionic versi 5. Dengan menggunakan \textit{framework} yang lebih baru, maka memungkinkan perawatan yang lebih efisien, serta dukungan teknologi yang lebih terbarukan.
 \section{Rumusan Masalah}
 Rumusan masalah yang akan dibahas pada skripsi ini adalah sebagai berikut :
 \begin{itemize}
@@ -96,12 +102,12 @@ Detail bagian pekerjaan skripsi sesuai dengan rencan kerja terkahir adalah sebag
 	\begin{enumerate}
 		\item \textbf{Melakukan studi mengenai \textit{framework} Ionic versi 3 dan versi 5.} \\
 		{\bf Status :} Ada sejak rencana kerja skripsi.\\
-		{\bf Hasil :} 
+		{\bf Hasil :} \textit{Framework} Ionic versi 3 dan versi 5 telah dipelajari untuk diimplementasikan pada migrasi aplikasi WSDC 2017 Bali menggunakan Ionic versi 5. Perbedaan dari Ionic versi 3 dan versi 5 telah didokumentasikan di dalam Bab 2 Landasan Teori.
 		%Jelasin ada apa aja di ionic 3 sama ionic 5, apa itu ionic, dll
 		
 		\item \textbf{Menganalisis aplikasi WSDC 2017 Bali.}\\
 		{\bf Status :} Ada sejak rencana kerja skripsi.\\
-		{\bf Hasil :}Aplikasi WSDC 2017 Bali saat ini menggunakan \textit{framework} Ionic versi 3, dengan Angular versi 4.1.3, dan juga Cordova. Aplikasi WSDC 2017 Bail memiliki berbagai fitur yang dapat diakses oleh pengguna, yaitu halaman utama, melihat berita, pengumuman, jadwal, lokasi acara, hasil pengundian, informasi terkait penyelenggara, serta hasil dari kompetisi WSDC 2017 Bali. 
+		{\bf Hasil :} Dari hasil analisis, diketahui bahwa aplikasi WSDC 2017 Bali saat ini menggunakan \textit{framework} Ionic versi 3, dengan Angular versi 4.1.3, dan juga Cordova. Aplikasi WSDC 2017 Bail memiliki berbagai fitur yang dapat diakses oleh pengguna, yaitu halaman utama, melihat berita, pengumuman, jadwal, lokasi acara, hasil pengundian, informasi terkait penyelenggara, serta hasil dari kompetisi WSDC 2017 Bali. 
 		
 		\item \textbf{Mempelajari bagaimana cara melakukan migrasi Ionic versi 3 ke versi 5.}\\
 		{\bf Status :} Ada sejak rencana kerja skripsi.\\
@@ -112,15 +118,15 @@ Detail bagian pekerjaan skripsi sesuai dengan rencan kerja terkahir adalah sebag
 		{\bf Hasil :} Belum dikerjakan dan akan dikerjakan pada Skripsi 2.
 		
 		\item \textbf{Membangun aplikasi WSDC dengan \textit{framework} Ionic versi 5.}\\
-		{\bf Status :} Ada sejak rencana kejra skripsi.\\
+		{\bf Status :} Ada sejak rencana kerja skripsi.\\
 		{\bf Hasil :} Baru memulai melakukan migrasi aplikasi WSDC 2017 Bali pada tahap pertama, yaitu migrasi dari Ionic versi 3 ke Ionic versi 4. Dengan hasil yaitu aplikasi sudah dapat berjalan, namun belum memiliki fitur apapun selain berpindah halaman. Lalu selanjutnya akan dikerjakan pada Skripsi 2.
 		
 		\item \textbf{Melakuakn pengujian dan eksperimen.}\\
-		{\bf Status :} Ada sejak rencana kejra skripsi.\\
+		{\bf Status :} Ada sejak rencana kerja skripsi.\\
 		{\bf Hasil :} Belum dikerjakan dan akan dikerjakan pada Skripsi 2.
 		
 		\item \textbf{Menulis dokumen skripsi.}\\
-		{\bf Status :} Ada sejak rencana kejra skripsi.\\
+		{\bf Status :} Ada sejak rencana kerja skripsi.\\
 		{\bf Hasil :} Dokumen skripsi telah telah dikerjakan dengan hasil Bab 1 sampai dengan Bab 3, yang terdiri atas pendahuluan, landasan teori, dan analisis. Untuk pendahuluan, terdiri atas latar belakang, rumusan masalah, tujuan, batasan masalah, metodologi, serta sistematika pembahasan. Lalu untuk landasan teori terdiri atas landasan teori mengenai WSDC 2017 Bali, serta Ionic Framework. Dan yang terakhir yaitu analisis mengenai sistem kini dan sistem usulan.
 
 	\end{enumerate}
@@ -128,9 +134,9 @@ Detail bagian pekerjaan skripsi sesuai dengan rencan kerja terkahir adalah sebag
 \section{Pencapaian Rencana Kerja}
 Langkah-langkah kerja yang berhasil diselesaikan dalam Skripsi 1 ini adalah sebagai berikut:
 \begin{enumerate}
-\item
-\item
-\item
+\item Mempelajari \textit{framework} Ionic versi 3 dan versi 5.
+\item Menganalisis aplikasi WSDC 2017 Bali yang sudah ada.
+\item Menulis dokumen skripsi untuk Bab 1 sampai dengan Bab 3
 \end{enumerate}
 
 
@@ -139,10 +145,7 @@ Langkah-langkah kerja yang berhasil diselesaikan dalam Skripsi 1 ini adalah seba
 %TULISKAN BAGIAN INI JIKA DOKUMEN ANDA TIPE A ATAU C
 Kendala - kendala yang dihadapi selama mengerjakan skripsi :
 \begin{itemize}
-	\item Terlalu banyak melakukan prokratinasi
-	\item Terlalu banyak godaan berupa hiburan (game, film, dll)
-	\item Skripsi diambil bersamaan dengan kuliah ASD karena selama 5 semester pertama kuliah tersebut sangat dihindari dan tidak diambil, dan selama 4 semester terakhir kuliah tersebut selalu mendapat nilai E
-	\item Mengalami kesulitan pada saat sudah mulai membuat program komputer karena selama ini selalu dibantu teman
+	\item Terbatasnya referensi mengenai \textit{framework} Ionic, khusunya yang membahas Ionic versi 5.
 \end{itemize}
 
 \vspace{1cm}
