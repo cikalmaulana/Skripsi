@@ -28,13 +28,13 @@
 %ISILAH DATA BERIKUT INI:
 \newcommand{\nama}{Rajasa Cikal Maulana Solihin}
 \newcommand{\@npm}{2017730084}
-\newcommand{\tanggal}{13/12/2021} %Tanggal pembuatan dokumen
+\newcommand{\tanggal}{21/12/2021} %Tanggal pembuatan dokumen
 \newcommand{\@judultopik}{Pembuatan Ulang Aplikasi WSDC 2017 Bali dengan Ionic 5} % Judul/topik anda
 \newcommand{\kodetopik}{PAN5192}
 \newcommand{\jumpemb}{1} % Jumlah pembimbing, 1 atau 2
 \newcommand{\pembA}{Pascal Alfadian Nugroho, S.Kom., M.Comp.}
 \newcommand{\pembB}{-}
-\newcommand{\semesterPertama}{45 - Ganjil 21/22} % semester pertama kali topik diambil, angka 1 dimulai dari sem Ganjil 96/97
+\newcommand{\semesterPertama}{51 - Ganjil 21/22} % semester pertama kali topik diambil, angka 1 dimulai dari sem Ganjil 96/97
 \newcommand{\lamaSkripsi}{1} % Jumlah semester untuk mengerjakan skripsi s.d. dokumen ini dibuat
 \newcommand{\kulPertama}{Skripsi 1} % Kuliah dimana topik ini diambil pertama kali
 \newcommand{\tipePR}{B} % tipe progress report :
@@ -102,8 +102,9 @@ Detail bagian pekerjaan skripsi sesuai dengan rencan kerja terkahir adalah sebag
 	\begin{enumerate}
 		\item \textbf{Melakukan studi mengenai \textit{framework} Ionic versi 3 dan versi 5.} \\
 		{\bf Status :} Ada sejak rencana kerja skripsi.\\
-		{\bf Hasil :} \textit{Framework} Ionic versi 3 dan versi 5 telah dipelajari untuk diimplementasikan pada migrasi aplikasi WSDC 2017 Bali menggunakan Ionic versi 5. Perbedaan dari Ionic versi 3 dan versi 5 telah didokumentasikan di dalam Bab 2 Landasan Teori.
-		%Jelasin ada apa aja di ionic 3 sama ionic 5, apa itu ionic, dll
+		{\bf Hasil :} Hasil studi mengenai \textit{framework} Ionic versi 3 dan versi 5, sebagaimana yang telah didokumentasikan pada Bab 2 Landasan Teori, bahwa Ionic Framework merupakan sebuah kerangka kerja \textit{open source} lintas platform yang memungkinkan untuk mengembangkan aplikasi hibrida yang bekerja pada berbagai macam platform seluler seperti Android, iOS, dan Windows. Selain itu, telah dipelajari juga bahwa Ionic Framework mendukung komunikasi dengan menggunakan Native API, untuk menambahkan fungsionalitas ke dalam aplikasi Ionic apapun dengan menggunakan Capacitor atau Cordova. Capacitor sendiri merupakan penyedia akses ke perangkat \textit{native} dan fitur platform, serta untuk menyediakan satu set API untuk mengembangkan aplikasi seluler secara hibrida. Sedangkan Cordova, merupakan \textit{framework open source} yang dapat menggunakan teknologi web seperti HTML, JavaScript, dan CSS untuk membangun aplikasi untuk perangkat bergerak yang berjalan pada sistem operasi mobile. Cordova ini lah yang digunakan dalam pengerjaan skripsi ini. Lalu, baik pada Ionic versi 3 maupun versi 5, terdapat UI Component yang digunakan untuk membuat UI untuk aplikasi di dalam Ionic Framework.
+		
+		\textit{Framework} Ionic versi 3 dan versi 5 telah dipelajari untuk diimplementasikan pada migrasi aplikasi WSDC 2017 Bali menggunakan Ionic versi 5. Perbedaan dari Ionic versi 3 dan versi 5 telah didokumentasikan di dalam Bab 2 Landasan Teori.
 		
 		\item \textbf{Menganalisis aplikasi WSDC 2017 Bali.}\\
 		{\bf Status :} Ada sejak rencana kerja skripsi.\\
@@ -111,7 +112,25 @@ Detail bagian pekerjaan skripsi sesuai dengan rencan kerja terkahir adalah sebag
 		
 		\item \textbf{Mempelajari bagaimana cara melakukan migrasi Ionic versi 3 ke versi 5.}\\
 		{\bf Status :} Ada sejak rencana kerja skripsi.\\
-		{\bf Hasil :} Migrasi Ionic versi 3 ke versi 5 dilakukan dengan dua tahap, yaitu pertama melakukan migrasi dari Ionic versi 3 ke Ionic versi 4, lalu yang kedua melakukan migrasi kembali dari Ionic versi 4 ke Ionic versi 5. Pada migrasi pertama, terdapat beberapa langkah, seperti membuat proyek Ionic baru, serta menyalin Angular Services, \textit{root-level items}, global sass, dan bagian-bagian aplikasi. Terdapat perbedaan mengenai komponen yang ada pada Ionic versi 3 dan versi 4, yang kemudian harus disesuaikan. Lalu yang kedua melakukan migrasi kembali dari Ionic versi 4 ke Ionic versi 5, terdapat perbedaan antara kedua versi tersebut. Perbedaan tersebut yaitu terdapat perubahan pada CSS yang digunakan, Events Services, serta pemasangan \textit{package} dan \textit{dependencies}. Selain itu terdapat juga perubahan komponen-komponen yang harus disesuaikan.
+		{\bf Hasil :} Migrasi Ionic versi 3 ke versi 5 dilakukan dengan dua tahap, yaitu pertama melakukan migrasi dari Ionic versi 3 ke Ionic versi 4, lalu yang kedua melakukan migrasi kembali dari Ionic versi 4 ke Ionic versi 5. Pada migrasi pertama, terdapat beberapa langkah, diantaranya adalah sebagai berikut :
+		\begin{enumerate}
+			\item Membuat Proyek Ionic Baru, yaitu dengan mengetikan perintah \textbf{ionic start myApp blank} pada \textit{Command Line}.
+			\item Menyalin Angular Services yang berada di \textbf{src/providers} pada Ionic 3, menjadi \textbf{src/app/services} pada Ionic 4.
+			\item Menyalin \textit{Root-level Items} pada Ionic 3, dengan alamat direktori yang sama atau dengan beberapa perubahan pada Ionic 4. Perubahan-perubahan yang terjadi sudah didokumentasikan pada dokumen skripsi di Bab 2 Landasan Teori, Sub Bab 2.2.3 Migrasi Ionic 3 ke Ionic 5.
+			\item Menyalin Global Scss, yang semula berada di \textbf{src/app/global.scss} menjadi \textbf{src/global.scss} pada Ionic 4.
+			\item Menyalin Bagian-Bagian Aplikasi, yaitu keseluruhan bagian yang ada pada aplikasi, baik itu halaman maupun fitur yang ada, termasuk juga perubahan UI Component.
+		\end{enumerate}
+		 
+		Lalu yang kedua melakukan migrasi kembali dari Ionic versi 4 ke Ionic versi 5, terdapat perbedaan antara kedua versi tersebut. Perbedaan tersebut antara lain sebagai berikut :
+		\begin{enumerate}
+			\item CSS, yang terdiri dari CSS Utilities, Display Classes, Kelas Activated, Focuses, dan Hover States, serta Distributed Scss.
+			\item Komponen pada Ioinc 5 mengalami perbedaan-perbedaan dibandingkan dengan Ionic 4 yang menyangkut perbedaan nama, penambahan kelas, serta penghapusan atau penggantian komponen.
+			\item Warna pada Ionic 5 mengalami perubahan terkait dengan warna bawaan.
+			\item Events \textbf{@ionic/angular} dihapus pada Ionic 5.
+			\item Package dan Dependencies ditambahkan pada Ionic 5.
+		\end{enumerate}				
+		Langkah-langkah untuk melakukan migrasi dari Ionic versi 3 ke versi 5 telah dijelaskan pada Bab 2 Landasan Teori, pada Sub Bab 2.2.3 Migrasi Ionic 3 ke Ionic 5.
+		%rinciin juga gimana migrasi3 ke 4, 4 ke 5, gausah detail, intinya aja yg udah dipelajari
 		
 		\item \textbf{Mendesain kelas aplikasi.}\\
 		{\bf Status :} Ada sejak rencana kerja skripsi.\\
@@ -119,9 +138,9 @@ Detail bagian pekerjaan skripsi sesuai dengan rencan kerja terkahir adalah sebag
 		
 		\item \textbf{Membangun aplikasi WSDC dengan \textit{framework} Ionic versi 5.}\\
 		{\bf Status :} Ada sejak rencana kerja skripsi.\\
-		{\bf Hasil :} Baru memulai melakukan migrasi aplikasi WSDC 2017 Bali pada tahap pertama, yaitu migrasi dari Ionic versi 3 ke Ionic versi 4. Dengan hasil yaitu aplikasi sudah dapat berjalan, namun belum memiliki fitur apapun selain berpindah halaman. Lalu selanjutnya akan dikerjakan pada Skripsi 2.
+		{\bf Hasil :} Baru memulai melakukan migrasi aplikasi WSDC 2017 Bali pada tahap pertama, yaitu migrasi dari Ionic versi 3 ke Ionic versi 4, sesuai dengan yang tertulis pada Bab 2 Landasan Teori. Dengan hasil yaitu aplikasi sudah dapat berjalan, namun belum memiliki fitur apapun selain berpindah halaman, dan menampilkan halaman utama yang hanya berisi satu buah kompnen Card. Lalu selanjutnya akan dikerjakan pada Skripsi 2.
 		
-		\item \textbf{Melakuakn pengujian dan eksperimen.}\\
+		\item \textbf{Melakukan pengujian dan eksperimen.}\\
 		{\bf Status :} Ada sejak rencana kerja skripsi.\\
 		{\bf Hasil :} Belum dikerjakan dan akan dikerjakan pada Skripsi 2.
 		
