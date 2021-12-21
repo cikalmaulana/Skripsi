@@ -9,6 +9,12 @@
 \usepackage{etoolbox}
 \usepackage{setspace} 
 \usepackage{lipsum} 
+\usepackage{listings}
+\lstset{
+basicstyle=\ttfamily,
+frame=single
+}
+\renewcommand\lstlistingname{Kode}
 \setlength{\headsep}{30pt}
 \usepackage[inner=2cm,outer=2.5cm,top=2.5cm,bottom=2cm]{geometry} %margin
 % \pagestyle{empty}
@@ -78,7 +84,7 @@ Tipe Laporan : {\bf \tipePR} -
 	\item Halaman Info untuk melihat kontak-kontak penting yang dapat dihubungi, kata-kata dalam bahasa Indonesia, serta kredit terhadap pembuat dari aplikasi WSDC 2017 Bali.
 \end{enumerate}
 
-Aplikasi ini dikembangkan oleh PT DNArtworks menggunakan \textit{framework} Ionic versi 3. Ionic Framework merupakan sebuah kerangka kerja {\it open source} lintas platform yang memungkinkan untuk mengembangkan aplikasi hibrida yang bekerja pada berbagai macam platform seluler seperti {\it android}, iOS, dan Windows. Ionic memiliki berbagai macam \textit{front-end library} dan \textit{User Interface}(UI) {\it Components} yang digunakan untuk  perancangan aplikasi menggunakan teknologi web seperti HTML, {\it Cascading Style Sheets} CSS, dan Javascript. 
+Aplikasi ini dikembangkan oleh PT DNArtworks Komunikasi Visual menggunakan \textit{framework} Ionic versi 3. Ionic Framework merupakan sebuah kerangka kerja {\it open source} lintas platform yang memungkinkan untuk mengembangkan aplikasi hibrida yang bekerja pada berbagai macam platform seluler seperti {\it android}, iOS, dan Windows. Ionic memiliki berbagai macam \textit{front-end library} dan \textit{User Interface}(UI) {\it Components} yang digunakan untuk  perancangan aplikasi menggunakan teknologi web seperti HTML, {\it Cascading Style Sheets} CSS, dan Javascript. 
 
 Aplikasi WSDC 2017 Bali dibangun menggunakan Ionic versi 3. Sedangkan Ionic versi 3 saat ini sudah tidak mendapat pembaruan lagi. Saat ini Ionic semakin berkembang dan sudah mencapai Ionic versi 5. Maka dari itu, pada skripsi ini akan dibuat sebuah aplikasi pembaruan dari aplikasi WSDC 2017 Bali, dengan menggunakan \textit{framework} Ionic versi 5. Dengan menggunakan \textit{framework} yang lebih baru, maka memungkinkan perawatan yang lebih efisien, serta dukungan teknologi yang lebih terbarukan.
 \section{Rumusan Masalah}
@@ -103,34 +109,720 @@ Detail bagian pekerjaan skripsi sesuai dengan rencan kerja terkahir adalah sebag
 	\begin{enumerate}
 		\item \textbf{Melakukan studi mengenai \textit{framework} Ionic versi 3 dan versi 5.} \\
 		{\bf Status :} Ada sejak rencana kerja skripsi.\\
-		{\bf Hasil :} Hasil studi mengenai \textit{framework} Ionic versi 3 dan versi 5, sebagaimana yang telah didokumentasikan pada Bab 2 Landasan Teori, bahwa Ionic Framework merupakan sebuah kerangka kerja \textit{open source} lintas platform yang memungkinkan untuk mengembangkan aplikasi hibrida yang bekerja pada berbagai macam platform seluler seperti Android, iOS, dan Windows. Selain itu, telah dipelajari juga bahwa Ionic Framework mendukung komunikasi dengan menggunakan Native API, untuk menambahkan fungsionalitas ke dalam aplikasi Ionic apapun dengan menggunakan Capacitor atau Cordova. Capacitor sendiri merupakan penyedia akses ke perangkat \textit{native} dan fitur platform, serta untuk menyediakan satu set API untuk mengembangkan aplikasi seluler secara hibrida. Sedangkan Cordova, merupakan \textit{framework open source} yang dapat menggunakan teknologi web seperti HTML, JavaScript, dan CSS untuk membangun aplikasi untuk perangkat bergerak yang berjalan pada sistem operasi mobile. Cordova ini lah yang digunakan dalam pengerjaan skripsi ini. Lalu, baik pada Ionic versi 3 maupun versi 5, terdapat UI Component yang digunakan untuk membuat UI untuk aplikasi di dalam Ionic Framework.
+		{\bf Hasil :} Ionic Framework merupakan sebuah kerangka kerja {\it open source} lintas platform yang memungkinkan untuk mengembangkan aplikasi hibrida yang bekerja pada berbagai macam platform seluler seperti {\it android}, iOS, dan Windows. Ionic memiliki berbagai macam \textit{front-end library} dan komponen \textit{User Interface}(UI) yang digunakan untuk  perancangan aplikasi menggunakan teknologi web seperti HTML, CSS, dan Javascript, dengan integrasi untuk berbagai \textit{framework} seperti Angular, React, dan Vue. Saat pertama kali dibuat, Ionic menggunakan AngularJS. Namun, seiring saat Angular versi 2 yang menggunakan Typescript dirilis, Ionic versi 2 dan selanjutnya menggunakan Angular. Lalu, pada tahun 2019, Ionic mendukung penggunaan \textit{framework} lain selain Angular, yaitu React dan Vue. Di dalam Ionic, Angular digunakan untuk membangun aplikasi dan perutean, sehingga aplikasi dapat sejalan dengan ekosistem Angular lainnya. Ionic menyediakan {\it toolkit} Angular untuk membangun aplikasi dan terintegrasi dengan Angular CLI resmi yang menyediakan fitur khusus untuk aplikasi Ionic Angular. Pada saat skripsi ini dibuat, Ionic versi terbaru adalah Ionic versi 5, sedangkan Angular yang digunakan adalah Angular versi 12. 
+
+		Ionic mendukung komunikasi dengan menggunakan Native API yang terintegrasi untuk menambahkan fungsionalitas ke dalam aplikasi Ionic apapun dengan menggunakan Capacitor atau Cordova. Native API memungkinkan pengembangan aplikasi langsung terintegrasi ke dalam platform. Pengembang dapat membuat aplikasi pada perangkat {\it mobile} untuk dapat diimplementasikan ke berbagai {\it platform}, seperti IOS dan Android, setelah pengembangan selesai di dalam {\it framework native} tanpa perlu perubahan, dan tidak mempengaruhi peforma dari aplikasi tersebut. Dengan terpasangnya Ionic Native, maka aplikasi akan memiliki antar muka yang diperlukan untuk berinteraksi dengan salah satu {\it plug-in}, yaitu Capacitor atau Cordova.
 		
-		\textit{Framework} Ionic versi 3 dan versi 5 telah dipelajari untuk diimplementasikan pada migrasi aplikasi WSDC 2017 Bali menggunakan Ionic versi 5. Perbedaan dari Ionic versi 3 dan versi 5 telah didokumentasikan di dalam Bab 2 Landasan Teori.
+		Capacitor bertujuan untuk menyediakan akses ke perangkat {\it native} dan fitur platform, serta untuk menyediakan satu set API untuk mengembangkan aplikasi seluler secara hibrida, {\it Progressive Web Apps} berbasis web, dan aplikasi komputer berbasis Electron. Capacitor merupakan penerus dari Cordova, dengan tujuan untuk memungkinkan aplikasi web modern berjalan di semua platform utama. Capacitor juga mendapat dukungan terhadap banyak {\it plugi-n} Cordova. Sedangkan Cordova merupakan {\it framework open source} yang dapat membuat pengembang untuk menggunakan teknologi seperti HTML, JavaScript, dan CSS untuk membangun aplikasi untuk perangkat bergerak yang dapat berjalan pada beberapa sistem operasi {\it mobile}. Cordova menyediakan antarmuka antara WebView dan lapisan {\it native} pada perangkat. Selain dapat bekerja pada dua platform seluler Android dan IOS, Cordova juga dapat digunakan pada platform seluler seperti Windows Phone, Blackberry, dan FireOS.
+		
+		Untuk mengonfigurasi proyek Cordova, saat ini dapat menggunakan {\it Command Line Tool} (CLI). CLI membuat proyek dasar dan mengonfigurasinya agar berfungsi dengan platform seluler apa pun yang didukung yang dapat digunakan. Cordova CLI juga dapat membuat pengembang memliki integrasi dan pengelolaan {\it plug-in}. Selain itu, CLI juga dapat mengkompilasi aplikasi untuk berjalan pada simulator atau pada perangkat {\it native}. Serupa dengan Capacitor, Cordova membuat pengembang dapat mengakses fitur {\it native} dari sebuah perangkat, seperti kamera, papan ketik, dan geolokasi, menggunakan {\it plugin}. {\it Framework} Ionic telah terdapat berbagai macam TypeScript {\it wrapper} untuk {\it plugins} Cordova.  Untuk dapat menggunakan Cordova Plugins, yaitu dengan memasang Cordova Plugins terlebih dahulu (Kode~\ref{lst:installCordova}), dan memperbaruinya ke versi terakhir (Kode~\ref{lst:updateCordova}) yang dapat dilakukan melalui CLI. Setiap {\it plugins} memiliki dua komponen, yaitu kode {\it native} (Cordova), dan kode TypeScript (Ionic Native). Cordova Plugins juga dibungkus di dalam Promise atau Observable untuk menyediakan antarmuka {\it plug-in}.
+		
+\begin{lstlisting}[caption=Kode untuk Memperbarui Cordova Plugins,label={lst:installCordova},language=html]
+npm install cordova-plugin-name
+npx cap sync
+\end{lstlisting}
+
+\begin{lstlisting}[language=php, label={lst:updateCordova}, caption=Kode untuk Memperbarui Cordova Plugins]
+npm install cordova-plugin-name@2
+npx cap update
+\end{lstlisting} 
+		
+		{\it Framework} Ionic menggunakan kemampuan Angular dalam memperluas kosakata HTML, yaitu menyertakan {\it tag} khusus untuk menciptakan seluruh rangkaian komponen. \textit{Framework} Ionic memiliki komponen yang memiliki awalan ion, sehingga dapat dikenali dalam markup. Sama seperti {\it tag} HTML standar, komponen Ionic juga dapat menerima berbagai macam atribut sebagai pengaturan dari {\it tag} tersebut, seperti mengatur id atau mendefinisikan kelas CSS tambahan. Terdapat beberapa komponen yang ada pada {\it framework} Ionic yaitu :
+\begin{itemize}
+	\item Action Sheet \\
+	Merupakan dialog yang menampilkan serangkaian opsi, yang muncul di atas konten aplikasi dan harus ditutup secara manual oleh pengguna sebelum pengguna dapat melanjutkan interaksi dengan aplikasi. Untuk menutup Action Sheet terdapat beberapa cara, termasuk mengetuk latar belakang atau menekan tombol escape di desktop.
+
+	\item Alert \\
+	Alert merupakan dialog yang menampilkan informasi kepada pengguna, atau mengumpulkan informasi dari pengguna menggunakan input. Alert muncul di atas konten aplikasi, dan harus ditutup secara manual oleh pengguna sebelum pengguna dapat melanjutkan interaksi dengan aplikasi. Secara opsional, terdapat header, sub header, dan pesan yang ada pada Alert.
+	\newpage
+	\item Badge \\
+	Merupakan elemen {\it inline block} yang biasanya muncul di dekat elemen lain, berisi angka atau karakter lain, yang digunakan sebagai pemberitahuan bahwa ada item tambahan yang terkait dengan suatu elemen dan menunjukan berapa banyak item yang ada. Penggunaan Badge dengan menggunakan {\it tag} <ion-badge> (Kode~\ref{lst:badgeComponent}).
+	\begin{lstlisting}[language=php, label={lst:badgeComponent}, caption=Potongan Kode Program dari Badge Component]
+<ion-badge>99</ion-badge>
+	\end{lstlisting} 
+	\item Button \\
+	Merupakan elemen yang dapat diklik, biasanya digunakan dalam formulir atau di mana pun yang membutuhkan fungsionalitas tombol. Button biasanya menampilkan teks, ikon, atau bisa juga keduanya. Button dapat pula menggunakan atribut untuk menampilkannya dengan penampilan tertentu. Penggunaan Button dengan menggunakan {\it tag} <ion-button>  (Kode~\ref{lst:buttonComponent}).
+	\begin{lstlisting}[language=php, label={lst:buttonComponent}, caption=Potongan Kode Program dari Button Component]
+<ion-button>Default</ion-button>
+	\end{lstlisting} 
+
+	\item Card \\
+	Merupakan bagian standar dari tampilan antarmuka yang berfungsi sebagai titik masuk ke dalam informasi yang lebih detail. Card dapat menjadi satu komponen, tetapi sering kali terdiri dari beberapa header, judul, sub judul, dan konten. Penggunaan Card dengan menggunakan {\it tag} <ion-card> yang dapat berisi {\it header}, {\it subtitle}, {\it title}, dan {\it content} (Kode~\ref{lst:cardComponent}).
+	\begin{lstlisting}[language=php, label={lst:cardComponent}, caption=Potongan Kode Program dari Card Component]
+<ion-card>
+	<ion-card-header>
+		<ion-card-subtitle>
+			Card Subtitle
+		</ion-card-subtitle>
+		<ion-card-title>
+			Card Title
+		</ion-card-title>
+	</ion-card-header>
+				
+	<ion-card-content>
+		Card Content
+	</ion-card-content>
+</ion-card>
+	\end{lstlisting} 
+	\item Content\\
+	Komponen content merupakan penyedia area konten yang bisa digunakan untuk mengontrol area yang dapat digulir. Dalam satu tampilan, setidaknya terdapat satu buah content. Content juga dapat dimodifikasi padding, margin, dan lainnya menggunakan {\it global style} yang berada di CSS Utilites atau mengubahnya secara individual dengan menggunakan CSS. Penggunaan Content dengan menggunakan {\it tag} <ion-content> (Kode~\ref{lst:contentComponent}). \newpage
+	\begin{lstlisting}[language=php, label={lst:contentComponent}, caption=Potongan Kode Program dari Content Component]
+<ion-content
+	[scrollEvents]="true"
+	(ionScrollStart)="logScrollStart()"
+	(ionScroll)="logScrolling($event)"
+	(ionScrollEnd)="logScrollEnd()">
+		<h1>Main Content</h1>
+			
+			<div slot="fixed">
+				<h1>Fixed Content</h1>
+			</div>
+</ion-content>
+	\end{lstlisting} 
+	\item Date and Time Pickers\\
+	Datetime merupakan penampil antarmuka untuk pengguna memilih tanggal dan waktu. Terdapat kolom yang dapat digulir yang dapat digunakan untuk memilih tahun, bulan, hari, jam, dan menit secara individual. Komponen ini menampilkan nilai di dua tempat, yaitu di komponen <ion-datetime> (Kode~\ref{lst:datetimeComponent}), dan di antarmuka pemilih yang ditampilkan dari bawah layar.
+		\begin{lstlisting}[language=html, label={lst:datetimeComponent}, caption=Kode Program dari Datetime Component dengan Format Bulan-Hari-Tahun]
+<ion-datetime displayFormat="MM DD YY" placeholder="Select Date">
+</ion-datetime>
+		\end{lstlisting} 
+	\item Infinite Scroll	\\
+	Komponen Infinite Scroll memanggil sebuah action yang akan dilakukan ketika pengguna menggulir dengan jarak tertentu dari bawah atau atas halaman. Penggunaan Infinite Scroll dengan menggunakan {\it tag} <ion-infinite-scroll> (Kode~\ref{lst:InfiteScrollComponent}). 
+	\begin{lstlisting}[language=php, label={lst:InfiteScrollComponent}, caption=Potongan Kode Program dari Infinite Scroll Component]
+<ion-infinite-scroll threshold="100px" 
+(ionInfinite)="loadData($event)">
+	<ion-infinite-scroll-content
+		loadingSpinner="bubbles"
+		loadingText="Loading more data...">
+	</ion-infinite-scroll-content>
+</ion-infinite-scroll>
+	\end{lstlisting}
+	\item Icon \\
+	Icon merupakan komponen yang berupa gambar kecil, yang merepresentasikan sebuah berkas, dan folder di dalam aplikasi. Penggunaan Icon adalah dengan menggunakan {\it tag} <ion-icon> (Kode~\ref{lst:iconComponent}).
+	\begin{lstlisting}[language=php, label={lst:iconComponent}, caption=Potongan Kode Program dari Icon Home]
+<ion-icon name="home"></ion-icon>
+	\end{lstlisting} 
+	\item Item \\
+	Item merupakan elemen yang dapat berisi teks, ikon, avatar, gambar, masukan, dan elemen asli atau kustom lainnya. Biasanya, item ditempatkan di dalam sebuah {\it list} bersamaan dengan item lainnya dengan {\it tag} <ion-item> (Kode~\ref{lst:itemComponent}). Dapat dilakukan {\it swipe}, dihapus, disusun ulang, dan diedit.
+	\begin{lstlisting}[language=php, label={lst:itemComponent}, caption=Potongan Kode Program dari Item Component]
+<ion-item>
+	<ion-label>
+		Item
+	</ion-label>
+</ion-item>
+	\end{lstlisting} 
+	\item Menu \\
+	Komponen menu merupakan panel navigasi samping yang dapat dilakukan {\it slides} dari sisi pada tampilan halaman saat ini menggunakan {\it tag} <ion-menu> (Kode~\ref{lst:menuComponent}). Pada dasarnya, Menu muncul dari kiri, tetapi sisi kemunculan menu dapat diganti. 
+
+	\begin{lstlisting}[language=php, label={lst:menuComponent}, caption=Potongan Kode Program dari Menu Component]
+<ion-menu side="start" menuId="first" contentId="main">
+	<ion-header>
+		<ion-toolbar color="primary">
+			<ion-title>Start Menu</ion-title>
+		</ion-toolbar>
+	</ion-header>
+	<ion-content>
+		<ion-list>
+			<ion-item>Menu Item</ion-item>
+			<ion-item>Menu Item</ion-item>
+			<ion-item>Menu Item</ion-item>
+			<ion-item>Menu Item</ion-item>
+			<ion-item>Menu Item</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-menu>
+	\end{lstlisting} 
+	\item Modal \\
+	Modal merupakan kotak dialog yang muncul diatas konten aplikasi lain, dan harus diutup secara manual oleh pengguna sebelum pengguna dapat melanjutkan menggunakan aplikasi. Modal berguna sebagai komponen pilihan ketika ada banyak opsi untuk dipilih, atau melakukan penyaringan isi di dalam daftar, serta beberapa kasus serupa lainnya (Kode~\ref{lst:modalComponent}).
+		\begin{lstlisting}[language=php, label={lst:modalComponent}, caption=Kode Program dari Modal]
+import { Component, Input } from '@angular/core';
+
+@Component({
+	selector: 'modal-page',
+})
+export class ModalPage {	
+	constructor() {}		
+}
+		\end{lstlisting} 
+\newpage
+	\item Navigation \\
+	Navigation adalah komponen mandiri yang digunakan untuk membuat komponen baru ke dalam {\it stack}. Navigation tidak terikat kepada {\it router} tertentu, mengakibatkan jika kita membuat komponen Navigation dan melakukan {\it push} komponen lain ke dalam {\it stack}, komponen tersebut tidak akan mempengaruhi router aplikasi secara keseluruhan. Sesuai dengan kasus penggunaan dimana ketika pengguna bisa memilih modal, yang membutuhkan sub-navigasinya sendiri, tanpa membuatnya terikat ke URL aplikasi. 
+
+	\item Segment \\
+	Segment berfungsi untuk menampilkan pilihan tombol bagi pengguna untuk beralih di antara tampilan berbeda di dalam satu halaman yang sama. Segment menampilkan sekelompok tombol-tombol yang dapat diklik, dalam baris horizontal. Penggunaan Segment dengan menggunakan {\it tag} <ion-segment> (Kode~\ref{lst:segmentComponent}).
+	\begin{lstlisting}[language=php, label={lst:segmentComponent}, caption=Kode Program dari Segment]
+<ion-segment (ionChange)="segmentChanged($event)">
+	<ion-segment-button value="friends">
+		<ion-label>Friends</ion-label>
+	</ion-segment-button>
+	<ion-segment-button value="enemies">
+		<ion-label>Enemies</ion-label>
+	</ion-segment-button>
+</ion-segment>
+	\end{lstlisting}
+	
+	\item Tabs \\
+	Tabs merupakan navigasi {\it top-level} yang mengimplementasi sebuah {\it tab-based navigation}. Tabs dapat digunakan dengan {\it tag} <ion-tabs> (Kode~\ref{lst:tabsComponent}) yang tidak memliki {\it styling} apapun dan bekerja sebagai {\it router outlet} untuk menangani navigasi. 
+		\begin{lstlisting}[language=php, label={lst:tabsComponent}, caption=Kode Program dari Tabs]
+<ion-tabs>
+	<ion-tab-bar slot="bottom">
+		<ion-tab-button tab="schedule">
+			<ion-icon name="calendar"></ion-icon>
+			<ion-label>Schedule</ion-label>
+			<ion-badge>6</ion-badge>
+		</ion-tab-button>
+
+		<ion-tab-button tab="speakers">
+			<ion-icon name="person-circle"></ion-icon>
+			<ion-label>Speakers</ion-label>
+		</ion-tab-button>
+	</ion-tab-bar>
+</ion-tabs>
+		\end{lstlisting}
+
+	\item Toolbar \\
+	Toolbar dapat diposisikan di atas ataupun di bawah konten. Ketika toolbar ditempatkan di header <ion-header> akan muncul di bagian atas konten, sedangkan ketika ditempatkan di footer <ion-footer> akan muncul tetap di bagian bawah. Toolbar menggunakan {\it tag} <ion-toolbar>, yang di dalamnya dapat berisi button, dan dapat menggunakan border (Kode~\ref{lst:datetimeComponent}). \newpage
+		\begin{lstlisting}[language=php, label={lst:datetimeComponent}, caption=Kode Program dari Toolbar dengan Button di Dalamnya]
+<ion-toolbar>
+	<ion-buttons slot="start">
+		<ion-back-button></ion-back-button>
+	</ion-buttons>
+	<ion-title>Back Button</ion-title>
+</ion-toolbar>
+		\end{lstlisting} 
+\end{itemize}
+
+Selain komponen-komponen yang telah disebutkan, tertapat beberapa komponen lainnya yang tidak disebutkan disini. Komponen-komponen tersebut yaitu Checkbox, Chip, Floating Action Button, Grid, Icon, Input, List, Popover, Progress Indicator, Radio, Refresher, Reorder, Routing, Searchbar, Segment, Select, Slides, Toast, dan Toggle.
+
+
+		%Hasil studi mengenai \textit{framework} Ionic versi 3 dan versi 5, sebagaimana yang telah didokumentasikan pada Bab 2 Landasan Teori, bahwa Ionic Framework merupakan sebuah kerangka kerja \textit{open source} lintas platform yang memungkinkan untuk mengembangkan aplikasi hibrida yang bekerja pada berbagai macam platform seluler seperti Android, iOS, dan Windows. Selain itu, telah dipelajari juga bahwa Ionic Framework mendukung komunikasi dengan menggunakan Native API, untuk menambahkan fungsionalitas ke dalam aplikasi Ionic apapun dengan menggunakan Capacitor atau Cordova. Capacitor sendiri merupakan penyedia akses ke perangkat \textit{native} dan fitur platform, serta untuk menyediakan satu set API untuk mengembangkan aplikasi seluler secara hibrida. Sedangkan Cordova, merupakan \textit{framework open source} yang dapat menggunakan teknologi web seperti HTML, JavaScript, dan CSS untuk membangun aplikasi untuk perangkat bergerak yang berjalan pada sistem operasi mobile. Cordova ini lah yang digunakan dalam pengerjaan skripsi ini. Lalu, baik pada Ionic versi 3 maupun versi 5, terdapat UI Component yang digunakan untuk membuat UI untuk aplikasi di dalam Ionic Framework.
+		
+		%\textit{Framework} Ionic versi 3 dan versi 5 telah dipelajari untuk diimplementasikan pada migrasi aplikasi WSDC 2017 Bali menggunakan Ionic versi 5. Perbedaan dari Ionic versi 3 dan versi 5 telah didokumentasikan di dalam Bab 2 Landasan Teori.
 		
 		\item \textbf{Menganalisis aplikasi WSDC 2017 Bali.}\\
 		{\bf Status :} Ada sejak rencana kerja skripsi.\\
-		{\bf Hasil :} Dari hasil analisis, diketahui bahwa aplikasi WSDC 2017 Bali saat ini menggunakan \textit{framework} Ionic versi 3, dengan Angular versi 4.1.3, dan juga Cordova. Aplikasi WSDC 2017 Bali memiliki berbagai fitur yang dapat diakses oleh pengguna, yaitu halaman utama, melihat berita, pengumuman, jadwal, lokasi acara, hasil pengundian, informasi terkait penyelenggara, serta hasil dari kompetisi WSDC 2017 Bali. 
+		{\bf Hasil :} Aplikasi WSDC 2017 Bali digunakan untuk menunjang keberlangsungan acara WSDC 2017 yang diselenggarakan di Bali, Indonesia. Pada halaman utama, pengguna dapat melihat berita-berita terkait acara WSDC 2017 Bali dan tombol {\it read more} yang apabila ditekan akan mengarahkan pengguna untuk melihat berita terkait acara WSDC 2017 Bali dengan format pdf. Aplikasi WSDC 2017 Bali dapat digunakan untuk melihat berita acara, pengumuman, jadwal peserta, lokasi acara, hasil pengundian, info, serta pengumuman pemenang dari acara WSDC 2017 Bali (Gambar~\ref{fig:useCaseDiagram}). 
+
+Aplikasi WSDC 2017 Bali dibangun menggunakan {\it framework} Ionic versi 3, dan Angular versi 4.1.3. Dengan digunakannya Ionic Framework, maka memungkinkan aplikasi WSDC 2017 Bali menggunakan teknologi web seperti HTML, dan CSS. Lalu untuk membangun aplikasi WSDC 2017 Bali agar dapat berjalan secara {\it native}, digunakanlah Cordova. Penggunaan Cordova memungkinkan aplikasi WSDC 2017 Bali kompatibel dengan perangkat berbasis Android dan IOS, tanpa perlu mengimplementasikannya kembali ke dalam bahasa masing-masing platform.
+
+\begin{figure}[H]
+		\centering
+	    \includegraphics[scale=0.4]{useCaseDiagram.png}
+	    \caption{{\it Use Case Diagram} Aplikasi WSDC 2017 Bali}
+	    \label{fig:useCaseDiagram}
+\end{figure}
+
+\newpage
+Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu yang terdapat pada aplikasi WSDC 2017 Bali. Untuk mengakses {\it sidebar}, pengguna dapat menekan tombol navigasi berada di sebelah kiri atas aplikasi WSDC 2017 Bali. Selain itu dapat pula dengan cara mengusap layar dari kiri ke kanan. Untuk menutup {\it sidebar}, pengguna dapat menekan area di luar {\it sidebar}, atau dengan cara menekan tombol silang di sebelah kiri atas {\it sidebar}. Terdapat fitur-fitur yang ada pada aplikasi WSDC 2017 Bali yang dapat diakses melalui {\it sidebar}. Fitur-fitur tersebut adalah sebagai berikut :
+\begin{enumerate}
+	\item Halaman Utama : Pengguna dapat melihat halaman utama aplikasi WSDC 2017 Bali yang berisi berita acara WSDC 2017 Bali, serta pemberitahuan terakhir terkait acara WSDC 2017 Bali.
+	\begin{itemize}
+		\item Nama: Melihat Halaman Utama WSDC 2017 Bali.
+		\item Aktor: Pengguna Aplikasi WSDC 2017 Bali.
+		\item Deskripsi: Pengguna melihat halaman awal yang berisi berita acara WSDC 2017 Bali dengan urutan paling atas adalah berita yang lebih baru terbit, dan sebuah {\it card} yang berisi pengumuman terakhir terkait acara WSDC 2017 Bal, yang dapat diklik dan mengarahkan pengguna ke halaman Pemberitahuan.
+		\item Kondisi Awal: Pengguna belum membuka aplikasi WSDC 2017 Bali.
+		\item Kondisi Akhir: Aplikasi menampilkan halaman utama aplikasi WSDC 2017 Bali.
+		\item Skenario utama:\\
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
+				\hline
+				No & Aksi Aktor                               & Reaksi Sistem                                          \\ \hline
+				1  & Pengguna membuka aplikasi WSDC 2017 Bali & Aplikasi WSDC 2017 Bali menampilkan halaman selamat datang. \\ \hline
+				2  &                                          & Aplikasi WSDC 2017 Bali menampilkan halaman utama           \\ \hline
+				3  & Pengguna mengklik {\it card} Announcements & Aplikasi WSDC 2017 Bali menampilkan halaman Pemberitahuan. \\ \hline
+			\end{tabular}
+			\caption{Tabel Skenario dari Halaman Utama}
+			\label{table:skenarioHalamanUtama}
+		\end{table}
+	\end{itemize}
+	\item Berita : Pengguna dapat melihat berita acara WSDC 2017 Bali dengan format pdf.
+	\begin{itemize}
+		\item Nama: Melihat Berita Acara WSDC 2017 Bali.
+		\item Aktor: Pengguna aplikasi WSDC 2017 Bali.
+		\item Deskripsi: Melihat berita acara dengan format pdf yang berisi kejadian kejadian pada WSDC 2017 Bali di tanggal tertentu sesuai dengan berita yang diklik.
+		\item Kondisi Awal: Pengguna telah membuka halaman utama aplikasi WSDC 2017 Bali.
+		\item Kondisi Akhir : Berkas berita WSDC 2017 Bali dengan format pdf dapat dilihat dan dibaca.
+		\item Skenario Utama: \\
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
+				\hline
+				No & Aksi Aktor                               & Reaksi Sistem                                          \\ \hline
+				1  & Pengguna menekan tombol {\it read more} pada berita di halaman utama aplikasi WSDC 2017 Bali. & Aplikasi WSDC 2017 Bali mengarahkan pengguna ke halaman Google Drive yang menampilkan berita acara WSDC 2017 Bali \\ \hline
+				2  &  & Aplikasi WSDC 2017 Bali menampilkan berita acara WSDC 2017 Bali \\ \hline
+			\end{tabular}
+			\caption{Tabel Skenario dari Berita}
+			\label{table:skenarioBerita}
+		\end{table}
+	\end{itemize}
+	\newpage
+	\item Pengumuman : Pengguna dapat melihat pengumuman mengenai keberlangsungan acara WSDC 2017 Bali.
+	\begin{itemize}
+		\item Nama: Melihat pemberitahuan acara WSDC 2017 Bali.
+		\item Aktor: Pengguna aplikasi WSDC 2017 Bali.
+		\item Deskripsi: Melihat pemberitahuan acara WSDC 2017 Bali yang tersusun menurun berdasarkan jam dan tanggal dirilisnya pengumuman tersebut.
+		\item Kondisi Awal: Pengguna telah membuka aplikasi WSDC 2017 Bali.
+		\item Kondisi Akhir: Halaman pemberitahuan terbuka dan menampilkan pemberitahuan acara WSDC 2017 bali yang tersusun menurun berdasarkan jam dan tanggal.
+		\item Skenario utama: \\
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
+				\hline
+				No & Aksi Aktor                               & Reaksi Sistem                                          \\ \hline
+				1  & Pengguna menekan tombol {\it hamburger} di pojok kiri atas aplikasi WSDC 2017 Bali. & Aplikasi WSDC 2017 Bali menampilkan {\it sidebar} \\ \hline
+				2  & Pengguna menekan tombol Announcement & Aplikasi WSDC 2017 Bali menampilkan halaman pengumuman. \\ \hline
+			\end{tabular}
+			\caption{Tabel Skenario dari Halaman Pemberitahuan}
+			\label{table:skenarioHalamanPemberitahuan}
+		\end{table}
+	\end{itemize}
+	\item Jadwal : Pengguna dapat melihat jadwal acara WSDC 2017 Bali yang ditampilkan berdasarkan tanggal dan hari.
+	\begin{itemize}
+		\item Nama: Melihat jadwal acara WSDC 2017 Bali.
+		\item Aktor: Pengguna aplikasi WSDC 2017 Bali.
+		\item Deskripsi: Melihat jadwal acara WSDC 2017 Bali yang ditampilkan berdasarkan tanggal dan hari, serta dapat berpindah pindah tanggal agar dapat melihat jadwal apa saja yang tersedia pada hari itu. Untuk setiap harinya terdapat nama kegiatan, waktu yang menunjukan pukul berapa acara tersebut mulai dan selesai, serta lokasi kegiatan acara tersebut.
+		\item Kondisi awal: Pengguna telah membuka aplikasi WSDC 2017 Bali.
+		\item Kondisi akhir: Halaman jadwal terbuka dan menampilkan jadwal acara yang ditampilkan berdasarkan tanggal dan hari, serta dapat melihat acara dengan detail waktu, tempat, dan nama kegiatan.
+		\item Skenario utama: \\
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
+				\hline
+				No & Aksi Aktor                               & Reaksi Sistem                                          \\ \hline
+				1  & Pengguna menekan tombol {\it hamburger} di pojok kiri atas aplikasi WSDC 2017 Bali. & Aplikasi WSDC 2017 Bali menampilkan {\it side bar} \\ \hline
+				2  & Pengguna menekan tombol Schedule & Aplikasi WSDC 2017 Bali menampilkan halaman jadwal. \\ \hline
+				3  & Pengguna menekan tanggal yang berada di atas halaman jadwal & Aplikasi WSDC 2017 Bali menampilkan jadwal berdasarkan tanggal yang dipilih oleh pengguna dengan detail waktu, lokasi, dan nama kegiatan. \\ \hline
+			\end{tabular}
+			\caption{Tabel Skenario dari Halaman Jadwal}
+			\label{table:skenarioHalamanJadwal}
+		\end{table}
+	\end{itemize} \newpage
+	\item {\it Venues} : Pengguna dapat melihat lokasi dari berlangsungnya acara WSDC 2017 Bali.
+	\begin{itemize}
+		\item Nama: Melihat lokasi acara WSDC 2017 Bali.
+		\item Aktor: Pengguna aplikasi WSDC 2017 Bali.
+		\item Deskripsi: Pengguna dapat melihat lokasi dari berlangsungnya acara WSDC 2017 Bali, yang dibagi menjadi 4 kategroi, yaitu: {\it Ceremony Venues}, {\it Competition Venues}, {\it Delegates Accomodation}, dan {\it Educational Tour}. Masing masing dari lokasi tersebut akan menampikan peta, dan lokasi acara yang dituju dengan penanda yang ada di dalam peta. Serta dapat menampilkan jarak pengguna saat ini terhadap lokasi yang ingin dituju.
+		\item Kondisi awal: Pengguna telah membuka aplikasi WSDC 2017 Bali.
+		\item Kondisi akhir: Halaman {\it venues} yang sesuai dengan keinginan pengguna terbuka.
+		\item Pengecualian: Aplikasi WSDC 2017 Bali tidak akan menampilkan jarak antara lokasi pengguna saat ini ke lokasi yang ingin dituju, jika pengguna berada di luar pulau Bali.
+		\item Skenario utama: \\
+		 \begin{table}[H]
+			\centering
+			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
+				\hline
+				No & Aksi Aktor                               & Reaksi Sistem                                          \\ \hline
+				1  & Pengguna menekan tombol {\it hamburger} di pojok kiri atas aplikasi WSDC 2017 Bali. & Aplikasi WSDC 2017 Bali menampilkan {\it sidebar} \\ \hline
+				2  & Pengguna menekan tombol Venues & Aplikasi WSDC 2017 Bali menampilkan halaman Venues yang berisi {\it Ceremony Venues}, {\it Competition Venues}, {\it Delegates Accomodation}, dan {\it Educational Tour}.\\ \hline
+				3  & Pengguna menekan kategori {\it venues} yang diinginkan. & Aplikasi WSDC 2017 Bali menampilkan peta, nama lokasi acara dengan disertai penanda yang ada di dalam peta, dan jarak antara lokasi pengguna saat ini dan lokasi acara.\\ \hline
+			\end{tabular}
+			\caption{Tabel Skenario dari Halaman {\it Venues}}
+			\label{table:skenarioHalamanVenues}
+		\end{table}
+	\end{itemize}
+	\item {\it Draw} : Pengguna dapat melihat pembagian {\it venue} serta pembagian kubu proposisi dan oposisi dari hasil pengundian untuk para negara peserta WSDC 2017 Bali.
+	\begin{itemize}
+		\item Nama: Melihat halaman {\it draw}
+		\item Aktor: Pengguna aplikasi WSDC 2017 Bali.
+		\item Deskripsi: Pengguna dapat melihat hasil dari pengundian kubu untuk negara peserta WSDC 2017 Bali, yaitu kubu proposisi dan oposisi, serta lokasi {\it venue} untuk kedua kubu tersebut. Aplikasi WSDC 2017 Bali akan menampilkan nama-nama negara peserta dengan benderanya masing-masing yang terbagi menjadi dua kubu di dalam satu tabel, kubu oposisi dan kubu proposisi.
+		\item Kondisi awal: Pengguna telah membuka aplikasi WSDC 2017 Bali.
+		\item Kondisi akhir: Halaman {\it draw} terbuka.
+		\item Skenario utama: \\
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
+				\hline
+				No & Aksi Aktor                               & Reaksi Sistem                                          \\ \hline
+				1  & Pengguna menekan tombol {\it hamburger} di pojok kiri atas aplikasi WSDC 2017 Bali. & Aplikasi WSDC 2017 Bali menampilkan {\it side bar} \\ \hline
+				2  & Pengguna menekan tombol Draw & Aplikasi WSDC 2017 Bali menampilkan halaman Draw yang dapat digulir kebawah untuk menampilkan keseluruhan tabel. \\ \hline
+			\end{tabular}
+			\caption{Tabel Skenario dari Halaman {\it Draw}}
+			\label{table:skenarioHalamanDraw}
+		\end{table}
+	\end{itemize}
+	\item Hasil : Pengguna dapat melihat pemenang dari kompetisi WSDC 2017 Bali.
+	\begin{itemize}
+		\item Nama : Melihat halaman Hasil.
+		\item Aktor: Pengguna aplikasi WSDC 2017 Bali.
+		\item Deskripsi: Pengguna dapat melihat pemenang dari kompetisi WSDC 2017 Bali, yang terdiri dari babak semifinal, perempatfinal, dan perdelapanfinal. Dari masing-masing babak, ditampilkan negara-negara yang berpartisipasi, serta skor dari negara-negara tersebut. 
+		\item Kondisi awal: Pengguna telah membuka aplikasi WSDC 2017 Bali.
+		\item Kondisi akhir: Halaman Hasil terbuka.
+		\item Skenario utama: \\
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
+				\hline
+				No & Aksi Aktor                               & Reaksi Sistem                                          \\ \hline
+				1  & Pengguna menekan tombol {\it hamburger} di pojok kiri atas aplikasi WSDC 2017 Bali. & Aplikasi WSDC 2017 Bali menampilkan {\it side bar} \\ \hline
+				2  & Pengguna menekan tombol Result & Aplikasi WSDC 2017 Bali menampilkan halaman Result yang berisi pemenang dari babak semifinal, perempatfinal, dan perdelapanfinal. \\ \hline
+			\end{tabular}
+			\caption{Tabel Skenario dari Halaman Hasil}
+			\label{table:skenarioHalamanHasil}
+		\end{table}
+	\end{itemize}
+	\item Info : Pengguna dapat melihat info-info seputar kontak-kontak penting yang dapat dihubungi, kosa kata dalam Bahasa Indonesia sehari-hari, serta {\it credits} kepada pembuat aplikasi WSDC 2017 Bali.
+	\begin{itemize}
+		\item Nama: Melihat halaman Info.
+		\item Aktor: Pengguna aplikasi WSDC 2017 Bali.
+		\item Deskripsi: Pengguna dapat melihat info kontak-kontak yang dapat dihubungi, dengan menekan nomor telepon yang ada di halaman Info. Setelah menekan nomor telepon tersebut, pengguna akan diarahkan ke aplikasi pemanggilan. Lalu ada juga informasi mengenai kosa kata dalam Bahasa Indonesia, yang dapat dipakai oleh pengguna, khususnya peserta WSDC 2017 Bali dari mancanegara. Serta terdapat pula informasi mengenai siapa saja yang berperan dalam pembuatan aplikasi WSDC 2017 Bali.
+		\item Kondisi awal: Pengguna telah membuka aplikasi WSDC 2017 Bali.
+		\item Kondisi akhir: Halaman Info terbuka.
+		\item Skenario utama: \\
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
+				\hline
+				No & Aksi Aktor                               & Reaksi Sistem                                          \\ \hline
+				1  & Pengguna menekan tombol {\it hamburger} di pojok kiri atas aplikasi WSDC 2017 Bali. & Aplikasi WSDC 2017 Bali menampilkan {\it side bar} \\ \hline
+				2  & Pengguna menekan tombol Info & Aplikasi WSDC 2017 Bali menampilkan halaman Info \\ \hline
+			\end{tabular}
+			\caption{Tabel Skenario dari Halaman Info}
+			\label{table:skenarioHalamanInfo}
+		\end{table}
+	\end{itemize}
+\end{enumerate}
 		
 		\item \textbf{Mempelajari bagaimana cara melakukan migrasi Ionic versi 3 ke versi 5.}\\
 		{\bf Status :} Ada sejak rencana kerja skripsi.\\
-		{\bf Hasil :} Migrasi Ionic versi 3 ke versi 5 dilakukan dengan dua tahap, yaitu pertama melakukan migrasi dari Ionic versi 3 ke Ionic versi 4, lalu yang kedua melakukan migrasi kembali dari Ionic versi 4 ke Ionic versi 5. Pada langkah migrasi yang pertama, terdapat beberapa langkah, diantaranya adalah sebagai berikut :
+		{\bf Hasil :} Untuk melakukan migrasi dari Ionic 3 ke Ionic 5 memerlukan dua tahap, yaitu migrasi dari Ionic 3 ke Ionic 4, dan migrasi Ionic 4 ke Ionic 5. Tahapan migrasi tersebut adalah sebagai berikut: \newpage
+
+\begin{enumerate}
+	\item Migrasi Ionic 3 ke Ionic 4 \\
+	Ada beberapa langkah untuk melakukan migrasi dari Ionic 3 ke dalam Ionic 4, yaitu:
+
+	\begin{enumerate}
+		\item Membuat Proyek Ionic Baru \\
+		Untuk membuat projek Ionic baru tanpa {\it template} apapun dengan menggunakan perintah \textbf{ionic start myApp blank} dan memilih Angular sebagai {\it framework}nya~(Kode \ref{lst:createNewProject}).
+		
+\begin{lstlisting}[caption=Perintah Membuat Proyek Ionic Baru,label={lst:createNewProject},language=html]
+ionic start myApp blank
+\end{lstlisting}
+
+		\item Menyalin Angular Services \\
+		Menyalin Angular Services yang pada Ionic 3 berada di \textbf{src/providers}, menjadi \textbf{src/app/services} pada Ionic 4.
+
+		\item Menyalin {\it Root-level Items} \\
+		Menyalin seluruh {\it Root-level Items} pada Ionic versi 3 dengan direktori yang sama atau dengan beberapa perubahan. Terdapat beberapa perubahan baik itu nama maupun letak dari suatu fungsi atau berkas. Perubahan tersebut yaitu:
+
 		\begin{enumerate}
-			\item Membuat proyek Ionic baru, yaitu dengan mengetikan perintah \textbf{ionic start myApp blank} pada \textit{Command Line}.
-			\item Menyalin Angular Services yang berada di \textbf{src/providers} pada Ionic 3, menjadi \textbf{src/app/services} pada Ionic 4.
-			\item Menyalin \textit{Root-level Items} pada Ionic 3, dengan alamat direktori yang sama atau dengan beberapa perubahan pada Ionic 4. Perubahan-perubahan yang terjadi sudah didokumentasikan pada dokumen skripsi di Bab 2 Landasan Teori, Sub Bab 2.2.3 Migrasi Ionic 3 ke Ionic 5.
-			\item Menyalin Global Scss, yang semula berada di \textbf{src/app/global.scss} menjadi \textbf{src/global.scss} pada Ionic 4.
-			\item Menyalin bagian-bagian aplikasi, yaitu keseluruhan bagian yang ada pada aplikasi, baik itu halaman maupun fitur yang ada, termasuk juga perubahan UI Component.
+		
+			\item {\it Imports} \\
+			Terjadi perubahaan dalam mengimpor {\it package} di Ionic 3 dan Ionic 4. Daftar perubahan tersebut adalah sebagai berikut :
+			\begin{enumerate}	
+				\item Component Imports \\
+				Untuk kepentingan konsistensi dengan {\it framework} lain, maka untuk mengimpor komponen Ionic diawali dengan ion~(Kode \ref{lst:componentImportIonic4}).
+				\begin{lstlisting}[language=php, label={lst:componentImportIonic4}, caption=Impor Komponen pada Ionic 4]
+import { IonInput, IonList, IonSlides } from '@ionic/angular';
+				\end{lstlisting}
+
+				\item Package Name \\
+				Terdapat perubahan pada Ionic 4, dimana nama {\it package} diubah menjadi @ionic/angular. Untuk dapat menggunakannya dengan cara mencopot pemasangan Ionic 3 dan memasang Ionic 4 dengan nama {\it package} yang baru (Kode~\ref{lst:packageNameIonic4}).
+				\begin{lstlisting}[language=php, label={lst:packageNameIonic4}, caption=Pencopotan Ionic 3 dan Pemasangan Ionic 4 dengan nama {\it package} baru]
+npm uninstall ionic-angular
+npm install @ionic/angular>
+				\end{lstlisting}
+			\end{enumerate}
+
+			\item Penamaan Berkas \\
+			Terjadi perubahaan penamaan pada berkas di Ionic 3 dan Ionic 4. Daftar perubahan tersebut adalah sebagai berikut:
+			\begin{enumerate}
+				\item {\it Page} \\
+				Terdapat perbedaan nama {\it file} pada folder Pages. Perbedaan tersebut adalah sebagai berikut :\\
+				Pada Ionic 3 : home.html  \\
+				Terdapat perubahan pada Ionic 4 menjadi : home.page.html
+	
+				\item {\it App} \\
+				Terdapat perbedaan nama {\it file} pada direktori App. Perbedaan tersebut adalah sebagai berikut : \\
+				Pada Ionic 3 : app.html \\
+				Terdapat perubahan pada Ionic 4 menjadi : app-component.html
+			\end{enumerate}
 		\end{enumerate}
+		
+		\item Menyalin Global Scss dari \textbf{src/app/app.scss} pada Ionic 3, menjadi \textbf{src/global.scss} pada Ionic 4.
+
+		\item Menyalin Bagian-bagian Aplikasi \\
+		Menyalin keseluruhan bagian yang ada pada aplikasi, baik itu halaman maupun fitur yang ada, dengan ketentuan sebagai berikut :
+
+		%---START ITEMIZE MENYALIN BAGIAN BAGIAN APLIKASi---%
+		\begin{itemize}
+			\item Shadow DOM sudah aktif secara {\it default}.
+			\item Halaman atau komponen Sass tidak lagi dibungkus dengan tag halaman / komponen dan harus menggunakan opsi styleUrls milik Angular dari dekorator @Component.
+			\item RxJS \\
+			Pada Ionic 3, RxJS yang digunakan adalah versi 5. Sedangkan pada Ionic 4, RxJS yang digunakan adalah versi 6.
+
+			\item Lifecycle Hooks tertentu harus digantikan dengan Angular Hooks.
+			\item Perubahan markup yang mungkin saja dibutuhkan. \\
+			Sejak Ionic 4 dipindahkan ke elemen kustom, terdapat perubahan yang signifikan terkait dengan markup untuk setiap komponen. Semua perubahan ini dibuat untuk mengikuti spesifikasi dari elemen kustom. Komponen-komponen yang berubah tersebut yaitu :
+
+			\begin{itemize}
+				\item {\it Button} \\
+				Terdapat perbedaan pada {\it tag} untuk membuat Button, yang semula pada Ionic 3 adalah <button> menjadi <ion-button> pada Ionic 4~(Kode \ref{lst:buttonIonic4}).
+				\begin{lstlisting}[language=php, label={lst:buttonIonic4}, caption=Penggunaan Button pada Ionic 4]
+<ion-button (click)="doSomething()">
+	Default Button
+</ion-button>
+				\end{lstlisting}
+
+				\item Floating Action Button (FAB) \\
+				Terdapat perbedaan pada {\it tag} di dalam <ion-fab>, yang semula pada Ionic 3 adalah <button> menjadi <ion-fab-button> pada Ionic 4~(Kode \ref{lst:fabIonic4}).
+				\begin{lstlisting}[language=php, label={lst:fabIonic4}, caption=Penggunaan Floating Action Button pada Ionic 4]
+<ion-fab>
+	<ion-fab-button>
+		<ion-icon name="add"></ion-icon>
+	</ion-fab-button>
+	<ion-fab-list>
+		<ion-fab-button>
+			<ion-icon name="logo-facebook">
+			</ion-icon>
+		</ion-fab-button>
+	</ion-fab-list>
+</ion-fab>
+				\end{lstlisting}
+
+				\item Label \\
+				Pada Ionic 4, atribut untuk mengatur posisi dari label digabungkan dengan atribut {\it position}~(Kode \ref{lst:atributIonic4}). \newpage
+				\begin{lstlisting}[language=php, label={lst:atributIonic4}, caption=Penggunaan Atribut {\it Position} pada Ionic 4]
+<ion-item>
+	<ion-label position="floating">
+		Floating Label
+	</ion-label>
+	<!-- input -->
+</ion-item>
+				\end{lstlisting}
+
+				\item Menu \\
+				Terdapat beberapa perubahan nama pada Ionic 4, yaitu :
+				\begin{itemize}
+					\item Perubahan Nama Properti
+					Terdapat perubahan nama properti pada Ionic 4. Perubahan-perubahan tersebut adalah sebagai berikut : 
+						\begin{itemize}
+							\item swipeEnable \\
+							Terdapat perubahan swipeEnable pada Ionic 4. Perubahan tersebut adalah sebagai berikut : \\
+							Pada Ionic 3 : swipeEnabled \\
+							Sedangkan pada Ionic 4 menjadi : swipeGesture
+
+							\item content \\
+							Terdapat perubahan content pada Ionic 4. Perubahan tersebut adalah sebagai berikut : \\
+							Pada Ionic 3 : content \\
+							Sedangkan pada Ionic 4 menjadi : contentId
+						\end{itemize}	
+					
+
+					\item Perubahan Nama Events
+					Terdapat perubahan nama {\it events} pada Ionic 4. Perubahan-perubahan tersebut adalah sebagai berikut :
+						\begin{itemize}
+							\item ionClose \\
+							Terdapat perubahan ionClose pada Ionic 4. Perubahan tersebut adalah sebagai berikut : \\
+							Pada Ionic 3 : ionClose \\
+							Sedangkan pada Ionic 4 menjadi : ionDidClose
+
+							\item ionOpen \\
+							Terdapat perubahan ionOpen pada Ionic 4. Perubahan tersebut adalah sebagai berikut : \\
+							Pada Ionic 3 : ionOpen \\
+							Sedangkan pada Ionic 4 menjadi : ionDidOpen
+						\end{itemize}	
+				\end{itemize}
+				\item Nav \\
+				Terdapat perubahan Nav pada Ionic 4. Perubahan-perubahan tersebut adalah sebagai berikut :
+				\begin{itemize}
+					\item Perubahan Nama Method 
+					Terdapat perubahan nama {\it method} pada Ionic 4. Perubahan-perubahan tersebut adalah sebagai berikut :
+					\begin{itemize}
+						\item remove \\
+						Terdapat perubahan remove pada Ionic 4. Perubahan tersebut adalah sebagai berikut :\\
+						Pada Ionic 3 : remove \\
+						Sedangkan pada Ionic 4 untuk menghindari konflik dengan HTML, berubah menjadi : removeIndex 
+						\newpage
+						\item getActiveChildNavs \\
+						Terdapat perubahan getActiveChildNavs pada Ionic 4. Perubahan tersebut adalah sebagai berikut :\\
+						Pada Ionic 3 : getActiveChildNavs \\
+						Sedangkan pada Ionic 4 menjadi : getChildNavs
+					\end{itemize}
+
+					\item Perubahan Nama Prop \\
+					Terdapat perubahan nama prop pada Ionic 4. Perubahan tersebut adalah sebagai berikut :\\
+					Pada Ionic 3 : swipeBackEnabled   \\
+					Sedangkan pada Ionic 4 menjadi : swipeGesture
+				\end{itemize}	
+
+				\item Navbar \\
+				Pada Ionic 4, terdapat penghapusan terhadap komponen <ion-navbar> karena untuk menjaga agar selalu menggunakan <ion-toolbar> dengan {\it back button} yang eksplisit~\ref{lst:navbarIonic4}.
+				\begin{lstlisting}[language=php, label={lst:navbarIonic4}, caption=Penggunaan Navbar pada Ionic 4 dengan {\it Back Button}]
+<ion-toolbar>
+	<ion-buttons slot="start">
+		<ion-back-button></ion-back-button>
+	</ion-buttons>
+	<ion-title>My Navigation Bar</ion-title>
+</ion-toolbar>
+				\end{lstlisting}
+			\end{itemize}
+			Selain yang telah disebutkan, terdapat beberapa perubahan lainnya yang tidak ditulis seperti Action Sheet, Alert, Colors, Content, Datetime, Dynamic Mode, Fixed Content, Grid, Icon, Infinite Scroll, Item, Item Divider, Item Options, Item Sliding, List Header, Loading, Modal, Option, Overlays, Popover, Radio, Range, Refresher, Scroll, Segment Button, Select, Show When, Hide When, Spinner, Tabs, Typography, Therming, Toast, dan Toolbar~\footnote{\textit{`Breaking Changes'} https://github.com/ionic-team/ionic-framework/blob/main/angular/BREAKING.md, Diakses pada 13 November 2021. \label{ref:breakingChanges}}.
+		\end{itemize}
+		%---END ITEMIZE MENYALIN BAGIAN BAGIAN APLIKASi---%
+
+
+	\end{enumerate}
+	%---END ENUM MIGRASI IONIC 3 KE IONIC 4---%
+	\item Migrasi Ionic 4 ke Ionic 5 \\
+	Migrasi aplikasi dari Ionic 4 ke Ionic 5 memerlukan beberapa pembaruan mengenai properti API, CSS, dan {\it package dependencies} yang terpasang. Perubahan-perubahan tersebut yaitu :
+
+	%---START ITEMIZE MIGRASI IONIC 4 KE IONIC 5---%
+	\begin{itemize}
+		\item CSS
+		\begin{itemize}
+			\item CSS {\it Utilities} \\
+			Karena pada versi sebelumnya, yaitu Ionic versi 4, terdapat masalah dengan menggunakan atribut CSS dengan {\it framework} yang menggunakan JSX dan TypeScript, Ionic {\it Framework} menambahkan dukungan untuk beberapa {\it framework}, dan pada Ionic 5 menambahkan kelas CSS. Ionic versi 5 menghapus atribut CSS dan mendukung konsistensi. Selain itu, Ionic versi 5 juga mengubah ke kelas dengan diawali ion untuk menghindari konflik dengan atribut asli dan CSS dari pengguna (Kode~\ref{lst:CSSUtilities}). \newpage
+		\begin{lstlisting}[language=php, label={lst:CSSUtilities}, caption=Contoh Kode Kelas CSS {\it Utility} pada Ionic 5]
+<ion-header class="ion-text-center"></ion-header>
+<ion-content class="ion-padding"></ion-content>
+<ion-label class="ion-text-wrap"></ion-label>
+<ion-item class="ion-wrap"></ion-item>
+		\end{lstlisting} 
+  
+			\item {\it Display Classes} \\ 
+			Kelas dari {\it responsive display} yang ditemukan di dalam berkas display.css memiliki kueri media yang diperbarui untuk lebih mencerminkan bagaimana cara kerjanya.
+
+			\item {\it Activated, Focused, Hover States} \\
+			Kelas .activated secara otomatis ditambahkan ke komponen yang dapat diklik, mengalami perubahan nama menjadi .ion-activated. Selain itu juga memperbarui komponen Action Sheet sehingga variabel akan diawali dengan {\it button}. Hal ini dapat memungkinkan aplikasi tetap memiliki kontrol atas {\it opacity} jika diinginkan, tetapi saat memperbarui status, hanya perlu mengatur variabel utama, yaitu -background-activated, -background-focused, -background-hover. Hal tersebut penting saat mengubah tema global, karena memperbarui warna {\it toolbar} akan secara otomatis memperbarui {\it hover states} untuk semua {\it buttons} di {\it toolbar} (Kode~\ref{lst:hoverStates}). 
+		\begin{lstlisting}[language=php, label={lst:hoverStates}, caption=Contoh Kode {\it Hover States} pada Ionic 5]
+/* Setting the button background on hover to solid red */
+ion-button {
+	--background-hover: red;
+	--background-hover-opacity: 1;
+}
+
+/* Setting the action sheet button background on focus 
+* to an opaque green */
+ion-action-sheet {
+	--button-background-focus: green;
+	--button-background-focus-opacity: 0.5;
+}
+
+/*
+* Setting the fab button background on hover to match 
+* the text color with
+* the default --background-hover-opacity on md
+*/
+.md ion-fab-button {
+	--color: #222;
+	--background-hover: #222;
+}
+		\end{lstlisting} 
+
+			\item {\it Distributed Scss} \\
+			Berkas scss telah dihapus dari dist/. Sebagai gantinya, variabel CSS harus digunakan untuk tema.
+
+		\end{itemize}
+\newpage
+		\item Komponen\\
+		Terdapat perubahan beberapa komponen pada Ionic 5, yaitu :
+		\begin{itemize}
+			\item Back Button dan Button  \\
+			Perubahan terdapat pada penambahan penamaan kelas .activated yang secara otomatis ditambahkan ke komponen yang dapat di klik, menjadi .ion-activated.
+			\item Controllers\\
+			Terdapat beberapa komponen yang dihapus dari Ionic sebagai elemen, yaitu ion-action-sheet-controller, ion-alert-controller, ion-loading-controller, ion-menu-controller, ion-modal-controller, ion-picker-controller, ion-popover-controller, dan ion- toast-controller. Sebagai gantinya, maka harus diimpor dari @ionic/core. 
+			\item Header dan Footer\\
+			Atribut no-border dihapus, dan sebagai gantinya yaitu dengan menggunakan kelas ion-no-border.
+			\item List Header\\
+			Konten berupa teks apa pun di dalam <ion-list-header> harus dibungkus dengan <ion-label> sesuai dengan gaya desain yang baru (Kode~\ref{lst:listHeader}). Jika label tidak ada, maka perataan tombol di header bisa saja terlihat tidak aktif. 
+			\begin{lstlisting}[language=php, label={lst:listHeader}, caption=Kode Program untuk List Header]
+<ion-list-header>
+	<ion-label>New This Week</ion-label>
+	<ion-button>See All</ion-button>
+</ion-list-header>
+			\end{lstlisting}
+			\item Menu\\
+			Fungsi swipeEnable() telah dihapus di Angular, sebagai gantinya menggunakan swipeGesture(). Lalu nilai {\it left} dan {\it right} telah dihapus, gunakan {\it start} dan {\it end} sebagai gantinya. Selain itu ada penghapusan atribut utama, sebagai gantinya yaitu dengan menggunakan content-id (untuk vanila JS atau Vue) dan contentId (untuk Angular atau React) (Kode~\ref{lst:menu}).
+			\begin{lstlisting}[language=php, label={lst:menu}, caption=Kode Program untuk Menu]
+<ion-menu content-id="main"></ion-menu>
+<ion-content id="main">...</ion-content>
+			\end{lstlisting}
+			\item Select Option \\
+			Properti selected telah dihapus. Sebagai gantinya harus mengatur properti nilai pada ion-select induk agar sesuai dengan opsi terpilih yang diinginkan (Kode~\ref{lst:selectOption}).
+			\begin{lstlisting}[language=php, label={lst:selectOption}, caption=Kode Program untuk Select Option]
+<ion-select value="two">
+	<ion-select-option value="one">
+		One
+	</ion-select-option>
+	<ion-select-option value="two">
+		Two
+	</ion-select-option>
+</ion-select>
+			\end{lstlisting}
+\newpage
+			\item Toast \\
+			Properti close button seperti showCloseButton dan closeButtonText telah dihapus. Sebagai gantinya, gunakan buttons array untuk fungsi batal (Kode~\ref{lst:toast}.
+			\begin{lstlisting}[language=php, label={lst:toast}, caption=Kode Program untuk Toast]
+async presentToast() {
+	const toast = await this.toastController.create({
+		message: 'Your settings have been saved.',
+		buttons: [	
+		{
+			text: 'Close',
+			role: 'cancel',
+			handler: () => {
+			console.log('Close clicked');	
+		}
+		}
+		]
+	});
+toast.present();
+}
+			\end{lstlisting}
+		\end{itemize}
+		Selain yang sudah disebutkan, terdapat beberapa komponen lain yang mendapat perubahan di Ionic 5, namun tidak ditulis di dalam dokumen skripsi ini. Komponen-komponen tersebut antara lain Action Sheet, Anchor, Card, FAB, Item, Menu Button, Nav Link, Radio, Segment, Segment Button, Skeleton Text, Split Pane, dan Tabs~\footnote{\textit{`Breaking Changes'} https://github.com/ionic-team/ionic-framework/blob/main/BREAKING.md, Diakses pada 20 November 2021. \label{ref:breakingChangesIonic5}}.
+		\item Warna \\
+		Terdapat perubahan terhadap warna bawaan milik ionic (Tabel~\ref{table:colors}).
+		\begin{table}[H]
+		\centering
+			\begin{tabular}{|l|l|}
+				\hline
+				Nama Warna & Kode HEX \\ \hline
+				primary    & \#3880ff \\ \hline
+				secondary  & \#3dc2ff \\ \hline
+				tertiary   & \#5260ff \\ \hline
+				success    & \#2dd36f \\ \hline
+				warning    & \#ffc409 \\ \hline
+				danger     & \#eb445a \\ \hline
+				light      & \#f4f5f8 \\ \hline
+				medium     & \#92949c \\ \hline
+				dark       & \#222428 \\ \hline
+			\end{tabular}
+			\caption{Tabel Warna Bawaan di Ionic 5}
+			\label{table:colors}
+		\end{table}
+		
+		\item Events \\
+		Pada Ionic 5, Events services di @ionic/angular telah dihapus. Sebagai gantinya gunakan Observables untuk arsitektur pub/sub, dan Redux untuk {\it advanced state management}.
+		\newpage
+		\item {\it Package} dan {\it Dependencies} \\
+		Untuk memasang {\it package} dan {\it dependencies} pada Angular, dapat memanfaatkan npm pada CLI, dengan menjalankan pemasangan pada {\it package} ionic-angular  (Kode~\ref{lst:packageDependenciesInstall}). Namun jika ingin membuat proyek baru, dapat dibuat dari CLI dan aplikasi yang ada dapat dimigrasikan secara manual.
+		\begin{lstlisting}[language=php, label={lst:packageDependenciesInstall}, caption=Kode untuk Memasang {\it Package} dan {\it Dependencies} pada Angular]
+npm install @ionic/angular@latest 
+@ionic/angular-toolkit@latest --save
+		\end{lstlisting} 
+	\end{itemize}
+	%---END ITEMIZE MIGRASI IONIC 4 KE IONIC 5---%
+
+
+\end{enumerate}
+		%Migrasi Ionic versi 3 ke versi 5 dilakukan dengan dua tahap, yaitu pertama melakukan migrasi dari Ionic versi 3 ke Ionic versi 4, lalu yang kedua melakukan migrasi kembali dari Ionic versi 4 ke Ionic versi 5. Pada langkah migrasi yang pertama, terdapat beberapa langkah, diantaranya adalah sebagai berikut :
+		%\begin{enumerate}
+			%\item Membuat proyek Ionic baru, yaitu dengan mengetikan perintah \textbf{ionic start myApp blank} pada \textit{Command Line}.
+			%\item Menyalin Angular Services yang berada di \textbf{src/providers} pada Ionic 3, menjadi \textbf{src/app/services} pada Ionic 4.
+			%\item Menyalin \textit{Root-level Items} pada Ionic 3, dengan alamat direktori yang sama atau dengan beberapa perubahan pada Ionic 4. Perubahan-perubahan yang terjadi sudah didokumentasikan pada dokumen skripsi di Bab 2 Landasan Teori, Sub Bab 2.2.3 Migrasi Ionic 3 ke Ionic 5.
+			%\item Menyalin Global Scss, yang semula berada di \textbf{src/app/global.scss} menjadi \textbf{src/global.scss} pada Ionic 4.
+			%\item Menyalin bagian-bagian aplikasi, yaitu keseluruhan bagian yang ada pada aplikasi, baik itu halaman maupun fitur yang ada, termasuk juga perubahan UI Component.
+		%\end{enumerate}
 		 
-		Lalu langkah yang kedua yaitu melakukan migrasi kembali dari Ionic versi 4 ke Ionic versi 5. Terdapat perbedaan antara kedua versi Ionic tersebut. Perbedaan tersebut antara lain sebagai berikut :
-		\begin{enumerate}
-			\item Perbedaan CSS, yang terdiri dari CSS Utilities, Display Classes, Kelas Activated, Focuses, dan Hover States, serta Distributed Scss.
-			\item Terdapat perbedaan komponen pada Ioinc 5 dibandingkan dengan Ionic 4 yang menyangkut perbedaan nama, penambahan kelas, serta penghapusan atau penggantian komponen.
-			\item Warna pada Ionic 5 mengalami perubahan terkait dengan warna bawaan.
-			\item Events \textbf{@ionic/angular} dihapus pada Ionic 5.
-			\item Package dan Dependencies ditambahkan pada Ionic 5.
-		\end{enumerate}				
-		Langkah-langkah untuk melakukan migrasi dari Ionic versi 3 ke versi 5 telah dijelaskan pada Bab 2 Landasan Teori, pada Sub Bab 2.2.3 Migrasi Ionic 3 ke Ionic 5.
+		%Lalu langkah yang kedua yaitu melakukan migrasi kembali dari Ionic versi 4 ke Ionic versi 5. Terdapat perbedaan antara kedua versi Ionic tersebut. Perbedaan tersebut antara lain sebagai berikut :
+		%\begin{enumerate}
+			%\item Perbedaan CSS, yang terdiri dari CSS Utilities, Display Classes, Kelas Activated, Focuses, dan Hover States, serta Distributed Scss.
+			%\item Terdapat perbedaan komponen pada Ioinc 5 dibandingkan dengan Ionic 4 yang menyangkut perbedaan nama, penambahan kelas, serta penghapusan atau penggantian komponen.
+			%\item Warna pada Ionic 5 mengalami perubahan terkait dengan warna bawaan.
+			%\item Events \textbf{@ionic/angular} dihapus pada Ionic 5.
+			%\item Package dan Dependencies ditambahkan pada Ionic 5.
+		%\end{enumerate}				
+		%Langkah-langkah untuk melakukan migrasi dari Ionic versi 3 ke versi 5 telah dijelaskan pada Bab 2 Landasan Teori, pada Sub Bab 2.2.3 Migrasi Ionic 3 ke Ionic 5.
 		%rinciin juga gimana migrasi3 ke 4, 4 ke 5, gausah detail, intinya aja yg udah dipelajari
 		
 		\item \textbf{Mendesain kelas aplikasi.}\\
@@ -163,7 +855,7 @@ Langkah-langkah kerja yang berhasil diselesaikan dalam Skripsi 1 ini adalah seba
 
 \section{Kendala yang Dihadapi}
 %TULISKAN BAGIAN INI JIKA DOKUMEN ANDA TIPE A ATAU C
-Kendala - kendala yang dihadapi selama mengerjakan skripsi :
+Kendala-kendala yang dihadapi selama mengerjakan skripsi :
 \begin{itemize}
 	\item Terbatasnya referensi mengenai \textit{framework} Ionic, khusunya yang membahas Ionic versi 5.
 \end{itemize}
