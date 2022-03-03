@@ -85,6 +85,60 @@ Fitur-fitur yang terdapat di aplikasi WSDC 2017 Bali saat ini yaitu :
         \label{fig:three graphs}
 \end{figure}
 
+\section{Angular}
+\label{sec:angular} 
+%buku Angular Development with TypeScript
+Angular merupakan kerangka kerja Javascript terbuka, yang dikembangkan oleh Google, dan merupakan penerus dari versi sebelumnya yaitu AngularJS~\cite{fain:18:angular}. Angular versi pertama dirilis pada tahun 2016 dengan nama Angular 2. Aplikasi Angular dapat dibangun dengan menggunakan JavaScript, atau TypeScript.
+
+%buku SPA Design and Architecture: Understanding single-page web applications
+Angular dapat digunakan untuk membuat aplikasi Single-page-application (SPA), yaitu ketika halaman awal dimuat, semua yang dibutuhkan untuk membuat dan menampilkan sebuah halaman diunduh, kemudian ditampilkan kedalam layar~\cite{scott:15:spa}. Tampilan pada awalnya merupakan halaman dengan kode-kode HTML yang belum utuh, kemudian tampilan halaman dibuat dan diunduh untuk ditampilkan. Dengan begitu, \textit{browser} tidak perlu melakukan penyegaran tampilan lagi untuk menampilkan halaman baru.
+
+%Nulis typiscrript
+Angular dapat dibangun dengan menggunakan JavaScript atau TypeScript. Namun, penggunaan TypeScript saat ini menjadi lebih produktif dibandingkan dengan JavaScript~\cite{fain:18:angular}. TypeScript mengikuti perkembangan terakhir dari ECMAScript, dan menambahkan \textit{types}, \textit{interface}, \textit{decorators}, \textit{class member variables} ,\textit{generic}, \textit{enum}, dan \textit{keyword} seperti \textit{public}, \textit{protected}, dan \textit{private}. Lalu selain itu, TypeScript juga dapat dimungkinkan untuk mendeklarisasi jenis tipe khusus yang dapat di kustomisasi. Maka dari itu, Framework Angular sendiri ditulis menggunakan TypeScript.
+
+Di dalam aplikasi Angular, terdapat beberapa komponen, seperti Parent Component, dan Child Component. Parent Component dapat mengirimkan data ke properti Child Component-nya. Namun, Child Component tidak tahu siapa yang mengirimkannya. Sedangkan Child Component juga dapat mengirimkan data ke Parent Component, meskipun dia tidak tahu siapa Parent Component-nya. Arsitektur seperti ini dapat membuat komponen menjadi mandiri dan dapat digunakan kembali.
+
+Di dalam TypeScript, sebuah kelas komponen memiliki anotasi dengan sebuah \textit{decorator}~(Kode~\ref{lst:decorator}) yang ditempatkan sesuai dengan komponen UI nya berada. Komponen akan berisi \textit{instance} dari service class yang diimplementasi dari \textit{business logic} tanpa UI. Sebuah service class merupakan implementasi dari \textit{business logic}. Angular akan menempatkan \textit{services} ke dalam komponen atau ke dalam \textit{services} lainnya dengan menggunakan \textit{dependency injection} (DI). 	
+
+\begin{lstlisting}[language=html, label={lst:decorator}, caption=Anotasi Komponen dengan \textit{Decorator}]
+@Component({
+	...
+}
+export class AppComponent{
+	...
+})
+\end{lstlisting} 
+
+Komponen-komponen yang ada akan dikelompokkan menjadi Angular modules, yaitu sebuah kelas yang diberi \textbf{@NgModule()}. Angular module biasanya merupakan sebuah kelas kecil yang tidak memiliki isi, kecuali menulis kode bootstrap secara manual ke dalam aplikasi. Contohnya, ketika sebuah aplikasi merupakan turunan dari AngularJS yang lama, \textit{decorator} \textbf{@NgModule()} menampilkan semua komonen dan \textit{artifacts} lain termasuk \textit{services}, \textit{directive}, dan yang lainnya, maka semua itu harus disertakan ke dalam module (Kode~\ref{lst:moduleComponent}). 
+
+\begin{lstlisting}[language=html, label={lst:moduleComponent}, caption=Module dengan Komponen]
+@NgModule({
+	declaration: [
+		AppComponent
+	],
+	imports: [
+		BrowserModule	
+	],
+	bootstrap: [AppComponent]
+})
+export class AppModule{
+	...
+}
+\end{lstlisting} 
+
+Komponen juga bisa terdapat HTML \textit{template} yang berada di dalam komponen tersebut, atau di dalam file yang berada di luar file kopmonen yang direferensikan dengan menggunakan properti \textbf{templateUrl} di dalam komponen. File HTML \textit{template} yang terpisah dengan komponen, memberikan efek kode yang lebih bersih di dalam komponen nya. Selain HTML \textit{template}, file lain seperti file CSS dapat diletakan terpisah dari file komponen dengan menggunakan styleUrls untuk mereferensikan file CSS ke dalam komponen (Kode~\ref{lst:referensiHTMLCSSdiKomponen}). Lalu terdapat juga properti selector untuk mendefinisikan nama dari tag yang bisa digunakan atau dipanggil oleh komponen lain.
+
+\begin{lstlisting}[language=html, label={lst:referensiHTMLCSSdiKomponen}, caption=Contoh Mereferensikan HTML dan CSS di Dalam Komponen]
+@Component({
+	selector: 'app-search',
+	templateUrl: './search.component.html',
+	styleUrl:['./search.component.css']
+})
+export class SearchComponent{
+	...
+}
+\end{lstlisting} 
+
 
 
 \section{Ionic Framework}
@@ -134,7 +188,7 @@ npx cap update
 <ion-badge>99</ion-badge>
 	\end{lstlisting} 
 	\item Button \\
-	Merupakan elemen yang dapat diklik, biasanya digunakan dalam formulir atau di mana pun yang membutuhkan fungsionalitas tombol. Button biasanya menampilkan teks, ikon, atau bisa juga keduanya. Button dapat pula menggunakan atribut untuk menampilkannya dengan penampilan tertentu. Penggunaan Button dengan menggunakan {\it tag} <ion-button>  (Kode~\ref{lst:buttonComponent}). \newpage
+	Merupakan elemen yang dapat diklik, biasanya digunakan dalam formulir atau di mana pun yang membutuhkan fungsionalitas tombol. Button biasanya menampilkan teks, ikon, atau bisa juga keduanya. Button dapat pula menggunakan atribut untuk menampilkannya dengan penampilan tertentu. Penggunaan Button dengan menggunakan {\it tag} <ion-button>  (Kode~\ref{lst:buttonComponent}). 
 	\begin{lstlisting}[language=php, label={lst:buttonComponent}, caption=Potongan Kode Program dari Button Component]
 <ion-button>Default</ion-button>
 	\end{lstlisting} 
@@ -155,6 +209,8 @@ npx cap update
 	\end{lstlisting} 
 	\item Content\\
 	Komponen content merupakan penyedia area konten yang bisa digunakan untuk mengontrol area yang dapat digulir. Dalam satu tampilan, setidaknya terdapat satu buah content. Content juga dapat dimodifikasi padding, margin, dan lainnya menggunakan {\it global style} yang berada di CSS Utilites atau mengubahnya secara individual dengan menggunakan CSS. Penggunaan Content dengan menggunakan {\it tag} <ion-content> (Kode~\ref{lst:contentComponent}).
+	
+	\newpage
 
 	\begin{lstlisting}[language=php, label={lst:contentComponent}, caption=Potongan Kode Program dari Content Component]
 <ion-content
@@ -237,6 +293,8 @@ export class ModalPage {
 
 	\item Segment \\
 	Segment berfungsi untuk menampilkan pilihan tombol bagi pengguna untuk beralih di antara tampilan berbeda di dalam satu halaman yang sama. Segment menampilkan sekelompok tombol-tombol yang dapat diklik, dalam baris horizontal. Penggunaan Segment dengan menggunakan {\it tag} <ion-segment> (Kode~\ref{lst:segmentComponent}).
+	
+	\newpage
 	\begin{lstlisting}[language=php, label={lst:segmentComponent}, caption=Kode Program dari Segment]
 <ion-segment (ionChange)="segmentChanged($event)">
 	<ion-segment-button value="friends">
@@ -389,7 +447,7 @@ npm install @ionic/angular>
 				\end{lstlisting}
 
 				\item Floating Action Button (FAB) \\
-				Terdapat perbedaan pada {\it tag} di dalam <ion-fab>, yang semula pada Ionic 3 adalah <button> menjadi <ion-fab-button> pada Ionic 4~\ref{lst:fabIonic4}. \newpage
+				Terdapat perbedaan pada {\it tag} di dalam <ion-fab>, yang semula pada Ionic 3 adalah <button> menjadi <ion-fab-button> pada Ionic 4~\ref{lst:fabIonic4}.
 				\begin{lstlisting}[language=php, label={lst:fabIonic4}, caption=Penggunaan Floating Action Button pada Ionic 4]
 <ion-fab>
 	<ion-fab-button>
@@ -444,7 +502,6 @@ npm install @ionic/angular>
 							Sedangkan pada Ionic 4 menjadi : ionDidOpen
 						\end{itemize}	
 				\end{itemize}
-				\newpage
 				\item Nav \\
 				Terdapat perubahan Nav pada Ionic 4. Perubahan-perubahan tersebut adalah sebagai berikut :
 				\begin{itemize}
@@ -487,7 +544,7 @@ npm install @ionic/angular>
 	\end{enumerate}
 	%---END ENUM MIGRASI IONIC 3 KE IONIC 4---%
 
-\newpage
+
 	\item Migrasi Ionic 4 ke Ionic 5 \\
 	Migrasi aplikasi dari Ionic 4 ke Ionic 5 memerlukan beberapa pembaruan mengenai properti API, CSS, dan {\it package dependencies} yang terpasang. Perubahan-perubahan tersebut yaitu :
 
@@ -506,7 +563,7 @@ npm install @ionic/angular>
   
 			\item {\it Display Classes} \\ 
 			Kelas dari {\it responsive display} yang ditemukan di dalam berkas display.css memiliki kueri media yang diperbarui untuk lebih mencerminkan bagaimana cara kerjanya.
-
+			\newpage
 			\item {\it Activated, Focused, Hover States} \\
 			Kelas .activated secara otomatis ditambahkan ke komponen yang dapat diklik, mengalami perubahan nama menjadi .ion-activated. Selain itu juga memperbarui komponen Action Sheet sehingga variabel akan diawali dengan {\it button}. Hal ini dapat memungkinkan aplikasi tetap memiliki kontrol atas {\it opacity} jika diinginkan, tetapi saat memperbarui status, hanya perlu mengatur variabel utama, yaitu -background-activated, -background-focused, -background-hover. Hal tersebut penting saat mengubah tema global, karena memperbarui warna {\it toolbar} akan secara otomatis memperbarui {\it hover states} untuk semua {\it buttons} di {\it toolbar} (Kode~\ref{lst:hoverStates}). 
 		\begin{lstlisting}[language=php, label={lst:hoverStates}, caption=Contoh Kode {\it Hover States} pada Ionic 5]
@@ -568,7 +625,7 @@ ion-action-sheet {
 	<ion-select-option value="two">Two</ion-select-option>
 </ion-select>
 			\end{lstlisting}
-\newpage
+			
 			\item Toast \\
 			Properti close button seperti showCloseButton dan closeButtonText telah dihapus. Sebagai gantinya, gunakan buttons array untuk fungsi batal (Kode~\ref{lst:toast}.
 			\begin{lstlisting}[language=php, label={lst:toast}, caption=Kode Program untuk Toast]
@@ -590,6 +647,7 @@ toast.present();
 			\end{lstlisting}
 		\end{itemize}
 		Selain yang sudah disebutkan, terdapat beberapa komponen lain yang mendapat perubahan di Ionic 5, namun tidak ditulis di dalam dokumen skripsi ini. Komponen-komponen tersebut antara lain Action Sheet, Anchor, Card, FAB, Item, Menu Button, Nav Link, Radio, Segment, Segment Button, Skeleton Text, Split Pane, dan Tabs~\footnote{\textit{`Breaking Changes'} https://github.com/ionic-team/ionic-framework/blob/main/BREAKING.md, Diakses pada 20 November 2021. \label{ref:breakingChangesIonic5}}.
+		\newpage
 		\item Warna \\
 		Terdapat perubahan terhadap warna bawaan milik ionic (Tabel~\ref{table:colors}).
 		\begin{table}[H]
