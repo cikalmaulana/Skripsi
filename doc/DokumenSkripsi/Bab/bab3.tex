@@ -17,16 +17,20 @@ Aplikasi WSDC 2017 Bali dibangun menggunakan {\it framework} Ionic versi 3, dan 
 	    \label{fig:useCaseDiagram}
 \end{figure}
 
+\subsection{Skenario Pengguna pada Aplikasi Sistem Kini}
+\label{sec:skenarioPenggunaAplikasiSistemKini}
+
 Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu yang terdapat pada aplikasi WSDC 2017 Bali. Untuk mengakses {\it sidebar}, pengguna dapat menekan tombol navigasi berada di sebelah kiri atas aplikasi WSDC 2017 Bali. Selain itu dapat pula dengan cara mengusap layar dari kiri ke kanan. Untuk menutup {\it sidebar}, pengguna dapat menekan area di luar {\it sidebar}, atau dengan cara menekan tombol silang di sebelah kiri atas {\it sidebar}. Terdapat fitur-fitur yang ada pada aplikasi WSDC 2017 Bali yang dapat diakses melalui {\it sidebar}. Fitur-fitur tersebut adalah sebagai berikut :
 \begin{enumerate}
-	\item Halaman Utama : Pengguna dapat melihat halaman utama aplikasi WSDC 2017 Bali yang berisi berita acara WSDC 2017 Bali, serta pemberitahuan terakhir terkait acara WSDC 2017 Bali.
-	\begin{itemize}
-		\item Nama: Melihat Halaman Utama WSDC 2017 Bali.
-		\item Aktor: Pengguna Aplikasi WSDC 2017 Bali.
-		\item Deskripsi: Pengguna melihat halaman awal yang berisi berita acara WSDC 2017 Bali dengan urutan paling atas adalah berita yang lebih baru terbit, dan sebuah {\it card} yang berisi pengumuman terakhir terkait acara WSDC 2017 Bal, yang dapat diklik dan mengarahkan pengguna ke halaman Pemberitahuan.
-		\item Kondisi Awal: Pengguna belum membuka aplikasi WSDC 2017 Bali.
-		\item Kondisi Akhir: Aplikasi menampilkan halaman utama aplikasi WSDC 2017 Bali.
-		\item Skenario utama:\\
+	\item Halaman Utama \\
+	Pada halaman utama, pengguna dapat melihat halaman utama aplikasi WSDC 2017 Bali yang berisi berita acara WSDC 2017 Bali, serta pemberitahuan terakhir terkait acara WSDC 2017 Bali. Halaman ini merupakan halaman awal yang ditampilkan saat aplikasi WSDC 2017 Bali pertama kali dibuka. Untuk mengakses halaman ini, dapat melalui sidebar (Tabel~\ref{table:skenarioHalamanUtama}).
+	%\begin{itemize}
+		%\item Nama: Melihat Halaman Utama WSDC 2017 Bali.
+		%\item Aktor: Pengguna Aplikasi WSDC 2017 Bali.
+		%\item Deskripsi: Pengguna melihat halaman awal yang berisi berita acara WSDC 2017 Bali dengan urutan paling atas adalah berita yang lebih baru terbit, dan sebuah {\it card} yang berisi pengumuman terakhir terkait acara WSDC 2017 Bal, yang dapat diklik dan mengarahkan pengguna ke halaman Pemberitahuan.
+		%\item Kondisi Awal: Pengguna belum membuka aplikasi WSDC 2017 Bali.
+		%\item Kondisi Akhir: Aplikasi menampilkan halaman utama aplikasi WSDC 2017 Bali.
+		%\item Skenario utama:\\
 		\begin{table}[H]
 			\centering
 			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
@@ -39,15 +43,16 @@ Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu 
 			\caption{Tabel Skenario dari Halaman Utama}
 			\label{table:skenarioHalamanUtama}
 		\end{table}
-	\end{itemize}
-	\item Berita : Pengguna dapat melihat berita acara WSDC 2017 Bali dengan format pdf.
-	\begin{itemize}
-		\item Nama: Melihat Berita Acara WSDC 2017 Bali.
-		\item Aktor: Pengguna aplikasi WSDC 2017 Bali.
-		\item Deskripsi: Melihat berita acara dengan format pdf yang berisi kejadian kejadian pada WSDC 2017 Bali di tanggal tertentu sesuai dengan berita yang diklik.
-		\item Kondisi Awal: Pengguna telah membuka halaman utama aplikasi WSDC 2017 Bali.
-		\item Kondisi Akhir : Berkas berita WSDC 2017 Bali dengan format pdf dapat dilihat dan dibaca.
-		\item Skenario Utama: \\
+	%\end{itemize}
+	\item Berita \\ 
+	Pada halaman ini, pengguna dapat melihat berita-berita terkait acara WSDC 2017 Bali dengan format pdf. Untuk mengakses halaman ini, dapat melalui sidebar (Tabel~\ref{table:skenarioBerita}).
+	%\begin{itemize}
+		%\item Nama: Melihat Berita Acara WSDC 2017 Bali.
+		%\item Aktor: Pengguna aplikasi WSDC 2017 Bali.
+		%\item Deskripsi: Melihat berita acara dengan format pdf yang berisi kejadian kejadian pada WSDC 2017 Bali di tanggal tertentu sesuai dengan berita yang diklik.
+		%\item Kondisi Awal: Pengguna telah membuka halaman utama aplikasi WSDC 2017 Bali.
+		%\item Kondisi Akhir : Berkas berita WSDC 2017 Bali dengan format pdf dapat dilihat dan dibaca.
+		%\item Skenario Utama: \\
 		\begin{table}[H]
 			\centering
 			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
@@ -59,15 +64,16 @@ Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu 
 			\caption{Tabel Skenario dari Berita}
 			\label{table:skenarioBerita}
 		\end{table}
-	\end{itemize}
-	\item Pengumuman : Pengguna dapat melihat pengumuman mengenai keberlangsungan acara WSDC 2017 Bali.
-	\begin{itemize}
-		\item Nama: Melihat pemberitahuan acara WSDC 2017 Bali.
-		\item Aktor: Pengguna aplikasi WSDC 2017 Bali.
-		\item Deskripsi: Melihat pemberitahuan acara WSDC 2017 Bali yang tersusun menurun berdasarkan jam dan tanggal dirilisnya pengumuman tersebut.
-		\item Kondisi Awal: Pengguna telah membuka aplikasi WSDC 2017 Bali.
-		\item Kondisi Akhir: Halaman pemberitahuan terbuka dan menampilkan pemberitahuan acara WSDC 2017 bali yang tersusun menurun berdasarkan jam dan tanggal.
-		\item Skenario utama: \\
+	%\end{itemize}
+	\item Pengumuman \\ 
+	Pada halaman ini, pengguna dapat melihat berbagai pengumuman mengenai keberlangsungan acara WSDC 2017 Bali yang tersusun berdasarkan tanggal dirilisnya pengumuman tersebut. Untuk mengakses halaman ini, dapat melalui sidebar (Tabel~\ref{table:skenarioHalamanPemberitahuan}).
+	%\begin{itemize}
+		%\item Nama: Melihat pemberitahuan acara WSDC 2017 Bali.
+		%\item Aktor: Pengguna aplikasi WSDC 2017 Bali.
+		%\item Deskripsi: Melihat pemberitahuan acara WSDC 2017 Bali yang tersusun menurun berdasarkan jam dan tanggal dirilisnya pengumuman tersebut.
+		%\item Kondisi Awal: Pengguna telah membuka aplikasi WSDC 2017 Bali.
+		%\item Kondisi Akhir: Halaman pemberitahuan terbuka dan menampilkan pemberitahuan acara WSDC 2017 bali yang tersusun menurun berdasarkan jam dan tanggal.
+		%\item Skenario utama: \\
 		\begin{table}[H]
 			\centering
 			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
@@ -79,15 +85,16 @@ Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu 
 			\caption{Tabel Skenario dari Halaman Pemberitahuan}
 			\label{table:skenarioHalamanPemberitahuan}
 		\end{table}
-	\end{itemize}
-	\item Jadwal : Pengguna dapat melihat jadwal acara WSDC 2017 Bali yang ditampilkan berdasarkan tanggal dan hari.
-	\begin{itemize}
-		\item Nama: Melihat jadwal acara WSDC 2017 Bali.
-		\item Aktor: Pengguna aplikasi WSDC 2017 Bali.
-		\item Deskripsi: Melihat jadwal acara WSDC 2017 Bali yang ditampilkan berdasarkan tanggal dan hari, serta dapat berpindah pindah tanggal agar dapat melihat jadwal apa saja yang tersedia pada hari itu. Untuk setiap harinya terdapat nama kegiatan, waktu yang menunjukan pukul berapa acara tersebut mulai dan selesai, serta lokasi kegiatan acara tersebut.
-		\item Kondisi awal: Pengguna telah membuka aplikasi WSDC 2017 Bali.
-		\item Kondisi akhir: Halaman jadwal terbuka dan menampilkan jadwal acara yang ditampilkan berdasarkan tanggal dan hari, serta dapat melihat acara dengan detail waktu, tempat, dan nama kegiatan.
-		\item Skenario utama: \\
+	%\end{itemize}
+	\item Jadwal \\ 
+	Pada halaman ini, pengguna dapat melihat jadwal acara WSDC 2017 Bali yang ditampilkan berdasarkan tanggal dan hari. Jadwal yang ditampilkan berupa waktu mulai dan waktu selesai, lokasi acara, serta nama acara. Untuk mengakses halaman ini, dapat melalui sidebar (Tabel~\ref{table:skenarioHalamanJadwal}).
+	%\begin{itemize}
+		%\item Nama: Melihat jadwal acara WSDC 2017 Bali.
+		%\item Aktor: Pengguna aplikasi WSDC 2017 Bali.
+		%\item Deskripsi: Melihat jadwal acara WSDC 2017 Bali yang ditampilkan berdasarkan tanggal dan hari, serta dapat berpindah pindah tanggal agar dapat melihat jadwal apa saja yang tersedia pada hari itu. Untuk setiap harinya terdapat nama kegiatan, waktu yang menunjukan pukul berapa acara tersebut mulai dan selesai, serta lokasi kegiatan acara tersebut.
+		%\item Kondisi awal: Pengguna telah membuka aplikasi WSDC 2017 Bali.
+		%\item Kondisi akhir: Halaman jadwal terbuka dan menampilkan jadwal acara yang ditampilkan berdasarkan tanggal dan hari, serta dapat melihat acara dengan detail waktu, tempat, dan nama kegiatan.
+		%\item Skenario utama: \\
 		\begin{table}[H]
 			\centering
 			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
@@ -100,16 +107,17 @@ Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu 
 			\caption{Tabel Skenario dari Halaman Jadwal}
 			\label{table:skenarioHalamanJadwal}
 		\end{table}
-	\end{itemize}
-	\item {\it Venues} : Pengguna dapat melihat lokasi dari berlangsungnya acara WSDC 2017 Bali.
-	\begin{itemize}
-		\item Nama: Melihat lokasi acara WSDC 2017 Bali.
-		\item Aktor: Pengguna aplikasi WSDC 2017 Bali.
-		\item Deskripsi: Pengguna dapat melihat lokasi dari berlangsungnya acara WSDC 2017 Bali, yang dibagi menjadi 4 kategroi, yaitu: {\it Ceremony Venues}, {\it Competition Venues}, {\it Delegates Accomodation}, dan {\it Educational Tour}. Masing masing dari lokasi tersebut akan menampikan peta, dan lokasi acara yang dituju dengan penanda yang ada di dalam peta. Serta dapat menampilkan jarak pengguna saat ini terhadap lokasi yang ingin dituju.
-		\item Kondisi awal: Pengguna telah membuka aplikasi WSDC 2017 Bali.
-		\item Kondisi akhir: Halaman {\it venues} yang sesuai dengan keinginan pengguna terbuka.
-		\item Pengecualian: Aplikasi WSDC 2017 Bali tidak akan menampilkan jarak antara lokasi pengguna saat ini ke lokasi yang ingin dituju, jika pengguna berada di luar pulau Bali.
-		\item Skenario utama: \\
+	%\end{itemize}
+	\item {\it Venues} \\ 
+	Pada halaman ini, pengguna dapat melihat lokasi dari berlangsungnya acara WSDC 2017 Bali. Untuk mengakses halaman ini, dapat melalui sidebar (Tabel~\ref{table:skenarioHalamanVenues}).
+	%\begin{itemize}
+		%\item Nama: Melihat lokasi acara WSDC 2017 Bali.
+		%\item Aktor: Pengguna aplikasi WSDC 2017 Bali.
+		%\item Deskripsi: Pengguna dapat melihat lokasi dari berlangsungnya acara WSDC 2017 Bali, yang dibagi menjadi 4 kategroi, yaitu: {\it Ceremony Venues}, {\it Competition Venues}, {\it Delegates Accomodation}, dan {\it Educational Tour}. Masing masing dari lokasi tersebut akan menampikan peta, dan lokasi acara yang dituju dengan penanda yang ada di dalam peta. Serta dapat menampilkan jarak pengguna saat ini terhadap lokasi yang ingin dituju.
+		%\item Kondisi awal: Pengguna telah membuka aplikasi WSDC 2017 Bali.
+		%\item Kondisi akhir: Halaman {\it venues} yang sesuai dengan keinginan pengguna terbuka.
+		%\item Pengecualian: Aplikasi WSDC 2017 Bali tidak akan menampilkan jarak antara lokasi pengguna saat ini ke lokasi yang ingin dituju, jika pengguna berada di luar pulau Bali.
+		%\item Skenario utama: \\
 		 \begin{table}[H]
 			\centering
 			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
@@ -122,16 +130,17 @@ Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu 
 			\caption{Tabel Skenario dari Halaman {\it Venues}}
 			\label{table:skenarioHalamanVenues}
 		\end{table}
-	\end{itemize}
-\newpage
-	\item {\it Draw} : Pengguna dapat melihat pembagian {\it venue} serta pembagian kubu proposisi dan oposisi dari hasil pengundian untuk para negara peserta WSDC 2017 Bali.
-	\begin{itemize}
-		\item Nama: Melihat halaman {\it draw}
-		\item Aktor: Pengguna aplikasi WSDC 2017 Bali.
-		\item Deskripsi: Pengguna dapat melihat hasil dari pengundian kubu untuk negara peserta WSDC 2017 Bali, yaitu kubu proposisi dan oposisi, serta lokasi {\it venue} untuk kedua kubu tersebut. Aplikasi WSDC 2017 Bali akan menampilkan nama-nama negara peserta dengan benderanya masing-masing yang terbagi menjadi dua kubu di dalam satu tabel, kubu oposisi dan kubu proposisi.
-		\item Kondisi awal: Pengguna telah membuka aplikasi WSDC 2017 Bali.
-		\item Kondisi akhir: Halaman {\it draw} terbuka.
-		\item Skenario utama: \\
+	%\end{itemize}
+
+	\item {\it Draw} \\ 
+	Pada halaman ini, pengguna dapat melihat pembagian {\it venue} serta pembagian kubu proposisi dan oposisi dari hasil pengundian untuk para negara peserta WSDC 2017 Bali. Untuk mengakses halaman ini, dapat melalui sidebar (Tabel~\ref{table:skenarioHalamanDraw}).
+	%\begin{itemize}
+		%\item Nama: Melihat halaman {\it draw}
+		%\item Aktor: Pengguna aplikasi WSDC 2017 Bali.
+		%\item Deskripsi: Pengguna dapat melihat hasil dari pengundian kubu untuk negara peserta WSDC 2017 Bali, yaitu kubu proposisi dan oposisi, serta lokasi {\it venue} untuk kedua kubu tersebut. Aplikasi WSDC 2017 Bali akan menampilkan nama-nama negara peserta dengan benderanya masing-masing yang terbagi menjadi dua kubu di dalam satu tabel, kubu oposisi dan kubu proposisi.
+		%\item Kondisi awal: Pengguna telah membuka aplikasi WSDC 2017 Bali.
+		%\item Kondisi akhir: Halaman {\it draw} terbuka.
+		%\item Skenario utama: \\
 		\begin{table}[H]
 			\centering
 			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
@@ -143,15 +152,16 @@ Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu 
 			\caption{Tabel Skenario dari Halaman {\it Draw}}
 			\label{table:skenarioHalamanDraw}
 		\end{table}
-	\end{itemize}
-	\item Hasil : Pengguna dapat melihat pemenang dari kompetisi WSDC 2017 Bali.
-	\begin{itemize}
-		\item Nama : Melihat halaman Hasil.
-		\item Aktor: Pengguna aplikasi WSDC 2017 Bali.
-		\item Deskripsi: Pengguna dapat melihat pemenang dari kompetisi WSDC 2017 Bali, yang terdiri dari babak semifinal, perempatfinal, dan perdelapanfinal. Dari masing-masing babak, ditampilkan negara-negara yang berpartisipasi, serta skor dari negara-negara tersebut. 
-		\item Kondisi awal: Pengguna telah membuka aplikasi WSDC 2017 Bali.
-		\item Kondisi akhir: Halaman Hasil terbuka.
-		\item Skenario utama: \\
+	%\end{itemize}
+	\item Hasil \\ 
+	Pada halaman ini, pengguna dapat melihat pemenang dari kompetisi WSDC 2017 Bali. Untuk mengakses halaman ini, dapat melalui sidebar (Tabel~\ref{table:skenarioHalamanHasil}).
+	%\begin{itemize}
+		%\item Nama : Melihat halaman Hasil.
+		%\item Aktor: Pengguna aplikasi WSDC 2017 Bali.
+		%\item Deskripsi: Pengguna dapat melihat pemenang dari kompetisi WSDC 2017 Bali, yang terdiri dari babak semifinal, perempatfinal, dan perdelapanfinal. Dari masing-masing babak, ditampilkan negara-negara yang berpartisipasi, serta skor dari negara-negara tersebut. 
+		%\item Kondisi awal: Pengguna telah membuka aplikasi WSDC 2017 Bali.
+		%\item Kondisi akhir: Halaman Hasil terbuka.
+		%\item Skenario utama: \\
 		\begin{table}[H]
 			\centering
 			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
@@ -163,16 +173,17 @@ Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu 
 			\caption{Tabel Skenario dari Halaman Hasil}
 			\label{table:skenarioHalamanHasil}
 		\end{table}
-	\end{itemize}
-\newpage
-	\item Info : Pengguna dapat melihat info-info seputar kontak-kontak penting yang dapat dihubungi, kosa kata dalam Bahasa Indonesia sehari-hari, serta {\it credits} kepada pembuat aplikasi WSDC 2017 Bali.
-	\begin{itemize}
-		\item Nama: Melihat halaman Info.
-		\item Aktor: Pengguna aplikasi WSDC 2017 Bali.
-		\item Deskripsi: Pengguna dapat melihat info kontak-kontak yang dapat dihubungi, dengan menekan nomor telepon yang ada di halaman Info. Setelah menekan nomor telepon tersebut, pengguna akan diarahkan ke aplikasi pemanggilan. Lalu ada juga informasi mengenai kosa kata dalam Bahasa Indonesia, yang dapat dipakai oleh pengguna, khususnya peserta WSDC 2017 Bali dari mancanegara. Serta terdapat pula informasi mengenai siapa saja yang berperan dalam pembuatan aplikasi WSDC 2017 Bali.
-		\item Kondisi awal: Pengguna telah membuka aplikasi WSDC 2017 Bali.
-		\item Kondisi akhir: Halaman Info terbuka.
-		\item Skenario utama: \\
+	%\end{itemize}
+
+	\item Info \\
+	Pada halaman ini, pengguna dapat melihat info-info seputar kontak-kontak penting yang dapat dihubungi, kosa kata dalam Bahasa Indonesia sehari-hari, serta {\it credits} kepada pembuat aplikasi WSDC 2017 Bali. Untuk mengakses halaman ini, dapat melalui sidebar (Tabel~\ref{table:skenarioHalamanInfo}).
+	%\begin{itemize}
+		%\item Nama: Melihat halaman Info.
+		%\item Aktor: Pengguna aplikasi WSDC 2017 Bali.
+		%\item Deskripsi: Pengguna dapat melihat info kontak-kontak yang dapat dihubungi, dengan menekan nomor telepon yang ada di halaman Info. Setelah menekan nomor telepon tersebut, pengguna akan diarahkan ke aplikasi pemanggilan. Lalu ada juga informasi mengenai kosa kata dalam Bahasa Indonesia, yang dapat dipakai oleh pengguna, khususnya peserta WSDC 2017 Bali dari mancanegara. Serta terdapat pula informasi mengenai siapa saja yang berperan dalam pembuatan aplikasi WSDC 2017 Bali.
+		%\item Kondisi awal: Pengguna telah membuka aplikasi WSDC 2017 Bali.
+		%\item Kondisi akhir: Halaman Info terbuka.
+		%\item Skenario utama: \\
 		\begin{table}[H]
 			\centering
 			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
@@ -184,13 +195,78 @@ Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu 
 			\caption{Tabel Skenario dari Halaman Info}
 			\label{table:skenarioHalamanInfo}
 		\end{table}
-	\end{itemize}
+	%\end{itemize}
 \end{enumerate}
+
+\subsection{Struktur Ionic 3 pada Sistem Kini}
+\label{sec:StrukturIonic3SistemKini}
+
+Aplikasi WSDC 2017 Bali saat ini menggunakan Ionic versi 3, Angular versi 4.0.0, dan Cordova. Dengan Ionic Framework yang disusun berdasarkan arsitektur Angular, maka aplikasi WSDC 2017 memungkinakn untuk ditulis menggunakan bahasa pemrograman web seperti HTML, CSS, dan Javascript. Pada Ionic Framework vesi 3 juga terdapat UI Component~\ref{subsec:uiComponent} yang digunakan dalam aplikasi WSDC 2017 Bali, diantarnya yaitu Badge, Button, Card, Content, Icons, Items, List, Menu, Segment, Tabs, dan Toolbar. Kemudian dengan digunakannya Cordova, maka seluruh kode program yang mneggunakan bahasa pemrograman web tersebut, dapat hidup dan berjalan seperti halnya aplikasi \textit{native} di dalam perangkat seluler.
+
+\newpage
+
+Anatomi pada Ionic Framework memiliki struktur proyek Cordova. Pada saat pertama kali dijalankan, aplikasi WSDC 2017 Bali secara \textit{default} akan membuka file index.html yang berada di folder src/index.html. File ini merupakan file pertama yang dijalankan untuk aplikasi WSDC 2017 Bali. Tujuan dari file ini adalah untuk melakukan pengaturan terhadap script, CSS, serta menjalankan aplikasi. Di dalam file index.html ini terapat sebuah tag <ion-app>. Tag ini yang pertama dicari dan dijalankan oleh Ionic untuk  membuka komponen \textit{root} dari aplikasi WSDC 2017 Bali. Pada saat pertama menjalankan aplikasi, kode di dalam folder src akan ditranspilasikan ke versi JavaScript yang dapat dipahami browser. Dengan begitu, aplikasi dapat menjalankan TypeScript yang dikomplikasi ke bentuk JavaScript.
+
+Setelah index.html dijalankan, titik masuk ke dalam aplikasi WSDC 2017 Bali adalah file app.module.ts yang berada di src/app/app.module.ts. Di dalam file ini terdapat NgModule untuk mendeklarasi komponen apa saja yang akan digunakan, mengimpor module, bootstrap apa yang digunakan, dan menyediakan \textit{services} apa yang akan digunakan oleh komponen (Kode~\ref{lst:NgModuleWSDC2017Bali}).  
+
+\begin{lstlisting}[language=html, label={lst:NgModuleWSDC2017Bali}, caption=NgModule pada app.module.ts]
+@NgModule({
+  declarations: [
+    MyApp, HomePage, AnnouncementsPage, SchedulePage, VenuesPage, VenuesMapPage, DrawPage, ResultPage, InfoPage
+  ],
+  imports: [
+    BrowserModule, HttpModule, IonicModule.forRoot(MyApp), IonicStorageModule.forRoot(), CloudModule.forRoot(cloudSettings)
+  ],
+  bootstrap: [IonicApp],
+  entryComponents: [
+    MyApp, HomePage, AnnouncementsPage, SchedulePage, VenuesPage, VenuesMapPage, DrawPage, ResultPage, InfoPage
+  ],
+  providers: [
+    StatusBar, SplashScreen, InAppBrowser, {provide: ErrorHandler, useClass: IonicErrorHandler}, Geolocation,
+  ]
+})
+export class AppModule {}
+\end{lstlisting} 
+
+Lalu, untuk komponen \textit{root}, diatur ke MyApp. Komponen tersebut berada di folder src/app/app.component.ts. Karena pada file app.component.ts, \textit{root} telah diatur ke dalam MyApp, maka komponen tersebut menjadi komponen pertama yang dibuka ke dalam aplikasi WSDC 2017 Bali. Di dalam komponen tersebut terdapat templateUrl yang digunakan sebagai template utama dari aplikasi WSDC 2017 Bali, yaitu file app.html (Kode~\ref{lst:apphtml}). Di dalam template, terdapat tag <ion-menu> yang digunakan untuk menampilkan sidebar, lalu tag <ion-nav> sebagai area koten utama, dengan properti [root]=``rootPage``. Properti tersebut yang nantinya akan diisi oleh halaman \textit{root} dari aplikasi WSDC 2017 Bali, yaitu Home Page. Variabel rootPage telah diatur di file app.component.ts secara spesifik mengarah ke HomePage, yang akan menjadi halaman petama yang ditampilkan di nav controller. 
+
+\newpage
+
+\begin{lstlisting}[language=html, label={lst:apphtml}, caption=\textit{Source Code} File app.html]
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        <button menuClose id="menu-close-btn">
+          <ion-icon menu-close ios="ios-close-circle-outline" md="md-close-circle"></ion-icon>
+        </button>
+        <span class="text">Menu</span>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button class="title-sidemenu" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon [ios]=p.iosicon [md]=p.mdicon></ion-icon>
+        <span class="text">{{p.title}}</span>
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+
+\end{lstlisting} 
+
+Selain komponen \textit{root}, terdapat pula beberapa komponen lain yang berisi halaman-halaman yang ada di aplikasi WSDC 2017 Bali. Komponen-komponen tersebut adalah komponen Announcement, Draw, Home, Info, Result, Schedule, Venus, dan VenusMap. Masing-masing komponen memiliki selector dan templateUrl masing-masing di dalam file TypeScript. Lalu untuk tampilan halamannya, menggunakan file .html, dan file .css untuk CSS nya.
 
 \section{Analisis Sistem Usulan}
 \label{sec:analisisSistemUsulan}
 
-Aplikasi yang ada pada saat ini menggunakan Ionic Framework versi 3, yang sudah tidak lagi didukung oleh Ionic. Maka dari itu, aplikasi WSDC 2017 Bali akan dibangun ulang  menggunakan Ionic Framework versi terbaru saat ini, yaitu Ionic Framework versi 5. Proses untuk melakukan pembangunan ulang aplikasi dari Ionic Framework versi 3 ke Ionic Framework versi 5 telah dijelaskan pada sub bab~\ref{subsec:migrasi}. Pada sub bab ini akan dijelaskan analisis untuk pengembangan kebutuhan apilkasi WSDC 2017 Bali agar aplikasi tersebut dapat berjalan menggunakan Ionic Framework versi 5.
+Aplikasi yang ada pada saat ini menggunakan Ionic Framework versi 3, yang sudah tidak lagi didukung oleh Ionic. Maka dari itu, aplikasi WSDC 2017 Bali akan dibangun ulang  menggunakan Ionic Framework versi terbaru saat ini, yaitu Ionic Framework versi 5. Proses untuk melakukan pembangunan ulang aplikasi dari Ionic Framework versi 3 ke Ionic Framework versi 5 telah dijelaskan pada sub bab~\ref{subsec:migrasi}. Pada sub bab ini akan dijelaskan analisis untuk pengembangan kebutuhan apilkasi WSDC 2017 Bali agar aplikasi tersebut dapat berjalan menggunakan~Ionic~Framework~versi~5.
 
 \subsection{Analisis Kebutuhan Sistem Usulan}
 \label{sec:analisisKebutuhanSistem}
