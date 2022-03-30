@@ -260,36 +260,34 @@ Selain komponen \textit{root}, terdapat pula beberapa komponen lain yang berisi 
 
 Setiap komponen memiliki tiga buah \textit{file} utama, yaitu \textit{file} HTML, CSS, dan TypeScript. \textit{File} HTML digunakan untuk menampilkan sebuah halaman ke dalam aplikasi dengan susunan kode HTML. Lalu \textit{file} CSS digunakan untuk mengatur desain, bentuk, dan tampilan dari sebuah halaman. Sedangkan \textit{file} TypeScript digunakan untuk mengontrol jalannya sebuah komponen.
 
-
 \begin{figure}[H]
      \centering
-     \begin{subfigure}[b]{0.21\textwidth}
+     \begin{subfigure}[b]{0.247\textwidth}
         \centering
-    	\includegraphics[scale=0.4]{Gambar/AnnouncementsPageWireframe.png}
-    	\caption{Halaman \textit{Announcement}}
-    	\label{fig:announcementsPageWireframe}
+	    \includegraphics[scale=0.37]{Gambar/AnnouncementsPageWireframe.png}
+	    \caption{{\it Announcement Page}}
+	    \label{fig:announcementsPageWireframe}
      \end{subfigure}
      \hfill
-     \begin{subfigure}[b]{0.247\textwidth}
+     \begin{subfigure}[b]{0.24\textwidth}
     \centering
-	    \includegraphics[scale=0.4]{Gambar/DrawPageWireframe.png}
-	    \caption{Halaman {\it Draw}}
+	    \includegraphics[scale=0.37]{Gambar/DrawPageWireframe.png}
+	    \caption{\textit{Draw Page}}
 	    \label{fig:drawPageWireframe}
      \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.247\textwidth}
-         \centering
-	    \includegraphics[scale=0.4]{Gambar/HomePageWireframe.png}
-	    \caption{Halaman {\it Home}}
+	\begin{subfigure}[b]{0.24\textwidth}
+    \centering
+	    \includegraphics[scale=0.37]{Gambar/HomePageWireframe.png}
+	    \caption{{\it Home Page}}
 	    \label{fig:homePageWireframe}
      \end{subfigure}
-     \begin{subfigure}[b]{0.247\textwidth}
+	\begin{subfigure}[b]{0.24\textwidth}
     \centering
-	    \includegraphics[scale=0.4]{Gambar/InfoPageWireframe.png}
-	    \caption{Halaman Info}
+	    \includegraphics[scale=0.37]{Gambar/InfoPageWireframe.png}
+	    \caption{Info \textit{Page}}
 	    \label{fig:InfoPageWireframe}
      \end{subfigure}
-        \caption{Wireframe Aplikasi WSDC 2017 Bali}
+	\caption{Wireframe Aplikasi WSDC 2017 Bali}
         \label{fig:three graphs}
 \end{figure}
 
@@ -307,14 +305,14 @@ Komponen-komponen yang ada pada aplikasi WSDC 2017 Bali adalah sebagai berikut:
 	Lalu, terdapat \textbf{export class} yang digunakan pada \textit{import} di dalam app.module.ts. Kelas ini berisi beberapa \textit{method} yang akan digunakan di dalam aplikasi, diataranya adalah sebagai berikut:
 	\begin{itemize}
 		\item ionViewDidLoad() \\
-		Method ini berfungsi untuk memuat data \textit{announcement} yang sudah disimpan di dalam penyimpanan Ionic. 
+		\textit{Method} ini merupakan \textit{method} yang dipanggil ketika tampilan halaman \textit{announcement} pertama kali dimuat. \textit{Method} berfungsi untuk memuat data \textit{announcement} yang sudah disimpan di dalam penyimpanan Ionic. 
 		\item doRefresh() \\
-		Method ini berfungsi untuk melakukan penyegaran ulang pada halaman \textit{announcement} untuk mendapatkan data \textit{announcement} terbaru di dalam server, kemudian menyimpannya ke dalam penyimpanan Ionic.
-		\newpage
+		\textit{Method} ini berfungsi untuk melakukan penyegaran ulang pada halaman \textit{announcement} untuk mendapatkan data \textit{announcement} terbaru di dalam server, kemudian menyimpannya ke dalam penyimpanan Ionic.
+		
 		\item presentConnectionAlert() \\
-		Method ini digunakan ketika method doRefresh() mengalami \textit{error}, yang kemudian memunculkan \textit{toast}.
+		\textit{Method} ini digunakan ketika method doRefresh() mengalami \textit{error}, yang kemudian memunculkan \textit{toast}.
 		\item formatDatetime() \\
-		Method ini berfungsi untuk membuat format tanggal.
+		\textit{Method} ini berfungsi untuk membuat format tanggal.
 	\end{itemize}
 
 	\textit{File} announcement.html digunakan untuk menampilkan halaman \textit{announcemnet}. Terdapat beberapa komponen yang disediakan oleh Ionic Framework, yang diimplementasikan ke dalam halaman \textit{announcement}. Diantaranya adalah sebagai berikut:	
@@ -322,7 +320,7 @@ Komponen-komponen yang ada pada aplikasi WSDC 2017 Bali adalah sebagai berikut:
 	\begin{itemize}
 		\item \textit{Header} \\
 		Pada \textit{header} dari halaman \textit{announcement}, digunakan beberapa \textit{tag} dari komponen yang disediakan oleh Ionic Framework (Kode~\ref{lst:headerannouncement}). Yaitu \textit{tag} <ion-header> yang merupakan komponen \textit{parent} yang menampung komponen \textit{toolbar} yang ditandai dengan warna biru pada gambar ~\ref{fig:announcementsPageWireframe}. Di dalam \textit{tag} tersebut terdapat \textit{tag} pendukung, seperti <ion-navbar>, <button> sebagai tombol untuk membuka \textit{sidebar}, <ion-icon> untuk menampilkan icon, dan <ion-title> untuk menampilkan judul dari halaman, yaitu \textit{Announcement}, pada \textit{navbar}.
-		
+		\newpage
 \begin{lstlisting}[language=html, label={lst:headerannouncement}, caption=\textit{Header} pada halaman \textit{Annoncement}]
 <ion-header>
   <ion-navbar>
@@ -352,8 +350,6 @@ Komponen-komponen yang ada pada aplikasi WSDC 2017 Bali adalah sebagai berikut:
 </ion-content>
 \end{lstlisting} 
 	\end{itemize}
-
-\newpage	
 	
 	\item Komponen \textit{Draw} \\
 	Komponen \textit{draw} digunakan untuk menampilkan halaman \textit{Draw} pada aplikasi. Terdapat \textit{file} TypeScript, draw.ts, yang berfungsi untuk mengatur keseluruhan halaman. Di dalam \textit{flie} tersebut terdapat \textit{decorator} @Component (Kode~\ref{lst:componendraw}) dan \textit{decorator} @ViewChild (Kode~\ref{lst:viewchilddraw}). Pada \textit{decorator} @Component, terdapat CSS \textit{selector} untuk memilih CSS mana yang akan digunakan, serta \textbf{templateUrl} untuk mendefinisikan ekxternal HTML \textit{template} halaman \textit{Draw}yang akan digunakan, yaitu draw.html. Lalu, @ViewChild digunakan untuk memanggil elemen dari DOM untuk meamanggil komponen API ke dalam TypeScript, yaitu pada komponen \textit{draw} adalah drawIFrame yang berada di \textit{file} draw.html.
@@ -368,15 +364,17 @@ Komponen-komponen yang ada pada aplikasi WSDC 2017 Bali adalah sebagai berikut:
 @ViewChild('drawIFrame') drawIFrame: ElementRef;
 \end{lstlisting} 
 
+\newpage
+
 	Lalu, terdapat \textbf{export class} yang akan digunakan pada \textit{import} di dalam app.module.ts. Kelas ini berisi beberapa \textit{method} yang akan digunakan di dalam aplikasi, diataranya adalah sebagai berikut:
 	
 	\begin{itemize}
 		\item ionViewDidLoad() \\
-		Method ini berfungsi untuk mengambil data \textit{draw} yang ada di dalam penyimpanan. Kemudian data yang didapatkan tersebut disimpan ke dalam \textit{child} drawIFrame. Sampai seluruh halaman dimuat, akan dipanggil method presentLoading().
+		\textit{Method} ini merupakan \textit{method} yang dipanggil ketika tampilan halaman \textit{draw} pertama kali dimuat. \textit{Method} ini berfungsi untuk mengambil data \textit{draw} yang ada di dalam penyimpanan. Kemudian data yang didapatkan tersebut disimpan ke dalam \textit{child} drawIFrame. Sampai seluruh halaman dimuat, akan dipanggil method presentLoading().
 		\item presentLoading() \\
-		Method ini berfungsi untuk menampilkan teks saat halaman sedang dimuat. Method ini dipanggil di dalam method ionViewDidLoad().
+		\textit{Method} ini berfungsi untuk menampilkan teks saat halaman sedang dimuat. \textit{Method} ini dipanggil di dalam method ionViewDidLoad().
 		\item onDrawIframeLoad() \\
-		Method ini dipanggil di dalam tag <iframe> pada draw.html. Method ini berfungsi untuk menampilkan data yang telah diambil yang disimpan di dalam \textit{child} drawIFrame.
+		\textit{Method} ini dipanggil di dalam tag <iframe> pada draw.html. \textit{Method} ini berfungsi untuk menampilkan data yang telah diambil yang disimpan di dalam \textit{child} drawIFrame.
 	\end{itemize}
 	
 	\textit{File} draw.html digunakan untuk menampilkan tata letak dari halaman \textit{draw}. Terdapat beberapa komponen yang disediakan oleh Ionic Framework, yang diimplementasikan ke dalam halaman \textit{draw}. Diantaranya adalah sebagai berikut:	
@@ -384,7 +382,7 @@ Komponen-komponen yang ada pada aplikasi WSDC 2017 Bali adalah sebagai berikut:
 	\begin{itemize}
 		\item \textit{Header} \\
 		\textit{Header} dari halaman \textit{draw} seperti pada gambar ~\ref{fig:drawPageWireframe} menggunakan \textit{tag} <ion-header> (Kode~\ref{lst:headerdraw}). \textit{Tag} tersebut merupakan komponen \textit{parent} yang menampung komponen navbar yang ditandai dengan kotak berwarna biru. Di dalam navbar tersebut, terdapat sebuah \textit{tag} <button> untuk memunculkan \textit{sidebar}. Lalu terdapat \textit{tag} <ion-title> sebagai judul dari halaman.
-		\newpage
+
 \begin{lstlisting}[language=html, label={lst:headerdraw}, caption=\textit{Header} pada draw.html]
 <ion-header>
   <ion-navbar>
@@ -406,6 +404,8 @@ Komponen-komponen yang ada pada aplikasi WSDC 2017 Bali adalah sebagai berikut:
 \end{lstlisting} 
 	\end{itemize}
 
+\newpage
+
 	\item Komponen \textit{Home} \\
 	Komponen ini digunakan untuk menampilkan halaman \textit{Home} pada aplikasi. Komponen ini memiliki sebuah \textit{file} TypeScript untuk mengatur keseluruhan halaman. Di dalam \textit{file} home.ts terdapat sebuah \textit{decorator} @Component untuk komponen (Kode~\ref{lst:componenthome}). Di dalam decorator ini terdapat CSS \textit{selector} untuk memilih CSS yang akan digunakan, serta \textbf{templateUrl} untuk mendefinisikan ekxternal HTML \textit{template} yang akan digunakan. \textit{Template} HTML yang digunakan adalah \textit{file} home.html.
 
@@ -420,8 +420,8 @@ Komponen-komponen yang ada pada aplikasi WSDC 2017 Bali adalah sebagai berikut:
 	
 	\begin{itemize}
 		\item ionViewDidLoad() \\
-		\textit{Method} ini berfungsi untuk mengambil keseluruhan data aplikasi yang ada di dalam penyimpanan Kode~\ref{lst:storageionViewDidLoad}). Karena halaman \textit{home} merupakan halaman pertama ditampilkan ke dalam aplikasi, maka method ini yang akan dijalankan pertama kali. Karena itu, memanfaatkan fitur \textit{storage} yang dimiliki oleh Ionic Framework, \textit{method} ini akan mengecek apakah sudah ada data keseluruhan aplikasi di dalam penyimpanan. Jika data tidak ditemukan, maka data akan diambil dari \textit{file} wsdc-data.json yang kemudian dimasukan ke dalam penyimpanan internal.
-		\newpage
+		\textit{Method} ini merupakan \textit{method} yang dipanggil ketika tampilan halaman \textit{home} pertama kali dimuat. \textit{Method} ini berfungsi untuk mengambil keseluruhan data aplikasi yang ada di dalam penyimpanan Kode~\ref{lst:storageionViewDidLoad}). Karena halaman \textit{home} merupakan halaman pertama ditampilkan ke dalam aplikasi, maka method ini yang akan dijalankan pertama kali. Karena itu, dengan memanfaatkan fitur \textit{storage} yang dimiliki oleh Ionic Framework, \textit{method} ini akan mengecek apakah sudah ada data keseluruhan aplikasi di dalam penyimpanan. Jika data tidak ditemukan, maka data akan diambil dari \textit{file} wsdc-data.json yang kemudian dimasukan ke dalam penyimpanan internal.
+
 	\begin{lstlisting}[language=html, label={lst:storageionViewDidLoad}, caption=Storage pada ionViewDidLoad()]
 this.storage.get('wsdcDataStorage').then((data) => {
 	if (data == null) {
@@ -439,7 +439,10 @@ this.storage.get('wsdcDataStorage').then((data) => {
 	}
 })
 \end{lstlisting}
-		Lalu, \textit{method} ini akan mengambil data dari server dengan batas waktu maksimal untuk terhubung dengan server. Jika sudah melewati batas waktu, dan aplikasi belum terhubung dengan server, maka \textit{method} ini akan \textit{method} showToast() yang akan menampilkan Toast yang berisi teks `Failed to refresh information' (Kode~\ref{lst:setTimeOutHome}). Data yang didapatkan dari server akan dimasukan ke dalam penyimpanan \textit{internal}.
+		Lalu, \textit{method} ini akan mengambil data dari server dengan batas waktu maksimal untuk terhubung dengan server. Jika sudah melewati batas waktu, dan aplikasi belum terhubung dengan server, maka \textit{method} ini akan \textit{method} showToast() yang akan menampilkan Toast yang berisi teks `Failed to refresh information' (Kode~\ref{lst:setTimeOutHome}). Data yang didapatkan dari server akan dimasukan ke dalam penyimpanan internal.
+
+\newpage		
+		
 		\begin{lstlisting}[language=html, label={lst:setTimeOutHome}, caption=Perintah setTimeout() pada Home]
 setTimeout(() => {
 	this.http.get('http://wsdc.dnartworks.com/wsdc_data.json')
@@ -459,8 +462,6 @@ setTimeout(() => {
 		\textit{Method} ini berfungsi untuk mengembalikan tanggal dengan format `hari, tanggal'.
 		\item doRefresh() \\
 		\textit{Method} ini berfungsi untuk memuat ulang data yang tersimpan di dalam server. \textit{Method} ini akan melakukan pemanggilan kembali kepada server, dalam batas waktu tertentu. Jika batas waktu maksimal telah tercapai, sedangkan server belum juga memberi tanggapan, maka akan memanggil \textit{method} showToast() yang akan menampilkan sebuah Toast yang berisi teks `Failed to refresh information' (Kode~\ref{lst:doRefreshHome}). Setelah berhasil untuk terhubung dengan server, \textit{method} ini akan menghapus data yang berada di penyimpanan \textit{internal}, dan digantikan dengan data yang telah didapatkan dari server.
-
-\newpage
 
 \begin{lstlisting}[language=html, label={lst:doRefreshHome}, caption=\textit{Method} doRefresh() pada Home]
 // Begin async operation
@@ -512,6 +513,10 @@ this.http.get('http://wsdc.dnartworks.com/wsdc_data.json')
 		
 		Lalu terdapat \textit{tag} <ion-card> yang digunakan sebagai tempat untuk pengumuman terkait acara WSDC 2017 Bali disimpan. Penggunaan \textit{card} ditantai dengan kotak berwarna merah muda. Di dalam \textit{tag} <ion-card> terdapat \textit{tag} <ion-grid> untuk mengatur tata letak dari penyusunan isi dari suatu \textit{card}. Di dalam \textit{grid} tersebut terdapat satu baris dengan \textit{tag} <ion-row> dan dua kolom dengan \textit{tag} <ion-col>. Kolom pertama ditandai dengan kotak berawrna coklat, berisi tanggal beserta pengumuman. Lalu kolom kedua ditandai dengan kotak berwarna oranye berisi gambar.
 		
+		Lalu, terdapat sebuah \textit{tag} <ion-list> untuk menyimpan berita-berita terkait acara WSDC 2017 Bali, yang ditandai dengan warna ungu. Di dalam \textit{list} tersebut terdapat \textit{tag} <ion-list-header> sebagai judul dari \textit{list}, dan \textit{tag} <ion-item> untuk menyimpan berita-berita terkait acara WSDC 2017 Bali. Di dalam \textit{tag} <ion-item> terdapat \textit{tag} <button> yang apabila ditekan oleh pengguna, maka akan mengarahkan pengguna untuk melihat berita tertentu sesuai dengan \textit{item} yang dipilih dengan memanggil \textit{method} launch() yang ada di home.ts. 
+
+\newpage		
+		
 \begin{lstlisting}[language=html, label={lst:contentHome}, caption=\textit{Content} pada home.html]
 <ion-content>
   <ion-refresher (ionRefresh)="doRefresh($event)">
@@ -550,7 +555,7 @@ this.http.get('http://wsdc.dnartworks.com/wsdc_data.json')
 </ion-content>
 \end{lstlisting}
 		
-		Lalu, terdapat sebuah \textit{tag} <ion-list> untuk menyimpan berita-berita terkait acara WSDC 2017 Bali, yang ditandai dengan warna ungu. Di dalam \textit{list} tersebut terdapat \textit{tag} <ion-list-header> sebagai judul dari \textit{list}, dan \textit{tag} <ion-item> untuk menyimpan berita-berita terkait acara WSDC 2017 Bali. Di dalam \textit{tag} <ion-item> terdapat \textit{tag} <button> yang apabila ditekan oleh pengguna, maka akan mengarahkan pengguna untuk melihat berita tertentu sesuai dengan \textit{item} yang dipilih dengan memanggil \textit{method} launch() yang ada di home.ts. 
+		
 	\end{itemize}
 
 \begin{figure}[H]
@@ -600,7 +605,7 @@ this.http.get('http://wsdc.dnartworks.com/wsdc_data.json')
 	\begin{itemize}
 		\item \textit{Header} \\
 		Halaman info memiliki \textit{header} dengan \textit{tag} <ion-header> (Kode~\ref{lst:headerInfo}) seperti pada gambar~\ref{fig:InfoPageWireframe}. \textit{Tag} tersebut merupakan komponen \textit{parent} yang menampung komponen navbar yang ditandai dengan kotak berwarna biru. Di dalam navbar tersebut, terdapat sebuah \textit{tag} <button> untuk memunculkan \textit{sidebar}. Lalu terdapat \textit{tag} <ion-title> sebagai judul dari halaman, yaitu ``Info''.
-		\newpage
+
 \begin{lstlisting}[language=html, label={lst:headerInfo}, caption=\textit{Header} pada info.html]
 <ion-header>
   <ion-navbar>
@@ -645,8 +650,8 @@ this.http.get('http://wsdc.dnartworks.com/wsdc_data.json')
 	
 	\begin{itemize}
 		\item ionViewDidLoad() \\
-		\textit{Method} ini berfungsi untuk memuat data \textit{result} yang sudah disimpan di dalam penyimpanan internal. Setelah berhasil memuat data \textit{result}, data tersebut akan dimasukan ke dalam \textit{child} resultIFrame. Sampai seluruh halaman dimuat, akan dipanggil method presentLoading().
-		\newpage
+		\textit{Method} ini merupakan \textit{method} yang dipanggil ketika tampilan halaman \textit{result} pertama kali dimuat. \textit{Method} ini berfungsi untuk memuat data \textit{result} yang sudah disimpan di dalam penyimpanan internal. Setelah berhasil memuat data \textit{result}, data tersebut akan dimasukan ke dalam \textit{child} resultIFrame. Sampai seluruh halaman dimuat, akan dipanggil method presentLoading().
+
 		\item presentLoading() \\
 		\textit{Method} ini berfungsi untuk menampilkan teks `Please wait...' saat aplikasi menunggu halaman \textit{result} selesai dimuat.
 		\item onResultIframeLoad() \\
@@ -668,7 +673,9 @@ this.http.get('http://wsdc.dnartworks.com/wsdc_data.json')
     <ion-title>Result</ion-title>
   </ion-navbar>
 </ion-header>
-\end{lstlisting} 
+\end{lstlisting}
+
+\newpage 
 		\item \textit{Content}\\
 		\textit{Content} pada halaman result memiliki \textit{tag} <ion-content> (Kode~\ref{lst:contentResult}) yang pada gambar~\ref{fig:ResultPageWireframe} dengan kotak berwarna merah. Di dalam \textit{tag} <ion-content> terdapat \textit{tag} <iframe>. \textit{Tag} tersebut berisi informasi mengenai daftar pemenang acara WSDC 2017 bali yang di dapatkan pada \textit{method} onResultIframeLoad() di kelas ResultPage pada \textit{file} result.ts.
 		
@@ -723,11 +730,13 @@ this.http.get('http://wsdc.dnartworks.com/wsdc_data.json')
   </ion-navbar>
 </ion-header>
 \end{lstlisting} 
-\newpage
+
 		\item \textit{Content} \\
 		\textit{Content} pada halaman result memiliki \textit{tag} <ion-content> (Kode~\ref{lst:contentSchedule}) yang pada gambar~\ref{fig:SchedulePageWireframe} dengan kotak berwarna merah. Di dalam \textit{tag} <ion-content> terdapat dua buah \textit{tag} <div> yang masing masing berisi \textit{tag} <ion-segment> dan \textit{tag} <ion-slides>. \textit{Tag} <ion-segment> digunakan untuk tampilan hari, seperti pada gambar~\ref{fig:SchedulePageWireframe} yang ditandai dengan kotak berwarna hijau. Lalu, \textit{tag} <ion-slides> digunakan untuk tampilan jadwal di dalam satu hari, seperti yang ditandai dengan kotak berwarna coklat. 
 		
 		Setiap jadwal yang berada di \textit{tag} <ion-slides> dibungkus dengan \textit{tag} <ion-list> seperti pada kotak berwarna merah muda di gambar~\ref{fig:SchedulePageWireframe}. Dalam satu \textit{tag} <ion-list> terdapat \textit{tag} <ion-note> yang berisi waktu mulai dan waktu selesai dari satu jadwal seperti yang ditandai dengan kotak berwarna ungu, \textit{tag} <h3> berisi nama acara seperti yang ditandai dengan kotak berwarna oranye, dan \textit{tag} <p> yang berisi tempat acara tersebut diadakan ditandai dengan kotak berwarna biru muda.
+		
+		\newpage
 		
 \begin{lstlisting}[language=html, label={lst:contentSchedule}, caption=\textit{Content} pada schedule.html]
 <ion-content>
@@ -775,6 +784,8 @@ this.http.get('http://wsdc.dnartworks.com/wsdc_data.json')
 	Lalu, terdapat \textbf{export class} pada venues.ts yang digunakan pada \textit{import} di dalam app.module.ts. Kelas ini memiliki satu \textit{constructor}. \textit{Constructor} kelas ini berfungsi untuk mengambil data \textit{venues} yang berada di dalam penyimpanan internal. Data tersebut kemudian disimpan ke dalam variabel lokal valVenues. Selain itu, terdapat sebuah \textit{method} itemTapped() yang berfungsi untuk berpindah halaman ke halaman venues-map, yang akan menampilkan peta lokasi berlangsungnya acara, sesuai dengan \textit{venues} yang dipilih.
 
 	Selain itu, terdapat \textit{file} venues.html yang digunakan untuk menampilkan halaman \textit{venues}. Terdapat beberapa komponen yang disediakan oleh Ionic Framework, yang diimplementasikan ke dalam halaman \textit{venues}. Diantaranya adalah sebagai berikut:	
+
+\newpage	
 	
 	\begin{itemize}
 		\item \textit{Header} \\
@@ -810,7 +821,7 @@ this.http.get('http://wsdc.dnartworks.com/wsdc_data.json')
 \end{lstlisting}
 	\end{itemize}
 
-\newpage	
+
 	
 	\item Komponen \textit{Venues Map} \\
 	Komponen ini digunakan untuk menampilkan halaman \textit{Venues Map} pada aplikasi. Berbeda dengan komponen \textit{venues}, komponen \textit{Venues Map} menampilkan sebuah peta yang berisi lokasi dari acara WSDC 2017 Bali. Komponen ini memiliki sebuah \textit{file} TypeScript untuk mengatur keseluruhan halaman. Di dalam \textit{file} venues\textunderscore map.ts terdapat sebuah \textit{decorator} @Component untuk komponen (Kode~\ref{lst:componentVenuesMap}). Di dalam decorator ini terdapat CSS \textit{selector} untuk memilih CSS yang akan digunakan, serta \textbf{templateUrl} untuk mendefinisikan ekxternal HTML \textit{template} yang akan digunakan. \textit{Template} HTML yang digunakan adalah \textit{file} venues\textunderscore map.html
@@ -845,6 +856,8 @@ this.http.get('http://wsdc.dnartworks.com/wsdc_data.json')
 	\end{itemize}
 	
 	Selain itu, terdapat \textit{file} venues\textunderscore map.html yang digunakan untuk menampilkan halaman \textit{venues map}. Terdapat beberapa komponen yang disediakan oleh Ionic Framework, yang diimplementasikan ke dalam halaman. Diantaranya adalah sebagai berikut:
+
+\newpage	
 	
 	\begin{itemize}
 		\item \textit{Header} \\
@@ -864,7 +877,7 @@ this.http.get('http://wsdc.dnartworks.com/wsdc_data.json')
 		\item \textit{Content} \\
 		\textit{Content} pada halaman venues dibungkus oleh \textit{tag} <ion-content> (Kode~\ref{lst:contentVenuesMap}) yang pada gambar~\ref{fig:VenuePageWireframe} dengan kotak berwarna merah. Di dalam \textit{tag} <ion-content> terdapat sebuah \textit{tag} <div> dengan id bernilai map, untuk menampilkan peta lokasi dari \textit{venues} seperti yang ditandai dengan kotak berwarna hijau pada gambar~\ref{fig:VenueMapPageWireframe}. Lalu untuk judul dari \textit{venues} ditandai dengan kotak berwarna kuning dengan menggunakan \textit{tag} <h3>. Selain itu terdapat sebuah \textit{tag} <ion-scroll> seperti yang ditandai dengan kotak berwarna biru muda, berfungsi untuk menampilkan sebuah konten yang dapat digulir. Di dalam \textit{tag} <ion-scroll> terdapat sebuah \textit{tag} <ion-list> dan <ion-item> seperti yang ditandai dengan kotak berwarna ungu, berisi nama, deskripsi, serta jarak pengguna ke tempat \textit{venues} berada. \textit{Tag} <ion-item> akan melakukan perulangan dengan menggunakan *ngFor yang tersedia pada Angular. Dengan melakukan perulangan ini, akan menampilkan daftar \textit{venues} yang tersedia, sesuai dengan yang ada pada server.
 		
-\newpage		
+	
 		
 \begin{lstlisting}[language=html, label={lst:contentVenuesMap}, caption=\textit{Content} pada venues\textunderscore map.html]
 <ion-content>
@@ -889,6 +902,9 @@ this.http.get('http://wsdc.dnartworks.com/wsdc_data.json')
 	\end{itemize}
 \end{itemize}
 
+\newpage
+
+
 \section{Analisis Sistem Usulan}
 \label{sec:analisisSistemUsulan}
 
@@ -902,7 +918,7 @@ Struktur yang akan dibuat, menggunakan struktur Ionic Framework versi 5, namun m
 
 UI Component yang akan digunakan akan mengikuti perkembangan pada Ionic Framework versi 5. Pada setiap komponen, akan terdapat sebuah \textit{header} dengan \textit{tag} <ion-header>. \textit{Tag} tersebut akan membungkus \textit{tag} <ion-toolbar> sebagai \textit{toolbar} dari aplikasi, yang didalamnya terdapat \textit{tag} <ion-buttons> dan \textit{tag} <ion-title>. Dibandingkan dengan aplikasi sistem kini, terdapat perubahan pada \textit{tag} <ion-toolbar> yang semula bernama <ion-navbar> pada Ionic Framework versi 3. Selain itu ada \textit{tag} <ion-buttons> yang semula bernama <button>. Di dalam \textit{tag} <ion-buttons> akan ada sebuah \textit{tag} <ion-menu-button>.
 
-\newpage
+
 
 Selain itu, terdapat UI Component lain yang akan diterapkan ke dalam masing-masing komponen di dalam aplikasi yang akan dibangun, diantaranya adalah sebagai berikut :
 
@@ -915,6 +931,8 @@ Selain itu, terdapat UI Component lain yang akan diterapkan ke dalam masing-masi
 		
 		\item \textit{Refresher} \\
 		\textit{Refresher} menyediakan fungsionalitas  pull-to-refresh pada komponen \textit{content}. UI Component \textit{Refresher} dengan \textit{tag} <ion-refresher> dan <ion-refresher-content> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3.
+
+\newpage
 
 		\item \textit{List} \\
 		\textit{List} dengan \textit{tag} <ion-list> akan terdiri dari beberapa baris item <ion-item> yang berisi label <ion-label>. UI Component \textit{List} dengan \textit{tag} <ion-list>, <ion-item> dan <ion-label> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3.
@@ -934,7 +952,7 @@ Selain itu, terdapat UI Component lain yang akan diterapkan ke dalam masing-masi
 			\item \textit{Card} \\
 			Komponen ini akan digunakan sebagai tampilan antar muka, yang dapat menjadi titik masuk ke dalam informasi yang lebih detail. UI Component \textit{Card} dengan \textit{tag} <ion-card>, <ion-card-title> dan <ion-card-content> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3.
 
-\newpage			
+		
 			
 			\item \textit{Grid} \\
 			Komponen ini akan digunakan untuk membangun tata letak kustom pada halaman \textit{home} bagian \textit{announcement}, yang terdiri dari baris dan kolom. UI Component \textit{Grid} dengan \textit{tag} <ion-card>, <ion-row> dan <ion-col> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3
@@ -942,6 +960,9 @@ Selain itu, terdapat UI Component lain yang akan diterapkan ke dalam masing-masi
 			\textit{List}  dengan \textit{tag} <ion-list> akan terdiri dari beberapa baris item <ion-item> dan akan memiliki sebuah \textit{header}. UI Component \textit{List} dengan \textit{tag} <ion-list>, <ion-item>, <ion-label> dan <ion-list-header> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3.
 			\item \textit{Icon} \\
 			Komponen ini akan digunakan untuk menampilkan ikon pada halaman \textit{home}. UI Component \textit{List} dengan \textit{tag} <ion-icon> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3.
+
+\newpage
+			
 			\item \textit{Button} \\
 			Di dalam halaman \textit{home}, komponen ini merupakan sebuah komponen yang dapat diklik untuk mengarahkan pengguna ke URL yang berisi berita terkait WSDC 2017 Bali. Pada Ionic Framework versi 3, komponen ini ditulis menggunakan \textit{tag} <button>, lalu pada Ionic Framework versi 5, terjadi perubahan dengan mengganti \textit{tag} tersebut menjadi <ion-button>.
 		\end{itemize}
@@ -957,8 +978,7 @@ Selain itu, terdapat UI Component lain yang akan diterapkan ke dalam masing-masi
 		
 	\item \textit{Result} \\ 
 	Pada komponen \textit{Result}, terdapat sebuah UI Component, yaitu \textit{Content}. Komponen \textit{content} akan digunakan sebagai penyedia area konten yang digunakan untuk mengontrol area konten dan menampilkan isi konten dari halaman \textit{result}. UI Component \textit{Content} dengan \textit{tag} <ion-content> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3. 
-		
-		\newpage
+
 		
 	\item \textit{Schedule} \\
 	Pada komponen \textit{schedule}, terdapat beberapa UI Component yang akan diimplementasikan, diantaranya adalah sebagai berikut:
@@ -967,6 +987,9 @@ Selain itu, terdapat UI Component lain yang akan diterapkan ke dalam masing-masi
 		Komponen ini akan digunakan sebagai penyedia area konten yang digunakan untuk mengontrol area yang dapat digulir dan menampilkan isi konten dari halaman \textit{schedule}. UI Component \textit{Content} dengan \textit{tag} <ion-content> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3.
 			\item \textit{Segment} \\
 		Komponen ini akan digunakan untuk pengguna agar dapat berpindah tampilan di dalam halaman yang sama. Seperti pada tampilan halaman jadwal yang ada pada aplikasi WSDC 2017 Bali saat ini, dimana pengguna dapat berpindah hari untuk mengetahui jadwal kegiatan pada hari tertentu yang dipilih oleh pengguna, namun masih berada di halaman yang sama, yaitu halaman Schedule. UI Component \textit{Segment} dengan \textit{tag} <ion-segment> dan <ion-segment-button> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3.
+		
+\newpage		
+		
 			\item \textit{Slides} \\
 		Komponen ini akan digunakan sebagai wadah dari \textit{multi-section}. Penggunaan slide di halaman \textit{schedule} yaitu untuk berpindah jadwal perhari dengan cara melakukan \textit{swipe} dari kanan ke kiri layar atau sebaliknya. UI Component \textit{Slides} dengan \textit{tag} <ion-slides> dan <ion-slide> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3.
 			\item \textit{List} \\
@@ -981,7 +1004,7 @@ Selain itu, terdapat UI Component lain yang akan diterapkan ke dalam masing-masi
 			\item \textit{Grid} \\
 		Komponen ini akan digunakan untuk membangun tata letak kustom pada halaman info. UI Component \textit{Grid} dengan \textit{tag} <ion-card> dan <ion-row> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3
 
-\newpage		
+	
 		
 			\item \textit{List} \\
 		\textit{List} dengan \textit{tag} <ion-list>, yang terdiri dari baris yang setiap barisnya berisi kategori \textit{venues} yang disusun menggunakan \textit{button}. UI Component \textit{List} dengan \textit{tag} <ion-list> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3.
@@ -990,8 +1013,10 @@ Selain itu, terdapat UI Component lain yang akan diterapkan ke dalam masing-masi
 			\item \textit{Icon} \\
 		Komponen ini akan digunakan untuk menampilkan ikon pada halaman \textit{venues}. UI Component \textit{Icon} dengan \textit{tag} <ion-icon> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3.
 		\end{itemize}
+
+\newpage		
 		
-	\item \textit{VenuesMap}\\
+	\item \textit{Venues Map}\\
 	Pada komponen \textit{venues\textunderscore map}, terdapat beberapa UI Component yang akan diimplementasikan, diantaranya adalah sebagai berikut:
 	\begin{itemize}
 			\item Content \\
@@ -1000,6 +1025,7 @@ Selain itu, terdapat UI Component lain yang akan diterapkan ke dalam masing-masi
 		\textit{List} dengan \textit{tag} <ion-list>, yang terdiri dari baris yang setiap barisnya berisi nama dan lokasi \textit{venues} yang disusun menggunkan <ion-item>. UI Component \textit{List} dengan \textit{tag} <ion-list> dan <ion-item> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3.
 		\end{itemize}
 	
+	Selain itu, akan digunakan sebuah \textit{plugin} yang disediakan oleh Capacitor, yaitu Capacitor Google Maps. \textit{Plugin} ini berfungsi untuk menampilkan peta Google Maps secara \textit{native} pada perangkat pengguna. Lalu, untuk mengetahui posisi dari pengguna, akan digunakan sebuah \textit{plugin} yang disediakan oleh Capacitor, yaitu Capacitor Geolocation. \textit{Plugin} ini akan mendapatkan dan melacak posisi perangkat saat ini saat menggunakan Global Positioning System (GPS). 
 \end{itemize}
 
 %Bagian-bagian dari UI Component yang akan digunakan pada aplikasi WSDC 2017 Bali yang akan dibangun diantaranya yaitu :
@@ -1030,8 +1056,6 @@ Selain itu, terdapat UI Component lain yang akan diterapkan ke dalam masing-masi
 Saat sedang melakukan proses migrasi aplikasi WSDC 2017 Bali dari Ionic Framework versi 3 ke Ionic Framework versi 5, terdapat beberapa kendala yang dialami. Kendala-kendala tersebut adalah sebagai berikut : 
 \begin{itemize}
 	\item Seperti yang disebutkan pada landasan teori (Sub Bab~\ref{subsec:migrasi}) sebelum melakukan migrasi dari Ionic Framework versi 3 ke Ionic Framework versi 5 terlebih dahulu melakukan migrasi dari Ionic Framework versi 3 ke Ionic Framework versi 4. Namun karena tidak tersedianya perintah untuk membuat aplikasi dengan menggunakan Ionic Framework versi 4, maka penulis langsung melakukan migrasi dari Ionic Framework versi 3 ke Ionic Framework versi 5. Dalam melakukan hal ini, penulis berlandaskan bahwa susunan kelas Ionic Framework versi 4 dan versi 5 tidaklah berubah sama sekali. Yang mengalami perubahan hanyalah pembaruan properti mengenai API, CSS, dan {\it package dependencies} yang terpasang, yang telah dijelaskan pada landasan teori (Sub Bab~\ref{subsec:migrasi}).
-
-\newpage	
 	
 	\item Pada awal pengerjaan skripsi, halaman Draw dan Result pada aplikasi WSDC 2017 Bali tidak dapat diakses karena terjadi kesalahan konfigurasi pada server. Lalu setelah menghubungi dan dibantu oleh pembuat dari aplikasi WSDC 2017 Bali, maka masalah ini telah terselesaikan, yaitu halaman Draw dan Result pada aplikasi WSDC 2017 Bali dapat diakses kembali sebagaimana mestinya.
 \end{itemize}
