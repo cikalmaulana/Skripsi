@@ -162,11 +162,13 @@ Ionic mendukung komunikasi dengan menggunakan Native API yang terintegrasi untuk
 \label{subsec:capacitor}
 Tujuan dari Capacitor adalah untuk menyediakan akses ke perangkat {\it native} dan fitur platform, serta untuk menyediakan satu set API untuk mengembangkan aplikasi seluler secara hibrida, {\it Progressive Web Apps} berbasis web, dan aplikasi komputer berbasis Electron~\cite{tor:19:software}. Capacitor merupakan penerus dari Cordova, dengan tujuan untuk memungkinkan aplikasi web modern berjalan di semua platform utama. Capacitor juga mendapat dukungan terhadap banyak {\it plugin} Cordova.
 
+Capacitor melakukan pendekatan secara hybrid yang mememungkinkan pembuatan aplikasi seluler untuk beberapa platform dengan hanya dari satu basis kode~\cite{huber:21:pwa}. Capacitor menampilkan aplikasi seluler dalam komponen \textit{native} WebView yang dibungkus di dalam \textit{native app}, menghasilkan komponen antarmuka pengguna yang memiliki tampilan dan rasa yang mirip dengan komponen \textit{native} dari sistem operasi suatu perangkat. Capacitor menjadi sebuah~pembungkus~aplikasi~web~di~dalam~Android~atau~iOS~\textit{native}. 
+
 \subsubsection{Cordova}
 \label{subsec:cordova}
-Cordova merupakan {\it framework open source} yang dapat membuat pengembang untuk menggunakan teknologi seperti HTML, JavaScript, dan CSS untuk membangun aplikasi untuk perangkat bergerak yang dapat berjalan pada beberapa sistem operasi {\it mobile}~\cite{gonsalves:18:evaluating}. Cordova menyediakan antarmuka antara WebView dan lapisan {\it native} pada perangkat~\cite{griffith:17:mobile}. Selain dapat bekerja pada dua platform seluler Android dan iOS, Cordova juga dapat digunakan pada platform seluler seperti Windows Phone, Blackberry, dan FireOS.
+Cordova merupakan {\it framework open source} yang dapat membuat pengembang untuk menggunakan teknologi seperti HTML, JavaScript, dan CSS untuk membangun aplikasi untuk perangkat bergerak yang dapat berjalan pada beberapa sistem operasi {\it mobile}~\cite{gonsalves:18:evaluating}. Cordova menyediakan antarmuka antara WebView dan lapisan {\it native} pada perangkat~\cite{griffith:17:mobile}. Selain dapat bekerja pada dua platform seluler Android dan iOS,~Cordova~juga~dapat~digunakan~pada~platform~seluler~seperti~Windows~Phone,~Blackberry,~dan~FireOS.
 
-Untuk mengonfigurasi proyek Cordova, saat ini dapat menggunakan {\it Command Line Tool} (CLI). CLI membuat proyek dasar dan mengonfigurasinya agar berfungsi dengan platform seluler apa pun yang didukung yang dapat digunakan. Cordova CLI juga dapat membuat pengembang memliki integrasi dan pengelolaan {\it plug-in}. Selain itu, CLI juga dapat mengkompilasi aplikasi untuk berjalan pada simulator atau pada perangkat {\it native}. Serupa dengan Capacitor, Cordova membuat pengembang dapat mengakses fitur {\it native} dari sebuah perangkat, seperti kamera, papan ketik, dan geolokasi, menggunakan {\it plugin}. {\it Framework} Ionic telah terdapat berbagai macam TypeScript {\it wrapper} untuk {\it plugins} Cordova.  Untuk dapat menggunakan Cordova Plugins, yaitu dengan memasang Cordova Plugins terlebih dahulu (Kode~\ref{lst:installCordova}), dan memperbaruinya ke versi terakhir (Kode~\ref{lst:updateCordova}) yang dapat dilakukan melalui CLI. Setiap {\it plugins} memiliki dua komponen, yaitu kode {\it native} (Cordova), dan kode TypeScript (Ionic Native). Cordova Plugins juga dibungkus di dalam Promise atau Observable untuk menyediakan antarmuka {\it plug-in}.
+Untuk mengonfigurasi~proyek~Cordova,~saat~ini~dapat~menggunakan~{\it Command Line Tool} (CLI). CLI membuat proyek dasar dan mengonfigurasinya~agar~berfungsi dengan platform seluler apa pun yang didukung yang dapat digunakan. Cordova CLI juga dapat membuat pengembang memliki integrasi dan pengelolaan {\it plug-in}. Selain itu, CLI juga dapat mengkompilasi aplikasi untuk berjalan pada simulator~atau~pada~perangkat {\it native}.~Serupa~dengan~Capacitor,~Cordova membuat pengembang dapat mengakses fitur {\it native} dari sebuah perangkat, seperti kamera, papan ketik, dan geolokasi, menggunakan {\it plugin}. {\it Framework} Ionic~telah~terdapat~berbagai~macam~TypeScript~{\it wrapper}~untuk {\it plugins} Cordova.  Untuk dapat menggunakan Cordova Plugins, yaitu dengan memasang Cordova Plugins terlebih dahulu (Kode~\ref{lst:installCordova}), dan memperbaruinya ke versi terakhir (Kode~\ref{lst:updateCordova}) yang dapat dilakukan melalui CLI. Setiap {\it plugins} memiliki dua komponen, yaitu kode {\it native} (Cordova), dan kode TypeScript (Ionic Native).
 
 \newpage
 
@@ -611,7 +613,7 @@ npm install @ionic/angular>
 				\end{itemize}	
 
 				\item Navbar \\
-				Pada Ionic 4, terdapat penghapusan terhadap komponen <ion-navbar> karena untuk menjaga agar selalu menggunakan <ion-toolbar> dengan {\it back button} yang eksplisit~\ref{lst:navbarIonic4}.
+				Pada Ionic 4, terdapat penghapusan terhadap komponen <ion-navbar> karena untuk menjaga agar selalu menggunakan <ion-toolbar> dengan {\it back button} yang eksplisit (Kode~\ref{lst:navbarIonic4}).
 				\begin{lstlisting}[language=php, label={lst:navbarIonic4}, caption=Penggunaan Navbar pada Ionic 4 dengan {\it Back Button}]
 <ion-toolbar>
 	<ion-buttons slot="start">
@@ -620,8 +622,33 @@ npm install @ionic/angular>
 	<ion-title>My Navigation Bar</ion-title>
 </ion-toolbar>
 				\end{lstlisting}
+				
+				\item Overlays \\
+				Pada Ionic 4, semua overlay harus menggunakan async/await. Overlay tersebut adalah Action Sheet, Alert, Loading, Modal, Popover, and Toast (Kode~\ref{lst:overlaysIonic4}). Selain itu, terjadi perubahan nama propert enableBackdropDismiss menjadi backdropDismiss.
+				
+				\begin{lstlisting}[language=php, label={lst:overlaysIonic4}, caption=Penggunaan Overlay untuk Toast pada Ionic 4]
+async presentToast() {
+    const toast = await this.toastController.create({
+      message: 'Your settings have been saved.',
+      duration: 2000
+    });
+    toast.present();
+}
+				\end{lstlisting}
+				
+				\item Scroll \\
+				\textit{Tag} <ion-scroll> sudah dihapus pada Ionic 4 agar penggunaan \textit{tag} <ion-content> menjadi lebih maksimal.
+				
+				\item Segment Button \\
+				Pada Ionic 4, teks pada Segment Button membutuhkan <ion-label> untuk membungkusnya (Kode~\ref{lst:segmentButtonIonic4}).
+				\begin{lstlisting}[language=php, label={lst:segmentButtonIonic4}, caption=Penggunaan Segment Button untuk Toast pada Ionic 4]
+<ion-segment-button>
+	<ion-label>Item One</ion-label>
+</ion-segment-button>
+				\end{lstlisting}
+				
 			\end{itemize}
-			Selain yang telah disebutkan, terdapat beberapa perubahan lainnya yang tidak ditulis seperti Action Sheet, Alert, Colors, Content, Datetime, Dynamic Mode, Fixed Content, Grid, Icon, Infinite Scroll, Item, Item Divider, Item Options, Item Sliding, List Header, Loading, Modal, Option, Overlays, Popover, Radio, Range, Refresher, Scroll, Segment Button, Select, Show When, Hide When, Spinner, Tabs, Typography, Therming, Toast, dan Toolbar~\footnote{\textit{`Breaking Changes'} https://github.com/ionic-team/ionic-framework/blob/main/angular/BREAKING.md, Diakses pada 13 November 2021. \label{ref:breakingChanges}}.
+			Selain yang telah disebutkan, terdapat beberapa perubahan lainnya yang tidak ditulis seperti Action Sheet, Alert, Colors, Content, Datetime, Dynamic Mode, Fixed Content, Grid, Icon, Infinite Scroll, Item Divider, Item Options, Item Sliding, List Header, Loading, Modal, Option, Popover, Radio, Range, Refresher, Select, Show When, Hide When, Spinner, Tabs, Typography, Therming, dan Toolbar~\footnote{\textit{`Breaking Changes'} https://github.com/ionic-team/ionic-framework/blob/main/angular/BREAKING.md, Diakses pada 13 November 2021. \label{ref:breakingChanges}}.
 		\end{itemize}
 		%---END ITEMIZE MENYALIN BAGIAN BAGIAN APLIKASi---%
 
@@ -649,9 +676,7 @@ npm install @ionic/angular>
 			Kelas dari {\it responsive display} yang ditemukan di dalam berkas display.css memiliki kueri media yang diperbarui untuk lebih mencerminkan bagaimana cara kerjanya.
 
 			\item {\it Activated, Focused, Hover States} \\
-			Kelas .activated secara otomatis ditambahkan ke komponen yang dapat diklik, mengalami perubahan nama menjadi .ion-activated. Selain itu juga memperbarui komponen Action Sheet sehingga variabel akan diawali dengan {\it button}. Hal ini dapat memungkinkan aplikasi tetap memiliki kontrol atas {\it opacity} jika diinginkan, tetapi saat memperbarui status, hanya perlu mengatur variabel utama, yaitu -background-activated, -background-focused, -background-hover. Hal tersebut penting saat mengubah tema global, karena memperbarui warna {\it toolbar} akan secara otomatis memperbarui {\it hover states} untuk semua {\it buttons} di {\it toolbar} (Kode~\ref{lst:hoverStates}). 
-
-\newpage			
+			Kelas .activated secara otomatis ditambahkan ke komponen yang dapat diklik, mengalami perubahan nama menjadi .ion-activated. Selain itu juga memperbarui komponen Action Sheet sehingga variabel akan diawali dengan {\it button}. Hal ini dapat memungkinkan aplikasi tetap memiliki kontrol atas {\it opacity} jika diinginkan, tetapi saat memperbarui status, hanya perlu mengatur variabel utama, yaitu -background-activated, -background-focused, -background-hover. Hal tersebut penting saat mengubah tema global, karena memperbarui warna {\it toolbar} akan secara otomatis memperbarui {\it hover states} untuk semua {\it buttons} di {\it toolbar} (Kode~\ref{lst:hoverStates}). 		
 			
 		\begin{lstlisting}[language=php, label={lst:hoverStates}, caption=Contoh Kode {\it Hover States} pada Ionic 5]
 /* Setting the button background on hover to solid red */
@@ -686,6 +711,9 @@ ion-action-sheet {
 		\begin{itemize}
 			\item Back Button dan Button  \\
 			Perubahan terdapat pada penambahan penamaan kelas .activated yang secara otomatis ditambahkan ke komponen yang dapat di klik, menjadi .ion-activated.
+			
+			\newpage 
+			
 			\item Controllers\\
 			Terdapat beberapa komponen yang dihapus dari Ionic sebagai elemen, yaitu ion-action-sheet-controller, ion-alert-controller, ion-loading-controller, ion-menu-controller, ion-modal-controller, ion-picker-controller, ion-popover-controller, dan ion- toast-controller. Sebagai gantinya, maka harus diimpor dari @ionic/core. 
 			\item Header dan Footer\\
@@ -715,6 +743,9 @@ ion-action-sheet {
 			
 			\item Toast \\
 			Properti close button seperti showCloseButton dan closeButtonText telah dihapus. Sebagai gantinya, gunakan buttons array untuk fungsi batal (Kode~\ref{lst:toast}.
+			
+			\newpage
+			
 			\begin{lstlisting}[language=php, label={lst:toast}, caption=Kode Program untuk Toast]
 async presentToast() {
 	const toast = await this.toastController.create({
