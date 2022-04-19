@@ -12,7 +12,7 @@ Aplikasi WSDC 2017 Bali dibangun menggunakan {\it framework} Ionic versi 3, dan 
 
 \begin{figure}[H]
 		\centering
-	    \includegraphics[scale=0.4]{Gambar/useCaseDiagram.png}
+	    \includegraphics[scale=0.35]{Gambar/useCaseDiagram.png}
 	    \caption{{\it Use Case Diagram} Aplikasi WSDC 2017 Bali}
 	    \label{fig:useCaseDiagram}
 \end{figure}
@@ -37,10 +37,10 @@ Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu 
 				\hline
 				No & Aksi Aktor                               & Reaksi Sistem                                          \\ \hline
 				1  & Pengguna membuka aplikasi WSDC 2017 Bali & Aplikasi WSDC 2017 Bali menampilkan halaman selamat datang. \\ \hline
-				2  &                                          & Aplikasi WSDC 2017 Bali menampilkan halaman utama           \\ \hline
-				3  & Pengguna mengklik {\it card} Announcements & Aplikasi WSDC 2017 Bali menampilkan halaman Pemberitahuan. \\ \hline
+				2  &                                          & Aplikasi WSDC 2017 Bali menampilkan halaman \textit{Home}           \\ \hline
+				3  & Pengguna mengklik {\it card} Announcements & Aplikasi WSDC 2017 Bali menampilkan halaman \textit{Announcement}. \\ \hline
 			\end{tabular}
-			\caption{Tabel Skenario dari Halaman Utama}
+			\caption{Tabel Skenario dari Halaman \textit{Home}}
 			\label{table:skenarioHalamanUtama}
 		\end{table}
 	%\end{itemize}
@@ -60,7 +60,7 @@ Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu 
 				No & Aksi Aktor                               & Reaksi Sistem                                          \\ \hline
 				1  & Pengguna menekan tombol {\it read more} pada berita di halaman utama aplikasi WSDC 2017 Bali. & Aplikasi WSDC 2017 Bali menampilkan berita pada acara WSDC 2017 Bali \\ \hline
 			\end{tabular}
-			\caption{Tabel Skenario dari Berita}
+			\caption{Tabel Skenario dari \textit{Newsletter}}
 			\label{table:skenarioBerita}
 		\end{table}
 	%\end{itemize}
@@ -78,9 +78,9 @@ Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu 
 			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
 				\hline
 				No & Aksi Aktor                               & Reaksi Sistem                                          \\ \hline
-				1  & Pengguna menekan tombol Announcement pada \textit{sidebar} & Aplikasi WSDC 2017 Bali menampilkan halaman pengumuman. \\ \hline
+				1  & Pengguna menekan tombol Announcement pada \textit{sidebar} & Aplikasi WSDC 2017 Bali menampilkan halaman \textit{Announcement}. \\ \hline
 			\end{tabular}
-			\caption{Tabel Skenario dari Halaman Pemberitahuan}
+			\caption{Tabel Skenario dari Halaman \textit{Announcement}}
 			\label{table:skenarioHalamanPemberitahuan}
 		\end{table}
 	%\end{itemize}
@@ -98,10 +98,10 @@ Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu 
 			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
 				\hline
 				No & Aksi Aktor                               & Reaksi Sistem                                          \\ \hline
-				1  & Pengguna menekan tombol Schedule pada \textit{sidebar} & Aplikasi WSDC 2017 Bali menampilkan halaman jadwal. \\ \hline
+				1  & Pengguna menekan tombol Schedule pada \textit{sidebar} & Aplikasi WSDC 2017 Bali menampilkan halaman \textit{Schedule}. \\ \hline
 				2  & Pengguna menekan tanggal yang berada di atas halaman jadwal & Aplikasi WSDC 2017 Bali menampilkan jadwal berdasarkan tanggal yang dipilih oleh pengguna dengan detail waktu, lokasi, dan nama kegiatan. \\ \hline
 			\end{tabular}
-			\caption{Tabel Skenario dari Halaman Jadwal}
+			\caption{Tabel Skenario dari Halaman \textit{Schedule}}
 			\label{table:skenarioHalamanJadwal}
 		\end{table}
 	%\end{itemize}
@@ -120,7 +120,7 @@ Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu 
 			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
 				\hline
 				No & Aksi Aktor                               & Reaksi Sistem                                          \\ \hline
-				1  & Pengguna menekan tombol Venues pada \textit{sidebar} & Aplikasi WSDC 2017 Bali menampilkan halaman Venues yang berisi {\it Ceremony Venues}, {\it Competition Venues}, {\it Delegates Accomodation}, dan {\it Educational Tour}.\\ \hline
+				1  & Pengguna menekan tombol \textit{Venues} pada \textit{sidebar} & Aplikasi WSDC 2017 Bali menampilkan halaman \textit{Venues} yang berisi {\it Ceremony Venues}, {\it Competition Venues}, {\it Delegates Accomodation}, dan {\it Educational Tour}.\\ \hline
 				2  & Pengguna menekan kategori {\it venues} yang diinginkan. & Aplikasi WSDC 2017 Bali menampilkan peta, nama lokasi acara dengan disertai penanda yang ada di dalam peta, dan jarak antara lokasi pengguna saat ini dan lokasi acara.\\ \hline
 			\end{tabular}
 			\caption{Tabel Skenario dari Halaman {\it Venues}}
@@ -142,12 +142,14 @@ Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu 
 			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
 				\hline
 				No & Aksi Aktor                               & Reaksi Sistem                                          \\ \hline
-				1  & Pengguna menekan tombol Draw pada \textit{sidebar} & Aplikasi WSDC 2017 Bali menampilkan halaman Draw yang dapat digulir kebawah untuk menampilkan keseluruhan tabel. \\ \hline
+				1  & Pengguna menekan tombol \textit{Draw} pada \textit{sidebar} & Aplikasi WSDC 2017 Bali menampilkan halaman \textit{Draw} yang dapat digulir kebawah untuk menampilkan keseluruhan tabel. \\ \hline
 			\end{tabular}
 			\caption{Tabel Skenario dari Halaman {\it Draw}}
 			\label{table:skenarioHalamanDraw}
 		\end{table}
 	%\end{itemize}
+	
+	\newpage
 	\item \textit{Result} \\ 
 	Pada halaman ini, pengguna dapat melihat pemenang dari kompetisi WSDC 2017 Bali. Untuk mengakses halaman ini, dapat melalui sidebar (Tabel~\ref{table:skenarioHalamanHasil}).
 	%\begin{itemize}
@@ -162,9 +164,9 @@ Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu 
 			\begin{tabular}{|p{0.5cm}|p{7cm}|p{7cm}|}
 				\hline
 				No & Aksi Aktor                               & Reaksi Sistem                                          \\ \hline
-				1  & Pengguna menekan tombol Result pada \textit{sidebar} & Aplikasi WSDC 2017 Bali menampilkan halaman Result yang berisi pemenang dari babak semifinal, perempatfinal, dan perdelapanfinal. \\ \hline
+				1  & Pengguna menekan tombol \textit{Result} pada \textit{sidebar} & Aplikasi WSDC 2017 Bali menampilkan halaman \textit{Result} yang berisi pemenang dari babak semifinal, seperempatfinal, dan seperdelapanfinal. \\ \hline
 			\end{tabular}
-			\caption{Tabel Skenario dari Halaman Hasil}
+			\caption{Tabel Skenario dari Halaman \textit{Result}}
 			\label{table:skenarioHalamanHasil}
 		\end{table}
 	%\end{itemize}
@@ -197,10 +199,7 @@ Terdapat {\it sidebar} untuk pengguna agar dapat bernavigasi ke dalam menu-menu 
 
 Aplikasi WSDC 2017 Bali saat ini menggunakan Ionic versi 3, Angular versi 4.0.0, dan Cordova. Dengan Ionic Framework yang disusun berdasarkan arsitektur Angular, maka aplikasi WSDC 2017 memungkinakn untuk ditulis menggunakan bahasa pemrograman web seperti HTML, CSS, dan Javascript. Pada Ionic Framework vesi 3 juga terdapat UI Component~\ref{subsec:uiComponent} yang digunakan dalam aplikasi WSDC 2017 Bali, diantarnya yaitu Badge, Button, Card, Content, Grid, Icons, Items, List, Menu, Segment, Slides, Tabs, dan Toolbar. Kemudian dengan digunakannya Cordova, maka seluruh kode program yang mneggunakan bahasa pemrograman web tersebut, dapat hidup dan berjalan seperti halnya aplikasi \textit{native} di dalam perangkat seluler.
 
-\newpage
-
-Anatomi pada Ionic Framework memiliki struktur proyek Cordova. Pada saat pertama kali dijalankan, aplikasi WSDC 2017 Bali secara \textit{default} akan membuka file index.html yang berada di folder src/index.html. File ini merupakan file pertama yang dijalankan untuk aplikasi WSDC 2017 Bali. Tujuan dari file ini adalah untuk melakukan pengaturan terhadap script, CSS, serta menjalankan aplikasi. Di dalam file index.html ini terapat sebuah tag <ion-app>. Tag ini yang pertama dicari dan dijalankan oleh Ionic untuk  membuka komponen \textit{root} dari aplikasi WSDC 2017 Bali. Pada saat pertama menjalankan aplikasi, kode di dalam folder src akan ditranspilasikan ke versi JavaScript yang dapat dipahami browser. Dengan begitu, aplikasi dapat menjalankan TypeScript yang dikompil
-asi ke bentuk JavaScript.
+Anatomi pada Ionic Framework memiliki struktur proyek Cordova. Pada saat pertama kali dijalankan, aplikasi WSDC 2017 Bali secara \textit{default} akan membuka file index.html yang berada di folder src/index.html. File ini merupakan file pertama yang dijalankan untuk aplikasi WSDC 2017 Bali. Tujuan dari file ini adalah untuk melakukan pengaturan terhadap script, CSS, serta menjalankan aplikasi. Di dalam file index.html ini terapat sebuah tag <ion-app>. Tag ini yang pertama dicari dan dijalankan oleh Ionic untuk  membuka komponen \textit{root} dari aplikasi WSDC 2017 Bali. Pada saat pertama menjalankan aplikasi, kode di dalam folder src akan ditranspilasikan ke versi JavaScript yang dapat dipahami browser. Dengan begitu, aplikasi dapat menjalankan TypeScript yang dikompilasi ke bentuk JavaScript.
 
 Setelah index.html dijalankan, titik masuk ke dalam aplikasi WSDC 2017 Bali adalah file app.module.ts yang berada di src/app/app.module.ts. Di dalam file ini terdapat NgModule untuk mendeklarasi komponen apa saja yang akan digunakan, mengimpor module, bootstrap apa yang digunakan, dan menyediakan \textit{services} apa yang akan digunakan oleh komponen (Kode~\ref{lst:NgModuleWSDC2017Bali}).  
 
@@ -368,7 +367,7 @@ Komponen-komponen yang ada pada aplikasi WSDC 2017 Bali adalah sebagai berikut:
 		\item ionViewDidLoad() \\
 		\textit{Method} ini merupakan sebuah \textit{lifecycle event} yang dijalankan saat halaman \textit{draw} telah dimuat. \textit{Event} ini hanya berjalan satu kali, jadi jika sudah melakukan chache terhadap halaman ini, maka ionViewDidLoad() tidak akan berjalan lagi. \textit{Lifecycle event} ini berguna untuk melakukan pengaturan awal, yaitu untuk memuat data \textit{draw} dari \textit{storage}, kemudian data tersebut dimasukkan ke dalam \textit{child} drawIFrame. Terakhir, method ini akan memanggil method presentLoading().
 		\item presentLoading() \\
-		\textit{Method} ini berfungsi untuk menampilkan sebuah \textit{overlay} yang menunjukkan sebuah pesan dan indikator pemuatan saat pertama kali halaman \textit{draw} dimuat. Karena \textit{overlay} ini muncul di atas konten aplikasi, maka aktivitas pengguna akan diblokir untuk sementara selama 3 detik.
+		\textit{Method} ini berfungsi untuk menampilkan sebuah \textit{overlay} yang menunjukkan sebuah pesan dan indikator pemuatan saat pertama kali halaman \textit{draw} dimuat. Karena \textit{overlay} ini muncul di atas konten aplikasi, maka aktivitas pengguna akan diblokir untuk sementara sampai seluruh halaman dimuat, yaitu sampai \textit{method} onDrawIframeLoad() selesai.
 		\item onDrawIframeLoad() \\
 		\textit{Method} ini merupakan sebuah \textit{template statement} dipanggil oleh \textit{event} di dalam tag <iframe> pada draw.html yaitu \textit{event} (load). \textit{Method} ini berfungsi untuk menampilkan data yang telah diambil yang disimpan di dalam \textit{child} drawIFrame.
 	\end{itemize}
@@ -506,26 +505,26 @@ Komponen-komponen yang ada pada aplikasi WSDC 2017 Bali adalah sebagai berikut:
      \begin{subfigure}[b]{0.21\textwidth}
         \centering
 	    \includegraphics[scale=0.4]{Gambar/VenuePageWireframe.png}
-	    \caption{Halaman {\it Venues}}
+	    \caption{{\it Venues Page}}
 	    \label{fig:VenuePageWireframe}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.247\textwidth}
     \centering
 	    \includegraphics[scale=0.4]{Gambar/VenueMapPageWireframe.png}
-	    \caption{Halaman \textit{Venues Map}}
+	    \caption{\textit{Venues Map Page}}
 	    \label{fig:VenueMapPageWireframe}
      \end{subfigure}
 	\begin{subfigure}[b]{0.247\textwidth}
     \centering
 	    \includegraphics[scale=0.4]{Gambar/SchedulePageWireframe.png}
-	    \caption{Halaman {\it Schedule}}
+	    \caption{{\it Schedule Page}}
 	    \label{fig:SchedulePageWireframe}
      \end{subfigure}
 	\begin{subfigure}[b]{0.247\textwidth}
     \centering
 	    \includegraphics[scale=0.4]{Gambar/ResultPageWireframe.png}
-	    \caption{Halaman {\it Result}}
+	    \caption{{\it Result Page}}
 	    \label{fig:ResultPageWireframe}
      \end{subfigure}
 	\caption{Wireframe Aplikasi WSDC 2017 Bali}
@@ -597,7 +596,7 @@ Komponen-komponen yang ada pada aplikasi WSDC 2017 Bali adalah sebagai berikut:
 		\item ionViewDidLoad() \\
 		\textit{Method} ini merupakan sebuah \textit{lifecycle event} yang dijalankan saat halaman \textit{result} telah dimuat. \textit{Event} ini hanya berjalan satu kali, jadi jika sudah melakukan cache terhadap halaman ini, maka ionViewDidLoad() tidak akan berjalan lagi. \textit{Lifecycle event} ini berguna untuk melakukan pengaturan awal, yaitu untuk memuat data \textit{result} yang sudah disimpan di dalam penyimpanan internal. Setelah berhasil memuat data \textit{result}, data tersebut akan dimasukan ke dalam \textit{child} resultIFrame. Terakhir, akan dipanggil \textit{method} presentLoading().
 		\item presentLoading() \\
-		\textit{Method} ini berfungsi untuk menampilkan sebuah \textit{overlay} yang menunjukkan sebuah pesan dan indikator pemuatan saat pertama kali halaman \textit{draw} dimuat. Karena \textit{overlay} ini muncul di atas konten aplikasi, maka aktivitas pengguna akan diblokir untuk sementara selama 3 detik. 
+		\textit{Method} ini berfungsi untuk menampilkan sebuah \textit{overlay} yang menunjukkan sebuah pesan dan indikator pemuatan saat pertama kali halaman \textit{draw} dimuat. Karena \textit{overlay} ini muncul di atas konten aplikasi, maka aktivitas pengguna akan diblokir untuk sementara sampai seluruh halaman dimuat, yaitu sampai \textit{method} onDrawIframeLoad() selesai. 
 		\item onResultIframeLoad() \\
 		\textit{Method} ini merupakan sebuah \textit{template statement} dipanggil oleh \textit{event} di dalam tag <iframe> pada result.html yaitu \textit{event} (load). \textit{Method} ini berfungsi untuk menampilkan data yang telah diambil yang disimpan di dalam \textit{child} resultIFrame.
 	\end{itemize}
@@ -646,7 +645,7 @@ Komponen-komponen yang ada pada aplikasi WSDC 2017 Bali adalah sebagai berikut:
 @ViewChild('segmentContainer') segmentContainer: ElementRef;
 \end{lstlisting} 
 
-	Lalu, terdapat \textbf{export class} pada schedule.ts yang digunakan pada \textit{import} di dalam app.module.ts. Kelas ini memiliki satu \textit{constructor}. \textit{Constructor} kelas ini berfungsi untuk mengambil data \textit{result} yang berada di dalam penyimpanan internal. Data tersebut kemudian disimpan ke dalam variabel lokal schedules. Kemudian akan mengatur \textit{segment} yang aktif pada saat pertama kali halaman \textit{result} dibuka, yaitu \textit{segment} yang pertama dan menampilkan \textit{slide} pertama yang berisi jadwal pada hari pertama. Selain itu, terdapat beberapa \textit{method} yang digunakan, yaitu:
+	Lalu, terdapat kelas SchedulePage pada schedule.ts yang ini memiliki satu \textit{constructor}. \textit{Constructor} kelas ini berfungsi untuk mengambil data \textit{result} yang berada di dalam penyimpanan internal. Data tersebut kemudian disimpan ke dalam variabel lokal schedules. Kemudian akan mengatur \textit{segment} yang aktif pada saat pertama kali halaman \textit{result} dibuka, yaitu \textit{segment} yang pertama dan menampilkan \textit{slide} pertama yang berisi jadwal pada hari pertama. Selain itu, terdapat beberapa \textit{method} yang digunakan, yaitu:
 	
 	\begin{itemize}
 		\item onSegmentChanged(segmentButton) \\
@@ -979,7 +978,7 @@ Lalu sebagai penyedia \textit{interface} untuk mengakses SDK \textit{native} dan
 
 \newpage
 
-Dengan digunakannya Capacitor, maka akan digunakan sebuah \textit{plugin} yang disediakan oleh Capacitor, yaitu Capacitor Google Maps yang menggantikan \textit{plugin} Google Maps sebelumnya yang berjalan menggunakan Cordova. \textit{Plugin} ini berfungsi untuk menampilkan peta Google Maps secara \textit{native} pada perangkat pengguna. Peta tersebut berisi lokasi dari seluruh acara WSDC 2017 Bali dilaksanakan yang akan ditandai dengan \textit{marker}, dan juga akan menampilkan posisi dari perangkat pengguna. Lalu, untuk mengetahui posisi dari pengguna, akan digunakan sebuah \textit{plugin} yang disediakan oleh Capacitor, yaitu Capacitor Geolocation. \textit{Plugin} ini akan mendapatkan posisi \textit{latitude} dan \textit{longitude} perangkat saat ini dengan menggunakan Global Positioning System (GPS). 
+Dengan digunakannya Capacitor, maka akan digunakan sebuah \textit{plugin} yang disediakan oleh Capacitor, yaitu Capacitor Google Maps yang menggantikan \textit{plugin} Google Maps sebelumnya yang berjalan menggunakan Cordova. \textit{Plugin} ini berfungsi untuk menampilkan peta Google Maps secara \textit{native} pada perangkat pengguna. Peta tersebut berisi lokasi dari seluruh acara WSDC 2017 Bali dilaksanakan yang ditandai dengan \textit{marker}, dan juga akan menampilkan posisi dari perangkat pengguna. Lalu, untuk mengetahui posisi dari pengguna, akan digunakan sebuah \textit{plugin} yang disediakan oleh Capacitor, yaitu Capacitor Geolocation. \textit{Plugin} ini akan mendapatkan koordinat berupa \textit{latitude} dan \textit{longitude} dimana perangkat berada saat ini dengan menggunakan \textit{Global Positioning System} (GPS). 
 \end{itemize}
 
 \subsection{Permasalahan Pengembangan Sistem Usulan}
