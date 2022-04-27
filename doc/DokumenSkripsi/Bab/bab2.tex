@@ -3,7 +3,7 @@
 \chapter{Landasan Teori}
 \label{chap:teori}
 
-Pada bab ini akan menjelaskan dasar-dasar teori mengenai Ionic, berikut dengan cara untuk melakukan migrasi dari Ionic 3 ke Ionic 5. Akan dibahas pula aplikasi WSDC 2017 Bali saat ini, Native API berupa Capacitor dan Cordova, dan UI Components.
+Pada bab ini akan menjelaskan dasar-dasar teori mengenai Ionic, berikut dengan cara untuk melakukan migrasi dari Ionic 3 ke Ionic 5. Akan dibahas pula aplikasi WSDC 2017 Bali saat ini, Angular, Native API berupa Capacitor dan Cordova, dan UI Components.
 
 \section{WSDC 2017 Bali}
 \label{sec:wsdc2017bali}
@@ -88,7 +88,7 @@ Fitur-fitur yang terdapat di aplikasi WSDC 2017 Bali saat ini yaitu :
 \section{Angular}
 \label{sec:angular} 
 %buku Angular Development with TypeScript
-Angular merupakan kerangka kerja Javascript terbuka, yang dikembangkan oleh Google, dan merupakan penerus dari versi sebelumnya yaitu AngularJS~\cite{fain:18:angular}. Angular versi pertama dirilis pada tahun 2016 dengan nama Angular 2. Aplikasi Angular dapat dibangun dengan menggunakan JavaScript, atau TypeScript.
+Angular merupakan kerangka kerja Javascript terbuka yang dikembangkan oleh Google, dan merupakan penerus dari versi sebelumnya yaitu AngularJS~\cite{fain:18:angular}. Angular versi pertama dirilis pada tahun 2016 dengan nama Angular 2. Aplikasi Angular dapat dibangun dengan menggunakan JavaScript, atau TypeScript.
 
 %buku SPA Design and Architecture: Understanding single-page web applications
 Angular dapat digunakan untuk membuat aplikasi Single-page-application (SPA), yaitu ketika halaman awal dimuat, semua yang dibutuhkan untuk membuat dan menampilkan sebuah halaman diunduh, kemudian ditampilkan kedalam layar~\cite{scott:15:spa}. Tampilan pada awalnya merupakan halaman dengan kode-kode HTML yang belum utuh, kemudian tampilan halaman dibuat dan diunduh untuk ditampilkan. Dengan begitu, \textit{browser} tidak perlu melakukan penyegaran tampilan lagi untuk menampilkan halaman baru.
@@ -148,7 +148,7 @@ export class SearchComponent{
 \section{Ionic Framework}
 \label{sec:ionicframework} 
  
-Ionic Framework merupakan sebuah kerangka kerja {\it open source} lintas platform yang memungkinkan untuk mengembangkan aplikasi hibrida yang bekerja pada berbagai macam platform seluler seperti {\it android}, iOS, dan Windows~\cite{waranashiwar:18:ionic}. Ionic memiliki berbagai macam \textit{front-end library} dan komponen \textit{User Interface}(UI) yang digunakan untuk  perancangan aplikasi menggunakan teknologi web seperti HTML, CSS, dan Javascript, dengan integrasi untuk berbagai \textit{framework} seperti Angular, React, dan Vue. Saat pertama kali dibuat, Ionic menggunakan AngularJS. Namun, seiring saat Angular versi 2 yang menggunakan Typescript dirilis, Ionic versi 2 dan selanjutnya menggunakan Angular. Lalu, pada tahun 2019, Ionic mendukung penggunaan \textit{framework} lain selain Angular, yaitu React dan Vue. Di dalam Ionic, Angular digunakan untuk membangun aplikasi dan perutean, sehingga aplikasi dapat sejalan dengan ekosistem Angular lainnya. Ionic menyediakan {\it toolkit} Angular untuk membangun aplikasi dan terintegrasi dengan Angular CLI resmi yang menyediakan fitur khusus untuk aplikasi Ionic Angular. Pada saat skripsi ini dibuat, Ionic versi terbaru adalah Ionic versi 5, sedangkan Angular yang digunakan adalah Angular versi 12. 
+Ionic Framework merupakan sebuah kerangka kerja {\it open source} lintas platform yang memungkinkan untuk mengembangkan aplikasi hibrida yang bekerja pada berbagai macam platform seluler seperti {\it android}, iOS, dan Windows~\cite{waranashiwar:18:ionic}. Ionic memiliki berbagai macam \textit{front-end library} dan komponen \textit{User Interface}(UI) yang digunakan untuk  perancangan aplikasi menggunakan teknologi web seperti HTML, CSS, dan Javascript, dengan integrasi untuk berbagai \textit{framework} seperti Angular, React, dan Vue. Saat pertama kali dibuat, Ionic menggunakan AngularJS. Namun, seiring saat Angular versi 2 yang menggunakan Typescript dirilis, Ionic versi 2 dan selanjutnya menggunakan Angular. Lalu, pada tahun 2019, Ionic mendukung penggunaan \textit{framework} lain selain Angular, yaitu React dan Vue. Di dalam Ionic, Angular digunakan untuk membangun aplikasi dan perutean, sehingga aplikasi dapat sejalan dengan ekosistem Angular lainnya. Ionic menyediakan {\it toolkit} Angular untuk membangun aplikasi dan terintegrasi dengan Angular CLI resmi yang menyediakan fitur khusus untuk aplikasi Ionic Angular. Pada saat skripsi ini dibuat, Ionic versi terbaru adalah Ionic versi 6, dengan dukungan penggunaan Angular versi 12 sampai dengan yang lebih baru.  
 
 \newpage
 
@@ -185,7 +185,7 @@ npx cap update
 
 \subsection{UI Component}
 \label{subsec:uiComponent}
-{\it Framework} Ionic menggunakan kemampuan Angular dalam memperluas kosakata HTML, yaitu menyertakan {\it tag} khusus untuk menciptakan seluruh rangkaian komponen~\cite{griffith:17:mobile}. Semua komponen memiliki awalan ion, sehingga dapat dikenali dalam markup. Sama seperti {\it tag} HTML standar, komponen Ionic juga dapat menerima berbagai macam atribut sebagai pengaturan dari {\it tag} tersebut, seperti mengatur id atau mendefinisikan kelas CSS tambahan. Terdapat beberapa komponen yang ada pada {\it framework} Ionic yaitu :
+{\it Framework} Ionic menggunakan kemampuan Angular dalam memperluas kosakata HTML, yaitu menyertakan {\it tag} khusus untuk menciptakan seluruh rangkaian komponen~\cite{griffith:17:mobile}. Semua komponen memiliki awalan ion, sehingga dapat dikenali dalam markup. Sama seperti {\it tag} HTML standar, komponen Ionic juga dapat menerima berbagai macam atribut sebagai pengaturan dari {\it tag} tersebut, seperti mengatur id atau mendefinisikan kelas CSS tambahan. Terdapat beberapa komponen yang ada pada {\it framework} Ionic versi 6 yaitu :
 \begin{itemize}
 	\item Action Sheet \\
 	Merupakan dialog yang menampilkan serangkaian opsi, yang muncul di atas konten aplikasi dan harus ditutup secara manual oleh pengguna sebelum pengguna dapat melanjutkan interaksi dengan aplikasi. Untuk menutup Action Sheet terdapat beberapa cara, termasuk mengetuk latar belakang atau menekan tombol escape di desktop.
@@ -412,11 +412,11 @@ async presentToast() {
 %2.2.1.2 Cordova
 %2.2.2 UI Component 
 
-\subsection{Migrasi Ionic 3 ke Ionic 5}
+\subsection{Migrasi Ionic 3 ke Ionic 6}
 \label{subsec:migrasi}
 %Aplikasi WSDC Bali 2017 saat ini menggunakan {\it framework} Ionic versi 3 yang sudah tidak didukung lagi. Maka dari itu dilakukan pembaruan aplikasi WSDC 2017 Bali ke dalam {\it framework} Ionic versi 5. 
 
-Untuk melakukan migrasi dari Ionic 3 ke Ionic 5 memerlukan dua tahap, yaitu migrasi dari Ionic 3 ke Ionic 4, dan migrasi Ionic 4 ke Ionic 5. Tahapan migrasi tersebut adalah sebagai berikut:
+Untuk melakukan migrasi dari Ionic 3 ke Ionic 6 memerlukan tiga tahap, yaitu migrasi dari Ionic 3 ke Ionic 4, migrasi Ionic 4 ke Ionic 5, dan migrasi dari Ionic 5 ke Ionic 6. Tahapan migrasi tersebut adalah sebagai berikut:
 
 %---START ENUM SECTION MIGRASI IONIC 3 KE IONIC 5---%
 \begin{enumerate}
@@ -797,8 +797,52 @@ npm install @ionic/angular@latest @ionic/angular-toolkit@latest --save
 		\end{lstlisting} 
 	\end{itemize}
 	%---END ITEMIZE MIGRASI IONIC 4 KE IONIC 5---%
+	\newpage
+	\item Migrasi Ionic 5 ke Ionic 6 \\
+	Berikut merupakan perubahan-perubahan pada Ionic 6, diantaranya yaitu:
+	\begin{itemize}
+		\item Pembaruan Ionic dan Angular \\
+		Ionic 6 mendukung penggunaan Angular versi 12 dan yang lebih baru, dengan begitu perlu dilakukan perbaruan Angular ke versi yang terbaru (Kode~\ref{lst:updateAngular}).
+		
+\begin{lstlisting}[language=php, label={lst:updateAngular}, caption=Kode untuk Memperbarui Versi Ionic 6 dengan versi Angular Terbaru]
+npm install @ionic/angular@6
+\end{lstlisting} 
 
+		\item \textit{Icon} \\
+		Penghapusan properti ariaLabel dan ariaHidden, dan diganti dengan menggunakan aria-label dan aria-hidden.
+		\item \textit{Input}, \textit{Select}, dan Textarea \\
+		Menggunakan ``undefined'' sebagai nilai untuk diteruskan ke porperti placeholder, dibandingkan dengan menggunakan ``null''.
+		\item \textit{Modal} dan \textit{Popover} \\
+		ion-modal (Kode~\ref{lst:updateModal}) dan ion-popover (Kode~\ref{lst:updatePopover}) menggunakan Shadow DOM.
+		
+\begin{lstlisting}[language=php, label={lst:updateModal}, caption=Kode ion-modal menggunakan Shadow DOM pada CSS]
+ion-modal::part(content) {
+  ...
+}
 
+ion-modal::part(backdrop) {
+  ...
+}
+\end{lstlisting} 
+
+\begin{lstlisting}[language=php, label={lst:updatePopover}, caption=Kode ion-popover menggunakan Shadow DOM pada CSS]
+ion-popover::part(arrow) {
+  ...
+}
+
+ion-popover::part(backdrop) {
+  ...
+}
+
+ion-popover::part(content) {
+  ...
+}
+\end{lstlisting} 
+
+		\item Radio \\
+		Menghapus semua penggunaan antarmuka RadioChangeEventDetail.
+		
+	\end{itemize}
 \end{enumerate}
 %---END ENUM SECTION MIGRASI IONIC 3 KE IONIC 5---%
 

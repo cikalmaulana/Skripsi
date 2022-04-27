@@ -292,7 +292,7 @@ Setiap komponen memiliki tiga buah \textit{file} utama, yaitu \textit{file} HTML
 
 Komponen-komponen yang ada pada aplikasi WSDC 2017 Bali adalah sebagai berikut:
 
-\begin{itemize}
+\begin{enumerate}
 	\item Komponen \textit{Announcement} \\
 	Komponen ini digunakan untuk menampilkan halaman \textit{Announcement} pada aplikasi. Komponen ini memiliki sebuah \textit{file} TypeScript untuk mengatur keseluruhan halaman. Di dalam \textit{file} announcement.ts terdapat sebuah \textit{decorator} @Component untuk komponen (Kode~\ref{lst:componentannouncement}). Di dalam decorator ini terdapat CSS \textit{selector} untuk memilih CSS yang akan digunakan, serta \textbf{templateUrl} untuk mendefinisikan ekxternal HTML \textit{template} yang akan digunakan. \textit{Template} HTML yang digunakan adalah \textit{file} announcement.html. 
 \begin{lstlisting}[language=html, label={lst:componentannouncement}, caption=@Component pada annoncement.ts]
@@ -839,7 +839,7 @@ Komponen-komponen yang ada pada aplikasi WSDC 2017 Bali adalah sebagai berikut:
 \end{lstlisting}
 
 	\end{itemize}
-\end{itemize}
+\end{enumerate}
 
 \section{Analisis Sistem Usulan}
 \label{sec:analisisSistemUsulan}
@@ -856,52 +856,88 @@ UI Component yang akan digunakan akan mengikuti perkembangan pada Ionic Framewor
 
 Selain itu, terdapat UI Component lain yang akan diterapkan ke dalam masing-masing komponen di dalam aplikasi yang akan dibangun, diantaranya adalah sebagai berikut :
 
-\begin{itemize}
+\begin{enumerate}
 	\item \textit{Announcement} \\
 	Pada komponen \textit{announcement}, terdapat beberapa UI Component yang akan diimplementasikan, diantaranya adalah sebagai berikut:
 	\begin{itemize}
 		\item \textit{Content} \\
-		Komponen ini akan digunakan sebagai penyedia area konten yang digunakan untuk mengontrol area yang dapat digulir dan menampilkan isi konten dari halaman \textit{announcement}. UI Component \textit{Content} dengan \textit{tag} <ion-content> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3. 
+		Komponen ini akan digunakan sebagai penyedia area konten yang digunakan untuk mengontrol area yang dapat digulir dan menampilkan isi konten dari halaman \textit{announcement}. UI Component \textit{Content} dengan \textit{tag} <ion-content> pada Ionic Framework versi 6 tidak mengalami perubahan dari Ionic Framework versi 3. 
 		
 		\item \textit{Refresher} \\
-		\textit{Refresher} menyediakan fungsionalitas  pull-to-refresh pada komponen \textit{content}. UI Component \textit{Refresher} dengan \textit{tag} <ion-refresher> dan <ion-refresher-content> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3.
+		\textit{Refresher} menyediakan fungsionalitas  pull-to-refresh pada komponen \textit{content}. UI Component \textit{Refresher} dengan \textit{tag} <ion-refresher> dan <ion-refresher-content> pada Ionic Framework versi 6 tidak mengalami perubahan dari Ionic Framework versi 3.
 
 		\item \textit{List} \\
-		\textit{List} dengan \textit{tag} <ion-list> akan terdiri dari beberapa baris item <ion-item> yang berisi label <ion-label>. UI Component \textit{List} dengan \textit{tag} <ion-list>, <ion-item> dan <ion-label> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3.
+		\textit{List} dengan \textit{tag} <ion-list> akan terdiri dari beberapa baris item <ion-item> yang berisi label <ion-label>. UI Component \textit{List} dengan \textit{tag} <ion-list>, <ion-item> dan <ion-label> pada Ionic Framework versi 6 tidak mengalami perubahan dari Ionic Framework versi 3.
 		
 		\item \textit{Item} \\
-		\textit{Item} dengan \textit{tag} <ion-item> sejak Ionic 4 mengalami perubahan dibandingkan pada Ionic 3, yaitu wajib menambahkan \textit{label} dengan \textit{tag} <ion-label>. 
+		\textit{Item} dengan \textit{tag} <ion-item> sejak Ionic 4 mengalami perubahan dibandingkan pada Ionic 3, yaitu wajib menambahkan \textit{label} dengan \textit{tag} <ion-label>. Pada aplikasi WSDC 2017 Bali saat ini yang menggunakan Ionic 3, tidak terdapat \textit{tag} <ion-label> pada <ion-item> (Kode~\ref{lst:itemWSDCOld}). Sedangkan sesuai dengan ketentuan yang berlaku, pada aplikasi yang akan dibangun yang menggunakan Ionic 6, akan menggunakan \textit{tag} <ion-label> di dalam <ion-item> (Kode~\ref{lst:itemWSDCNew}).
+		
+\begin{lstlisting}[language=html, label={lst:itemWSDCOld}, caption=\textit{Tag} <ion-item> pada Aplikasi WSDC 2017 Bali Saat Ini]
+<ion-item text-wrap *ngFor="let announcement of announcements">
+	<h3>{{formatDatetime(announcement.localtime)}}</h3>
+    <p>{{announcement.message}}</p>
+</ion-item>
+\end{lstlisting}
+
+\begin{lstlisting}[language=html, label={lst:itemWSDCNew}, caption=\textit{Tag} <ion-item> pada Aplikasi WSDC 2017 Bali yang Akan dibuat]
+<ion-item color="wsdc-blue" *ngFor="let announcement of announcements; let i = index">
+    <ion-label>
+    	<h3>{{ formatDatetime(announcement.localtime) }}</h3>
+        <p>{{ announcement.message }}</p>
+    </ion-label>
+</ion-item>
+\end{lstlisting}
 		
 	\end{itemize}
 	
 	\item \textit{Draw} \\
-	Pada komponen \textit{draw}, terdapat sebuah UI Component, yaitu \textit{Content}. Komponen \textit{content} akan digunakan sebagai penyedia area konten yang digunakan untuk mengontrol area yang dapat digulir dan menampilkan isi konten dari halaman \textit{draw}. UI Component \textit{Content} dengan \textit{tag} <ion-content> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3. 
+	Pada komponen \textit{draw}, terdapat sebuah UI Component, yaitu \textit{Content}. Komponen \textit{content} akan digunakan sebagai penyedia area konten yang digunakan untuk mengontrol area yang dapat digulir dan menampilkan isi konten dari halaman \textit{draw}. UI Component \textit{Content} dengan \textit{tag} <ion-content> pada Ionic Framework versi 6 tidak mengalami perubahan dari Ionic Framework versi 3. 
 		
 	\item \textit{Home}\\
 	Pada komponen \textit{home}. terdapat beberapa \textit{file} yaitu:
 		\begin{itemize}
 			\item Content \\
-		Komponen ini akan digunakan sebagai penyedia area konten yang digunakan untuk mengontrol area yang dapat digulir dan menampilkan isi konten dari halaman \textit{home}. UI Component \textit{Content} dengan \textit{tag} <ion-content> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3.
+		Komponen ini akan digunakan sebagai penyedia area konten yang digunakan untuk mengontrol area yang dapat digulir dan menampilkan isi konten dari halaman \textit{home}. UI Component \textit{Content} dengan \textit{tag} <ion-content> pada Ionic Framework versi 6 tidak mengalami perubahan dari Ionic Framework versi 3.
 		
 			\item \textit{Refresher} \\
-		\textit{Refresher} menyediakan fungsionalitas  pull-to-refresh pada komponen \textit{content}. UI Component \textit{Refresher} dengan \textit{tag} <ion-refresher> dan <ion-refresher-content> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3.
-		
-\newpage		
+		\textit{Refresher} menyediakan fungsionalitas  pull-to-refresh pada komponen \textit{content}. UI Component \textit{Refresher} dengan \textit{tag} <ion-refresher> dan <ion-refresher-content> pada Ionic Framework versi 6 tidak mengalami perubahan dari Ionic Framework versi 3.	
 		
 			\item \textit{Card} \\
-			Komponen ini akan digunakan sebagai tampilan antar muka, yang dapat menjadi titik masuk ke dalam informasi yang lebih detail. UI Component \textit{Card} dengan \textit{tag} <ion-card>, <ion-card-title> dan <ion-card-content> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3.
+			Komponen ini akan digunakan sebagai tampilan antar muka, yang dapat menjadi titik masuk ke dalam informasi yang lebih detail. UI Component \textit{Card} dengan \textit{tag} <ion-card>, <ion-card-title> dan <ion-card-content> pada Ionic Framework versi 6 tidak mengalami perubahan dari Ionic Framework versi 3.
 			
 			\item \textit{Grid} \\
-			Komponen ini akan digunakan untuk membangun tata letak kustom pada halaman \textit{home} bagian \textit{announcement}, yang terdiri dari baris dan kolom. UI Component \textit{Grid} dengan \textit{tag} <ion-card>, <ion-row> dan <ion-col> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3
+			Komponen ini akan digunakan untuk membangun tata letak kustom pada halaman \textit{home} bagian \textit{announcement}, yang terdiri dari baris dan kolom. UI Component \textit{Grid} dengan \textit{tag} <ion-card>, <ion-row> dan <ion-col> pada Ionic Framework versi 6 tidak mengalami perubahan dari Ionic Framework versi 3
 			
-			\item \textit{List} \\
-			\textit{List} dengan \textit{tag} <ion-list> terdiri dari \textit{tag} <ion-list> dan <ion-list-header> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3. Namun sejak Ionic Framework versi 4, diwajibkan untuk menambahkan \textit{tag} label <ion-label> di dalam \textit{list}.
+			\item \textit{List Header} \\
+			\textit{List Header} dengan \textit{tag} <ion-list-header> sejak Ionic 4 diwajibkan untuk selalu menambahkan \textit{tag} <ion-label>. Pada aplikasi WSDC 2017 Bali saat ini yang menggunakan Ionic 3, tidak terdapat \textit{tag} <ion-label> pada <ion-list-header> (Kode~\ref{lst:listHeaderWSDCOld}). Sedangkan sesuai dengan ketentuan yang berlaku, pada aplikasi yang akan dibangun yang menggunakan Ionic 6, akan menggunakan \textit{tag} <ion-label> di dalam <ion-item-header> (Kode~\ref{lst:listHeaderWSDCNew}).
+			
+\begin{lstlisting}[language=html, label={lst:listHeaderWSDCOld}, caption=\textit{Tag} <ion-list-header> pada Aplikasi WSDC 2017 Bali Saat Ini]
+<ion-list-header>
+	<ion-icon ios="ios-book-outline" md="md-book"></ion-icon>
+    Newsletters
+</ion-list-header>
+\end{lstlisting}
+
+\begin{lstlisting}[language=html, label={lst:listHeaderWSDCNew}, caption=\textit{Tag} <ion-list-header> pada Aplikasi WSDC 2017 Bali yang Akan dibuat]
+<ion-list-header>
+	<ion-icon name="book-outline"></ion-icon>
+    <ion-label>Newsletters</ion-label>
+</ion-list-header>
+\end{lstlisting}
 			
 			\item \textit{Icon} \\
-			Komponen ini akan digunakan untuk menampilkan ikon pada halaman \textit{home}. UI Component \textit{List} dengan \textit{tag} <ion-icon> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3.
+			Komponen ini akan digunakan untuk menampilkan ikon pada halaman \textit{home}. UI Component \textit{List} dengan \textit{tag} <ion-icon> pada Ionic Framework versi 6 tidak mengalami perubahan dari Ionic Framework versi 3.
 			
 			\item \textit{Button} \\
-			Di dalam halaman \textit{home}, komponen ini merupakan sebuah komponen yang dapat diklik untuk mengarahkan pengguna ke URL yang berisi berita terkait WSDC 2017 Bali. Pada Ionic Framework versi 3, komponen ini ditulis menggunakan \textit{tag} <button>, lalu sejak Ionic Framework versi 4, terjadi perubahan dengan mengganti \textit{tag} tersebut menjadi <ion-button>.
+			Di dalam halaman \textit{home}, komponen ini merupakan sebuah komponen yang dapat diklik untuk mengarahkan pengguna ke URL yang berisi berita terkait WSDC 2017 Bali. Pada aplikasi WSDC 2017 Bali saat ini yang menggunakan Ionic 3, komponen ini ditulis menggunakan \textit{tag} <button> (Kode~\ref{lst:buttonHomeWSDCOld}). Lalu sejak Ionic Framework versi 4, terjadi perubahan dengan mengganti \textit{tag} tersebut menjadi <ion-button> pada aplikasi yang akan dibangun yang menggunakan Ionic 6 (Kode~\ref{lst:buttonHomeWSDCNew}).
+			
+\begin{lstlisting}[language=html, label={lst:buttonHomeWSDCOld}, caption=\textit{Button} pada Aplikasi WSDC 2017 Bali Saat Ini]
+<button ion-button full block color="danger" (click)="launch(wsdcNews.url)">Read More</button>
+\end{lstlisting}
+
+\begin{lstlisting}[language=html, label={lst:buttonHomeWSDCNew}, caption=\textit{Button} pada Aplikasi WSDC 2017 Bali yang Akan dibuat]
+<ion-button full block color="danger" (click)="launch(wsdcNews.url)">Read More</ion-button>
+\end{lstlisting}
 			
 		\end{itemize}
 		
@@ -909,34 +945,73 @@ Selain itu, terdapat UI Component lain yang akan diterapkan ke dalam masing-masi
 	Pada komponen info, terdapat beberapa UI Component yang akan diimplementasikan, diantaranya adalah sebagai berikut:
 		\begin{itemize}
 			\item Content \\
-		Komponen ini akan digunakan sebagai penyedia area konten yang digunakan untuk mengontrol area yang dapat digulir dan menampilkan isi konten dari halaman info. UI Component \textit{Content} dengan \textit{tag} <ion-content> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3.
+		Komponen ini akan digunakan sebagai penyedia area konten yang digunakan untuk mengontrol area yang dapat digulir dan menampilkan isi konten dari halaman info. UI Component \textit{Content} dengan \textit{tag} <ion-content> pada Ionic Framework versi 6 tidak mengalami perubahan dari Ionic Framework versi 3.
 		
 			\item \textit{Grid} \\
-		Komponen ini akan digunakan untuk membangun tata letak kustom pada halaman info, yang terdiri dari baris. UI Component \textit{Grid} dengan \textit{tag} <ion-card> dan <ion-row> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3
+		Komponen ini akan digunakan untuk membangun tata letak kustom pada halaman info, yang terdiri dari baris. UI Component \textit{Grid} dengan \textit{tag} <ion-card> dan <ion-row> pada Ionic Framework versi 6 tidak mengalami perubahan dari Ionic Framework versi 3
 		\end{itemize}
 		
 	\item \textit{Result} \\ 
-	Pada komponen \textit{Result}, terdapat sebuah UI Component, yaitu \textit{Content}. Komponen \textit{content} akan digunakan sebagai penyedia area konten yang digunakan untuk mengontrol area konten dan menampilkan isi konten dari halaman \textit{result}. UI Component \textit{Content} dengan \textit{tag} <ion-content> pada Ionic Framework versi~5~tidak~mengalami perubahan~dari~Ionic~Framework~versi~3. 
-
-\newpage		
+	Pada komponen \textit{Result}, terdapat sebuah UI Component, yaitu \textit{Content}. Komponen \textit{content} akan digunakan sebagai penyedia area konten yang digunakan untuk mengontrol area konten dan menampilkan isi konten dari halaman \textit{result}. UI Component \textit{Content} dengan \textit{tag} <ion-content> pada Ionic Framework versi~6~tidak~mengalami perubahan~dari~Ionic~Framework~versi~3. 
 		
 	\item \textit{Schedule} \\
 	Pada komponen \textit{schedule}, terdapat beberapa UI Component yang akan diimplementasikan, diantaranya adalah sebagai berikut:
 		\begin{itemize}
 			\item \textit{Content} \\
-		Komponen ini akan digunakan sebagai penyedia area konten yang digunakan untuk mengontrol area yang dapat digulir dan menampilkan isi konten dari halaman \textit{schedule}. UI Component \textit{Content} dengan \textit{tag} <ion-content> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3.
+		Komponen ini akan digunakan sebagai penyedia area konten yang digunakan untuk mengontrol area yang dapat digulir dan menampilkan isi konten dari halaman \textit{schedule}. UI Component \textit{Content} dengan \textit{tag} <ion-content> pada Ionic Framework versi 6 tidak mengalami perubahan dari Ionic Framework versi 3.
 		
 			\item \textit{Item} \\
-			\textit{Item} dengan \textit{tag} <ion-item> sejak Ionic 4 mengalami perubahan dibandingkan pada Ionic 3, yaitu wajib menambahkan \textit{label} dengan \textit{tag} <ion-label>. 
+			\textit{Item} dengan \textit{tag} <ion-item> sejak Ionic 4 mengalami perubahan dibandingkan pada Ionic 3, yaitu wajib menambahkan \textit{label} dengan \textit{tag} <ion-label>. Pada aplikasi WSDC 2017 Bali saat ini yang menggunakan Ionic 3, tidak terdapat \textit{tag} <ion-label> pada <ion-item> (Kode~\ref{lst:itemScheduleWSDCOld}). Sedangkan sesuai dengan ketentuan yang berlaku, pada aplikasi yang akan dibangun yang menggunakan Ionic 6, akan menggunakan \textit{tag} <ion-label> di dalam <ion-item> (Kode~\ref{lst:itemScheduleWSDCNew}).
+			
+\begin{lstlisting}[language=html, label={lst:itemScheduleWSDCOld}, caption=\textit{Tag} <ion-item> pada Aplikasi WSDC 2017 Bali Saat Ini]
+<ion-item text-wrap *ngFor="let agenda of schedule.agenda">
+	<ion-note item-start>
+		{{agenda.start}}<br/>
+        {{agenda.end}}
+   </ion-note>
+   <h3>{{agenda.title}}</h3>
+   <p>{{agenda.subtitle}}</p>
+</ion-item>
+\end{lstlisting}
+
+\begin{lstlisting}[language=html, label={lst:itemScheduleWSDCNew}, caption=\textit{Tag} <ion-item> pada Aplikasi WSDC 2017 Bali yang Akan dibuat]
+<ion-item *ngFor="let agenda of schedule.agenda;" >
+	<ion-note item-start>
+    	{{agenda.start}}<br/> 
+        {{agenda.end}}
+   	</ion-note>
+    <ion-label class="ion-text-wrap">
+    	<h3>{{agenda.title}}</h3>
+        <p>{{agenda.subtitle}}</p>
+    </ion-label>
+</ion-item>
+\end{lstlisting}
 			
 			\item \textit{List} \\
-			\textit{List} berfungsi untuk menyimpan konten yang terdiri dari beberapa baris. \textit{List} dengan \textit{tag} <ion-list> akan terdiri dari beberapa baris item <ion-item> dan akan memiliki sebuah \textit{header}. UI Component \textit{List} dengan \textit{tag} <ion-list>, dan <ion-item> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3.	
+			\textit{List} berfungsi untuk menyimpan konten yang terdiri dari beberapa baris. \textit{List} dengan \textit{tag} <ion-list> akan terdiri dari beberapa baris item <ion-item> dan akan memiliki sebuah \textit{header}. UI Component \textit{List} dengan \textit{tag} <ion-list>, dan <ion-item> pada Ionic Framework versi 6 tidak mengalami perubahan dari Ionic Framework versi 3.	
 		
 			\item \textit{Segment} \\
-		Komponen ini akan digunakan untuk pengguna agar dapat berpindah tampilan di dalam halaman yang sama. Seperti pada tampilan halaman jadwal yang ada pada aplikasi WSDC 2017 Bali saat ini, dimana pengguna dapat berpindah hari untuk mengetahui jadwal kegiatan pada hari tertentu yang dipilih oleh pengguna, namun masih berada di halaman yang sama, yaitu halaman Schedule. UI Component \textit{Segment} dengan \textit{tag} <ion-segment> dan <ion-segment-button> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3.
+		Komponen ini akan digunakan untuk pengguna agar dapat berpindah tampilan di dalam halaman yang sama. Seperti pada tampilan halaman jadwal yang ada pada aplikasi WSDC 2017 Bali saat ini, dimana pengguna dapat berpindah hari untuk mengetahui jadwal kegiatan pada hari tertentu yang dipilih oleh pengguna, namun masih berada di halaman yang sama, yaitu halaman Schedule. UI Component \textit{Segment} dengan \textit{tag} <ion-segment> pada Ionic Framework versi 6 tidak mengalami perubahan dari Ionic Framework versi 3.
+		Sedangkan \textit{tag} <ion-segment-button> yang berada di dalam \textit{tag} <ion-segment> sejak Ionic 4 mengalami perubahan yaitu wajib menambahkan \textit{label} dengan \textit{tag} <ion-label>. Pada aplikasi WSDC 2017 Bali saat ini yang menggunakan Ionic 3, tidak terdapat \textit{tag} <ion-label> pada <ion-item> (Kode~\ref{lst:segmentScheduleWSDCOld}). Sedangkan sesuai dengan ketentuan yang berlaku, pada aplikasi yang akan dibangun yang menggunakan Ionic 6, akan menggunakan \textit{tag} <ion-label> di dalam <ion-item> (Kode~\ref{lst:segmentScheduleWSDCNew}).
+		
+\begin{lstlisting}[language=html, label={lst:segmentScheduleWSDCOld}, caption=\textit{Tag} <ion-segment-button> pada Aplikasi WSDC 2017 Bali Saat Ini]
+<ion-segment-button *ngFor="let schedule of schedules; let i = index" [value]="i">
+	<div class="day">{{getDayName(schedule.date)}}</div>
+	<div class="date">{{getDate(schedule.date)}}</div>
+</ion-segment-button>
+\end{lstlisting}
+
+\begin{lstlisting}[language=html, label={lst:segmentScheduleWSDCNew}, caption=\textit{Tag} <ion-segment-button> pada Aplikasi WSDC 2017 Bali yang Akan Dibuat]
+<ion-segment-button *ngFor="let schedule of schedules; let i = index" [value]="i">
+	<ion-label>
+		<div class="day">{{getDayName(schedule.date)}}</div>
+		<div class="date">{{getDate(schedule.date)}}</div>
+	</ion-label>
+</ion-segment-button>
+\end{lstlisting}
 			
 			\item \textit{Slides} \\
-		Komponen ini akan digunakan sebagai wadah dari \textit{multi-section}. Penggunaan slide di halaman \textit{schedule} yaitu untuk berpindah jadwal perhari dengan cara melakukan \textit{swipe} dari kanan ke kiri layar atau sebaliknya. UI Component \textit{Slides} dengan \textit{tag} <ion-slides> dan <ion-slide> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3.
+		Komponen ini akan digunakan sebagai wadah dari \textit{multi-section}. Penggunaan slide di halaman \textit{schedule} yaitu untuk berpindah jadwal perhari dengan cara melakukan \textit{swipe} dari kanan ke kiri layar atau sebaliknya. UI Component \textit{Slides} dengan \textit{tag} <ion-slides> dan <ion-slide> pada Ionic Framework versi 6 tidak mengalami perubahan dari Ionic Framework versi 3.
 			
 		\end{itemize}
 		
@@ -944,30 +1019,43 @@ Selain itu, terdapat UI Component lain yang akan diterapkan ke dalam masing-masi
 	Pada komponen \textit{venues}, terdapat beberapa UI Component yang akan diimplementasikan, diantaranya adalah sebagai berikut:
 		\begin{itemize}
 			\item Content \\
-		Komponen ini akan digunakan sebagai penyedia area konten yang digunakan untuk mengontrol area yang dapat digulir dan menampilkan isi konten dari halaman \textit{venues}. UI Component \textit{Content} dengan \textit{tag} <ion-content> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3.
+		Komponen ini akan digunakan sebagai penyedia area konten yang digunakan untuk mengontrol area yang dapat digulir dan menampilkan isi konten dari halaman \textit{venues}. UI Component \textit{Content} dengan \textit{tag} <ion-content> pada Ionic Framework versi 6 tidak mengalami perubahan dari Ionic Framework versi 3.
+		
 			\item \textit{Grid} \\
-		Komponen ini akan digunakan untuk membangun tata letak kustom pada halaman info. UI Component \textit{Grid} dengan \textit{tag} <ion-card> dan <ion-row> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3
-
-\newpage
+		Komponen ini akan digunakan untuk membangun tata letak kustom pada halaman info. UI Component \textit{Grid} dengan \textit{tag} <ion-card> dan <ion-row> pada Ionic Framework versi 6 tidak mengalami perubahan dari Ionic Framework versi 3
 
 			\item \textit{List} \\
-		\textit{List} dengan \textit{tag} <ion-list>, yang terdiri dari baris yang setiap barisnya berisi kategori \textit{venues} yang disusun menggunakan \textit{button}. UI Component \textit{List} dengan \textit{tag} <ion-list> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3.
+		\textit{List} dengan \textit{tag} <ion-list>, yang terdiri dari baris yang setiap barisnya berisi kategori \textit{venues} yang disusun menggunakan \textit{button}. UI Component \textit{List} dengan \textit{tag} <ion-list> pada Ionic Framework versi 6 tidak mengalami perubahan dari Ionic Framework versi 3.
 		
 			\item \textit{Button} \\
-		Pada Ionic Framework versi 3, komponen ini ditulis menggunakan \textit{tag} <button>, lalu sejak Ionic Framework versi 3, terjadi perubahan dengan mengganti \textit{tag} tersebut menjadi <ion-button>.
+		\textit{Button} digunakan untuk berpindah ke halaman \textit{Venues Map} sesuai dengan tombol apa yang dipilih. Pada aplikasi WSDC 2017 Bali saat ini yang menggunakan Ionic 3, komponen ini ditulis menggunakan \textit{tag} <button> (Kode~\ref{lst:buttonVenuesWSDCOld}). Lalu sejak Ionic Framework versi 4, terjadi perubahan dengan mengganti \textit{tag} tersebut menjadi <ion-button> pada aplikasi yang akan dibangun yang menggunakan Ionic 6 (Kode~\ref{lst:buttonVenuesWSDCNew}). 
+		
+\begin{lstlisting}[language=html, label={lst:buttonVenuesWSDCOld}, caption=\textit{Button} pada Aplikasi WSDC 2017 Bali Saat Ini]
+<button ion-item  id="{{wsdcVenue.id}}" *ngFor="let wsdcVenue of venuesData" (click)="itemTapped($event, wsdcVenue)">
+	<ion-icon ios="ios-{{wsdcVenue.icon}}-outline" md="md-{{wsdcVenue.icon}}" item-start></ion-icon>
+	<span>{{wsdcVenue.name}}</span>
+</button>
+\end{lstlisting}
+
+\begin{lstlisting}[language=html, label={lst:buttonVenuesWSDCNew}, caption=\textit{Button} pada Aplikasi WSDC 2017 Bali yang Akan Dibuat]
+<ion-button ion-item  id="{{wsdcVenue.id}}" *ngFor="let wsdcVenue of venuesData" (click)="itemTapped($event, wsdcVenue)">
+	<ion-icon ios="ios-{{wsdcVenue.icon}}-outline" md="md-{{wsdcVenue.icon}}" item-start></ion-icon>
+	<span>{{wsdcVenue.name}}</span>
+</ion-button>
+\end{lstlisting}
 		
 			\item \textit{Icon} \\
-		Komponen ini akan digunakan untuk menampilkan ikon pada halaman \textit{venues}. UI Component \textit{Icon} dengan \textit{tag} <ion-icon> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3.
+		Komponen ini akan digunakan untuk menampilkan ikon pada halaman \textit{venues}. UI Component \textit{Icon} dengan \textit{tag} <ion-icon> pada Ionic Framework versi 6 tidak mengalami perubahan dari Ionic Framework versi 3.
 		\end{itemize}	
 		
 	\item \textit{Venues Map}\\
 	Pada komponen \textit{venues\textunderscore map}, terdapat beberapa UI Component yang akan diimplementasikan, diantaranya adalah sebagai berikut:
 	\begin{itemize}
 			\item Content \\
-		Komponen ini akan digunakan sebagai penyedia area konten yang digunakan untuk mengontrol area yang dapat digulir dan menampilkan isi konten dari halaman \textit{venues\textunderscore map}. UI Component \textit{Content} dengan \textit{tag} <ion-content> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3.
+		Komponen ini akan digunakan sebagai penyedia area konten yang digunakan untuk mengontrol area yang dapat digulir dan menampilkan isi konten dari halaman \textit{venues\textunderscore map}. UI Component \textit{Content} dengan \textit{tag} <ion-content> pada Ionic Framework versi 6 tidak mengalami perubahan dari Ionic Framework versi 3.
 
 			\item \textit{Scroll} \\
-			\textit{Tag} <ion-scroll> telah dihapus sejak Ionic Framework versi 4, dan digantikan penggunaannya dengan menggunakan \textit{tag} <ion-content> sejak Ionic Framework versi 4.		
+			\textit{Tag} <ion-scroll> telah dihapus sejak Ionic Framework versi 4, dan digantikan penggunaannya dengan hanya cukup menggunakan \textit{tag} <ion-content> sejak Ionic Framework versi 4.
 		
 			\item \textit{List} \\
 		\textit{List} dengan \textit{tag} <ion-list>, yang terdiri dari baris yang setiap barisnya berisi nama dan lokasi \textit{venues} yang disusun menggunkan <ion-item>. UI Component \textit{List} dengan \textit{tag} <ion-list> dan <ion-item> pada Ionic Framework versi 5 tidak mengalami perubahan dari Ionic Framework versi 3.
@@ -976,17 +1064,15 @@ Selain itu, terdapat UI Component lain yang akan diterapkan ke dalam masing-masi
 
 Lalu sebagai penyedia \textit{interface} untuk mengakses SDK \textit{native} dan API \textit{native} pada perangkat, pada skripsi ini akan menggunakan Capacitor dibandingkan dengan Cordova. Capacitor mengelola \textit{plugin} dengan cara yang berbeda dibandingkan dengan Cordova, yaitu dengan cara membangun semua \textit{plugin} sebagai sebuah \textit{libraries} di Android, dan diinstal menggunakan \textit{management tool} adnroid, yaitu Gradle. Selain itu, Capacitor didukung langsung oleh Ionic, dengan pengembangan yang lebih baru dibandingkan Cordova, membuatnya dapat lebih mendukung untuk \textit{Web Apps} modern untuk membuka fungsionalitas \textit{native} dari platform melalui API.
 
-\newpage
-
 Dengan digunakannya Capacitor, maka akan digunakan sebuah \textit{plugin} yang disediakan oleh Capacitor, yaitu Capacitor Google Maps yang menggantikan \textit{plugin} Google Maps sebelumnya yang berjalan menggunakan Cordova. \textit{Plugin} ini berfungsi untuk menampilkan peta Google Maps secara \textit{native} pada perangkat pengguna. Peta tersebut berisi lokasi dari seluruh acara WSDC 2017 Bali dilaksanakan yang ditandai dengan \textit{marker}, dan juga akan menampilkan posisi dari perangkat pengguna. Lalu, untuk mengetahui posisi dari pengguna, akan digunakan sebuah \textit{plugin} yang disediakan oleh Capacitor, yaitu Capacitor Geolocation. \textit{Plugin} ini akan mendapatkan koordinat berupa \textit{latitude} dan \textit{longitude} dimana perangkat berada saat ini dengan menggunakan \textit{Global Positioning System} (GPS). 
-\end{itemize}
+\end{enumerate}
 
 \subsection{Permasalahan Pengembangan Sistem Usulan}
 \label{sec:analisisPermasalahanSistemKini}
 Saat sedang melakukan proses migrasi aplikasi WSDC 2017 Bali dari Ionic Framework versi 3 ke Ionic Framework versi 5, terdapat beberapa kendala yang dialami. Kendala-kendala tersebut adalah sebagai berikut : 
 
 \begin{itemize}
-	\item Seperti yang disebutkan pada landasan teori (Sub Bab~\ref{subsec:migrasi}) sebelum melakukan migrasi dari Ionic Framework versi 3 ke Ionic Framework versi 5 terlebih dahulu melakukan migrasi dari Ionic Framework versi 3 ke Ionic Framework versi 4. Namun karena tidak tersedianya perintah untuk membuat aplikasi dengan menggunakan Ionic Framework versi 4, maka penulis langsung melakukan migrasi dari Ionic Framework versi 3 ke Ionic Framework versi 5. Dalam melakukan hal ini, penulis berlandaskan bahwa susunan kelas Ionic Framework versi 4 dan versi 5 tidaklah berubah sama sekali. Yang mengalami perubahan hanyalah pembaruan properti mengenai API, CSS, dan {\it package dependencies} yang terpasang, yang telah dijelaskan pada landasan teori (Sub Bab~\ref{subsec:migrasi}).
+	\item Seperti yang disebutkan pada landasan teori (Sub Bab~\ref{subsec:migrasi}) sebelum melakukan migrasi dari Ionic Framework versi 3 ke Ionic Framework versi 5 terlebih dahulu melakukan migrasi dari Ionic Framework versi 3 ke Ionic Framework versi 4, yang selanjutnya dari Ionic versi 4 ke Ionic versi 5. Namun karena tidak tersedianya perintah untuk membuat aplikasi dengan menggunakan Ionic Framework versi 4 dan 5, maka penulis langsung melakukan migrasi dari Ionic Framework versi 3 ke Ionic Framework versi 6. Dalam melakukan hal ini, penulis berlandaskan bahwa susunan kelas Ionic Framework versi 4, 5 dan 6 tidaklah berubah sama sekali. Yang mengalami perubahan hanyalah pembaruan properti mengenai API, CSS, dan {\it package dependencies} yang terpasang, yang telah dijelaskan pada landasan teori (Sub Bab~\ref{subsec:migrasi}).
 	
 	\item Pada awal pengerjaan skripsi, halaman Draw dan Result pada aplikasi WSDC 2017 Bali tidak dapat diakses karena terjadi kesalahan konfigurasi pada server. Lalu setelah menghubungi dan dibantu oleh pembuat dari aplikasi WSDC 2017 Bali, maka masalah ini telah terselesaikan, yaitu halaman Draw dan Result pada aplikasi WSDC 2017 Bali dapat diakses kembali sebagaimana mestinya.
 	
