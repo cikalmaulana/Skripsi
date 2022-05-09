@@ -577,7 +577,7 @@ Komponen-komponen yang ada pada aplikasi WSDC 2017 Bali adalah sebagai berikut:
 \newpage
 
 	\item Komponen \textit{Result} \\
-	Komponen ini digunakan untuk menampilkan halaman \textit{Result} pada aplikasi. Komponen ini memiliki sebuah \textit{file} TypeScript untuk mengatur keseluruhan halaman. Di dalam \textit{file} result.ts terdapat sebuah \textit{decorator} @Component untuk komponen (Kode~\ref{lst:componentresult}) dan \textit{decorator} @ViewChild (Kode~\ref{lst:viewchildtresult}). Di dalam decorator ini terdapat CSS \textit{selector} untuk memilih CSS yang akan digunakan, serta \textbf{templateUrl} untuk mendefinisikan ekxternal HTML \textit{template} yang akan digunakan. \textit{Template} HTML yang digunakan adalah \textit{file} info.html. Lalu, @ViewChild digunakan untuk memanggil elemen dari DOM untuk meamanggil komponen API ke dalam TypeScript, yaitu pada komponen \textit{result} adalah resultIFrame yang berada di \textit{file} result.html.
+	Komponen ini digunakan untuk menampilkan halaman \textit{Result} pada aplikasi. Komponen ini memiliki sebuah \textit{file} TypeScript untuk mengatur keseluruhan halaman. Di dalam \textit{file} result.ts terdapat sebuah \textit{decorator} @Component untuk komponen (Kode~\ref{lst:componentresult}) dan \textit{decorator} @ViewChild (Kode~\ref{lst:viewchildtresult}). Di dalam decorator ini terdapat CSS \textit{selector} untuk memilih CSS yang akan digunakan, serta \textbf{templateUrl} untuk mendefinisikan ekxternal HTML \textit{template} yang akan digunakan. \textit{Template} HTML yang digunakan adalah \textit{file} info.html. Lalu, @ViewChild digunakan untuk memanggil elemen dari DOM untuk memanggil komponen API ke dalam TypeScript, yaitu pada komponen \textit{result} adalah resultIFrame yang berada di \textit{file} result.html.
 	
 \begin{lstlisting}[language=html, label={lst:componentresult}, caption=@Component pada result.ts]
 @Component({
@@ -590,7 +590,7 @@ Komponen-komponen yang ada pada aplikasi WSDC 2017 Bali adalah sebagai berikut:
 @ViewChild('resultIFrame') resultIFrame: ElementRef;
 \end{lstlisting} 
 
-	Di dalam \textit{file} result.ts, terdapat beberapa \textit{method}, yaitu:
+	Lalu terdapat kelas ResultPage dengan beberapa \textit{method} yang digunakan, yaitu:
 	
 	\begin{itemize}
 		\item ionViewDidLoad() \\
@@ -631,7 +631,7 @@ Komponen-komponen yang ada pada aplikasi WSDC 2017 Bali adalah sebagai berikut:
 	\end{itemize}
 	
 	\item Komponen \textit{Schedule}\\ 
-	Komponen ini digunakan untuk menampilkan halaman \textit{Schedule} pada aplikasi. Komponen ini memiliki sebuah \textit{file} TypeScript untuk mengatur keseluruhan halaman. Di dalam \textit{file} schedule.ts terdapat sebuah \textit{decorator} @Component untuk komponen (Kode~\ref{lst:componentschedule}) dan dua \textit{decorator} @ViewChild (Kode~\ref{lst:viewchildtresult}). Di dalam decorator ini terdapat CSS \textit{selector} untuk memilih CSS yang akan digunakan, serta \textbf{templateUrl} untuk mendefinisikan ekxternal HTML \textit{template} yang akan digunakan. \textit{Template} HTML yang digunakan adalah \textit{file} info.html. Lalu, @ViewChild digunakan untuk memanggil elemen dari DOM untuk meamanggil komponen API ke dalam TypeScript, yaitu pada komponen \textit{result} adalah scheduleSlider dan segmentContainer yang berada di \textit{file} result.html. scheduleSlider berfungsi untuk menyimpan konten dari sebuah \textit{slide}. Sedangkan segmentContainer berfungsi untuk menyimpan konten dari sebuah \textit{segment}.
+	Komponen ini digunakan untuk menampilkan halaman \textit{Schedule} pada aplikasi. Komponen ini memiliki sebuah \textit{file} TypeScript untuk mengatur keseluruhan halaman. Di dalam \textit{file} schedule.ts terdapat sebuah \textit{decorator} @Component untuk komponen (Kode~\ref{lst:componentschedule}) dan dua \textit{decorator} @ViewChild (Kode~\ref{lst:viewchildtresult}). Di dalam decorator ini terdapat CSS \textit{selector} untuk memilih CSS yang akan digunakan, serta \textbf{templateUrl} untuk mendefinisikan ekxternal HTML \textit{template} yang akan digunakan. \textit{Template} HTML yang digunakan adalah \textit{file} info.html. Lalu, @ViewChild digunakan untuk memanggil elemen dari DOM untuk memanggil komponen API ke dalam TypeScript, yaitu pada komponen \textit{result} adalah scheduleSlider dan segmentContainer yang berada di \textit{file} result.html. scheduleSlider berfungsi untuk menyimpan konten dari sebuah \textit{slide}. Sedangkan segmentContainer berfungsi untuk menyimpan konten dari sebuah \textit{segment}.
 	
 \begin{lstlisting}[language=html, label={lst:componentschedule}, caption=@Component pada schedule.ts]
 @Component({
