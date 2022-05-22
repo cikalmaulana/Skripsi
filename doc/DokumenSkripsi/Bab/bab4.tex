@@ -7,11 +7,21 @@ Pada bab ini akan dijelaskan mengenai perancangan aplikasi yang akan dibangun me
 \section{Perancangan Kelas}
 \label{sec:perancanganKelas}
 
-Pada aplikasi WSDC 2017 Bali yang akan dibangun menggunakan struktur kelas yang sama dengan aplikasi WSDC 2017 Bali terdahulu, dengan beberapa penyesuaian terkait dengan pembaruan yang dilakukan. Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
+Pada aplikasi WSDC 2017 Bali yang akan dibangun menggunakan struktur kelas yang sama dengan aplikasi WSDC 2017 Bali terdahulu, dengan beberapa penyesuaian terkait dengan pembaruan yang dilakukan. Diagram kelas secara keseluruhan dapat dilihat pada~gambar~\ref{fig:umldiagramkeseluruhan}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.43]{Gambar/umldiagram.png}
+    \caption{ Diagram Kelas Keseluruhan}
+    \label{fig:umldiagramkeseluruhan}
+\end{figure}
+
+
+Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 
 \begin{enumerate}
 	\item Komponen \textit{Announcements} \\
-	Di dalam komponen \textit{announcements} terdapat sebuah kelas AnnouncementPage. Kelas ini berfungsi untuk mengambil data \textit{announcements} 	dari \textit{storage}, dan menampilkan pengumuman ke halaman \textit{announcements}. Kelas ini memiliki sebuah atribut, yaitu announcements bertipe \textit{array} yang menyimpan localtime bertipe data \textit{string} yang berisi tanggal dan waktu dari sebuah pengumuman dikeluarkan dengan format ``Tahun-Bulan-Hari Jam-Menit-Detik'', dan message yang berisi pesan pengumuman yang bertipe data \textit{string}. 
+	Di dalam komponen \textit{announcements} terdapat sebuah kelas AnnouncementPage. Kelas ini berfungsi untuk mengambil data \textit{announcements} 	dari \textit{storage}, dan menampilkan pengumuman ke halaman \textit{announcements}. Kelas ini memiliki sebuah atribut, yaitu announcements bertipe \textit{array} yang menyimpan localtime bertipe data \textit{string} yang berisi tanggal dan waktu dari sebuah pengumuman dikeluarkan dengan format ``Tahun-Bulan-Hari Jam:Menit:Detik'', dan message yang berisi pesan pengumuman yang bertipe data \textit{string}. 
 	Kelas ini memiliki beberapa \textit{method}, diantaranya adalah sebagai berikut:
 	
 	\begin{itemize}
@@ -24,13 +34,13 @@ Pada aplikasi WSDC 2017 Bali yang akan dibangun menggunakan struktur kelas yang 
 			\item \textbf{toastController}: Parameter ini digunakan untuk menyimpan API ToastController.
 		\end{itemize}
 		\textbf{Kembalian}; tidak ada.
+
+\newpage		
 		
 		\item \textbf{ngOnInit(): void}\\
 		\textit{Method} ini berfungsi untuk mengambil data \textit{announcements} yang terdapat di dalam \textit{storage}, kemudian menyimpannya ke dalam atribut kelas, yaitu announcements. \\
 		\textbf{Parameter}: tidak ada. \\
-		\textbf{Kembalian}: tidak ada.
-		
-		\newpage		
+		\textbf{Kembalian}: tidak ada.	
 		
 		\item \textbf{doRefresh(refresher)} \\
 		\textit{Method} ini berfungsi untuk melakukan penyegaran ulang terhadap halaman \textit{Announcements}. Saat melakukan penyegaran ulang, \textit{method} ini akan mengambil data terbaru dari server, kemudian menyimpannya ke dalam atribut kelas, yaitu announcements. Selanjutnya akan dilakukan penghapusan terlebih dahulu terhadap data yang sudah ada di dalam \textit{storage}, kemudian menyimpan data terbaru yang di dapatkan dari server ke dalam \textit{storage}. Jika server tidak merespon dan data tidak dapat diambil, maka akan memanggil \textit{method} presentConnectionAlert() untuk menampilkan \textit{toast}. \\
@@ -63,8 +73,6 @@ Pada aplikasi WSDC 2017 Bali yang akan dibangun menggunakan struktur kelas yang 
 			\end{itemize}
 			\textbf{Kembalian}: tidak ada.
 
-		\newpage			
-			
 		\item \textbf{ngOnInit()} \\
 			\textit{Method} ini berfungsi untuk mengambil data \textit{draws} yang terdapat di dalam \textit{storage}. Data tersebut lalu disimpan ke dalam \textit{child} drawIFrame. Kemudian \textit{method} ini akan memanggil \textit{method} presentLoading(). \\
 			\textbf{Parameter}: tidak ada. \\
@@ -76,7 +84,7 @@ Pada aplikasi WSDC 2017 Bali yang akan dibangun menggunakan struktur kelas yang 
 			\textbf{Kembalian}: tidak ada.
 			
 		\item \textbf{onDrawIframeLoad()}\\
-			\textit{Method} ini merupakan sebuah \textit{template statement} yang dipanggil oleh \textit{event} di dalam \textit{tag} <iframe> pada \textit{file} draw.page.html. \textit{Method} ini berfungsi untuk menampilkan data \textit{draw} yang disimpan di dalam \textit{storage}. \\
+			\textit{Method} ini merupakan sebuah \textit{template statement} yang dipanggil oleh \textit{event} di dalam \textit{tag} \texttt{<iframe>} pada \textit{file} draw.page.html. \textit{Method} ini berfungsi untuk menampilkan data \textit{draw} yang disimpan di dalam \textit{storage}. \\
 			\textbf{Parameter}: tidak ada. \\
 			\textbf{Kembalian}: tidak ada.
 	\end{itemize}
@@ -138,7 +146,8 @@ Pada aplikasi WSDC 2017 Bali yang akan dibangun menggunakan struktur kelas yang 
 			\textbf{Kembalian}: tidak ada.
 	\end{itemize}
 	
-	\newpage
+	\newpage	
+	
 	\item Komponen Info \\
 		Di dalam komponen info terdapat sebuah kelas InfoPage. Kelas ini berfungsi untuk mengambil data info dari \textit{stroage} dan menyimpannya ke atriubt kelas yang kemudian data tersebut akan ditampilkan ke halaman info. Kelas ini memiliki sebuah atribut, yaitu wsdcInfoData yang bertipe any. Atribut ini digunakan untuk menyimpan data untuk halaman info. Kelas ini hanya memiliki sebuah \textit{method} yaitu \textit{method} constructor. \textit{Method} ini memiliki sebuah parameter, yaitu storage yang bertipe Storage. Constructor pada kelas ini bertujuan untuk mengambil data info dari \textit{storage} dan menyimpannya ke dalam atribut kelas, yaitu wsdcInfoData. 
 		
@@ -168,11 +177,13 @@ Pada aplikasi WSDC 2017 Bali yang akan dibangun menggunakan struktur kelas yang 
 				\textbf{Kembalian}: tidak ada.
 				
 			\item \textbf{onResultIframeLoad()} \\
-				\textit{Method} ini merupakan sebuah \textit{template statement} yang dipanggil oleh \textit{event} di dalam \textit{tag} <iframe> pada \textit{file} result.page.html. \textit{Method} ini berfungsi untuk menampilkan data \textit{result} yang disimpan di dalam \textit{storage}. \\
+				\textit{Method} ini merupakan sebuah \textit{template statement} yang dipanggil oleh \textit{event} di dalam \textit{tag} \texttt{<iframe>} pada \textit{file} result.page.html. \textit{Method} ini berfungsi untuk menampilkan data \textit{result} yang disimpan di dalam \textit{storage}. \\
 				\textbf{Parameter}: tidak ada. \\
 				\textbf{Kembalian}: tidak ada.
 		\end{itemize}
-		\newpage
+
+\newpage
+
 		\item Komponen \textit{Schedule}\\
 			Di dalam komponen \textit{schedule} terdapat sebuah kelas SchedulePage. Kelas ini berfungsi untuk mengatur jadwal pada halaman \textit{schedule}, seperti mengatur perpindahan \textit{slides} dan \textit{segment} pada jadwal. 
 
@@ -206,6 +217,8 @@ Pada aplikasi WSDC 2017 Bali yang akan dibangun menggunakan struktur kelas yang 
 					\textit{Method} ini dipanggil saat \textit{slides} dipindahkan dengan cara digeser ke kanan atau ke kiri. \textit{Method} ini akan mengubah atribut currentIndex menjadi index \textit{slides} saat ini, kemudian mengubah atribud selectedSegmentIdx menjadi index \textit{slides} saat ini. Hal ini bertujuan agar indeks dari \textit{segment} yang aktif dapat diganti sesuai dengan indeks \textit{slides} yang aktif. Dengan begitu tampilan \textit{segment} dan \textit{slides} yang aktif akan sesuai. \\
 					\textbf{Parameter}: tidak ada. \\
 					\textbf{Kembalian}: tidak ada.
+					
+				\newpage					
 					
 				\item \textbf{onSegmentChanged(segmentButton)}\\
 					\textit{Method} ini berfungsi untuk mengubah \textit{slides} yang aktif sesuai dengan indeks dari \textit{segment} yang sedang aktif. \\
@@ -279,8 +292,7 @@ Pada aplikasi WSDC 2017 Bali yang akan dibangun menggunakan struktur kelas yang 
 						\textit{Method} ini digunakan untuk mengarahkan kamera map ke arah lokasi \textit{venues} yang dituju sesuai dengan koordinat pada parameter. \\
 						\textbf{Parameter}: venuesCoordinates: Parameter ini berisi koordinat latitude dan longitude dari lokasi \textit{venues} yang dituju. \\
 						\textbf{Kembalian}: tidak ada.
-						
-					\newpage
+						\newpage
 					\item \textbf{computeDistance(lat1, lat2, lon1, lon2)} \\
 						\textit{Method} ini berfungsi untuk menghitung jarak dari posisi perangkat pengguna ke posisi \textit{venues} menggunakan latitude dan longitude dari kedua posisi tersebut.\\
 						\textbf{Parameter}: 
@@ -303,39 +315,38 @@ Pada aplikasi WSDC 2017 Bali yang akan dibangun menggunakan struktur kelas yang 
 	
 	\begin{enumerate}
 		\item \textit{Header} \\
-			\textit{Header} untuk setiap komponen pada umunya memiliki struktur yang serupa namun dibedakan dengan judul dari setiap halaman. \textit{Header} digunakan untuk menampilkan judul dari sebuah halaman, serta menyediakan sebuah \textit{menu button} sebagai salah satu cara untuk membuat \textit{sidebar} untuk melakukan navigasi antar halaman. \textit{Header} dibungkus oleh \textit{tag} <ion-header> yang didalamnya terdapat \textit{tag} <ion-toolbar> yang disediakan Ionic Framework. Lalu untuk \textit{menu button} dibuat oleh \textit{tag} <ion-menu-button> pada \textit{tag} <ion-buttons>. Selanjutnya untuk judul dari sebuah halaman dibungkus oleh \textit{tag} <ion-title>. Judul akan berbeda beda tergantung dengan halamannya.
+			\textit{Header} untuk setiap komponen pada umunya memiliki struktur yang serupa namun dibedakan dengan judul dari setiap halaman. \textit{Header} digunakan untuk menampilkan judul dari sebuah halaman, serta menyediakan sebuah \textit{menu button} sebagai salah satu cara untuk membuat \textit{sidebar} untuk melakukan navigasi antar halaman. \textit{Header} dibungkus oleh \textit{tag} \texttt{<ion-header>} yang didalamnya terdapat \textit{tag} \texttt{<ion-toolbar>} yang disediakan Ionic Framework. Lalu untuk \textit{menu button} dibuat oleh \textit{tag} \texttt{<ion-menu-button>} pada \textit{tag} \texttt{<ion-buttons>}. Selanjutnya untuk judul dari sebuah halaman dibungkus oleh \textit{tag} \texttt{<ion-title>}. Judul akan berbeda beda tergantung dengan halamannya. Salah satu contoh dari penggunaan \textit{header} adalah pada gambar~\ref{fig:homePageWireframe} yang ditandai dengan kotak berwarna biru.
 			
 		\item \textit{Content} \\
-			\textit{Content} untuk setiap komponen memiliki struktur yang berbeda-beda tergantung dengan isi dari halaman tersebut. Namun \textit{content} untuk setiap komponen dibungkus oleh sebuah \textit{tag} <ion-content>. Struktur \textit{content} untuk masing-masing halaman adalah sebagai berikut:
+			\textit{Content} untuk setiap komponen memiliki struktur yang berbeda-beda tergantung dengan isi dari halaman tersebut. Namun \textit{content} untuk setiap komponen dibungkus oleh sebuah \textit{tag} \texttt{<ion-content>}. Salah satu contoh dari penggunaan \textit{content} adalah pada gambar~\ref{fig:homePageWireframe} yang ditandai dengan warna merah. Struktur \textit{content} untuk masing-masing halaman adalah sebagai berikut:
 			
 			\begin{itemize}
 				\item Halaman \textit{Announcements} \\
-					\textit{Content} pada halaman \textit{announcements} berisi sebuah \textit{refresher} dengan \textit{tag} <ion-refresher> untuk melakukan penyegaran ulang terhadap halaman \textit{announcements} yaitu mengambil data terbaru dari server. Selain itu terdapat sebuah list dengan \textit{tag} <ion-list>. List menampilkan pengumuman yang berisi waktu dan tanggal, serta pesan dari pengumuman tersebut. Setiap satu pengumuman dibungkus oleh sebuah \textit{tag} <ion-item>. Di dalamnya terdapat sebuah \textit{tag} <ion-label> yang berisi \textit{tag} <h3> untuk waktu dan tanggal, serta \textit{tag} <p> untuk pesan pengumuman.
-				
-				\newpage				
+					\textit{Content} pada halaman \textit{announcements} berisi sebuah \textit{refresher} dengan \textit{tag} \texttt{<ion-refresher>} untuk melakukan penyegaran ulang terhadap halaman \textit{announcements} yaitu mengambil data terbaru dari server. Penggunaan \textit{tag} \texttt{<ion-refresher>} seperti pada gambar~\ref{fig:announcementsPageWireframe} yang ditandai dengan kotak berwarna hijau. Selain itu terdapat sebuah list dengan \textit{tag} \texttt{<ion-list>} yang ditandai dengan kotak berwarna kuning. List menampilkan pengumuman yang berisi waktu dan tanggal, serta pesan dari pengumuman tersebut. Setiap satu pengumuman dibungkus oleh sebuah \textit{tag} \texttt{<ion-item>} yang ditandai dengan kotak berwarna hitam. Di dalamnya terdapat sebuah \textit{tag} \texttt{<ion-label>} yang berisi \textit{tag} \texttt{<h3>} untuk waktu dan tanggal, serta \textit{tag} \texttt{<p>} untuk pesan pengumuman.		
 				
 				\item Halaman \textit{Draw} \\
-					\textit{Content} pada halaman \textit{draw} berisi sebuah \textit{tag} <iframe> yang digunakan untuk menyematkan dokumen lain ke dalam dokumen HTML, yaitu sebuah data \textit{draw} yang berisi pembagian grup proposisi dan oposisi bagi setiap negara peserta WSDC 2017 Bali. Data tersebut diambil dari server, kemudian dimasukan ke dalam \textit{tag} <iframe>. 
+					\textit{Content} pada halaman \textit{draw} berisi sebuah \textit{tag} \texttt{<iframe>} yang digunakan untuk menyematkan dokumen lain ke dalam dokumen HTML, yaitu sebuah data \textit{draw} yang berisi pembagian grup proposisi dan oposisi bagi setiap negara peserta WSDC 2017 Bali. Data tersebut diambil dari server, kemudian dimasukan ke dalam \textit{tag} \texttt{<iframe>}. Penggunaan \textit{tag} \texttt{<iframe>} seperti pada gambar~\ref{fig:drawPageWireframe} yang ditandai dengan kotak berwarna hijau.
 					
 				\item Halaman \textit{Home} \\
-					\textit{Content} pada halaman \textit{home} berisi sebuah \textit{refresher} dengan \textit{tag} <ion-refresher> untuk melakukan penyegaran ulang terhadap halaman \textit{home}, yaitu mengambil data terbaru dari server. Selain itu terdapat sebuah \textit{card} dengan \textit{tag} <ion-card> yang digunakan untuk menampilkan sebuah pengumuman terbaru, berikut dengan waktu dan tanggal serta pesan dari pengumuman tersebut. Di dalam \textit{card} terdapat \textit{grid} untuk \textit{layout} dari \textit{card}. Di dalam sebuah \textit{grid} terdapat sebuah baris dengan \textit{tag} <ion-row>. Lalu di dalam baris tersebut terdapat dua buah kolom dengan \textit{tag} <ion-col>. Masing-masing kolom memili ukuran, kolom pertama berukuran 9sembilan digunakan untuk menyimpan \textit{header} dari \textit{card} dengan \textit{title} yaitu ``Latest Announcement''. \textit{Header} ini dibungkus di dalam \textit{tag} <ion-card-header>, dan \textit{title} dengan \textit{tag} <ion-card-title>. Selain \textit{header} untuk \textit{card}, terdapat pula \textit{content} untuk \textit{card} dengan \textit{tag} <ion-card-content> yang berisi waktu dan tanggal, serta pesan dari pengumuman. Untuk kolom selanjutnya dengan ukuran tiga berisi sebuah gambar.
-					Selain \textit{card} pengumuman, terdapat juga list dengan \textit{tag} <ion-list> yang berisi \textit{thumbnail} dari berita-berita terkait acara WSDC 2017 Bali. Di dalam list terdapat sebuah \textit{header} dengan \textit{tag} <ion-list-header> yang berisi judul dari list yaitu ``Newsletters'' yang berada di dalam \textit{tag} <ion-label>. Lalu untuk masing-masing \textit{thumbnail} berita berada di dalam \textit{tag} <ion-item>. Untuk masing-masing item terdapat sebuah gambar \textit{thumbnail} dari sebuah berita, judul dari berita tersebut, serta sebuah tombol dengan \textit{tag} <ion-button> yang jika ditekan akan mengarahkan pengguna untuk melihat berita tertentu sesuai dengan item yang dipilih.
+					\textit{Content} pada halaman \textit{home} berisi sebuah \textit{refresher} dengan \textit{tag} \texttt{<ion-refresher>} untuk melakukan penyegaran ulang terhadap halaman \textit{home}, yaitu mengambil data terbaru dari server. Penggunaan \textit{tag} \texttt{<ion-refresher>} seperti pada gambar~\ref{fig:homePageWireframe} yang ditandai dengan kotak berwarna hijau. Selain itu terdapat sebuah \textit{card} dengan \textit{tag} \texttt{<ion-card>} seperti yang ditandai dengan kotak berwarna merah muda yang digunakan untuk menampilkan sebuah pengumuman terbaru, berikut dengan waktu dan tanggal serta pesan dari pengumuman tersebut. Di dalam \textit{card} terdapat \textit{grid} untuk \textit{layout} dari \textit{card}. Di dalam sebuah \textit{grid} terdapat sebuah baris dengan \textit{tag} \texttt{<ion-row>}. Lalu di dalam baris tersebut terdapat dua buah kolom dengan \textit{tag} \texttt{<ion-col>}. Masing-masing kolom memiliki ukuran, kolom pertama yang ditandai dengan kotak berwarna coklat berukuran sembilan digunakan untuk menyimpan \textit{header} dari \textit{card} dengan \textit{title} yaitu ``Latest Announcement''. \textit{Header} ini dibungkus di dalam \textit{tag} \texttt{<ion-card-header>}, dan \textit{title} dengan \textit{tag} \texttt{<ion-card-title>}. Selain \textit{header} untuk \textit{card}, terdapat pula \textit{content} untuk \textit{card} dengan \textit{tag} \texttt{<ion-card-content>} yang berisi waktu dan tanggal, serta pesan dari pengumuman. Untuk kolom selanjutnya dengan ukuran tiga berisi sebuah gambar seperti yang ditandai dengan kotak berwarna jingga.
+					
+					Selain \textit{card} pengumuman, terdapat juga list dengan \textit{tag} \texttt{<ion-list>} yang berisi \textit{thumbnail} dari berita-berita terkait acara WSDC 2017 Bali seperti yang ditandai dengan kotak berwarna ungu pada gambar~\ref{fig:homePageWireframe}. Di dalam list terdapat sebuah \textit{header} dengan \textit{tag} \texttt{<ion-list-header>} yang berisi judul dari list yaitu ``Newsletters'' yang berada di dalam \textit{tag} \texttt{<ion-label>}. Lalu untuk masing-masing \textit{thumbnail} berita berada di dalam \textit{tag} \texttt{<ion-item>}. Untuk masing-masing item terdapat sebuah gambar \textit{thumbnail} dari sebuah berita, judul dari berita tersebut, serta sebuah tombol dengan \textit{tag} \texttt{<ion-button>} yang jika ditekan akan mengarahkan pengguna untuk melihat berita tertentu sesuai dengan item yang dipilih.
 				
 				\item Halaman Info \\
-					\textit{Content} pada halaman info berisi sebuah \textit{grid} dengan \textit{tag} <ion-grid>, yang berisi sebuah baris dengan \textit{tag} <ion-row>. Baris ini menyimpan info-info seputar kontak-kontak penting yang dapat dihubungi, kosa kata dalam Bahasa Indonesia sehari-hari, serta credits kepada pembuat aplikasi WSDC 2017 Bali.
+					\textit{Content} pada halaman info berisi sebuah \textit{grid} dengan \textit{tag} \texttt{<ion-grid>}, yang berisi sebuah baris dengan \textit{tag} \texttt{<ion-row>}. Baris ini menyimpan info-info seputar kontak-kontak penting yang dapat dihubungi, kosa kata dalam Bahasa Indonesia sehari-hari, serta credits kepada pembuat aplikasi WSDC 2017 Bali.
 					
 				\item Halaman \textit{Result}\\
-					\textit{Content} pada halaman \textit{result} berisi sebuah \textit{tag} <iframe> yang digunakan untuk menyematkan dokumen lain ke dalam dokumen HTML, yaitu sebuah data \textit{result} hasil dari keseluruhan pertandingan WSDC 2017 Bali. Data tersebut diambil dari server, kemudian dimasukan ke dalam \textit{tag} <iframe>. 
+					\textit{Content} pada halaman \textit{result} berisi sebuah \textit{tag} \texttt{<iframe>} yang digunakan untuk menyematkan dokumen lain ke dalam dokumen HTML, yaitu sebuah data \textit{result} hasil dari keseluruhan pertandingan WSDC 2017 Bali. Data tersebut diambil dari server, kemudian dimasukan ke dalam \textit{tag} \texttt{<iframe>}. 
 					
 				\item Halaman \textit{Schedule} \\
-					\textit{Content} pada halaman \textit{schedule} berisi \textit{segment} dengan \textit{tag} <ion-segment> dan sebuah \textit{slides} dengan \textit{tag} <ion-slides>. \textit{Segment} digunakan untuk menampilkan tanggal dan hari, serta berfungsi untuk memindahkan \textit{slides} ke hari yang dipilih. Untuk melakukan hal tersebut, di dalam \textit{segment} terdapat sebuah \textit{button} dengan \textit{tag} <ion-segment-button> yang berisi \textit{tag} <ion-label> untuk menampung tanggal dan hari. 
-					Sedangkan \textit{slides} digunakan untuk menampilkan jadwal acara WSDC 2017 Bali pada hari yang sesuai dengan \textit{segment} yang terpilih. Untuk menampilkan jadwal menggunakan \textit{list} dengan \textit{tag} <ion-list>. Di dalam \textit{list} terdapat sebuah \textit{item} dengan \textit{tag} <ion-item>. Untuk setiap \textit{item} berisi waktu mulai dan selesai sebuah acara dengan \textit{tag} <ion-note>, serta nama acara dan lokasi acara dengan \textit{tag}  <ion-label>.
+					\textit{Content} pada halaman \textit{schedule} berisi \textit{segment} dengan \textit{tag} \texttt{<ion-segment>} dan sebuah \textit{slides} dengan \textit{tag} \texttt{<ion-slides>}. \textit{Segment} digunakan untuk menampilkan tanggal dan hari, serta berfungsi untuk memindahkan \textit{slides} ke hari yang dipilih seperti yang ditandai dengan kotak berwarna hijau pada gambar~\ref{fig:SchedulePageWireframe}. Untuk melakukan hal tersebut, di dalam \textit{segment} terdapat sebuah \textit{button} dengan \textit{tag} \texttt{<ion-segment-button>} yang berisi \textit{tag} \texttt{<ion-label>} untuk menampung tanggal dan hari. 
+					Sedangkan \textit{slides} digunakan untuk menampilkan jadwal acara WSDC 2017 Bali pada hari yang sesuai dengan \textit{segment} yang terpilih seperti yang ditandai dengan kotak berwarna coklat. Untuk menampilkan jadwal menggunakan \textit{list} dengan \textit{tag} \texttt{<ion-list>} yang ditandai dengan warna merah muda. Di dalam \textit{list} terdapat sebuah \textit{item} dengan \textit{tag} \texttt{<ion-item>}. Untuk setiap \textit{item} berisi waktu mulai dan selesai sebuah acara dengan \textit{tag} \texttt{<ion-note>} yang ditandai dengan warna ungu, serta nama acara dengan \textit{tag} \texttt{<h3>} yang ditandai dengan kotak berwarna jingga dan lokasi acara dengan \textit{tag} \texttt{<p>} yang ditandai dengan kotak berwarna biru muda. Nama dan lokasi acara dibungkus dengan \textit{tag} \texttt{<ion-label>}.
 					
 				\item Halaman \textit{Venues} \\
-					\textit{Content} pada halaman \textit{venues} berisi \textit{grid} dengan \textit{tag} <ion-grid> dengan satu baris menggunakan \textit{tag} <ion-row>. Di dalamnya terdapat sebuah \textit{list} dengan \textit{tag} <ion-list>. \textit{List} tersebut berisi tombol dengan \textit{tag} <ion-button>. Masing-masing tombol digunakan untuk melakukan navigasi ke halaman \textit{venues map}. Setiap tombol berisi ikon dengan \textit{tag} <ion-icon> dan sebuah \textit{tag} <span> yang berisi nama dari \textit{venues}.
+					\textit{Content} pada halaman \textit{venues} berisi \textit{grid} dengan \textit{tag} \texttt{<ion-grid>} dengan satu baris menggunakan \textit{tag} \texttt{<ion-row>}. Di dalamnya terdapat sebuah \textit{list} dengan \textit{tag} \texttt{<ion-list>}. \textit{List} tersebut berisi tombol dengan \textit{tag} \texttt{<ion-button>} yang ditandai dengan kotak berwarna hijau pada gambar~\ref{fig:VenuePageWireframe}. Masing-masing tombol digunakan untuk melakukan navigasi ke halaman \textit{venues map}. Setiap tombol berisi ikon dengan \textit{tag} \texttt{<ion-icon>} yang ditandai dengan kotak berwarna biru muda pada gambar~\ref{fig:VenuePageWireframe} dan sebuah \textit{tag} \texttt{<span>} yang berisi nama dari \textit{venues}, ditandai dengan kotak berwarna hitam.
 					
 				\item Halaman \textit{Venues Map} \\
-					\textit{Content} pada halaman \textit{venues map} berisi \textit{tag} <div> yang digunakan untuk menampung peta dari sebuah kategori \textit{venues}. Lalu selain itu terdapat sebuah label dengan \textit{tag} <ion-label> yang berisi nama kategori \textit{venues}. Kemudian untuk menampilkan nama dan deskripsi sebuah \textit{venues}, serta jarak antara pengguna dengan \textit{venues}, menggunakan \textit{list} dengan \textit{tag} <ion-list>.
+					\textit{Content} pada halaman \textit{venues map} berisi \textit{tag} \texttt{<div>} yang digunakan untuk menampung peta dari sebuah kategori \textit{venues} seperti yang ditandai dengan kotak berwarna hijau pada gambar~\ref{fig:VenueMapPageWireframe}. Lalu selain itu terdapat sebuah label dengan \textit{tag} \texttt{<ion-label>} yang berisi nama kategori \textit{venues} yang ditandai dengan kotak berwarna kuning. Kemudian untuk menampilkan nama dan deskripsi sebuah \textit{venues}, serta jarak antara pengguna dengan \textit{venues}, menggunakan \textit{list} dengan \textit{tag} \texttt{<ion-list>} yang ditandai dengan kotak berwarna biru muda. 
 				
 			\end{itemize}			  
 	\end{enumerate}

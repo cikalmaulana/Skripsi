@@ -12,40 +12,45 @@ Aplikasi WSDC 2017 Bali digunakan untuk menunjang keberlangsungan acara WSDC 201
 
 \begin{figure}[H]
      \centering
-     \begin{subfigure}[b]{0.3\textwidth}
+     \begin{subfigure}[b]{0.247\textwidth}
         \centering
-    \includegraphics[scale=0.4]{Gambar/HomePage.png}
-    \caption{Halaman Utama}
-    \label{fig:wsdcapp}
+	    \includegraphics[scale=0.37]{Gambar/HomePage.png}
+	    \caption{{\it \textit{Home page}}}
+	    \label{fig:wsdcapp}
      \end{subfigure}
      \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
+     \begin{subfigure}[b]{0.24\textwidth}
     \centering
-	    \includegraphics[scale=0.4]{Gambar/AnnouncementsPage.png}
-	    \caption{Halaman {\it Announcements}}
+	    \includegraphics[scale=0.37]{Gambar/AnnouncementsPage.png}
+	    \caption{\textit{Announcements Page}}
 	    \label{fig:wsdcAppAnnouncements}
      \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-	    \includegraphics[scale=0.4]{Gambar/SchedulePage.png}
-	    \caption{Halaman {\it Schedule}}
+	\begin{subfigure}[b]{0.24\textwidth}
+    \centering
+	    \includegraphics[scale=0.37]{Gambar/SchedulePage.png}
+	    \caption{{\it Schedule Page}}
 	    \label{fig:wsdcAppSchedule}
      \end{subfigure}
-        \caption{Aplikasi WSDC 2017 Bali Saat Ini pada Perangkat Android}
-        \label{fig:three graphs}
+	\begin{subfigure}[b]{0.24\textwidth}
+    \centering
+	    \includegraphics[scale=0.37]{Gambar/VenuePage.png}
+	    \caption{\textit{Venues Page}}
+	    \label{fig:wsdcAppVenues} 
+     \end{subfigure}
+	\caption{Wireframe Aplikasi WSDC 2017 Bali}
+        \label{fig:ssAppWSDC2017Bali2}
 \end{figure}
 
 Fitur-fitur yang terdapat di aplikasi WSDC 2017 Bali saat ini yaitu :
 
 \begin{enumerate}
-	\item {\it Newsletter}: Pengguna dapat mengunduh dan berita-berita terkait acara WSDC 2017 Bali (Gambar~\ref{fig:wsdcapp}).
+	\item \textit{Home Page}: Pengguna dapat melihat pengumuman terbaru, dan \textit{headline} dari berita-berita terkait acara WSDC 2017 Bali dengan tombol yang dapat diklik untuk melihat berita tersebut secara lebih detail (Gambar~\ref{fig:wsdcapp}).
 
 	\item {\it Announcements}: Pengguna dapat melihat pemberitahuan tentang berjalannya acara WSDC 2017 Bali (Gambar~\ref{fig:wsdcAppAnnouncements}).
 
 	\item {\it Schedule}: Pengguna dapat melihat jadwal acara WSDC 2017 Bali yang sudah diadakan (Gambar~\ref{fig:wsdcAppSchedule}).
 
-	\item {\it Venues}: Pengguna dapat melihat berbagai macam lokasi acara WSDC 2017 Bali, mulai dari lokasi upacara, lokasi kompetisi, dan lokasi wisata edukasi. Masing-masing dari lokasi tersebut dapat menunjukan arah dan jarak dari lokasi tempat pengguna berada (Gambar~\ref{fig:wsdcAppVenues}).
+	\item {\it Venues}: Pengguna dapat melihat berbagai macam lokasi acara WSDC 2017 Bali, mulai dari lokasi upacara, lokasi kompetisi, dan lokasi wisata edukasi (Gambar~\ref{fig:wsdcAppVenues}). Masing-masing dari lokasi tersebut ditunjukkan dengan tanda merah pada peta dan dapat melihat jarak dari lokasi perangkat pengguna ke lokasi \textit{venues} (Gambar~\ref{fig:wsdcAppVenuesMap}).
 
 	\item Info: Pengguna dapat melihat informasi terkait dengan tim pengembang dari aplikasi WSDC 2017 Bali, kontak-kontak penting yang dapat dihubungi, dan kosa kata penting dalam Bahasa Indonesia (Gambar~\ref{fig:wsdcAppInfo}).
 
@@ -58,31 +63,31 @@ Fitur-fitur yang terdapat di aplikasi WSDC 2017 Bali saat ini yaitu :
      \centering
      \begin{subfigure}[b]{0.21\textwidth}
         \centering
-	    \includegraphics[scale=0.4]{Gambar/VenuePage.png}
-	    \caption{Halaman {\it Venues}}
-	    \label{fig:wsdcAppVenues}
+	    \includegraphics[scale=0.4]{Gambar/VenuesMapPage.png}
+	    \caption{{\it Venues Map Page}}
+	    \label{fig:wsdcAppVenuesMap}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.247\textwidth}
     \centering
 	    \includegraphics[scale=0.4]{Gambar/InfoPage.png}
-	    \caption{Halaman Info}
+	    \caption{Info \textit{Page}}
 	    \label{fig:wsdcAppInfo}
      \end{subfigure}
 	\begin{subfigure}[b]{0.247\textwidth}
     \centering
 	    \includegraphics[scale=0.4]{Gambar/DrawPage.png}
-	    \caption{Halaman {\it Draw}}
+	    \caption{{\it Draw Page}}
 	    \label{fig:wsdcAppDraw}
      \end{subfigure}
 	\begin{subfigure}[b]{0.247\textwidth}
     \centering
 	    \includegraphics[scale=0.4]{Gambar/ResultPage.png}
-	    \caption{Halaman {\it Result}}
+	    \caption{{\it Result Page}}
 	    \label{fig:wsdcAppResult}
      \end{subfigure}
 	\caption{Aplikasi WSDC 2017 Bali Saat Ini pada Perangkat Android}
-        \label{fig:three graphs}
+        \label{fig:ssAppWSDC2017Bali2}
 \end{figure}
 
 \section{Angular}
@@ -96,13 +101,38 @@ Angular dapat digunakan untuk membuat aplikasi Single-page-application (SPA), ya
 %Nulis typiscrript
 Angular dapat dibangun dengan menggunakan JavaScript atau TypeScript. Namun, penggunaan TypeScript saat ini menjadi lebih produktif dibandingkan dengan JavaScript~\cite{fain:18:angular}. TypeScript mengikuti perkembangan terakhir dari ECMAScript, dan menambahkan \textit{types}, \textit{interface}, \textit{decorators}, \textit{class member variables}, \textit{generic}, \textit{enum}, dan \textit{keyword} seperti \textit{public}, \textit{protected}, dan \textit{private}. Lalu selain itu, TypeScript juga dapat dimungkinkan untuk mendeklarisasi jenis tipe khusus yang dapat di kustomisasi. Maka dari itu, Framework Angular sendiri ditulis menggunakan TypeScript.
 
-Kelas TypeScript akan digunakan oleh Angular di dalam sebuah komponen. Komponen pada Angular merupakan sebuah penyusun utama untuk aplikasi Angular. Setiap komponen yang ada pada aplikasi terdiri dari \textit{template} HTML untuk mendeklarasi halaman yang akan dimuat, kelas TypeScript, serta CSS Selector.
+Kelas TypeScript akan digunakan oleh Angular di dalam sebuah komponen. Komponen pada Angular merupakan sebuah penyusun utama untuk aplikasi Angular. Setiap komponen yang ada pada aplikasi, secara \textit{default} memiliki \textit{critical files} yang terdiri dari \textit{file} HTML untuk mendeklarasi halaman yang akan dimuat, \textit{file} TypeScript, serta \textit{file} css~\cite{gion:18:mastering}. Selain itu di dalam komponen terdapat module.ts yang merupakan NgModule dari sebuah komponen, spec.ts yang digunakan untuk menguji komponen, dan routing.module.ts yang berisi definisi untuk bernavigasi antar bagian dalam aplikasi Angular. Penjelasan untuk masing-masing \textit{file} adalah sebagai berikut:
 
-Di dalam aplikasi Angular, terdapat beberapa komponen, seperti Parent Component, dan Child Component. Parent Component dapat mengirimkan data ke properti Child Component-nya. Namun, Child Component tidak tahu siapa yang mengirimkannya. Sedangkan Child Component juga dapat mengirimkan data ke Parent Component, meskipun dia tidak tahu siapa Parent Component-nya. Arsitektur seperti ini dapat membuat komponen menjadi mandiri dan dapat digunakan kembali.
+\begin{itemize}
+	\item \textit{File} routing.module.ts \\
+		\textit{File} ini digunakan untuk melakukan navigasi antar komponen. Untuk melakukannya, harus melakukan \textit{import} RouterModule dan Routes sehingga dapat memiliki fungsionalitas \textit{routing}~(Kode~\ref{lst:importroutingmodule}). Selanjutnya lakukan \textit{import} untuk memberikan \textit{router} suatu tempat untuk dituju setelah mengonfigurasi rute.
 
-Di dalam TypeScript, sebuah kelas komponen memiliki anotasi dengan sebuah \textit{decorator}~(Kode~\ref{lst:decorator}) yang ditempatkan sesuai dengan komponen UI nya berada. Komponen akan berisi \textit{instance} dari service class yang diimplementasi dari \textit{business logic} tanpa UI. Sebuah service class merupakan implementasi dari \textit{business logic}. Angular akan menempatkan \textit{services} ke dalam komponen atau ke dalam \textit{services} lainnya dengan menggunakan \textit{dependency injection} (DI). 	
+\begin{lstlisting}[label={lst:importroutingmodule}, caption=Contoh \textit{import} pada routing.module.ts]
+import { RouterModule, Routes } from '@angular/router';
+import { HeroesComponent } from './heroes/heroes.component';
+\end{lstlisting} 
 
-\begin{lstlisting}[language=html, label={lst:decorator}, caption=Anotasi Komponen dengan \textit{Decorator}]
+		Setelah itu, lakukan konfigurasi \textit{routes}~(Kode~\ref{lst:confroutingmodule}). \textit{Routes} akan memberi tahu Router tampilan mana yang akan ditampilkan saat pengguna melakukan navigasi.
+		
+\begin{lstlisting}[label={lst:confroutingmodule}, caption=Contoh Konfigurasi \textit{Routes} pada routing.module.ts]
+const routes: Routes = [
+  { path: 'heroes', component: HeroesComponent }
+];
+\end{lstlisting} 
+
+	\item \textit{File} CSS \\
+		\textit{File} ini digunakan sebagai \textit{template} CSS untuk sebuah komponen. Aplikasi angular ditata dengan CSS standar, yang dapat menerapkan  semua CSS stylesheets, \textit{selectors}, \textit{rules}, dan \textit{media queries} langsung ke aplikasi Angular.
+		 
+	\item \textit{File} HTML \\
+		\textit{File} HTML pada Angular sama seperti HTML biasa, dan bisa ditambahkan dengan sintaks Angular. HTML pada komponen digunakan untuk mendeklarasi halaman yang akan dimuat.
+		
+	\item \textit{File} specs.ts \\
+		\textit{File} ini digunakan untuk melakukan pengujian terhadap aplikasi Angular. 
+		
+	\item \textit{File} TypeScript \\
+		Di dalam TypeScript, sebuah kelas komponen memiliki anotasi dengan sebuah \textit{decorator}~(Kode~\ref{lst:decorator}) yang ditempatkan sesuai dengan komponen UI nya berada. Komponen akan berisi \textit{instance} dari service class yang diimplementasi dari \textit{business logic} tanpa UI. Sebuah service class merupakan implementasi dari \textit{business logic}. Angular akan menempatkan \textit{services} ke dalam komponen atau ke dalam \textit{services} lainnya dengan menggunakan \textit{dependency injection} (DI). 	
+
+\begin{lstlisting}[label={lst:decorator}, caption=Anotasi Komponen dengan \textit{Decorator}]
 @Component({
 	...
 }
@@ -111,11 +141,25 @@ export class AppComponent{
 })
 \end{lstlisting} 
 
-Komponen-komponen yang ada akan dikelompokkan menjadi Angular modules, yaitu sebuah kelas yang diberi \textbf{@NgModule()}. Angular module biasanya merupakan sebuah kelas kecil yang tidak memiliki isi, kecuali menulis kode bootstrap secara manual ke dalam aplikasi. Contohnya, ketika sebuah aplikasi merupakan turunan dari AngularJS yang lama, \textit{decorator} \textbf{@NgModule()} menampilkan semua komonen dan \textit{artifacts} lain termasuk \textit{services}, \textit{directive}, dan yang lainnya, maka semua itu harus disertakan ke dalam module (Kode~\ref{lst:moduleComponent}). 
+		Selain itu, di dalam TypeScript digunakan untuk mereferensikan HTML \textit{template} dan CSS. Pada setiap komponen terdapat HTML \textit{template} yang berada di dalam komponen tersebut, atau di dalam file yang berada di luar file kopmonen yang direferensikan dengan menggunakan properti \textbf{templateUrl} di dalam komponen pada \textit{file} TypeScript. File HTML \textit{template} yang terpisah dengan komponen, memberikan efek kode yang lebih bersih di dalam komponen nya. Selain HTML \textit{template}, file lain seperti file CSS dapat diletakan terpisah dari file komponen dengan menggunakan styleUrls untuk mereferensikan file CSS ke dalam komponen (Kode~\ref{lst:referensiHTMLCSSdiKomponen}). Lalu terdapat juga properti selector untuk mendefinisikan nama dari tag yang bisa digunakan atau dipanggil oleh komponen lain.
+
+\begin{lstlisting}[label={lst:referensiHTMLCSSdiKomponen}, caption=Contoh Mereferensikan HTML dan CSS di Dalam Komponen]
+@Component({
+	selector: 'app-search',
+	templateUrl: './search.component.html',
+	styleUrl:['./search.component.css']
+})
+export class SearchComponent{
+	...
+}
+\end{lstlisting} 
+
+	\item \textit{File} module.ts \\
+	Komponen-komponen yang ada akan dikelompokkan menjadi Angular modules, yaitu sebuah kelas yang diberi \textbf{@NgModule()}. Angular module biasanya merupakan sebuah kelas kecil yang tidak memiliki isi, kecuali menulis kode bootstrap secara manual ke dalam aplikasi. Contohnya, ketika sebuah aplikasi merupakan turunan dari AngularJS yang lama, \textit{decorator} \textbf{@NgModule()} menampilkan semua komonen dan \textit{artifacts} lain termasuk \textit{services}, \textit{directive}, dan yang lainnya, maka semua itu harus disertakan ke dalam module (Kode~\ref{lst:moduleComponent}). 
 
 \newpage
 
-\begin{lstlisting}[language=html, label={lst:moduleComponent}, caption=Module dengan Komponen]
+\begin{lstlisting}[label={lst:moduleComponent}, caption=Module dengan Komponen]
 @NgModule({
 	declaration: [
 		AppComponent
@@ -129,28 +173,14 @@ export class AppModule{
 	...
 }
 \end{lstlisting} 
+\end{itemize}
 
-Komponen juga bisa terdapat HTML \textit{template} yang berada di dalam komponen tersebut, atau di dalam file yang berada di luar file kopmonen yang direferensikan dengan menggunakan properti \textbf{templateUrl} di dalam komponen. File HTML \textit{template} yang terpisah dengan komponen, memberikan efek kode yang lebih bersih di dalam komponen nya. Selain HTML \textit{template}, file lain seperti file CSS dapat diletakan terpisah dari file komponen dengan menggunakan styleUrls untuk mereferensikan file CSS ke dalam komponen (Kode~\ref{lst:referensiHTMLCSSdiKomponen}). Lalu terdapat juga properti selector untuk mendefinisikan nama dari tag yang bisa digunakan atau dipanggil oleh komponen lain.
-
-\begin{lstlisting}[language=html, label={lst:referensiHTMLCSSdiKomponen}, caption=Contoh Mereferensikan HTML dan CSS di Dalam Komponen]
-@Component({
-	selector: 'app-search',
-	templateUrl: './search.component.html',
-	styleUrl:['./search.component.css']
-})
-export class SearchComponent{
-	...
-}
-\end{lstlisting} 
-
-
+Di dalam aplikasi Angular, terdapat beberapa komponen, seperti Parent Component, dan Child Component. Parent Component dapat mengirimkan data ke properti Child Component-nya. Namun, Child Component tidak tahu siapa yang mengirimkannya. Sedangkan Child Component juga dapat mengirimkan data ke Parent Component, meskipun dia tidak tahu siapa Parent Component-nya. Arsitektur seperti ini dapat membuat komponen menjadi mandiri dan dapat digunakan kembali.
 
 \section{Ionic Framework}
 \label{sec:ionicframework} 
  
 Ionic Framework merupakan sebuah kerangka kerja {\it open source} lintas platform yang memungkinkan untuk mengembangkan aplikasi hibrida yang bekerja pada berbagai macam platform seluler seperti {\it android}, iOS, dan Windows~\cite{waranashiwar:18:ionic}. Ionic memiliki berbagai macam \textit{front-end library} dan komponen \textit{User Interface}(UI) yang digunakan untuk  perancangan aplikasi menggunakan teknologi web seperti HTML, CSS, dan Javascript, dengan integrasi untuk berbagai \textit{framework} seperti Angular, React, dan Vue. Saat pertama kali dibuat, Ionic menggunakan AngularJS. Namun, seiring saat Angular versi 2 yang menggunakan Typescript dirilis, Ionic versi 2 dan selanjutnya menggunakan Angular. Lalu, pada tahun 2019, Ionic mendukung penggunaan \textit{framework} lain selain Angular, yaitu React dan Vue. Di dalam Ionic, Angular digunakan untuk membangun aplikasi dan perutean, sehingga aplikasi dapat sejalan dengan ekosistem Angular lainnya. Ionic menyediakan {\it toolkit} Angular untuk membangun aplikasi dan terintegrasi dengan Angular CLI resmi yang menyediakan fitur khusus untuk aplikasi Ionic Angular. Pada saat skripsi ini dibuat, Ionic versi terbaru adalah Ionic versi 6, dengan dukungan penggunaan Angular versi 12 sampai dengan yang lebih baru.  
-
-\newpage
 
 \subsection{Native API}
 \label{subsec:nativeApi}
@@ -162,7 +192,94 @@ Ionic mendukung komunikasi dengan menggunakan Native API yang terintegrasi untuk
 \label{subsec:capacitor}
 Tujuan dari Capacitor adalah untuk menyediakan akses ke perangkat {\it native} dan fitur platform, serta untuk menyediakan satu set API untuk mengembangkan aplikasi seluler secara hibrida, {\it Progressive Web Apps} berbasis web, dan aplikasi komputer berbasis Electron~\cite{tor:19:software}. Capacitor merupakan penerus dari Cordova, dengan tujuan untuk memungkinkan aplikasi web modern berjalan di semua platform utama. Capacitor juga mendapat dukungan terhadap banyak {\it plugin} Cordova.
 
-Capacitor melakukan pendekatan secara hybrid yang mememungkinkan pembuatan aplikasi seluler untuk beberapa platform dengan hanya dari satu basis kode~\cite{huber:21:pwa}. Capacitor menampilkan aplikasi seluler dalam komponen \textit{native} WebView yang dibungkus di dalam \textit{native app}, menghasilkan komponen antarmuka pengguna yang memiliki tampilan dan rasa yang mirip dengan komponen \textit{native} dari sistem operasi suatu perangkat. Capacitor menjadi sebuah~pembungkus~aplikasi~web~di~dalam~Android~atau~iOS~\textit{native}. 
+Capacitor melakukan pendekatan secara hybrid yang mememungkinkan pembuatan aplikasi seluler untuk beberapa platform dengan hanya dari satu basis kode~\cite{huber:21:pwa}. Capacitor menampilkan aplikasi seluler dalam komponen \textit{native} WebView yang dibungkus di dalam \textit{native app}, menghasilkan komponen antarmuka pengguna yang memiliki tampilan dan rasa yang mirip dengan komponen \textit{native} dari sistem operasi suatu perangkat. Capacitor menjadi sebuah~pembungkus~aplikasi~web~di~dalam~Android~atau~iOS~\textit{native}. Capacitor didasarkan pada aplikasi web yang dibuat dengan \textit{framework} Ionic. \textit{Framework}.
+
+Capacitor memiliki \textit{plugins} untuk mengakses \textit{native} API secara penuh. \textit{Plugins} yang dimiliki oleh Capacitor terbagi menjadi dua, yaitu:
+
+\begin{enumerate}
+	\item \textit{Official Plugins} \\
+		\textit{Official Plugins} merupakan sekumpulan \textit{plugin} resmi yang dikelola oleh tim Capacitor untuk menyediakan akses ke \textit{native} API suatu perangkat. Salah satu contoh dari \textit{official plugins} adalah Geolocation API. Geolocation API menyediakan metode untuk mendapatkan dan melacak posisi perangkat saat ini menggunakan \textit{Global Positioning System} (GPS), dengan latitude dan longitude, juga informasi mengenai ketinggian, arah, dan kecepatan jika tersedia. Untuk menginstal Geolocation API dapat dilakukan melalui \textit{command line} dengan perintah seperti pada kode~\ref{lst:installGeolocationAPI}.
+		
+\begin{lstlisting}[label={lst:installGeolocationAPI}, caption=Kode untuk Menginstal Geolocation API]
+npm install @capacitor/geolocation
+npx cap sync
+\end{lstlisting}
+
+		Pada perangkat Android, dibutuhkan izin untuk menggunakan Geolocation API~\ref{lst:permissionsGeolocationAPI}. Izin tersebut ditambahkan ke dalam baris kode pada \textit{file} AndroidManifest.xml. Izin tersebut digunakan untuk meminta data lokasi (\textit{fine} dan \textit{coarse}), dan izin untuk menggunakan GPS. Dengan menggunakan GPS, Geolocation API akan mengembalikan koordinat dari perangkat yang berupa latitude dan longitude. Contoh dari penggunaan Geolocation API untuk mengambil koordinat perangkat tertera pada kode~\ref{lst:usingGeolocationAPI}.
+		
+\begin{lstlisting}[label={lst:permissionsGeolocationAPI}, caption=\textit{Permissions} Geolocation API pada Android]
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-feature android:name="android.hardware.location.gps" />
+\end{lstlisting}
+
+\newpage
+
+\begin{lstlisting}[label={lst:usingGeolocationAPI}, caption=\textit{Permissions} Geolocation API pada Android]
+import { Geolocation } from '@capacitor/geolocation';
+
+const printCurrentPosition = async () => {
+  const coordinates = await Geolocation.getCurrentPosition();
+
+  console.log('Current position:', coordinates);
+};
+\end{lstlisting}
+
+		Untuk mengambil posisi dari perangkat dengan menggunakan method getCurrentPosition() seperti pada kode~\ref{lst:usingGeolocationAPI}. Selain itu terdapat beberapa method lain yang dapat diimplementasikan, diantaranya yaitu:
+			\begin{itemize}
+				\item watchPosition(): digunakan untuk mendaftarkan fungsi handler yang akan dipanggil secara otomatis setiap kali posisi perangkat berubah.
+				\item clearWatch(): digunakan untuk membatalkan pendaftaran fungsi handler yang sebelumnya diinstal menggunakan watchPosition().
+				\item checkPermissions(): digunakan untuk mengecek izin penggunaan lokasi.
+				\item requestPermissions(): digunakan untuk meminta izin penggunaan lokasi.
+			\end{itemize}
+		
+		Selain Geolocation API, terdapat beberapa \textit{Official Plugins} lain yang dimiliki Capacitor, yaitu Action Sheet, App, App Launcher, Browser, Camera, Clipboard, Device, Dialog, Filesystem, Google Maps, Haptics, Keyboard, Local Notifications, Motion, Network, Push Notifications, Screen Reader, Share, Splash Screen, Status Bar, Storage, Text Zoom, dan Toast.
+		
+	\item \textit{Community Plugins} \\
+		\textit{Community Plugins} merupakan sekumpulan \textit{plugin} yang diciptakan oleh komunitas untuk menambahkan fungsionalitas ke dalam aplikasi. Perbedaan dengan \textit{Official Plugins} adalah dimana tim Capacitor tidak secara resmi melakukan pemeliharaan terhadap \textit{Community Plugins}. Salah satu \textit{plugin} yang diciptakan oleh komunitas adalah \textit{plugin }Google Maps yang menggunakan \textit{native} Google Maps SDK. Untuk menginstal \textit{plugin} Google Maps dapat dilakukan melalui \textit{command line} dengan perintah seperti pada kode~\ref{lst:installGmapsPlugin}.
+		
+\begin{lstlisting}[label={lst:installGmapsPlugin}, caption=Kode untuk Menginstal \textit{Plugin} Google Maps]
+npm i --save @capacitor-community/google-maps
+npx cap sync
+\end{lstlisting}
+
+	Maps SDK merender \textit{native element} (MapView) di belakang aplikasi web (WebView). Maka dari itu, dibutuhkan \textit{boundaries} yang dirender. Maka dari itu Maps SDK menggunakan \textit{native element} dibandingkan HTMLElement. Sebelum dapat menggunakan \textit{plugin} ini, harus dilakukan impor terlebih dahulu. Setelah mengimpor \textit{plugin}, sebuah instance Maps sederhana dapat diinisialisasi (Kode~\ref{lst:codeGmapsPlugin}).
+	
+\newpage	
+	
+\begin{lstlisting}[label={lst:codeGmapsPlugin}, caption=Contoh Kode Penggunaan \textit{Plugin} Google Maps]
+const initializeMap = async () => {
+  await CapacitorGoogleMaps.initialize({
+    key: "YOUR_IOS_MAPS_API_KEY",
+    devicePixelRatio: window.devicePixelRatio, // this line is very important
+  });
+
+  const element = document.getElementById("container");
+  const boundingRect = element.getBoundingClientRect();
+  try {
+    const result = await CapacitorGoogleMaps.createMap({
+      boundingRect: {
+        width: Math.round(boundingRect.width),
+        height: Math.round(boundingRect.height),
+        x: Math.round(boundingRect.x),
+        y: Math.round(boundingRect.y),
+      },
+    });
+    element.style.background = "";
+    element.setAttribute("data-maps-id", result.googleMap.mapId);
+
+    alert("Map loaded successfully");
+  } catch (e) {
+    alert("Map failed to load");
+  }
+};
+
+(function () {
+	initializeMap();
+})();
+\end{lstlisting}
+	
+\end{enumerate}
 
 \subsubsection{Cordova}
 \label{subsec:cordova}
@@ -170,44 +287,54 @@ Cordova merupakan {\it framework open source} yang dapat membuat pengembang untu
 
 Untuk mengonfigurasi~proyek~Cordova,~saat~ini~dapat~menggunakan~{\it Command Line Tool} (CLI). CLI membuat proyek dasar dan mengonfigurasinya~agar~berfungsi dengan platform seluler apa pun yang didukung yang dapat digunakan. Cordova CLI juga dapat membuat pengembang memliki integrasi dan pengelolaan {\it plug-in}. Selain itu, CLI juga dapat mengkompilasi aplikasi untuk berjalan pada simulator~atau~pada~perangkat {\it native}.~Serupa~dengan~Capacitor,~Cordova membuat pengembang dapat mengakses fitur {\it native} dari sebuah perangkat, seperti kamera, papan ketik, dan geolokasi, menggunakan {\it plugin}. {\it Framework} Ionic~telah~terdapat~berbagai~macam~TypeScript~{\it wrapper}~untuk {\it plugins} Cordova.  Untuk dapat menggunakan Cordova Plugins, yaitu dengan memasang Cordova Plugins terlebih dahulu (Kode~\ref{lst:installCordova}), dan memperbaruinya ke versi terakhir (Kode~\ref{lst:updateCordova}) yang dapat dilakukan melalui CLI. Setiap {\it plugins} memiliki dua komponen, yaitu kode {\it native} (Cordova), dan kode TypeScript (Ionic Native).
 
-\newpage
-
-\begin{lstlisting}[language=html, label={lst:installCordova}, caption=Kode untuk Memasang Cordova Plugins]
+\begin{lstlisting}[label={lst:installCordova}, caption=Kode untuk Memasang Cordova Plugins]
 npm install cordova-plugin-name
 npx cap sync
 \end{lstlisting} 
 
-\begin{lstlisting}[language=php, label={lst:updateCordova}, caption=Kode untuk Memperbarui Cordova Plugins]
+\begin{lstlisting}[label={lst:updateCordova}, caption=Kode untuk Memperbarui Cordova Plugins]
 npm install cordova-plugin-name@2
 npx cap update
 \end{lstlisting} 
 
+Sama seperti Capacitor, Cordova juga memiliki \textit{plugins} yang menyediakan antarmuka JavaScript ke komponen \textit{native}. \textit{Plugin} memungkinkan aplikasi untuk menggunakan kemampuan \textit{native} dari suatu perangkat. Salah satu \textit{plugin} yang tersedia yaitu Google Maps. \textit{Plugin} ini menghasilkan MapView secara \textit{native}, dan menempatkannya di bawah browser. MapView yang dihasilkan bukan merupakan HTMLElements, maka tidak terkait dengan HTML. Sebelum dapat menggunakan \textit{plugin} Google Maps, dilakukan instalasi \textit{plugin} untuk pertama kali pada \textit{command line}~\ref{lst:installGMapsCordova}. Selanjutnya atur Google Maps API Key di dalam \textit{file} config.xml~\ref{lst:apikeyGMapsCordova}. 
+
+\begin{lstlisting}[label={lst:installGMapsCordova}, caption=Kode untuk Menginstal \textit{Plugin} Cordova Google Maps]
+cordova plugin add cordova-plugin-googlemaps
+\end{lstlisting} 
+
+\begin{lstlisting}[label={lst:apikeyGMapsCordova}, caption=Kode untuk Mengatur API Key untuk \textit{Plugin} Cordova Google Maps]
+<widget ...>
+  <preference name="GOOGLE_MAPS_ANDROID_API_KEY" value="(api key)" />
+  <preference name="GOOGLE_MAPS_IOS_API_KEY" value="(api key)" />
+</widget>
+\end{lstlisting} 
 
 \subsection{UI Component}
 \label{subsec:uiComponent}
-{\it Framework} Ionic menggunakan kemampuan Angular dalam memperluas kosakata HTML, yaitu menyertakan {\it tag} khusus untuk menciptakan seluruh rangkaian komponen~\cite{griffith:17:mobile}. Semua komponen memiliki awalan ion, sehingga dapat dikenali dalam markup. Sama seperti {\it tag} HTML standar, komponen Ionic juga dapat menerima berbagai macam atribut sebagai pengaturan dari {\it tag} tersebut, seperti mengatur id atau mendefinisikan kelas CSS tambahan. Terdapat beberapa komponen yang ada pada {\it framework} Ionic versi 6 yaitu :
+Dengan Angular, {\it framework} Ionic dapat menggunakan kemampuan Angular dalam memperluas kosakata HTML, yaitu menyertakan {\it tag} khusus untuk menciptakan seluruh rangkaian komponen~\cite{griffith:17:mobile}. Semua komponen memiliki awalan ion, sehingga dapat dikenali dalam markup. Sama seperti {\it tag} HTML standar, komponen Ionic juga dapat menerima berbagai macam atribut sebagai pengaturan dari {\it tag} tersebut, seperti mengatur id atau mendefinisikan kelas CSS tambahan. Terdapat beberapa komponen yang ada pada {\it framework} Ionic versi 6 yaitu :
 \begin{itemize}
 	\item Action Sheet \\
 	Merupakan dialog yang menampilkan serangkaian opsi, yang muncul di atas konten aplikasi dan harus ditutup secara manual oleh pengguna sebelum pengguna dapat melanjutkan interaksi dengan aplikasi. Untuk menutup Action Sheet terdapat beberapa cara, termasuk mengetuk latar belakang atau menekan tombol escape di desktop.
+	
+	\newpage
 
 	\item Alert \\
 	Alert merupakan dialog yang menampilkan informasi kepada pengguna, atau mengumpulkan informasi dari pengguna menggunakan input. Alert muncul di atas konten aplikasi, dan harus ditutup secara manual oleh pengguna sebelum pengguna dapat melanjutkan interaksi dengan aplikasi. Secara opsional, terdapat header, sub header, dan pesan yang ada pada Alert.
 	\item Badge \\
-	Merupakan elemen {\it inline block} yang biasanya muncul di dekat elemen lain, berisi angka atau karakter lain, yang digunakan sebagai pemberitahuan bahwa ada item tambahan yang terkait dengan suatu elemen dan menunjukan berapa banyak item yang ada. Penggunaan Badge dengan menggunakan {\it tag} <ion-badge> (Kode~\ref{lst:badgeComponent}).
-	\begin{lstlisting}[language=php, label={lst:badgeComponent}, caption=Potongan Kode Program dari Badge Component]
+	Merupakan elemen {\it inline block} yang biasanya muncul di dekat elemen lain, berisi angka atau karakter lain, yang digunakan sebagai pemberitahuan bahwa ada item tambahan yang terkait dengan suatu elemen dan menunjukan berapa banyak item yang ada. Penggunaan Badge dengan menggunakan {\it tag} \texttt{<ion-badge>} (Kode~\ref{lst:badgeComponent}).
+	\begin{lstlisting}[label={lst:badgeComponent}, caption=Potongan Kode Program dari Badge Component]
 <ion-badge>99</ion-badge>
 	\end{lstlisting} 
 	\item Button \\
-	Merupakan elemen yang dapat diklik, biasanya digunakan dalam formulir atau di mana pun yang membutuhkan fungsionalitas tombol. Button biasanya menampilkan teks, ikon, atau bisa juga keduanya. Button dapat pula menggunakan atribut untuk menampilkannya dengan penampilan tertentu. Penggunaan Button dengan menggunakan {\it tag} <ion-button>  (Kode~\ref{lst:buttonComponent}). 
-	\begin{lstlisting}[language=php, label={lst:buttonComponent}, caption=Potongan Kode Program dari Button Component]
+	Merupakan elemen yang dapat diklik, biasanya digunakan dalam formulir atau di mana pun yang membutuhkan fungsionalitas tombol. Button biasanya menampilkan teks, ikon, atau bisa juga keduanya. Button dapat pula menggunakan atribut untuk menampilkannya dengan penampilan tertentu. Penggunaan Button dengan menggunakan {\it tag} \texttt{<ion-button>} (Kode~\ref{lst:buttonComponent}). 
+	\begin{lstlisting}[label={lst:buttonComponent}, caption=Potongan Kode Program dari Button Component]
 <ion-button>Default</ion-button>
 	\end{lstlisting} 
-
-\newpage
-
+	
 	\item Card \\
-	Merupakan bagian standar dari tampilan antarmuka yang berfungsi sebagai titik masuk ke dalam informasi yang lebih detail. Card dapat menjadi satu komponen, tetapi sering kali terdiri dari beberapa header, judul, sub judul, dan konten. Penggunaan Card dengan menggunakan {\it tag} <ion-card> yang dapat berisi {\it header}, {\it subtitle}, {\it title}, dan {\it content} (Kode~\ref{lst:cardComponent}).
-	\begin{lstlisting}[language=php, label={lst:cardComponent}, caption=Potongan Kode Program dari Card Component]
+	Merupakan bagian standar dari tampilan antarmuka yang berfungsi sebagai titik masuk ke dalam informasi yang lebih detail. Card dapat menjadi satu komponen, tetapi sering kali terdiri dari beberapa header, judul, sub judul, dan konten. Penggunaan Card dengan menggunakan {\it tag} \texttt{<ion-card>} yang dapat berisi {\it header}, {\it subtitle}, {\it title}, dan {\it content} (Kode~\ref{lst:cardComponent}).
+	\begin{lstlisting}[label={lst:cardComponent}, caption=Potongan Kode Program dari Card Component]
 <ion-card>
 	<ion-card-header>
 		<ion-card-subtitle>Card Subtitle</ion-card-subtitle>
@@ -219,10 +346,13 @@ npx cap update
 	</ion-card-content>
 </ion-card>
 	\end{lstlisting} 
+	
+	\newpage 
+	
 	\item Content\\
-	Komponen content merupakan penyedia area konten yang bisa digunakan untuk mengontrol area yang dapat digulir. Dalam satu tampilan, setidaknya terdapat satu buah content. Content juga dapat dimodifikasi padding, margin, dan lainnya menggunakan {\it global style} yang berada di CSS Utilites atau mengubahnya secara individual dengan menggunakan CSS. Penggunaan Content dengan menggunakan {\it tag} <ion-content> (Kode~\ref{lst:contentComponent}).
+	Komponen content merupakan penyedia area konten yang bisa digunakan untuk mengontrol area yang dapat digulir. Dalam satu tampilan, setidaknya terdapat satu buah content. Content juga dapat dimodifikasi padding, margin, dan lainnya menggunakan {\it global style} yang berada di CSS Utilites atau mengubahnya secara individual dengan menggunakan CSS. Penggunaan Content dengan menggunakan {\it tag} \texttt{<ion-content>} (Kode~\ref{lst:contentComponent}).
 
-	\begin{lstlisting}[language=php, label={lst:contentComponent}, caption=Potongan Kode Program dari Content Component]
+	\begin{lstlisting}[label={lst:contentComponent}, caption=Potongan Kode Program dari Content Component]
 <ion-content
 	[scrollEvents]="true"
 	(ionScrollStart)="logScrollStart()"
@@ -236,15 +366,14 @@ npx cap update
 </ion-content>
 	\end{lstlisting} 
 	\item Date and Time Pickers\\
-	Datetime merupakan penampil antarmuka untuk pengguna memilih tanggal dan waktu. Terdapat kolom yang dapat digulir yang dapat digunakan untuk memilih tahun, bulan, hari, jam, dan menit secara individual. Komponen ini menampilkan nilai di dua tempat, yaitu di komponen <ion-datetime> (Kode~\ref{lst:datetimeComponent}), dan di antarmuka pemilih yang ditampilkan dari bawah layar.
-		\begin{lstlisting}[language=php, label={lst:datetimeComponent}, caption=Kode Program dari Datetime Component dengan Format Bulan-Hari-Tahun]
+	Datetime merupakan penampil antarmuka untuk pengguna memilih tanggal dan waktu. Terdapat kolom yang dapat digulir yang dapat digunakan untuk memilih tahun, bulan, hari, jam, dan menit secara individual. Komponen ini menampilkan nilai di dua tempat, yaitu di komponen \texttt{<ion-datetime>} (Kode~\ref{lst:datetimeComponent}), dan di antarmuka pemilih yang ditampilkan dari bawah layar.
+		\begin{lstlisting}[label={lst:datetimeComponent}, caption=Kode Program dari Datetime Component dengan Format Bulan-Hari-Tahun]
 <ion-datetime displayFormat="MM DD YY" placeholder="Select Date"></ion-datetime>
 		\end{lstlisting} 
 	\item Infinite Scroll	\\
-	Komponen Infinite Scroll memanggil sebuah action yang akan dilakukan ketika pengguna menggulir dengan jarak tertentu dari bawah atau atas halaman. Penggunaan Infinite Scroll dengan menggunakan {\it tag} <ion-infinite-scroll> (Kode~\ref{lst:InfiteScrollComponent}). 
+	Komponen Infinite Scroll memanggil sebuah action yang akan dilakukan ketika pengguna menggulir dengan jarak tertentu dari bawah atau atas halaman. Penggunaan Infinite Scroll dengan menggunakan {\it tag} \texttt{<ion-infinite-scroll>} (Kode~\ref{lst:InfiteScrollComponent}). 
 	
-	\newpage 
-	\begin{lstlisting}[language=php, label={lst:InfiteScrollComponent}, caption=Potongan Kode Program dari Infinite Scroll Component]
+	\begin{lstlisting}[label={lst:InfiteScrollComponent}, caption=Potongan Kode Program dari Infinite Scroll Component]
 <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
 	<ion-infinite-scroll-content
 		loadingSpinner="bubbles"
@@ -252,14 +381,17 @@ npx cap update
 	</ion-infinite-scroll-content>
 </ion-infinite-scroll>
 	\end{lstlisting}
+
+	\newpage	
+	
 	\item Icon \\
-	Icon merupakan komponen yang berupa gambar kecil, yang merepresentasikan sebuah berkas, dan folder di dalam aplikasi. Penggunaan Icon adalah dengan menggunakan {\it tag} <ion-icon> (Kode~\ref{lst:iconComponent}).
-	\begin{lstlisting}[language=php, label={lst:iconComponent}, caption=Potongan Kode Program dari Icon Home]
+	Icon merupakan komponen yang berupa gambar kecil, yang merepresentasikan sebuah berkas, dan folder di dalam aplikasi. Penggunaan Icon adalah dengan menggunakan {\it tag} \texttt{<ion-icon>} (Kode~\ref{lst:iconComponent}).
+	\begin{lstlisting}[label={lst:iconComponent}, caption=Potongan Kode Program dari Icon Home]
 <ion-icon name="home"></ion-icon>
 	\end{lstlisting} 
 	\item Item \\
-	Item merupakan elemen yang dapat berisi teks, ikon, avatar, gambar, masukan, dan elemen asli atau kustom lainnya. Biasanya, item ditempatkan di dalam sebuah {\it list} bersamaan dengan item lainnya dengan {\it tag} <ion-item> (Kode~\ref{lst:itemComponent}). Dapat dilakukan {\it swipe}, dihapus, disusun ulang, dan diedit.
-	\begin{lstlisting}[language=php, label={lst:itemComponent}, caption=Potongan Kode Program dari Item Component]
+	Item merupakan elemen yang dapat berisi teks, ikon, avatar, gambar, masukan, dan elemen asli atau kustom lainnya. Biasanya, item ditempatkan di dalam sebuah {\it list} bersamaan dengan item lainnya dengan {\it tag} \texttt{<ion-item>} (Kode~\ref{lst:itemComponent}). Dapat dilakukan {\it swipe}, dihapus, disusun ulang, dan diedit.
+	\begin{lstlisting}[label={lst:itemComponent}, caption=Potongan Kode Program dari Item Component]
 <ion-item>
 	<ion-label>
 		Item
@@ -268,9 +400,9 @@ npx cap update
 	\end{lstlisting} 
 	
 	\item List \\
-	Komponen List terdiri dari beberapa baris \textit{item} yang dapat berisi teks, tombol, \textit{toggles}, ikon, thumbnails, dan komponen-komponen lainnya menggunakan \textit{tag} <ion-list> (Kode~\ref{lst:listComponent}). List mendukung untuk pengguna melakukan \textit{swiping}, \textit{dragging}, dan penghapusan \textit{item}. 
+	Komponen List terdiri dari beberapa baris \textit{item} yang dapat berisi teks, tombol, \textit{toggles}, ikon, thumbnails, dan komponen-komponen lainnya menggunakan \textit{tag} \texttt{<ion-list>} (Kode~\ref{lst:listComponent}). List mendukung untuk pengguna melakukan \textit{swiping}, \textit{dragging}, dan penghapusan \textit{item}. 
 	
-\begin{lstlisting}[language=php, label={lst:listComponent}, caption=Potongan Kode Program dari List Component]
+\begin{lstlisting}[label={lst:listComponent}, caption=Potongan Kode Program dari List Component]
 <ion-list>
   <ion-item>
     <ion-label>Pokemon Yellow</ion-label>
@@ -293,9 +425,9 @@ npx cap update
 \newpage	
 	
 	\item Menu \\
-	Komponen Menu merupakan panel navigasi samping yang dapat dilakukan {\it slides} dari sisi pada tampilan halaman saat ini menggunakan {\it tag} <ion-menu> (Kode~\ref{lst:menuComponent}). Pada dasarnya, Menu muncul dari kiri, tetapi sisi kemunculan menu dapat diganti. 
+	Komponen Menu merupakan panel navigasi samping yang dapat dilakukan {\it slides} dari sisi pada tampilan halaman saat ini menggunakan {\it tag} \texttt{<ion-menu>} (Kode~\ref{lst:menuComponent}). Pada dasarnya, Menu muncul dari kiri, tetapi sisi kemunculan menu dapat diganti. 
 
-	\begin{lstlisting}[language=php, label={lst:menuComponent}, caption=Potongan Kode Program dari Menu Component]
+	\begin{lstlisting}[label={lst:menuComponent}, caption=Potongan Kode Program dari Menu Component]
 <ion-menu side="start" menuId="first" contentId="main">
 	<ion-header>
 		<ion-toolbar color="primary">
@@ -315,7 +447,7 @@ npx cap update
 	\end{lstlisting} 
 	\item Modal \\
 	Modal merupakan kotak dialog yang muncul diatas konten aplikasi lain, dan harus diutup secara manual oleh pengguna sebelum pengguna dapat melanjutkan menggunakan aplikasi. Modal berguna sebagai komponen pilihan ketika ada banyak opsi untuk dipilih, atau melakukan penyaringan isi di dalam daftar, serta beberapa kasus serupa lainnya (Kode~\ref{lst:modalComponent}).
-		\begin{lstlisting}[language=php, label={lst:modalComponent}, caption=Kode Program dari Modal]
+		\begin{lstlisting}[label={lst:modalComponent}, caption=Kode Program dari Modal]
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -329,12 +461,22 @@ export class ModalPage {
 	\item Navigation \\
 	Navigation adalah komponen mandiri yang digunakan untuk membuat komponen baru ke dalam {\it stack}. Navigation tidak terikat kepada {\it router} tertentu, mengakibatkan jika kita membuat komponen Navigation dan melakukan {\it push} komponen lain ke dalam {\it stack}, komponen tersebut tidak akan mempengaruhi router aplikasi secara keseluruhan. Sesuai dengan kasus penggunaan dimana ketika pengguna bisa memilih modal, yang membutuhkan sub-navigasinya sendiri, tanpa membuatnya terikat ke URL aplikasi. 
 
+	\newpage
+	
+	\item Refresher \\
+	Refresher merupakan komponen yang menyediakan fungsionalitas \textit{pull-to-refresh} pada komponen konten dengan \textit{tag} \texttt{<ion-refresher>} (Kode~\ref{}). Refresher digunakan pada saat pengguna menarik layar dari atas ke bawah, maka Refresher akan menyegarkan data atau mendapatkan daftar data untuk mengambil lebih banyak data. 
+	
+	\begin{lstlisting}[label={lst:segmentComponent}, caption=Kode Program dari Refresher]
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+</ion-content>
+	\end{lstlisting}
 	\item Segment \\
-	Segment berfungsi untuk menampilkan pilihan tombol bagi pengguna untuk beralih di antara tampilan berbeda di dalam satu halaman yang sama. Segment menampilkan sekelompok tombol-tombol yang dapat diklik, dalam baris horizontal. Penggunaan Segment dengan menggunakan {\it tag} <ion-segment> (Kode~\ref{lst:segmentComponent}).
+	Segment berfungsi untuk menampilkan pilihan tombol bagi pengguna untuk beralih di antara tampilan berbeda di dalam satu halaman yang sama. Segment menampilkan sekelompok tombol-tombol yang dapat diklik, dalam baris horizontal. Penggunaan Segment dengan menggunakan {\it tag} \texttt{<ion-segment>} (Kode~\ref{lst:segmentComponent}).
 	
-\newpage	
-	
-	\begin{lstlisting}[language=php, label={lst:segmentComponent}, caption=Kode Program dari Segment]
+	\begin{lstlisting}[label={lst:segmentComponent}, caption=Kode Program dari Segment]
 <ion-segment (ionChange)="segmentChanged($event)">
 	<ion-segment-button value="friends">
 		<ion-label>Friends</ion-label>
@@ -346,9 +488,9 @@ export class ModalPage {
 	\end{lstlisting}
 	
 	\item Slides \\
-	Komponen Slides merupakan sebuah \textit{multi-section container} yang setiap bagiannya dapat dilakukan \textit{swipe} atau \textit{drag}. Untuk menggunakan komponen ini dengan menggunakan \textit{tag} <ion-slides> (Kode~\ref{lst:slidesComponent}).
+	Komponen Slides merupakan sebuah \textit{multi-section container} yang setiap bagiannya dapat dilakukan \textit{swipe} atau \textit{drag}. Untuk menggunakan komponen ini dengan menggunakan \textit{tag} \texttt{<ion-slides>} (Kode~\ref{lst:slidesComponent}).
 	
-	\begin{lstlisting}[language=php, label={lst:slidesComponent}, caption=Kode Program dari Slides]
+	\begin{lstlisting}[label={lst:slidesComponent}, caption=Kode Program dari Slides]
 <ion-slides pager="true" [options]="slideOpts">
 	<ion-slide>
 		<h1>Slide 1</h1>
@@ -363,8 +505,8 @@ export class ModalPage {
 	\end{lstlisting}
 	
 	\item Tabs \\
-	Tabs merupakan navigasi {\it top-level} yang mengimplementasi sebuah {\it tab-based navigation}. Tabs dapat digunakan dengan {\it tag} <ion-tabs> (Kode~\ref{lst:tabsComponent}) yang tidak memliki {\it styling} apapun dan bekerja sebagai {\it router outlet} untuk menangani navigasi. 
-		\begin{lstlisting}[language=php, label={lst:tabsComponent}, caption=Kode Program dari Tabs]
+	Tabs merupakan navigasi {\it top-level} yang mengimplementasi sebuah {\it tab-based navigation}. Tabs dapat digunakan dengan {\it tag} \texttt{<ion-tabs>} (Kode~\ref{lst:tabsComponent}) yang tidak memliki {\it styling} apapun dan bekerja sebagai {\it router outlet} untuk menangani navigasi. 
+		\begin{lstlisting}[label={lst:tabsComponent}, caption=Kode Program dari Tabs]
 <ion-tabs>
 	<ion-tab-bar slot="bottom">
 		<ion-tab-button tab="schedule">
@@ -384,7 +526,7 @@ export class ModalPage {
 	\item Toast \\
 	Komponen Toast merupakan sebuah notifikasi yang digunakan di aplikasi modern untuk memberikan umpan balik atau menampilkan pesan sistem. Komponen ini muncul diatas konten aplikasi, dan dapat ditutup untuk melanjutkan penggunaan aplikasi. Komponen ini menggunakan ToastController yang dimiliki oleh \textit{library} Ionic Angular (Kode~\ref{lst:toastComponent}) 
 	
-	\begin{lstlisting}[language=php, label={lst:toastComponent}, caption=Kode Program dari Toast]
+	\begin{lstlisting}[label={lst:toastComponent}, caption=Kode Program dari Toast]
 async presentToast() {
     const toast = await this.toastController.create({
       message: 'Your settings have been saved.',
@@ -396,8 +538,11 @@ async presentToast() {
 		
 
 	\item Toolbar \\
-	Toolbar dapat diposisikan di atas ataupun di bawah konten. Ketika toolbar ditempatkan di header <ion-header> akan muncul di bagian atas konten, sedangkan ketika ditempatkan di footer <ion-footer> akan muncul tetap di bagian bawah. Toolbar menggunakan {\it tag} <ion-toolbar>, yang di dalamnya dapat berisi button, dan dapat menggunakan border (Kode~\ref{lst:datetimeComponent}).
-		\begin{lstlisting}[language=php, label={lst:datetimeComponent}, caption=Kode Program dari Toolbar dengan Button di Dalamnya]
+	Toolbar dapat diposisikan di atas ataupun di bawah konten. Ketika toolbar ditempatkan di header \texttt{<ion-header>} akan muncul di bagian atas konten, sedangkan ketika ditempatkan di footer <ion-footer> akan muncul tetap di bagian bawah. Toolbar menggunakan {\it tag} <ion-toolbar>, yang di dalamnya dapat berisi button, dan dapat menggunakan border (Kode~\ref{lst:datetimeComponent}).
+	
+	\newpage	
+	
+		\begin{lstlisting}[label={lst:datetimeComponent}, caption=Kode Program dari Toolbar dengan Button di Dalamnya]
 <ion-toolbar>
 	<ion-buttons slot="start">
 		<ion-back-button></ion-back-button>
@@ -406,7 +551,7 @@ async presentToast() {
 </ion-toolbar>
 		\end{lstlisting} 
 \end{itemize}
-	Selain komponen-komponen yang telah disebutkan, tertapat beberapa komponen lainnya yang tidak disebutkan disini. Komponen-komponen tersebut yaitu Checkbox, Chip, Floating Action Button, Grid, Icon, Input, Popover, Progress Indicator, Radio, Refresher, Reorder, Routing, Searchbar, Select, dan Toggle~\footnote{\textit{`UI Components'} https://ionicframework.com/docs/components, Diakses pada 17 April 2022. \label{ref:uiComponents}}.
+	Selain komponen-komponen yang telah disebutkan, tertapat beberapa komponen lainnya yang tidak disebutkan disini. Komponen-komponen tersebut yaitu Checkbox, Chip, Floating Action Button, Grid, Input, Popover, Progress Indicator, Radio, Reorder, Routing, Searchbar, Select, dan Toggle~\footnote{\textit{`UI Components'} https://ionicframework.com/docs/components, Diakses pada 17 April 2022. \label{ref:uiComponents}}.
 %2.2.1 Native API
 %2.2.1.1 Capacitor
 %2.2.1.2 Cordova
@@ -428,71 +573,14 @@ Untuk melakukan migrasi dari Ionic 3 ke Ionic 6 memerlukan tiga tahap, yaitu mig
 	\begin{enumerate}
 		\item Membuat Proyek Ionic Baru \\
 		Untuk membuat projek Ionic baru tanpa {\it template} apapun dengan menggunakan perintah \textbf{ionic start myApp blank} dan memilih Angular sebagai {\it framework}nya~\ref{lst:createNewProject}.
-		\begin{lstlisting}[language=php, label={lst:createNewProject}, caption=Perintah Membuat Proyek Ionic Baru]
+		\begin{lstlisting}[label={lst:createNewProject}, caption=Perintah Membuat Proyek Ionic Baru]
 ionic start myApp blank
 		\end{lstlisting}
 
-		\item Menyalin Angular Services \\
-		Menyalin Angular Services yang pada Ionic 3 berada di \textbf{src/providers}, menjadi \textbf{src/app/services} pada Ionic 4.
+		\item Menyalin Angular Services yang pada Ionic 3 berada di \textbf{src/providers}, menjadi \textbf{src/app/services} pada Ionic 4.
 
 		\item Menyalin {\it Root-level Items} \\
-		Menyalin seluruh {\it Root-level Items} pada Ionic versi 3 dengan direktori yang sama atau dengan beberapa perubahan. Terdapat beberapa perubahan baik itu nama maupun letak dari suatu fungsi atau berkas. Perubahan tersebut yaitu:
-
-		%---START ITEMIZE MENYALIN ROOT LEVEL---%
-		\begin{enumerate}
-		
-			\item {\it Imports} \\
-			Terjadi perubahaan dalam mengimpor {\it package} di Ionic 3 dan Ionic 4. Daftar perubahan tersebut adalah sebagai berikut :
-			%---START ITEMIZE IMPORT---%
-			\begin{enumerate}	
-				\item Component Imports \\
-				Untuk kepentingan konsistensi dengan {\it framework} lain, maka untuk mengimpor komponen Ionic diawali dengan ion~\ref{lst:componentImportIonic4}.
-
-\newpage				
-				
-				\begin{lstlisting}[language=php, label={lst:componentImportIonic4}, caption=Impor Komponen pada Ionic 4]
-import { IonInput, IonList, IonSlides } from '@ionic/angular';
-				\end{lstlisting}
-
-				\item Package Name \\
-				Terdapat perubahan pada Ionic 4, dimana nama {\it package} diubah menjadi @ionic/angular. Untuk dapat menggunakannya dengan cara mencopot pemasangan Ionic 3 dan memasang Ionic 4 dengan nama {\it package} yang baru (Kode~\ref{lst:packageNameIonic4}).
-				\begin{lstlisting}[language=php, label={lst:packageNameIonic4}, caption=Pencopotan Ionic 3 dan Pemasangan Ionic 4 dengan nama {\it package} baru]
-npm uninstall ionic-angular
-npm install @ionic/angular>
-				\end{lstlisting}
-			\end{enumerate}
-
-			\item Penamaan Berkas \\
-			Terjadi perubahaan penamaan pada berkas di Ionic 3 dan Ionic 4. Daftar perubahan tersebut adalah sebagai berikut:
-			%---START ITEMIZE PENAMAAN BERKAS---%
-			\begin{enumerate}
-				\item {\it Page} \\
-				Terdapat perbedaan nama {\it file} pada folder Pages. Perbedaan tersebut adalah sebagai berikut :\\
-				Pada Ionic 3 : home.html  \\
-				Terdapat perubahan pada Ionic 4 menjadi : home.page.html
-	
-				\item {\it App} \\
-				Terdapat perbedaan nama {\it file} pada direktori App. Perbedaan tersebut adalah sebagai berikut : \\
-				Pada Ionic 3 : app.html \\
-				Terdapat perubahan pada Ionic 4 menjadi : app-component.html
-			\end{enumerate}
-			%---END ITEMIZE PENAMAAN BERKAS---%
-
-
-			%\item {\it Routing}
-			%---START ITEMIZE ROUTING---%
-			%\begin{itemize}
-			%	\item {\it Selector} \\
-			%	Contoh perbedaan {\it selector} pada halaman Home adalah sebagai berikut :\\
-			%	Pada Ionic 3 : page-home  \\
-			%	Terdapat perubahan pada Ionic 4 menjad : app-home
-			%\end{itemize}
-			%---END ITEMIZE ROUTING---%
-
-			
-		\end{enumerate}
-		
-		%---END ITEMIZE MENYALIN ROOT LEVEL---%
+		Menyalin seluruh {\it Root-level Items} pada Ionic versi 3, seperti \textit{pipes} dan \textit{components}. Lalu terdapat perubahan struktur direktori dengan perubahan direktori yang semula \textbf{src/components} pada Ionic 3, menjadi \textbf{src/app/components} pada Ionic 4.
 
 		\item Menyalin Global Scss dari \textbf{src/app/app.scss} pada Ionic 3, menjadi \textbf{src/global.scss} pada Ionic 4.
 
@@ -502,26 +590,24 @@ npm install @ionic/angular>
 		%---START ITEMIZE MENYALIN BAGIAN BAGIAN APLIKASi---%
 		\begin{itemize}
 			\item Shadow DOM sudah aktif secara {\it default}.
-			\item Halaman atau komponen Sass tidak lagi dibungkus dengan tag halaman / komponen dan harus menggunakan opsi styleUrls milik Angular dari dekorator @Component.
-			\item RxJS \\
-			Pada Ionic 3, RxJS yang digunakan adalah versi 5. Sedangkan pada Ionic 4, RxJS yang digunakan adalah versi 6.
-
+			\item Page atau Components Sass tidak lagi dibungkus dengan \textit{tag page} atau \textit{components} dan harus menggunakan opsi styleUrls milik Angular dari dekorator @Component.
+			\item Perubahan RxJS yang digunakan. Pada ionic 3 adalah versi 5, sedangkan pada Ionic 4 RxJS yang digunakan adalah versi 6.
 			\item Lifecycle Hooks tertentu harus digantikan dengan Angular Hooks.
 			\item Perubahan markup yang mungkin saja dibutuhkan. \\
 			Sejak Ionic 4 dipindahkan ke elemen kustom, terdapat perubahan yang signifikan terkait dengan markup untuk setiap komponen. Semua perubahan ini dibuat untuk mengikuti spesifikasi dari elemen kustom. Komponen-komponen yang berubah tersebut yaitu :
 
 			\begin{itemize}
 				\item {\it Button} \\
-				Terdapat perbedaan pada {\it tag} untuk membuat Button, yang semula pada Ionic 3 adalah <button> menjadi <ion-button> pada Ionic 4 (Kode~\ref{lst:buttonIonic4}).
-				\begin{lstlisting}[language=php, label={lst:buttonIonic4}, caption=Penggunaan Button pada Ionic 4]
+				Terdapat perbedaan pada {\it tag} untuk membuat Button, yang semula pada Ionic 3 adalah \texttt{<button>} menjadi \texttt{<ion-button>} pada Ionic 4 (Kode~\ref{lst:buttonIonic4}).
+				\begin{lstlisting}[label={lst:buttonIonic4}, caption=Penggunaan Button pada Ionic 4]
 <ion-button (click)="doSomething()">
 	Default Button
 </ion-button>
 				\end{lstlisting}
 
 				\item Floating Action Button (FAB) \\
-				Terdapat perbedaan pada {\it tag} di dalam <ion-fab>, yang semula pada Ionic 3 adalah <button> menjadi <ion-fab-button> pada Ionic 4 (Kode~\ref{lst:fabIonic4}).
-				\begin{lstlisting}[language=php, label={lst:fabIonic4}, caption=Penggunaan Floating Action Button pada Ionic 4]
+				Terdapat perbedaan pada {\it tag} di dalam \texttt{<ion-fab>}, yang semula pada Ionic 3 adalah \texttt{<button>} menjadi \texttt{<ion-fab-button>} pada Ionic 4 (Kode~\ref{lst:fabIonic4}).
+				\begin{lstlisting}[label={lst:fabIonic4}, caption=Penggunaan Floating Action Button pada Ionic 4]
 <ion-fab>
 	<ion-fab-button>
 		<ion-icon name="add"></ion-icon>
@@ -535,9 +621,9 @@ npm install @ionic/angular>
 				\end{lstlisting}
 				
 				\item Item \\
-				Terdapat perbedaan pada \textit{tag} <ion-item>, dimana pada Ionic 3, \textit{tag} <ion-label> akan secara otomatis ditambahkan ke dalam <ion-item>. Sedangkan pada Ionic 4 diharuskan untuk menambahkan \textit{tag} <ion-label> secara manual ke dalam komponen item (Kode~\ref{lst:itemIonic4}). 
+				Terdapat perbedaan pada \textit{tag} \texttt{<ion-item>}, dimana pada Ionic 3, \textit{tag} \texttt{<ion-label>} akan secara otomatis ditambahkan ke dalam \texttt{<ion-item>}. Sedangkan pada Ionic 4 diharuskan untuk menambahkan \textit{tag} \texttt{<ion-label>} secara manual ke dalam komponen item (Kode~\ref{lst:itemIonic4}). 
 				
-				\begin{lstlisting}[language=php, label={lst:itemIonic4}, caption=Penggunaan Item pada Ionic 4]
+				\begin{lstlisting}[label={lst:itemIonic4}, caption=Penggunaan Item pada Ionic 4]
 <ion-item>
 	<ion-label>
     	Default Item
@@ -545,9 +631,11 @@ npm install @ionic/angular>
 </ion-item>
 				\end{lstlisting}
 
+\newpage
+
 				\item Label \\
 				Pada Ionic 4, atribut untuk mengatur posisi dari label digabungkan dengan atribut {\it position} (Kode~\ref{lst:atributIonic4}).
-				\begin{lstlisting}[language=php, label={lst:atributIonic4}, caption=Penggunaan Atribut {\it Position} pada Ionic 4]
+				\begin{lstlisting}[label={lst:atributIonic4}, caption=Penggunaan Atribut {\it Position} pada Ionic 4]
 <ion-item>
 	<ion-label position="floating">Floating Label</ion-label>
 	<!-- input -->
@@ -564,8 +652,6 @@ npm install @ionic/angular>
 							Terdapat perubahan swipeEnable pada Ionic 4. Perubahan tersebut adalah sebagai berikut : \\
 							Pada Ionic 3 : swipeEnabled \\
 							Sedangkan pada Ionic 4 menjadi : swipeGesture
-
-\newpage
 
 							\item content \\
 							Terdapat perubahan content pada Ionic 4. Perubahan tersebut adalah sebagai berikut : \\
@@ -595,6 +681,9 @@ npm install @ionic/angular>
 					\item Perubahan Nama Method 
 					Terdapat perubahan nama {\it method} pada Ionic 4. Perubahan-perubahan tersebut adalah sebagai berikut :
 					\begin{itemize}
+
+\newpage					
+					
 						\item remove \\
 						Terdapat perubahan remove pada Ionic 4. Perubahan tersebut adalah sebagai berikut :\\
 						Pada Ionic 3 : remove \\
@@ -613,8 +702,8 @@ npm install @ionic/angular>
 				\end{itemize}	
 
 				\item Navbar \\
-				Pada Ionic 4, terdapat penghapusan terhadap komponen <ion-navbar> karena untuk menjaga agar selalu menggunakan <ion-toolbar> dengan {\it back button} yang eksplisit (Kode~\ref{lst:navbarIonic4}).
-				\begin{lstlisting}[language=php, label={lst:navbarIonic4}, caption=Penggunaan Navbar pada Ionic 4 dengan {\it Back Button}]
+				Pada Ionic 4, terdapat penghapusan terhadap komponen \texttt{<ion-navbar>} karena untuk menjaga agar selalu menggunakan \texttt{<ion-toolbar>} dengan {\it back button} yang eksplisit (Kode~\ref{lst:navbarIonic4}).
+				\begin{lstlisting}[label={lst:navbarIonic4}, caption=Penggunaan Navbar pada Ionic 4 dengan {\it Back Button}]
 <ion-toolbar>
 	<ion-buttons slot="start">
 		<ion-back-button></ion-back-button>
@@ -626,7 +715,7 @@ npm install @ionic/angular>
 				\item Overlays \\
 				Pada Ionic 4, semua overlay harus menggunakan async/await. Overlay tersebut adalah Action Sheet, Alert, Loading, Modal, Popover, and Toast (Kode~\ref{lst:overlaysIonic4}). Selain itu, terjadi perubahan nama propert enableBackdropDismiss menjadi backdropDismiss.
 				
-				\begin{lstlisting}[language=php, label={lst:overlaysIonic4}, caption=Penggunaan Overlay untuk Toast pada Ionic 4]
+				\begin{lstlisting}[label={lst:overlaysIonic4}, caption=Penggunaan Overlay untuk Toast pada Ionic 4]
 async presentToast() {
     const toast = await this.toastController.create({
       message: 'Your settings have been saved.',
@@ -637,11 +726,11 @@ async presentToast() {
 				\end{lstlisting}
 				
 				\item Scroll \\
-				\textit{Tag} <ion-scroll> sudah dihapus pada Ionic 4 agar penggunaan \textit{tag} <ion-content> menjadi lebih maksimal.
+				\textit{Tag} \texttt{<ion-scroll>} sudah dihapus pada Ionic 4 agar penggunaan \textit{tag} \texttt{<ion-content>} menjadi lebih maksimal.
 				
 				\item Segment Button \\
-				Pada Ionic 4, teks pada Segment Button membutuhkan <ion-label> untuk membungkusnya (Kode~\ref{lst:segmentButtonIonic4}).
-				\begin{lstlisting}[language=php, label={lst:segmentButtonIonic4}, caption=Penggunaan Segment Button untuk Toast pada Ionic 4]
+				Pada Ionic 4, teks pada Segment Button membutuhkan \texttt{<ion-label>} untuk membungkusnya (Kode~\ref{lst:segmentButtonIonic4}).
+				\begin{lstlisting}[label={lst:segmentButtonIonic4}, caption=Penggunaan Segment Button untuk Toast pada Ionic 4]
 <ion-segment-button>
 	<ion-label>Item One</ion-label>
 </ion-segment-button>
@@ -665,7 +754,7 @@ async presentToast() {
 		\begin{itemize}
 			\item CSS {\it Utilities} \\
 			Karena pada versi sebelumnya, yaitu Ionic versi 4, terdapat masalah dengan menggunakan atribut CSS dengan {\it framework} yang menggunakan JSX dan TypeScript, Ionic {\it Framework} menambahkan dukungan untuk beberapa {\it framework}, dan pada Ionic 5 menambahkan kelas CSS. Ionic versi 5 menghapus atribut CSS dan mendukung konsistensi. Selain itu, Ionic versi 5 juga mengubah ke kelas dengan diawali ion untuk menghindari konflik dengan atribut asli dan CSS dari pengguna (Kode~\ref{lst:CSSUtilities}).
-		\begin{lstlisting}[language=php, label={lst:CSSUtilities}, caption=Contoh Kode Kelas CSS {\it Utility} pada Ionic 5]
+		\begin{lstlisting}[label={lst:CSSUtilities}, caption=Contoh Kode Kelas CSS {\it Utility} pada Ionic 5]
 <ion-header class="ion-text-center"></ion-header>
 <ion-content class="ion-padding"></ion-content>
 <ion-label class="ion-text-wrap"></ion-label>
@@ -678,7 +767,7 @@ async presentToast() {
 			\item {\it Activated, Focused, Hover States} \\
 			Kelas .activated secara otomatis ditambahkan ke komponen yang dapat diklik, mengalami perubahan nama menjadi .ion-activated. Selain itu juga memperbarui komponen Action Sheet sehingga variabel akan diawali dengan {\it button}. Hal ini dapat memungkinkan aplikasi tetap memiliki kontrol atas {\it opacity} jika diinginkan, tetapi saat memperbarui status, hanya perlu mengatur variabel utama, yaitu -background-activated, -background-focused, -background-hover. Hal tersebut penting saat mengubah tema global, karena memperbarui warna {\it toolbar} akan secara otomatis memperbarui {\it hover states} untuk semua {\it buttons} di {\it toolbar} (Kode~\ref{lst:hoverStates}). 		
 			
-		\begin{lstlisting}[language=php, label={lst:hoverStates}, caption=Contoh Kode {\it Hover States} pada Ionic 5]
+		\begin{lstlisting}[label={lst:hoverStates}, caption=Contoh Kode {\it Hover States} pada Ionic 5]
 /* Setting the button background on hover to solid red */
 ion-button {
 	--background-hover: red;
@@ -712,15 +801,16 @@ ion-action-sheet {
 			\item Back Button dan Button  \\
 			Perubahan terdapat pada penambahan penamaan kelas .activated yang secara otomatis ditambahkan ke komponen yang dapat di klik, menjadi .ion-activated.
 			
-			\newpage 
-			
 			\item Controllers\\
 			Terdapat beberapa komponen yang dihapus dari Ionic sebagai elemen, yaitu ion-action-sheet-controller, ion-alert-controller, ion-loading-controller, ion-menu-controller, ion-modal-controller, ion-picker-controller, ion-popover-controller, dan ion- toast-controller. Sebagai gantinya, maka harus diimpor dari @ionic/core. 
 			\item Header dan Footer\\
 			Atribut no-border dihapus, dan sebagai gantinya yaitu dengan menggunakan kelas ion-no-border.
+			
+			\newpage
+			
 			\item List Header\\
-			Konten berupa teks apa pun di dalam <ion-list-header> harus dibungkus dengan <ion-label> sesuai dengan gaya desain yang baru (Kode~\ref{lst:listHeader}). Jika label tidak ada, maka perataan tombol di header bisa saja terlihat tidak aktif. 
-			\begin{lstlisting}[language=php, label={lst:listHeader}, caption=Kode Program untuk List Header]
+			Konten berupa teks apa pun di dalam \texttt{<ion-list-header>} harus dibungkus dengan \texttt{<ion-label>} sesuai dengan gaya desain yang baru (Kode~\ref{lst:listHeader}). Jika label tidak ada, maka perataan tombol di header bisa saja terlihat tidak aktif. 
+			\begin{lstlisting}[label={lst:listHeader}, caption=Kode Program untuk List Header]
 <ion-list-header>
 	<ion-label>New This Week</ion-label>
 	<ion-button>See All</ion-button>
@@ -728,13 +818,13 @@ ion-action-sheet {
 			\end{lstlisting}
 			\item Menu\\
 			Fungsi swipeEnable() telah dihapus di Angular, sebagai gantinya menggunakan swipeGesture(). Lalu nilai {\it left} dan {\it right} telah dihapus, gunakan {\it start} dan {\it end} sebagai gantinya. Selain itu ada penghapusan atribut utama, sebagai gantinya yaitu dengan menggunakan content-id (untuk vanila JS atau Vue) dan contentId (untuk Angular atau React) (Kode~\ref{lst:menu}).
-			\begin{lstlisting}[language=php, label={lst:menu}, caption=Kode Program untuk Menu]
+			\begin{lstlisting}[label={lst:menu}, caption=Kode Program untuk Menu]
 <ion-menu content-id="main"></ion-menu>
 <ion-content id="main">...</ion-content>
 			\end{lstlisting}
 			\item Select Option \\
 			Properti selected telah dihapus. Sebagai gantinya harus mengatur properti nilai pada ion-select induk agar sesuai dengan opsi terpilih yang diinginkan (Kode~\ref{lst:selectOption}).
-			\begin{lstlisting}[language=php, label={lst:selectOption}, caption=Kode Program untuk Select Option]
+			\begin{lstlisting}[label={lst:selectOption}, caption=Kode Program untuk Select Option]
 <ion-select value="two">
 	<ion-select-option value="one">One</ion-select-option>
 	<ion-select-option value="two">Two</ion-select-option>
@@ -746,7 +836,7 @@ ion-action-sheet {
 			
 			\newpage
 			
-			\begin{lstlisting}[language=php, label={lst:toast}, caption=Kode Program untuk Toast]
+			\begin{lstlisting}[label={lst:toast}, caption=Kode Program untuk Toast]
 async presentToast() {
 	const toast = await this.toastController.create({
 		message: 'Your settings have been saved.',
@@ -792,19 +882,18 @@ toast.present();
 		
 		\item {\it Package} dan {\it Dependencies} \\
 		Untuk memasang {\it package} dan {\it dependencies} pada Angular, dapat memanfaatkan npm pada CLI, dengan menjalankan pemasangan pada {\it package} ionic-angular  (Kode~\ref{lst:packageDependenciesInstall}). Namun jika ingin membuat proyek baru, dapat dibuat dari CLI dan aplikasi yang ada dapat dimigrasikan secara manual.
-		\begin{lstlisting}[language=php, label={lst:packageDependenciesInstall}, caption=Kode untuk Memasang {\it Package} dan {\it Dependencies} pada Angular]
+		\begin{lstlisting}[label={lst:packageDependenciesInstall}, caption=Kode untuk Memasang {\it Package} dan {\it Dependencies} pada Angular]
 npm install @ionic/angular@latest @ionic/angular-toolkit@latest --save
 		\end{lstlisting} 
 	\end{itemize}
 	%---END ITEMIZE MIGRASI IONIC 4 KE IONIC 5---%
-	\newpage
 	\item Migrasi Ionic 5 ke Ionic 6 \\
 	Berikut merupakan perubahan-perubahan pada Ionic 6, diantaranya yaitu:
 	\begin{itemize}
 		\item Pembaruan Ionic dan Angular \\
 		Ionic 6 mendukung penggunaan Angular versi 12 dan yang lebih baru, dengan begitu perlu dilakukan perbaruan Angular ke versi yang terbaru (Kode~\ref{lst:updateAngular}).
 		
-\begin{lstlisting}[language=php, label={lst:updateAngular}, caption=Kode untuk Memperbarui Versi Ionic 6 dengan versi Angular Terbaru]
+\begin{lstlisting}[label={lst:updateAngular}, caption=Kode untuk Memperbarui Versi Ionic 6 dengan versi Angular Terbaru]
 npm install @ionic/angular@6
 \end{lstlisting} 
 
@@ -815,7 +904,7 @@ npm install @ionic/angular@6
 		\item \textit{Modal} dan \textit{Popover} \\
 		ion-modal (Kode~\ref{lst:updateModal}) dan ion-popover (Kode~\ref{lst:updatePopover}) menggunakan Shadow DOM.
 		
-\begin{lstlisting}[language=php, label={lst:updateModal}, caption=Kode ion-modal menggunakan Shadow DOM pada CSS]
+\begin{lstlisting}[label={lst:updateModal}, caption=Kode ion-modal menggunakan Shadow DOM pada CSS]
 ion-modal::part(content) {
   ...
 }
@@ -825,7 +914,7 @@ ion-modal::part(backdrop) {
 }
 \end{lstlisting} 
 
-\begin{lstlisting}[language=php, label={lst:updatePopover}, caption=Kode ion-popover menggunakan Shadow DOM pada CSS]
+\begin{lstlisting}[label={lst:updatePopover}, caption=Kode ion-popover menggunakan Shadow DOM pada CSS]
 ion-popover::part(arrow) {
   ...
 }

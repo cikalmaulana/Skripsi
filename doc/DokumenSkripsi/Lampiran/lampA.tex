@@ -1,47 +1,840 @@
 %versi 3 (18-12-2016)
-%\chapter{Kode Program}
-%\label{lamp:A}
+\chapter{Kode Program}
+\label{lamp:A}
 
-%terdapat 2 cara untuk memasukkan kode program
-% 1. menggunakan perintah \lstinputlisting (kode program ditempatkan di folder yang sama dengan file ini)
-% 2. menggunakan environment lstlisting (kode program dituliskan di dalam file ini)
-% Perhatikan contoh yang diberikan!!
-%
-% untuk keduanya, ada parameter yang harus diisi:
-% - language: bahasa dari kode program (pilihan: Java, C, C++, PHP, Matlab, C#, HTML, R, Python, SQL, dll)
-% - caption: nama file dari kode program yang akan ditampilkan di dokumen akhir
-%
-% Perhatian: Abaikan warning tentang textasteriskcentered!!
-%
+\section{Komponen Announcements} 
+\label{sec:lampiranKomponenAnnouncements}
+
+\begin{lstlisting}[language=JavaScript, label={lst:announcements.page.ts}, caption=annoncement.page.ts]
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { Storage } from '@ionic/storage';
+import { ToastController } from '@ionic/angular';
+
+@Component({
+  selector: 'app-announcement',
+  templateUrl: './announcement.page.html',
+  styleUrls: ['./announcement.page.scss'],
+})
+
+export class AnnouncementPage implements OnInit {
+  announcements: Array<{ localtime: string, message: string }>;
+
+  constructor(private http: HttpClient,private storage: Storage,public toastController: ToastController) { }
+
+  ngOnInit(): void {
+    this.storage.get('wsdcDataStorage').then((data) => {
+      this.announcements = data.announcements;
+    })
+  }
+
+  doRefresh(refresher) {
+    console.log('Begin async operation');
+    this.http.get('https://wsdc.dnartworks.com/wsdc_data.json').subscribe(
+      (data: any) => {
+      this.storage.clear();
+      this.storage.set('wsdcDataStorage',data);
+      this.announcements = data.announcements;
+      console.log("Data updated!"); 
+      if (refresher != 0)
+          refresher.target.complete();
+      },
+      (error) => {
+        this.presentConnectionAlert();
+        refresher.target.complete();
+        console.log('error in HTTPRequest JSON');
+    });
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.target.complete();
+    }, 30000);
+  }
+
+  async presentConnectionAlert() {
+    let toast = await this.toastController.create({
+      message: 'Failed to refresh information',
+      duration: 3000
+    });
+    toast.present();
+  }
+
+  formatDatetime(sqlDatetime: string) {
+    var date = new Date(sqlDatetime.substring(0, 10));
+    var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var dayOfWeek = date.getDay();
+    var day = date.getDate();
+    var monthIndex = date.getMonth();
+    var time=sqlDatetime.substring(16,4)
+    return time.substring(7) + ' | ' + dayNames[dayOfWeek] + ', ' + day + ' ' + monthNames[monthIndex];
+  }
+}
+
+\end{lstlisting} 
+
+\begin{lstlisting}[language=html, label={lst:announcements.page.html}, caption=annoncement.page.html]
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Announcements</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-item color="wsdc-blue" *ngFor="let announcement of announcements; let i = index">
+      <ion-label class="ion-text-wrap">
+        <h3>{{ formatDatetime(announcement.localtime) }}</h3>
+        <p>{{ announcement.message }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+\end{lstlisting} 
+
+\begin{lstlisting}[language=JavaScript, label={lst:draw.page.ts}, caption=draw.page.ts]
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { LoadingController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
+
+@Component({
+  selector: 'app-draw',
+  templateUrl: './draw.page.html',
+  styleUrls: ['./draw.page.scss'],
+})
+
+export class DrawPage implements OnInit {
+  @ViewChild('drawIFrame') drawIFrame: ElementRef;
+  loading: any;
+  constructor(private storage: Storage,public loadingController: LoadingController) { }
+
+  ngOnInit() {
+    this.storage.get('wsdcDataStorage').then((data) => {
+      this.drawIFrame.nativeElement.contentWindow.location.assign(data.draws);
+    });
+    this.presentLoading();
+  }
+
+  async presentLoading() {
+    this.loading = await this.loadingController.create({
+      message: 'Please wait...',
+      backdropDismiss: true // If true, the loading indicator will be dismissed when the backdrop is clicked.
+    });
+    this.loading.present();
+    setTimeout(() => {
+      this.loading.dismiss();
+    }, 1000);
+  }
+
+  onDrawIframeLoad(){
+    let doc = this.drawIFrame.nativeElement.contentWindow.document;
+    let elements = [
+      doc.getElementById('header'),
+      doc.getElementById('page_header'),
+      doc.getElementById('footer')
+    ];
+    elements.forEach(function (element) {
+      if (element) {
+        element.style.display = 'none';
+      }
+    })
+    this.drawIFrame.nativeElement.style.display = 'block';
+    console.log(this.loading);
+    
+  }
+}
+\end{lstlisting} 
+
+\begin{lstlisting}[language=html, label={lst:draw.page.html}, caption=draw.page.html]
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Draw</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <iframe #drawIFrame (load)="onDrawIframeLoad()"></iframe>
+</ion-content>
+\end{lstlisting} 
+
+\begin{lstlisting}[language=JavaScript, label={lst:home.page.ts}, caption=home.page.ts]
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Browser } from '@capacitor/browser';
+import { Storage } from '@ionic/storage';
+import { Router } from '@angular/router';
+import { SplashScreen } from '@capacitor/splash-screen';
+import { ToastController } from '@ionic/angular';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.page.html',
+  styleUrls: ['./home.page.scss'],
+})
+
+export class HomePage implements OnInit {
+  wsdcData:any;
+
+  constructor(private http: HttpClient,private storage: Storage,private router: Router,public toastController: ToastController) { }
+
+  ionViewDidEnter(){ //runs when the page has fully entered and is now the active page.
+    SplashScreen.hide()
+  }
+
+  ngOnInit(): void { //called after Angular has initialized all data-bound properties of a directive
+    this.storage.get('wsdcDataStorage').then((data) => {
+      
+      if(data == null){
+        //Default from asset
+        this.http.get('../assets/json/wsdc_data.json').subscribe((data: any) => {
+          this.wsdcData = data;
+          this.storage.set('wsdcDataStorage',data);       
+        },
+        error => {
+          this.showToast('Failed to refresh information from local storage');
+        });
+      }else{    
+        this.wsdcData = data;
+      }
+      
+      // Refresh data
+      setTimeout(() => {
+        this.http.get('http://wsdc.dnartworks.com/wsdc_data.json')
+        .subscribe((data: any) => {
+          this.storage.set('wsdcDataStorage', data);
+          this.wsdcData = data;
+        },
+        error => {
+          this.showToast('Failed to refresh information');
+        });
+      }, 1000);
+    })
+    
+  }
+
+  doRefresh(refresher) {
+    this.http.get('https://wsdc.dnartworks.com/wsdc_data.json').subscribe((data: any) => {
+      this.storage.clear();
+      this.storage.set('wsdcDataStorage',data);
+      this.wsdcData = data;
+    },
+    error => {
+      // Timeout or no connection
+      this.showToast('Failed to refresh information');
+      refresher.complete();
+    });
+
+    setTimeout(() => {
+      refresher.target.complete();
+    }, 2000);
+  }
+
+  async showToast(message: string, duration: number=3000) {
+    let toast = await this.toastController.create({
+      message: message,
+      duration: duration
+    });
+    toast.present();
+  }
+
+  formatDatetime(sqlDatetime: string) {
+    if (sqlDatetime === null) {
+      return null;
+    }
+    var time=sqlDatetime.substring(16,4)
+    var date = new Date(sqlDatetime.substring(0, 10));
+    var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    var dayOfWeek = date.getDay();
+    return dayNames[dayOfWeek] + ', ' + time.substring(7);
+  }
+
+  // ionic 6 : use capacitor in app browser
+  launch(newsUrl: string) {
+    Browser.open({ url: newsUrl });
+  }
+
+  // ionic 6 : use ionic angular router for change page
+  onAnnouncementClick() {
+    this.router.navigate(['announcement']);
+  }
+}
+
+\end{lstlisting} 
+
+\begin{lstlisting}[language=html, label={lst:home.page.html}, caption=home.page.html]
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-card (click)="onAnnouncementClick()">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="9">
+          <ion-card-header>
+            <ion-card-title>Latest Announcement</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+              <h3>{{ formatDatetime(wsdcData?.announcements[0].localtime) }}</h3>
+              <p>{{ wsdcData?.announcements[0].message }}</p>
+          </ion-card-content>
+        </ion-col>
+        <ion-col size="3">
+          <img src="assets/icon/announcement.png"/>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-icon name="book-outline"></ion-icon>
+      <ion-label class="label_newsletters"><h1><b> Newsletters</b></h1></ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let wsdcNews of wsdcData?.newsletters;">
+      <div class="newsletters" >
+        <img src="http://wsdc.dnartworks.com/uploads/newsletter/{{wsdcNews.id}}/thumbnail.jpg">
+        <h2 text-wrap>{{wsdcNews.title}}</h2> <br>
+        <ion-button class="ion-padding-end" full block color="danger" (click)="launch(wsdcNews.url)">Read More</ion-button>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
+\end{lstlisting} 
+
+\begin{lstlisting}[language=JavaScript, label={lst:info.page.ts}, caption=info.page.ts]
+import { Component, ViewEncapsulation  } from '@angular/core';
+import { Storage } from '@ionic/storage';
+
+@Component({
+  selector: 'app-info',
+  templateUrl: './info.page.html',
+  styleUrls: ['./info.page.scss'],
+  encapsulation: ViewEncapsulation.None,
+})
+
+export class InfoPage{
+  wsdcInfoData: any;
+
+  constructor(private storage: Storage) { 
+    
+    this.storage.get('wsdcDataStorage').then((data) => {
+      this.wsdcInfoData = data.info;
+      this.wsdcInfoData = this.wsdcInfoData.replace(new RegExp('icon-telephone','g'), '<img src="assets/icon/telephone.png" alt="Telephone Icon" class="icon"/>');
+    })
+  }
+
+}
+
+\end{lstlisting} 
+
+\begin{lstlisting}[language=html, label={lst:info.page.html}, caption=info.page.html]
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Info</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <div [innerHTML]="wsdcInfoData"></div>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+\end{lstlisting}
+
+\begin{lstlisting}[language=JavaScript, label={lst:result.page.ts}, caption=result.page.ts]
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Storage } from '@ionic/storage';
+import { LoadingController } from '@ionic/angular';
+
+@Component({
+  selector: 'app-result',
+  templateUrl: './result.page.html',
+  styleUrls: ['./result.page.scss'],
+})
+
+export class ResultPage implements OnInit {
+  @ViewChild('resultIFrame') resultIFrame: ElementRef;
+
+  constructor(private storage: Storage,public loadingController: LoadingController) { }
+
+  ngOnInit() {
+    this.storage.get('wsdcDataStorage').then((data) => {
+      this.resultIFrame.nativeElement.contentWindow.location.assign(data.results);
+    });
+    this.presentLoading();
+  }
+
+  async presentLoading() {
+    const loading = await this.loadingController.create({
+      message: 'Please wait...',
+      backdropDismiss: true
+    });
+
+    await loading.present();
+
+    setTimeout(() => {
+      loading.dismiss();
+    }, 500);
+  }
+
+  onResultIframeLoad(){
+    let doc = this.resultIFrame.nativeElement.contentWindow.document;
+    let elements = [
+      doc.getElementById('header'),
+      doc.getElementById('page_header'),
+      doc.getElementById('footer')
+    ];
+    elements.forEach(function (element) {
+      if (element) {
+        element.style.display = 'none';
+      }
+    })
+    this.resultIFrame.nativeElement.style.display = 'block';
+  }
+
+}
+
+\end{lstlisting} 
+
+\begin{lstlisting}[language=html, label={lst:result.page.html}, caption=result.page.html]
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Result</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <iframe #resultIFrame (load)="onResultIframeLoad()"></iframe>
+</ion-content>
+
+\end{lstlisting}
+
+\begin{lstlisting}[language=JavaScript, label={lst:schedule.page.ts}, caption=schedule.page.ts]
+import { Component, ElementRef} from '@angular/core';
+import { ViewChild } from '@angular/core';
+import { IonSlides } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
+
+@Component({
+  selector: 'app-schedule',
+  templateUrl: './schedule.page.html',
+  styleUrls: ['./schedule.page.scss'],
+})
+export class SchedulePage{
+  @ViewChild('scheduleSlider', { static: false }) slider: IonSlides;
+  @ViewChild('segmentContainer', { static: false }) segmentContainer: ElementRef;
+  schedules: any;
+  slideOpts = {
+    initialSlide: 0,
+    speed: 400,
+  };
+  selectedSegmentIdx: any;
+  currentIndex:any;
+
+  constructor(private storage: Storage) {
+    
+    this.storage.get('wsdcDataStorage').then((val) => {
+      this.schedules = val.schedules;
+      this.selectedSegmentIdx = 0;
+    });
+  }
+
+  getDayName(sqlDate: string) {
+    var date = new Date(sqlDate);
+    var dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    var dayOfWeek = date.getDay();
+    return dayNames[dayOfWeek];
+  }
+
+  getDate(sqlDate: string) {
+    var date = new Date(sqlDate);
+    return date.getDate();
+  }
+
+  onSlideChanged() {
+    this.slider.getActiveIndex().then((index: number) => {
+      this.currentIndex = index;
+      document.getElementById(this.currentIndex).scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'center'
+      });
+      this.selectedSegmentIdx = index;
+    });
+  }
+
+  onSegmentChanged(segmentButton) {
+    this.slider.slideTo(segmentButton.detail.value);
+  }
+}
+
+\end{lstlisting} 
+
+\begin{lstlisting}[language=html, label={lst:schedule.page.html}, caption=schedule.page.html]
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Schedule</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="schedulesContainer">
+    <div id="schedulesSegments" slot="fixed">
+      <ion-segment #segmentContainer scrollable [(ngModel)]="selectedSegmentIdx"  (ionChange)="onSegmentChanged($event)"> 
+        <ion-segment-button *ngFor="let schedule of schedules; let i = index;" [value]="i" [id]="i">
+          <ion-label>
+            <div class="day">{{ getDayName(schedule.date)}}</div>
+            <div class="date">{{ getDate(schedule.date) }}</div>
+          </ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+    <div id="schedulesSlides">
+      <ion-slides #scheduleSlider [options]="slideOpts" (ionSlideDidChange)="onSlideChanged()">
+        <ion-slide *ngFor="let schedule of schedules;">
+          <ion-list>
+            <ion-item *ngFor="let agenda of schedule.agenda;" >
+              <ion-note item-start>
+                  {{agenda.start}} <br> 
+                  {{agenda.end}}
+              </ion-note>
+              <ion-label class="ion-text-wrap">
+                <h3>{{agenda.title}}</h3>
+                <p>{{agenda.subtitle}}</p>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  </div>
+</ion-content>
+
+\end{lstlisting}
+
+\begin{lstlisting}[language=JavaScript, label={lst:venues.page.ts}, caption=venues.page.ts]
+import { Component, OnInit } from '@angular/core';
+import { Router, NavigationExtras } from '@angular/router';
+import { Storage } from '@ionic/storage';
+
+@Component({
+  selector: 'app-venues',
+  templateUrl: './venues.page.html',
+  styleUrls: ['./venues.page.scss'],
+})
+export class VenuesPage{
+  venuesData: Array<{ id: string, name: string, icon: string, geojson: any, colorIdx: number }>;
+  valVenues: any;
+  constructor(private router: Router,private storage: Storage) {
+    this.storage.get('wsdcDataStorage').then((val) => {
+      this.valVenues = val.venues;
+      this.venuesData = [];
+      let currColorIdx: number = 1;
+      for (let venue of this.valVenues) {
+        this.venuesData.push({
+          id: venue.id,
+          name: venue.name,
+          icon: venue.icon,
+          geojson: venue.geojson,
+          colorIdx: currColorIdx,
+        });
+        if (currColorIdx > 4) {
+          currColorIdx = 1;
+        } else {
+          currColorIdx++;
+        }
+      }
+    })
+  }
+
+  itemTapped(wsdcVenue) {
+    // this.router.navigate(['venues-map', id])
+    let navigationExtras: NavigationExtras = {
+      state: {
+        venuesData: wsdcVenue
+      }
+    };
+    this.router.navigate(['venues-map'], navigationExtras);
+  }
+}
+
+\end{lstlisting} 
+
+\begin{lstlisting}[language=html, label={lst:venues.page.html}, caption=venues.page.html]
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Venues</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-list no-lines>
+        <ion-button color="white" id="{{wsdcVenue.id}}" *ngFor="let wsdcVenue of venuesData" (click)="itemTapped(wsdcVenue)">
+          <ion-icon name={{wsdcVenue.icon}}></ion-icon>
+          <span>{{ wsdcVenue.name }}</span>
+        </ion-button>
+      </ion-list>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+\end{lstlisting}
+
+\begin{lstlisting}[language=JavaScript, label={lst:venues-map.page.ts}, caption=venues-map.page.ts, escapeinside={(*}{*)}]
+import { Component, OnInit} from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Storage } from '@ionic/storage';
+import { CapacitorGoogleMaps } from "@capacitor-community/google-maps";
+import { Geolocation } from '@capacitor/geolocation';
+
+@Component({
+  selector: 'app-venues-map',
+  templateUrl: './venues-map.page.html',
+  styleUrls: ['./venues-map.page.scss'],
+})
+export class VenuesMapPage{
+  venuesPage: any;
+  venuesMapsDetail: any;
+  userCoordinatesLat: any;
+  userCoordinatesLng: any;
+  mapid: any;
+  userDistanceTo: string[];
+  itemCounter: number;
+  items: Array<{id: string, idcolor:number }>
+  pageTitleColors: Array<string> = ["#ec1c24", "#c49a6c", "#d189bb", "#4d113f"];
+
+  constructor(private activatedRoute: ActivatedRoute, private router: Router,private storage: Storage) {
+
+    //Get data from venues page.
+    this.items = [];
+    this.activatedRoute.queryParams.subscribe(params => {
+      if (this.router.getCurrentNavigation().extras.state) {
+        this.venuesPage = this.router.getCurrentNavigation().extras.state.venuesData;
+      }
+      
+      this.items.push({
+        id: this.venuesPage.id,
+        idcolor: this.venuesPage.colorIdx
+      });
+      
+      document.getElementById("pagetitle").style.color = this.pageTitleColors[this.items[0].idcolor-1];
+    });
+
+    // Select data from storage
+    this.storage.get('wsdcDataStorage').then((data) => {
+      this.venuesMapsDetail = data.venues;
+      this.venuesMapsDetail = this.venuesMapsDetail.filter(d=> d.id==this.items[0].id);
+    })
+
+    //save user lat & lng location
+    const printCurrentPosition = async () => {
+      const coordinates = await Geolocation.getCurrentPosition();
+      this.userCoordinatesLat = coordinates.coords.latitude;
+      this.userCoordinatesLng = coordinates.coords.longitude;
+    };
+    
+    printCurrentPosition();
+    Geolocation.requestPermissions();
+  }
+
+  ionViewDidEnter() {
+    // create map and add marker
+    const initializeMap = async () => {
+      this.itemCounter = 0;
+      await CapacitorGoogleMaps.initialize({
+        key: "YOUR_IOS_MAPS_API_KEY",
+        devicePixelRatio: window.devicePixelRatio,
+      });
+      const element = document.getElementById("mapContainer");
+      const boundingRect = element.getBoundingClientRect();
+      try {
+        const result = await CapacitorGoogleMaps.createMap({
+          boundingRect: {
+            width: Math.round(boundingRect.width),
+            height: Math.round(boundingRect.height),
+            x: Math.round(boundingRect.x),
+            y: Math.round(boundingRect.y),
+          },
+          cameraPosition:{
+            target:{ //Kuta, Bali -8.722396, 115.17671
+              latitude:-8.722396, 
+              longitude: 	115.17671
+            },
+            zoom:11
+          },
+          preferences:{
+            controls:{
+              isCompassButtonEnabled:true,
+              isMyLocationButtonEnabled:true,
+              isZoomButtonsEnabled:true
+            },
+            appearance:{
+              isMyLocationDotShown:true
+            }
+          },
+        });
+        
+        element.style.background = "";
+        element.setAttribute("data-maps-id", result.googleMap.mapId);
+        this.mapid = result.googleMap.mapId;
+        console.log(this.venuesMapsDetail);
+        
+        //add marker to each location
+        for(let venue of this.venuesMapsDetail){
+          for(let venuesMarker of venue.geojson.features){
+            this.itemCounter +=1;
+            const koor = venuesMarker.geometry.coordinates;  
+            CapacitorGoogleMaps.addMarker({
+              mapId:result.googleMap.mapId,
+              position:{
+                latitude: koor[1],
+                longitude: koor[0],
+              },
+              preferences:{
+                title: venuesMarker.properties.Name
+              },
+            });     
+          }
+        }
+      } catch (e) {
+        alert("Map failed to load");
+      }
+  
+      // Insert distance to each location
+      this.userDistanceTo = new Array(this.itemCounter);
+      let counter = 0;
+      for(let venue of this.venuesMapsDetail){
+        for(let venuesMarker of venue.geojson.features){
+          const koor = venuesMarker.geometry.coordinates;  
+          this.userDistanceTo[counter] = this.computeDistance(this.userCoordinatesLat,koor[1],this.userCoordinatesLng,koor[0]);
+          counter+=1;
+        }
+      }
+    };
+
+    (function () {
+      initializeMap();
+    })();
+  }
+
+  backToVenue() {
+    this.router.navigate(['venues']);
+  }
+
+  featTapped(venuesCoordinates){
+    const coordinates = venuesCoordinates;
+    CapacitorGoogleMaps.moveCamera({
+      mapId:this.mapid,
+      cameraPosition:{
+        target:{
+          latitude: coordinates[1],
+          longitude: coordinates[0],
+        },
+        zoom:15
+      },
+      duration:800
+    });     
+  } 
+
+  computeDistance(lat1, lat2, lon1, lon2){
+    
+    const R = 6371e3; // metres
+    const phi1 = lat1 * Math.PI/180; // phi, lambda in radians
+    const phi2 = lat2 * Math.PI/180;
+    const deltaPhi = (lat2-lat1) * Math.PI/180;
+    const deltaLambda = (lon2-lon1) * Math.PI/180;
+    
+    const a = Math.sin(deltaPhi/2) * Math.sin(deltaPhi/2) +
+              Math.cos(phi1) * Math.cos(phi2) *
+              Math.sin(deltaLambda/2) * Math.sin(deltaLambda/2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    
+    const d = R * c; // in metres
+
+    
+    if(d < 1000){
+      return Math.floor(d) + " m";
+    }else if (d < 100000){
+      return Math.floor(d/1000) + " km";
+    }else{
+      return ">99 km"
+    }
+  }
+}
+
+\end{lstlisting} 
+
+\begin{lstlisting}[language=html, label={lst:venues-map.page.html}, caption=venues-map.page.html]
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="backToVenue()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>Venues</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<div id="container">
+  <div id="mapContainer"></div>
+</div>
+
+<!-- //deprecated scroll in ionic 5 -->
+<ion-content scrollX="true"> 
+  <ion-label>
+    <h3 #pagetitle id="pagetitle">{{venuesPage.name}}</h3>
+  </ion-label>
+
+  <ion-list>
+    <ion-item *ngFor="let venue of venuesMapsDetail; let i=index">
+      <div>
+        <div class="venuesDescContainer" *ngFor="let properties of venue.geojson.features; let j = index">
+          <div class="venueDesc" (click)="featTapped(properties.geometry.coordinates)">
+            <h2>{{properties.properties.Name}}</h2>
+            <p>{{properties.properties.Description}}</p>
+          </div>
+          <div class="venuesDist" #distance>
+            <p>{{userDistanceTo[j]}}</p>
+          </div>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
 
 
-%\begin{lstlisting}[language=Java, caption=MyCode.c]
-
-%// This does not make algorithmic sense, 
-%// but it shows off significant programming characters.
-
-%#include<stdio.h>
-
-%void myFunction( int input, float* output ) {
-%	switch ( array[i] ) {
-%		case 1: // This is silly code
-%			if ( a >= 0 || b <= 3 && c != x )
-%				*output += 0.005 + 20050;
-%			char = 'g';
-%			b = 2^n + ~right_size - leftSize * MAX_SIZE;
-%			c = (--aaa + &daa) / (bbb++ - ccc % 2 );
-%			strcpy(a,"hello $@?"); 
-%	}
-%	count = ~mask | 0x00FF00AA;
-%}
-%
-%// Fonts for Displaying Program Code in LATEX
-%// Adrian P. Robson, nepsweb.co.uk
-%// 8 October 2012
-%// http://nepsweb.co.uk/docs/progfonts.pdf
-%
-%\end{lstlisting}
-%
-%\lstinputlisting[language=Java, caption=MyCode.java]{./Lampiran/MyCode.java} 
-%
-%
+\end{lstlisting}
