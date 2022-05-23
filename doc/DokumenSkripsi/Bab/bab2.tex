@@ -130,7 +130,7 @@ const routes: Routes = [
 		\textit{File} ini digunakan untuk melakukan pengujian terhadap aplikasi Angular. 
 		
 	\item \textit{File} TypeScript \\
-		Di dalam TypeScript, sebuah kelas komponen memiliki anotasi dengan sebuah \textit{decorator}~(Kode~\ref{lst:decorator}) yang ditempatkan sesuai dengan komponen UI nya berada. Komponen akan berisi \textit{instance} dari service class yang diimplementasi dari \textit{business logic} tanpa UI. Sebuah service class merupakan implementasi dari \textit{business logic}. Angular akan menempatkan \textit{services} ke dalam komponen atau ke dalam \textit{services} lainnya dengan menggunakan \textit{dependency injection} (DI). 	
+		Di dalam TypeScript, terdapat sebuah kelas komponen. Kelas tersebut memiliki anotasi dengan sebuah \textit{decorator}~(Kode~\ref{lst:decorator}) yang ditempatkan sesuai dengan komponen UI nya berada. Komponen akan berisi \textit{instance} dari service class yang diimplementasi dari \textit{business logic} tanpa UI. Sebuah service class merupakan implementasi dari \textit{business logic}. Angular akan menempatkan \textit{services} ke dalam komponen atau ke dalam \textit{services} lainnya dengan menggunakan \textit{dependency injection} (DI). 	
 
 \begin{lstlisting}[label={lst:decorator}, caption=Anotasi Komponen dengan \textit{Decorator}]
 @Component({
@@ -370,6 +370,20 @@ Dengan Angular, {\it framework} Ionic dapat menggunakan kemampuan Angular dalam 
 		\begin{lstlisting}[label={lst:datetimeComponent}, caption=Kode Program dari Datetime Component dengan Format Bulan-Hari-Tahun]
 <ion-datetime displayFormat="MM DD YY" placeholder="Select Date"></ion-datetime>
 		\end{lstlisting} 
+
+	\item Grid \\
+	Grid digunakan untuk membuat tata letak kustom pada tampilan. Grid terdiri dari tiga bagian, yaitu \textit{grid}, baris, dan kolom. Masing-masing kolom dapat diubah ukurannya menggunakan CSS. Grid digunakan dengan \textit{tag} \texttt{<ion-grid>} (Kode~\ref{lst:GridComponent}).		
+\begin{lstlisting}[label={lst:GridComponent}, caption=Potongan Kode Program dari Grid Component]
+<ion-row>
+	<ion-col size="6">
+    	ion-col [size="6"]
+    </ion-col>
+    <ion-col>
+      	ion-col
+    </ion-col>
+</ion-row>
+\end{lstlisting}
+	
 	\item Infinite Scroll	\\
 	Komponen Infinite Scroll memanggil sebuah action yang akan dilakukan ketika pengguna menggulir dengan jarak tertentu dari bawah atau atas halaman. Penggunaan Infinite Scroll dengan menggunakan {\it tag} \texttt{<ion-infinite-scroll>} (Kode~\ref{lst:InfiteScrollComponent}). 
 	
@@ -381,8 +395,6 @@ Dengan Angular, {\it framework} Ionic dapat menggunakan kemampuan Angular dalam 
 	</ion-infinite-scroll-content>
 </ion-infinite-scroll>
 	\end{lstlisting}
-
-	\newpage	
 	
 	\item Icon \\
 	Icon merupakan komponen yang berupa gambar kecil, yang merepresentasikan sebuah berkas, dan folder di dalam aplikasi. Penggunaan Icon adalah dengan menggunakan {\it tag} \texttt{<ion-icon>} (Kode~\ref{lst:iconComponent}).
@@ -402,6 +414,8 @@ Dengan Angular, {\it framework} Ionic dapat menggunakan kemampuan Angular dalam 
 	\item List \\
 	Komponen List terdiri dari beberapa baris \textit{item} yang dapat berisi teks, tombol, \textit{toggles}, ikon, thumbnails, dan komponen-komponen lainnya menggunakan \textit{tag} \texttt{<ion-list>} (Kode~\ref{lst:listComponent}). List mendukung untuk pengguna melakukan \textit{swiping}, \textit{dragging}, dan penghapusan \textit{item}. 
 	
+	\newpage
+	
 \begin{lstlisting}[label={lst:listComponent}, caption=Potongan Kode Program dari List Component]
 <ion-list>
   <ion-item>
@@ -420,9 +434,7 @@ Dengan Angular, {\it framework} Ionic dapat menggunakan kemampuan Angular dalam 
     <ion-label>Super Mario World</ion-label>
   </ion-item>
 </ion-list>
-\end{lstlisting} 	
-	
-\newpage	
+\end{lstlisting} 		
 	
 	\item Menu \\
 	Komponen Menu merupakan panel navigasi samping yang dapat dilakukan {\it slides} dari sisi pada tampilan halaman saat ini menggunakan {\it tag} \texttt{<ion-menu>} (Kode~\ref{lst:menuComponent}). Pada dasarnya, Menu muncul dari kiri, tetapi sisi kemunculan menu dapat diganti. 
@@ -446,22 +458,17 @@ Dengan Angular, {\it framework} Ionic dapat menggunakan kemampuan Angular dalam 
 </ion-menu>
 	\end{lstlisting} 
 	\item Modal \\
-	Modal merupakan kotak dialog yang muncul diatas konten aplikasi lain, dan harus diutup secara manual oleh pengguna sebelum pengguna dapat melanjutkan menggunakan aplikasi. Modal berguna sebagai komponen pilihan ketika ada banyak opsi untuk dipilih, atau melakukan penyaringan isi di dalam daftar, serta beberapa kasus serupa lainnya (Kode~\ref{lst:modalComponent}).
+	Modal merupakan kotak dialog yang muncul diatas konten aplikasi lain, dan harus diutup secara manual oleh pengguna sebelum pengguna dapat melanjutkan menggunakan aplikasi. Modal berguna sebagai komponen pilihan ketika ada banyak opsi untuk dipilih, atau melakukan penyaringan isi di dalam daftar, serta beberapa kasus serupa lainnya. Modal dapat digunakan dengan \textit{tag} \texttt{<ion-modal>} (Kode~\ref{lst:modalComponent}).
 		\begin{lstlisting}[label={lst:modalComponent}, caption=Kode Program dari Modal]
-import { Component, Input } from '@angular/core';
-
-@Component({
-	selector: 'modal-page',
-})
-export class ModalPage {	
-	constructor() {}		
-}
+<ion-modal [isOpen]="true">
+  <ng-template>
+    <ion-content>Modal Content</ion-content>
+  </ng-template>
+</ion-modal>
 		\end{lstlisting} 
 
 	\item Navigation \\
 	Navigation adalah komponen mandiri yang digunakan untuk membuat komponen baru ke dalam {\it stack}. Navigation tidak terikat kepada {\it router} tertentu, mengakibatkan jika kita membuat komponen Navigation dan melakukan {\it push} komponen lain ke dalam {\it stack}, komponen tersebut tidak akan mempengaruhi router aplikasi secara keseluruhan. Sesuai dengan kasus penggunaan dimana ketika pengguna bisa memilih modal, yang membutuhkan sub-navigasinya sendiri, tanpa membuatnya terikat ke URL aplikasi. 
-
-	\newpage
 	
 	\item Refresher \\
 	Refresher merupakan komponen yang menyediakan fungsionalitas \textit{pull-to-refresh} pada komponen konten dengan \textit{tag} \texttt{<ion-refresher>} (Kode~\ref{}). Refresher digunakan pada saat pengguna menarik layar dari atas ke bawah, maka Refresher akan menyegarkan data atau mendapatkan daftar data untuk mengambil lebih banyak data. 
@@ -486,6 +493,8 @@ export class ModalPage {
 	</ion-segment-button>
 </ion-segment>
 	\end{lstlisting}
+	
+	\newpage
 	
 	\item Slides \\
 	Komponen Slides merupakan sebuah \textit{multi-section container} yang setiap bagiannya dapat dilakukan \textit{swipe} atau \textit{drag}. Untuk menggunakan komponen ini dengan menggunakan \textit{tag} \texttt{<ion-slides>} (Kode~\ref{lst:slidesComponent}).
@@ -526,6 +535,8 @@ export class ModalPage {
 	\item Toast \\
 	Komponen Toast merupakan sebuah notifikasi yang digunakan di aplikasi modern untuk memberikan umpan balik atau menampilkan pesan sistem. Komponen ini muncul diatas konten aplikasi, dan dapat ditutup untuk melanjutkan penggunaan aplikasi. Komponen ini menggunakan ToastController yang dimiliki oleh \textit{library} Ionic Angular (Kode~\ref{lst:toastComponent}) 
 	
+\newpage	
+	
 	\begin{lstlisting}[label={lst:toastComponent}, caption=Kode Program dari Toast]
 async presentToast() {
     const toast = await this.toastController.create({
@@ -538,10 +549,8 @@ async presentToast() {
 		
 
 	\item Toolbar \\
-	Toolbar dapat diposisikan di atas ataupun di bawah konten. Ketika toolbar ditempatkan di header \texttt{<ion-header>} akan muncul di bagian atas konten, sedangkan ketika ditempatkan di footer <ion-footer> akan muncul tetap di bagian bawah. Toolbar menggunakan {\it tag} <ion-toolbar>, yang di dalamnya dapat berisi button, dan dapat menggunakan border (Kode~\ref{lst:datetimeComponent}).
-	
-	\newpage	
-	
+	Toolbar dapat diposisikan di atas ataupun di bawah konten. Ketika toolbar ditempatkan di header \texttt{<ion-header>} akan muncul di bagian atas konten, sedangkan ketika ditempatkan di footer \texttt{<ion-footer>} akan muncul tetap di bagian bawah. Toolbar menggunakan {\it tag} \texttt{<ion-toolbar>}, yang di dalamnya dapat berisi button, dan dapat menggunakan border (Kode~\ref{lst:datetimeComponent}).
+
 		\begin{lstlisting}[label={lst:datetimeComponent}, caption=Kode Program dari Toolbar dengan Button di Dalamnya]
 <ion-toolbar>
 	<ion-buttons slot="start">
@@ -607,7 +616,10 @@ ionic start myApp blank
 
 				\item Floating Action Button (FAB) \\
 				Terdapat perbedaan pada {\it tag} di dalam \texttt{<ion-fab>}, yang semula pada Ionic 3 adalah \texttt{<button>} menjadi \texttt{<ion-fab-button>} pada Ionic 4 (Kode~\ref{lst:fabIonic4}).
-				\begin{lstlisting}[label={lst:fabIonic4}, caption=Penggunaan Floating Action Button pada Ionic 4]
+				
+				\newpage
+
+\begin{lstlisting}[label={lst:fabIonic4}, caption=Penggunaan Floating Action Button pada Ionic 4]
 <ion-fab>
 	<ion-fab-button>
 		<ion-icon name="add"></ion-icon>
@@ -618,7 +630,7 @@ ionic start myApp blank
 		</ion-fab-button>
 	</ion-fab-list>
 </ion-fab>
-				\end{lstlisting}
+\end{lstlisting}
 				
 				\item Item \\
 				Terdapat perbedaan pada \textit{tag} \texttt{<ion-item>}, dimana pada Ionic 3, \textit{tag} \texttt{<ion-label>} akan secara otomatis ditambahkan ke dalam \texttt{<ion-item>}. Sedangkan pada Ionic 4 diharuskan untuk menambahkan \textit{tag} \texttt{<ion-label>} secara manual ke dalam komponen item (Kode~\ref{lst:itemIonic4}). 
@@ -630,8 +642,6 @@ ionic start myApp blank
 	</ion-label>
 </ion-item>
 				\end{lstlisting}
-
-\newpage
 
 				\item Label \\
 				Pada Ionic 4, atribut untuk mengatur posisi dari label digabungkan dengan atribut {\it position} (Kode~\ref{lst:atributIonic4}).
@@ -652,7 +662,9 @@ ionic start myApp blank
 							Terdapat perubahan swipeEnable pada Ionic 4. Perubahan tersebut adalah sebagai berikut : \\
 							Pada Ionic 3 : swipeEnabled \\
 							Sedangkan pada Ionic 4 menjadi : swipeGesture
-
+							
+							\newpage							
+							
 							\item content \\
 							Terdapat perubahan content pada Ionic 4. Perubahan tersebut adalah sebagai berikut : \\
 							Pada Ionic 3 : content \\
@@ -680,9 +692,7 @@ ionic start myApp blank
 				\begin{itemize}
 					\item Perubahan Nama Method 
 					Terdapat perubahan nama {\it method} pada Ionic 4. Perubahan-perubahan tersebut adalah sebagai berikut :
-					\begin{itemize}
-
-\newpage					
+					\begin{itemize}				
 					
 						\item remove \\
 						Terdapat perubahan remove pada Ionic 4. Perubahan tersebut adalah sebagai berikut :\\
@@ -703,6 +713,9 @@ ionic start myApp blank
 
 				\item Navbar \\
 				Pada Ionic 4, terdapat penghapusan terhadap komponen \texttt{<ion-navbar>} karena untuk menjaga agar selalu menggunakan \texttt{<ion-toolbar>} dengan {\it back button} yang eksplisit (Kode~\ref{lst:navbarIonic4}).
+
+\newpage				
+				
 				\begin{lstlisting}[label={lst:navbarIonic4}, caption=Penggunaan Navbar pada Ionic 4 dengan {\it Back Button}]
 <ion-toolbar>
 	<ion-buttons slot="start">
@@ -744,7 +757,7 @@ async presentToast() {
 
 	\end{enumerate}
 	%---END ENUM MIGRASI IONIC 3 KE IONIC 4---%
-
+\newpage
 	\item Migrasi Ionic 4 ke Ionic 5 \\
 	Migrasi aplikasi dari Ionic 4 ke Ionic 5 memerlukan beberapa pembaruan mengenai properti API, CSS, dan {\it package dependencies} yang terpasang. Perubahan-perubahan tersebut yaitu :
 
@@ -752,18 +765,6 @@ async presentToast() {
 	\begin{itemize}
 		\item CSS
 		\begin{itemize}
-			\item CSS {\it Utilities} \\
-			Karena pada versi sebelumnya, yaitu Ionic versi 4, terdapat masalah dengan menggunakan atribut CSS dengan {\it framework} yang menggunakan JSX dan TypeScript, Ionic {\it Framework} menambahkan dukungan untuk beberapa {\it framework}, dan pada Ionic 5 menambahkan kelas CSS. Ionic versi 5 menghapus atribut CSS dan mendukung konsistensi. Selain itu, Ionic versi 5 juga mengubah ke kelas dengan diawali ion untuk menghindari konflik dengan atribut asli dan CSS dari pengguna (Kode~\ref{lst:CSSUtilities}).
-		\begin{lstlisting}[label={lst:CSSUtilities}, caption=Contoh Kode Kelas CSS {\it Utility} pada Ionic 5]
-<ion-header class="ion-text-center"></ion-header>
-<ion-content class="ion-padding"></ion-content>
-<ion-label class="ion-text-wrap"></ion-label>
-<ion-item class="ion-wrap"></ion-item>
-		\end{lstlisting} 
-  
-			\item {\it Display Classes} \\ 
-			Kelas dari {\it responsive display} yang ditemukan di dalam berkas display.css memiliki kueri media yang diperbarui untuk lebih mencerminkan bagaimana cara kerjanya.
-
 			\item {\it Activated, Focused, Hover States} \\
 			Kelas .activated secara otomatis ditambahkan ke komponen yang dapat diklik, mengalami perubahan nama menjadi .ion-activated. Selain itu juga memperbarui komponen Action Sheet sehingga variabel akan diawali dengan {\it button}. Hal ini dapat memungkinkan aplikasi tetap memiliki kontrol atas {\it opacity} jika diinginkan, tetapi saat memperbarui status, hanya perlu mengatur variabel utama, yaitu -background-activated, -background-focused, -background-hover. Hal tersebut penting saat mengubah tema global, karena memperbarui warna {\it toolbar} akan secara otomatis memperbarui {\it hover states} untuk semua {\it buttons} di {\it toolbar} (Kode~\ref{lst:hoverStates}). 		
 			
@@ -789,6 +790,21 @@ ion-action-sheet {
 	--background-hover: #222;
 }
 		\end{lstlisting} 
+		
+			\item CSS {\it Utilities} \\
+			Karena pada versi sebelumnya, yaitu Ionic versi 4, terdapat masalah dengan menggunakan atribut CSS dengan {\it framework} yang menggunakan JSX dan TypeScript, Ionic {\it Framework} menambahkan dukungan untuk beberapa {\it framework}, dan pada Ionic 5 menambahkan kelas CSS. Ionic versi 5 menghapus atribut CSS dan mendukung konsistensi. Selain itu, Ionic versi 5 juga mengubah ke kelas dengan diawali ion untuk menghindari konflik dengan atribut asli dan CSS dari pengguna (Kode~\ref{lst:CSSUtilities}).
+
+		\newpage			
+			
+		\begin{lstlisting}[label={lst:CSSUtilities}, caption=Contoh Kode Kelas CSS {\it Utility} pada Ionic 5]
+<ion-header class="ion-text-center"></ion-header>
+<ion-content class="ion-padding"></ion-content>
+<ion-label class="ion-text-wrap"></ion-label>
+<ion-item class="ion-wrap"></ion-item>
+		\end{lstlisting} 
+  
+			\item {\it Display Classes} \\ 
+			Kelas dari {\it responsive display} yang ditemukan di dalam berkas display.css memiliki kueri media yang diperbarui untuk lebih mencerminkan bagaimana cara kerjanya.
 
 			\item {\it Distributed Scss} \\
 			Berkas scss telah dihapus dari dist/. Sebagai gantinya, variabel CSS harus digunakan untuk tema.
@@ -806,7 +822,6 @@ ion-action-sheet {
 			\item Header dan Footer\\
 			Atribut no-border dihapus, dan sebagai gantinya yaitu dengan menggunakan kelas ion-no-border.
 			
-			\newpage
 			
 			\item List Header\\
 			Konten berupa teks apa pun di dalam \texttt{<ion-list-header>} harus dibungkus dengan \texttt{<ion-label>} sesuai dengan gaya desain yang baru (Kode~\ref{lst:listHeader}). Jika label tidak ada, maka perataan tombol di header bisa saja terlihat tidak aktif. 
@@ -818,6 +833,9 @@ ion-action-sheet {
 			\end{lstlisting}
 			\item Menu\\
 			Fungsi swipeEnable() telah dihapus di Angular, sebagai gantinya menggunakan swipeGesture(). Lalu nilai {\it left} dan {\it right} telah dihapus, gunakan {\it start} dan {\it end} sebagai gantinya. Selain itu ada penghapusan atribut utama, sebagai gantinya yaitu dengan menggunakan content-id (untuk vanila JS atau Vue) dan contentId (untuk Angular atau React) (Kode~\ref{lst:menu}).
+
+\newpage			
+			
 			\begin{lstlisting}[label={lst:menu}, caption=Kode Program untuk Menu]
 <ion-menu content-id="main"></ion-menu>
 <ion-content id="main">...</ion-content>
@@ -833,8 +851,7 @@ ion-action-sheet {
 			
 			\item Toast \\
 			Properti close button seperti showCloseButton dan closeButtonText telah dihapus. Sebagai gantinya, gunakan buttons array untuk fungsi batal (Kode~\ref{lst:toast}.
-			
-			\newpage
+
 			
 			\begin{lstlisting}[label={lst:toast}, caption=Kode Program untuk Toast]
 async presentToast() {
@@ -856,6 +873,7 @@ toast.present();
 		\end{itemize}
 		Selain yang sudah disebutkan, terdapat beberapa komponen lain yang mendapat perubahan di Ionic 5, namun tidak ditulis di dalam dokumen skripsi ini. Komponen-komponen tersebut antara lain Action Sheet, Anchor, Card, FAB, Item, Menu Button, Nav Link, Radio, Segment, Segment Button, Skeleton Text, Split Pane, dan Tabs~\footnote{\textit{`Breaking Changes'} https://github.com/ionic-team/ionic-framework/blob/main/BREAKING.md, Diakses pada 20 November 2021. \label{ref:breakingChangesIonic5}}.
 
+\newpage
 		\item Warna \\
 		Terdapat perubahan terhadap warna bawaan milik ionic (Tabel~\ref{table:colors}).
 		\begin{table}[H]
@@ -901,6 +919,9 @@ npm install @ionic/angular@6
 		Penghapusan properti ariaLabel dan ariaHidden, dan diganti dengan menggunakan aria-label dan aria-hidden.
 		\item \textit{Input}, \textit{Select}, dan Textarea \\
 		Menggunakan ``undefined'' sebagai nilai untuk diteruskan ke porperti placeholder, dibandingkan dengan menggunakan ``null''.
+
+		\newpage		
+		
 		\item \textit{Modal} dan \textit{Popover} \\
 		ion-modal (Kode~\ref{lst:updateModal}) dan ion-popover (Kode~\ref{lst:updatePopover}) menggunakan Shadow DOM.
 		

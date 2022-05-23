@@ -97,6 +97,9 @@ export class AnnouncementPage implements OnInit {
 </ion-content>
 \end{lstlisting} 
 
+\section{Komponen Draw} 
+\label{sec:lampiranKomponenDraw}
+
 \begin{lstlisting}[language=JavaScript, label={lst:draw.page.ts}, caption=draw.page.ts]
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
@@ -108,12 +111,11 @@ import { Storage } from '@ionic/storage';
   styleUrls: ['./draw.page.scss'],
 })
 
-export class DrawPage implements OnInit {
+export class DrawPage {
   @ViewChild('drawIFrame') drawIFrame: ElementRef;
-  loading: any;
   constructor(private storage: Storage,public loadingController: LoadingController) { }
 
-  ngOnInit() {
+  ionViewDidLoad() {
     this.storage.get('wsdcDataStorage').then((data) => {
       this.drawIFrame.nativeElement.contentWindow.location.assign(data.draws);
     });
@@ -121,13 +123,13 @@ export class DrawPage implements OnInit {
   }
 
   async presentLoading() {
-    this.loading = await this.loadingController.create({
+    const loading = await this.loadingController.create({
       message: 'Please wait...',
       backdropDismiss: true // If true, the loading indicator will be dismissed when the backdrop is clicked.
     });
-    this.loading.present();
+    await loading.present();
     setTimeout(() => {
-      this.loading.dismiss();
+      loading.dismiss();
     }, 1000);
   }
 
@@ -144,10 +146,8 @@ export class DrawPage implements OnInit {
       }
     })
     this.drawIFrame.nativeElement.style.display = 'block';
-    console.log(this.loading);
-    
   }
-}
+}s
 \end{lstlisting} 
 
 \begin{lstlisting}[language=html, label={lst:draw.page.html}, caption=draw.page.html]
@@ -164,6 +164,11 @@ export class DrawPage implements OnInit {
   <iframe #drawIFrame (load)="onDrawIframeLoad()"></iframe>
 </ion-content>
 \end{lstlisting} 
+
+\newpage
+
+\section{Komponen Home} 
+\label{sec:lampiranKomponenHome}
 
 \begin{lstlisting}[language=JavaScript, label={lst:home.page.ts}, caption=home.page.ts]
 import { Component, OnInit } from '@angular/core';
@@ -319,6 +324,9 @@ export class HomePage implements OnInit {
 </ion-content>
 \end{lstlisting} 
 
+\section{Komponen Info} 
+\label{sec:lampiranKomponenInfo}
+
 \begin{lstlisting}[language=JavaScript, label={lst:info.page.ts}, caption=info.page.ts]
 import { Component, ViewEncapsulation  } from '@angular/core';
 import { Storage } from '@ionic/storage';
@@ -364,6 +372,9 @@ export class InfoPage{
 </ion-content>
 
 \end{lstlisting}
+
+\section{Komponen Result} 
+\label{sec:lampiranKomponenResult}
 
 \begin{lstlisting}[language=JavaScript, label={lst:result.page.ts}, caption=result.page.ts]
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
@@ -435,6 +446,9 @@ export class ResultPage implements OnInit {
 </ion-content>
 
 \end{lstlisting}
+
+\section{Komponen Schedule} 
+\label{sec:lampiranKomponenSchedule}
 
 \begin{lstlisting}[language=JavaScript, label={lst:schedule.page.ts}, caption=schedule.page.ts]
 import { Component, ElementRef} from '@angular/core';
@@ -542,6 +556,9 @@ export class SchedulePage{
 
 \end{lstlisting}
 
+\section{Komponen Venues} 
+\label{sec:lampiranKomponenVenues}
+
 \begin{lstlisting}[language=JavaScript, label={lst:venues.page.ts}, caption=venues.page.ts]
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
@@ -615,7 +632,10 @@ export class VenuesPage{
 
 \end{lstlisting}
 
-\begin{lstlisting}[language=JavaScript, label={lst:venues-map.page.ts}, caption=venues-map.page.ts, escapeinside={(*}{*)}]
+\section{Komponen Venues Map} 
+\label{sec:lampiranKomponenVenuesMap}
+
+\begin{lstlisting}[language=JavaScript, label={lst:venues-map.page.ts}, caption=venues-map.page.ts]
 import { Component, OnInit} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Storage } from '@ionic/storage';
