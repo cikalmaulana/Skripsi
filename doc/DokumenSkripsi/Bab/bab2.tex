@@ -219,7 +219,7 @@ npx cap sync
 				\end{itemize}
 
 			\item Geolocation API \\
-			Geolocation API menyediakan metode untuk mendapatkan dan melacak posisi perangkat saat ini menggunakan \textit{Global Positioning System} (GPS), dengan latitude dan longitude, juga informasi mengenai ketinggian, arah, dan kecepatan jika tersedia. Untuk menginstal Geolocation API dapat dilakukan melalui \textit{command line} dengan perintah seperti pada kode~\ref{lst:installGeolocationAPI}.
+			Geolocation API menyediakan \textit{method} untuk mendapatkan dan melacak posisi perangkat saat ini menggunakan \textit{Global Positioning System} (GPS), dengan latitude dan longitude, juga informasi mengenai ketinggian, arah, dan kecepatan jika tersedia. Untuk menginstal Geolocation API dapat dilakukan melalui \textit{command line} dengan perintah seperti pada kode~\ref{lst:installGeolocationAPI}.
 		
 \begin{lstlisting}[label={lst:installGeolocationAPI}, caption=Kode untuk Menginstal Geolocation API]
 npm install @capacitor/geolocation
@@ -244,7 +244,7 @@ const printCurrentPosition = async () => {
 };
 \end{lstlisting}
 
-		Untuk mengambil posisi dari perangkat dengan menggunakan method getCurrentPosition() seperti pada kode~\ref{lst:usingGeolocationAPI}. Selain itu terdapat beberapa method lain yang dapat diimplementasikan, diantaranya yaitu:
+		Untuk mengambil posisi dari perangkat dengan menggunakan \textit{method} getCurrentPosition() seperti pada kode~\ref{lst:usingGeolocationAPI}. Selain itu terdapat beberapa \textit{method} lain yang dapat diimplementasikan, diantaranya yaitu:
 			\begin{itemize}
 				\item watchPosition(): digunakan untuk mendaftarkan fungsi handler yang akan dipanggil secara otomatis setiap kali posisi perangkat berubah.
 				\item clearWatch(): digunakan untuk membatalkan pendaftaran fungsi handler yang sebelumnya diinstal menggunakan watchPosition().
