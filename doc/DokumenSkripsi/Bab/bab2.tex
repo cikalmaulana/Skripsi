@@ -198,7 +198,28 @@ Capacitor memiliki \textit{plugins} untuk mengakses \textit{native} API secara p
 
 \begin{enumerate}
 	\item \textit{Official Plugins} \\
-		\textit{Official Plugins} merupakan sekumpulan \textit{plugin} resmi yang dikelola oleh tim Capacitor untuk menyediakan akses ke \textit{native} API suatu perangkat. Salah satu contoh dari \textit{official plugins} adalah Geolocation API. Geolocation API menyediakan metode untuk mendapatkan dan melacak posisi perangkat saat ini menggunakan \textit{Global Positioning System} (GPS), dengan latitude dan longitude, juga informasi mengenai ketinggian, arah, dan kecepatan jika tersedia. Untuk menginstal Geolocation API dapat dilakukan melalui \textit{command line} dengan perintah seperti pada kode~\ref{lst:installGeolocationAPI}.
+		\textit{Official Plugins} merupakan sekumpulan \textit{plugin} resmi yang dikelola oleh tim Capacitor untuk menyediakan akses ke \textit{native} API suatu perangkat. Terdapat beberapa \textit{plugin} pada \textit{Official Plugins}, diantaranya adalah sebagai berikut:
+
+		\begin{enumerate}
+		
+			\item Browser API \\
+				Browser API menyediakan kemampuan untuk membuka browser dalam aplikasi. Untuk menginstal Browser API dapat dilakukan melalui \textit{command line} dengan perintah seperti pada kode~\ref{lst:installBrowsernAPI}. 
+\begin{lstlisting}[label={lst:installBrowsernAPI}, caption=Kode untuk Menginstal Browser API]
+npm install @capacitor/browser
+npx cap sync
+\end{lstlisting}
+
+				Browser API memiliki beberapa \textit{method}, yaitu:
+				\begin{itemize}
+					\item open(): \textit{method} ini digunakan untuk membuka halaman \textit{browser} dengan opsi yang sudah ditentukan.
+					\item close(): \textit{method} ini digunakan untuk menutup halaman \textit{browser} yang sedang dibuka. \textit{Method} ini hanya dapat digunakan pada web dan iOS.
+					\item addListener(‘browserFinished’, …): \textit{method} ini merupakan sebuah \textit{listener} untuk \textit{browser finished event} dan dipanggil ketika \textit{browser} ditutup oleh pengguna. \textit{Method} ini hanya dapat digunakan pada Android dan iOS.
+					\item addListener(‘browserPageLoaded’, …): \textit{method} ini merupakan sebuah \textit{listener} untuk \textit{page loaded event} dan aktif ketika URL diteruskan ke \textit{method} \textit{finished loading}. \textit{Method} ini hanya dapat digunakan pada Android dan iOS.
+					\item removeAllListeners(): \textit{method} ini digunakan untuk menghapus semua \textit{native listeners} untuk \textit{plugin} ini.
+				\end{itemize}
+
+			\item Geolocation API \\
+			Geolocation API menyediakan metode untuk mendapatkan dan melacak posisi perangkat saat ini menggunakan \textit{Global Positioning System} (GPS), dengan latitude dan longitude, juga informasi mengenai ketinggian, arah, dan kecepatan jika tersedia. Untuk menginstal Geolocation API dapat dilakukan melalui \textit{command line} dengan perintah seperti pada kode~\ref{lst:installGeolocationAPI}.
 		
 \begin{lstlisting}[label={lst:installGeolocationAPI}, caption=Kode untuk Menginstal Geolocation API]
 npm install @capacitor/geolocation
@@ -212,8 +233,6 @@ npx cap sync
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 <uses-feature android:name="android.hardware.location.gps" />
 \end{lstlisting}
-
-\newpage
 
 \begin{lstlisting}[label={lst:usingGeolocationAPI}, caption=\textit{Permissions} Geolocation API pada Android]
 import { Geolocation } from '@capacitor/geolocation';
@@ -232,11 +251,41 @@ const printCurrentPosition = async () => {
 				\item checkPermissions(): digunakan untuk mengecek izin penggunaan lokasi.
 				\item requestPermissions(): digunakan untuk meminta izin penggunaan lokasi.
 			\end{itemize}
+			\item Splash Screen API	\\
+			Splash Screen API digunakan sebagai penyedia \textit{method} untuk menampilkan atau menyembunyikan gambar \textit{splash}. Untuk menginstal Splash Screen API dapat dilakukan melalui \textit{command line} dengan perintah seperti pada kode~\ref{lst:installSplashScreenAPI}. Contoh penggunaan Splash Screen dapat dilihat pada kode~\ref{lst:codeSplashScreenAPI}
+\begin{lstlisting}[label={lst:installSplashScreenAPI}, caption=Kode untuk Menginstal Splash Screen API]
+npm install @capacitor/splash-screen
+npx cap sync
+\end{lstlisting}
+
+\begin{lstlisting}[label={lst:codeSplashScreenAPI}, caption=Contoh Kode Penggunaan Splash Screen API]
+import { SplashScreen } from '@capacitor/splash-screen';
+
+// Hide the splash (you should do this on app launch)
+await SplashScreen.hide();
+
+// Show the splash for an indefinite amount of time:
+await SplashScreen.show({
+  autoHide: false
+});
+
+// Show the splash for two seconds and then automatically hide it:
+await SplashScreen.show({
+  showDuration: 2000,
+  autoHide: true
+});
+\end{lstlisting}
+			
+			Secara \textit{default}, Splash Screen diatur secara otomatis untuk disembunyikan dalam waktu 500ms. Selain itu, pada kondisi tertentu Splash Screen tidak sepenuhnya menutupi layar, seperti pada bagian-bagian sudut-sudut layar. Splash Screen dapat mengatur warna latar belakang, dibandingkan dengan menampilkan warna transparan saat Splash Screen tidak sepenuhnya menutupi layar. Selain itu, Splash Screen juga dapat dibuat untuk menampilkan \textit{spinner} diatas Splash Screen. 
 		
-		Selain Geolocation API, terdapat beberapa \textit{Official Plugins} lain yang dimiliki Capacitor, yaitu Action Sheet, App, App Launcher, Browser, Camera, Clipboard, Device, Dialog, Filesystem, Google Maps, Haptics, Keyboard, Local Notifications, Motion, Network, Push Notifications, Screen Reader, Share, Splash Screen, Status Bar, Storage, Text Zoom, dan Toast.
+		\end{enumerate}				
+		
+		Selain itu, terdapat beberapa \textit{Official Plugins} lain yang dimiliki Capacitor, yaitu Action Sheet, App, App Launcher, Camera, Clipboard, Device, Dialog, Filesystem, Google Maps, Haptics, Keyboard, Local Notifications, Motion, Network, Push Notifications, Screen Reader, Share, Status Bar, Storage, Text Zoom, dan Toast.
 		
 	\item \textit{Community Plugins} \\
 		\textit{Community Plugins} merupakan sekumpulan \textit{plugin} yang diciptakan oleh komunitas untuk menambahkan fungsionalitas ke dalam aplikasi. Perbedaan dengan \textit{Official Plugins} adalah dimana tim Capacitor tidak secara resmi melakukan pemeliharaan terhadap \textit{Community Plugins}. Salah satu \textit{plugin} yang diciptakan oleh komunitas adalah \textit{plugin }Google Maps yang menggunakan \textit{native} Google Maps SDK. Untuk menginstal \textit{plugin} Google Maps dapat dilakukan melalui \textit{command line} dengan perintah seperti pada kode~\ref{lst:installGmapsPlugin}.
+
+\newpage		
 		
 \begin{lstlisting}[label={lst:installGmapsPlugin}, caption=Kode untuk Menginstal \textit{Plugin} Google Maps]
 npm i --save @capacitor-community/google-maps
@@ -244,8 +293,7 @@ npx cap sync
 \end{lstlisting}
 
 	Maps SDK merender \textit{native element} (MapView) di belakang aplikasi web (WebView). Maka dari itu, dibutuhkan \textit{boundaries} yang dirender. Maka dari itu Maps SDK menggunakan \textit{native element} dibandingkan HTMLElement. Sebelum dapat menggunakan \textit{plugin} ini, harus dilakukan impor terlebih dahulu. Setelah mengimpor \textit{plugin}, sebuah instance Maps sederhana dapat diinisialisasi (Kode~\ref{lst:codeGmapsPlugin}).
-	
-\newpage	
+
 	
 \begin{lstlisting}[label={lst:codeGmapsPlugin}, caption=Contoh Kode Penggunaan \textit{Plugin} Google Maps]
 const initializeMap = async () => {
@@ -316,8 +364,6 @@ Dengan Angular, {\it framework} Ionic dapat menggunakan kemampuan Angular dalam 
 \begin{itemize}
 	\item Action Sheet \\
 	Merupakan dialog yang menampilkan serangkaian opsi, yang muncul di atas konten aplikasi dan harus ditutup secara manual oleh pengguna sebelum pengguna dapat melanjutkan interaksi dengan aplikasi. Untuk menutup Action Sheet terdapat beberapa cara, termasuk mengetuk latar belakang atau menekan tombol escape di desktop.
-	
-	\newpage
 
 	\item Alert \\
 	Alert merupakan dialog yang menampilkan informasi kepada pengguna, atau mengumpulkan informasi dari pengguna menggunakan input. Alert muncul di atas konten aplikasi, dan harus ditutup secara manual oleh pengguna sebelum pengguna dapat melanjutkan interaksi dengan aplikasi. Secara opsional, terdapat header, sub header, dan pesan yang ada pada Alert.
@@ -334,6 +380,9 @@ Dengan Angular, {\it framework} Ionic dapat menggunakan kemampuan Angular dalam 
 	
 	\item Card \\
 	Merupakan bagian standar dari tampilan antarmuka yang berfungsi sebagai titik masuk ke dalam informasi yang lebih detail. Card dapat menjadi satu komponen, tetapi sering kali terdiri dari beberapa header, judul, sub judul, dan konten. Penggunaan Card dengan menggunakan {\it tag} \texttt{<ion-card>} yang dapat berisi {\it header}, {\it subtitle}, {\it title}, dan {\it content} (Kode~\ref{lst:cardComponent}).
+
+\newpage	
+	
 	\begin{lstlisting}[label={lst:cardComponent}, caption=Potongan Kode Program dari Card Component]
 <ion-card>
 	<ion-card-header>
@@ -346,8 +395,6 @@ Dengan Angular, {\it framework} Ionic dapat menggunakan kemampuan Angular dalam 
 	</ion-card-content>
 </ion-card>
 	\end{lstlisting} 
-	
-	\newpage 
 	
 	\item Content\\
 	Komponen content merupakan penyedia area konten yang bisa digunakan untuk mengontrol area yang dapat digulir. Dalam satu tampilan, setidaknya terdapat satu buah content. Content juga dapat dimodifikasi padding, margin, dan lainnya menggunakan {\it global style} yang berada di CSS Utilites atau mengubahnya secara individual dengan menggunakan CSS. Penggunaan Content dengan menggunakan {\it tag} \texttt{<ion-content>} (Kode~\ref{lst:contentComponent}).
@@ -370,6 +417,8 @@ Dengan Angular, {\it framework} Ionic dapat menggunakan kemampuan Angular dalam 
 		\begin{lstlisting}[label={lst:datetimeComponent}, caption=Kode Program dari Datetime Component dengan Format Bulan-Hari-Tahun]
 <ion-datetime displayFormat="MM DD YY" placeholder="Select Date"></ion-datetime>
 		\end{lstlisting} 
+
+\newpage
 
 	\item Grid \\
 	Grid digunakan untuk membuat tata letak kustom pada tampilan. Grid terdiri dari tiga bagian, yaitu \textit{grid}, baris, dan kolom. Masing-masing kolom dapat diubah ukurannya menggunakan CSS. Grid digunakan dengan \textit{tag} \texttt{<ion-grid>} (Kode~\ref{lst:GridComponent}).		
@@ -403,6 +452,9 @@ Dengan Angular, {\it framework} Ionic dapat menggunakan kemampuan Angular dalam 
 	\end{lstlisting} 
 	\item Item \\
 	Item merupakan elemen yang dapat berisi teks, ikon, avatar, gambar, masukan, dan elemen asli atau kustom lainnya. Biasanya, item ditempatkan di dalam sebuah {\it list} bersamaan dengan item lainnya dengan {\it tag} \texttt{<ion-item>} (Kode~\ref{lst:itemComponent}). Dapat dilakukan {\it swipe}, dihapus, disusun ulang, dan diedit.
+	
+	\newpage
+	
 	\begin{lstlisting}[label={lst:itemComponent}, caption=Potongan Kode Program dari Item Component]
 <ion-item>
 	<ion-label>
@@ -413,8 +465,6 @@ Dengan Angular, {\it framework} Ionic dapat menggunakan kemampuan Angular dalam 
 	
 	\item List \\
 	Komponen List terdiri dari beberapa baris \textit{item} yang dapat berisi teks, tombol, \textit{toggles}, ikon, thumbnails, dan komponen-komponen lainnya menggunakan \textit{tag} \texttt{<ion-list>} (Kode~\ref{lst:listComponent}). List mendukung untuk pengguna melakukan \textit{swiping}, \textit{dragging}, dan penghapusan \textit{item}. 
-	
-	\newpage
 	
 \begin{lstlisting}[label={lst:listComponent}, caption=Potongan Kode Program dari List Component]
 <ion-list>
@@ -494,8 +544,6 @@ Dengan Angular, {\it framework} Ionic dapat menggunakan kemampuan Angular dalam 
 </ion-segment>
 	\end{lstlisting}
 	
-	\newpage
-	
 	\item Slides \\
 	Komponen Slides merupakan sebuah \textit{multi-section container} yang setiap bagiannya dapat dilakukan \textit{swipe} atau \textit{drag}. Untuk menggunakan komponen ini dengan menggunakan \textit{tag} \texttt{<ion-slides>} (Kode~\ref{lst:slidesComponent}).
 	
@@ -535,8 +583,6 @@ Dengan Angular, {\it framework} Ionic dapat menggunakan kemampuan Angular dalam 
 	\item Toast \\
 	Komponen Toast merupakan sebuah notifikasi yang digunakan di aplikasi modern untuk memberikan umpan balik atau menampilkan pesan sistem. Komponen ini muncul diatas konten aplikasi, dan dapat ditutup untuk melanjutkan penggunaan aplikasi. Komponen ini menggunakan ToastController yang dimiliki oleh \textit{library} Ionic Angular (Kode~\ref{lst:toastComponent}) 
 	
-\newpage	
-	
 	\begin{lstlisting}[label={lst:toastComponent}, caption=Kode Program dari Toast]
 async presentToast() {
     const toast = await this.toastController.create({
@@ -574,6 +620,7 @@ Untuk melakukan migrasi dari Ionic 3 ke Ionic 6 memerlukan tiga tahap, yaitu mig
 
 %---START ENUM SECTION MIGRASI IONIC 3 KE IONIC 5---%
 \begin{enumerate}
+\newpage
 	\item Migrasi Ionic 3 ke Ionic 4 \\
 	Ada beberapa langkah untuk melakukan migrasi dari Ionic 3 ke dalam Ionic 4, yaitu:
 	
@@ -616,8 +663,6 @@ ionic start myApp blank
 
 				\item Floating Action Button (FAB) \\
 				Terdapat perbedaan pada {\it tag} di dalam \texttt{<ion-fab>}, yang semula pada Ionic 3 adalah \texttt{<button>} menjadi \texttt{<ion-fab-button>} pada Ionic 4 (Kode~\ref{lst:fabIonic4}).
-				
-				\newpage
 
 \begin{lstlisting}[label={lst:fabIonic4}, caption=Penggunaan Floating Action Button pada Ionic 4]
 <ion-fab>
@@ -653,22 +698,20 @@ ionic start myApp blank
 				\end{lstlisting}
 
 				\item Menu \\
-				Terdapat beberapa perubahan nama pada Ionic 4, yaitu :
+				Terdapat beberapa perubahan nama pada Ionic 4, yaitu:
 				\begin{itemize}
 					\item Perubahan Nama Properti
-					Terdapat perubahan nama properti pada Ionic 4. Perubahan-perubahan tersebut adalah sebagai berikut : 
+					Terdapat perubahan nama properti pada Ionic 4. Perubahan-perubahan tersebut adalah sebagai berikut: 
 						\begin{itemize}
 							\item swipeEnable \\
-							Terdapat perubahan swipeEnable pada Ionic 4. Perubahan tersebut adalah sebagai berikut : \\
-							Pada Ionic 3 : swipeEnabled \\
-							Sedangkan pada Ionic 4 menjadi : swipeGesture
-							
-							\newpage							
-							
+							Terdapat perubahan swipeEnable pada Ionic 4. Perubahan tersebut adalah sebagai berikut: \\
+							Pada Ionic 3: swipeEnabled \\
+							Sedangkan pada Ionic 4 menjadi: swipeGesture						
+							\newpage
 							\item content \\
-							Terdapat perubahan content pada Ionic 4. Perubahan tersebut adalah sebagai berikut : \\
-							Pada Ionic 3 : content \\
-							Sedangkan pada Ionic 4 menjadi : contentId
+							Terdapat perubahan content pada Ionic 4. Perubahan tersebut adalah sebagai berikut: \\
+							Pada Ionic 3: content \\
+							Sedangkan pada Ionic 4 menjadi: contentId
 						\end{itemize}	
 					
 
@@ -676,45 +719,45 @@ ionic start myApp blank
 					Terdapat perubahan nama {\it events} pada Ionic 4. Perubahan-perubahan tersebut adalah sebagai berikut :
 						\begin{itemize}
 							\item ionClose \\
-							Terdapat perubahan ionClose pada Ionic 4. Perubahan tersebut adalah sebagai berikut : \\
-							Pada Ionic 3 : ionClose \\
-							Sedangkan pada Ionic 4 menjadi : ionDidClose
+							Terdapat perubahan ionClose pada Ionic 4. Perubahan tersebut adalah sebagai berikut: \\
+							Pada Ionic 3: ionClose \\
+							Sedangkan pada Ionic 4 menjadi: ionDidClose
 
 							\item ionOpen \\
-							Terdapat perubahan ionOpen pada Ionic 4. Perubahan tersebut adalah sebagai berikut : \\
-							Pada Ionic 3 : ionOpen \\
-							Sedangkan pada Ionic 4 menjadi : ionDidOpen
+							Terdapat perubahan ionOpen pada Ionic 4. Perubahan tersebut adalah sebagai berikut: \\
+							Pada Ionic 3: ionOpen \\
+							Sedangkan pada Ionic 4 menjadi: ionDidOpen
 						\end{itemize}	
 				\end{itemize}
 
 				\item Nav \\
-				Terdapat perubahan Nav pada Ionic 4. Perubahan-perubahan tersebut adalah sebagai berikut :
+				Terdapat perubahan Nav pada Ionic 4. Perubahan-perubahan tersebut adalah sebagai berikut:
 				\begin{itemize}
 					\item Perubahan Nama Method 
-					Terdapat perubahan nama {\it method} pada Ionic 4. Perubahan-perubahan tersebut adalah sebagai berikut :
+					Terdapat perubahan nama {\it method} pada Ionic 4. Perubahan-perubahan tersebut adalah sebagai berikut:
 					\begin{itemize}				
 					
 						\item remove \\
-						Terdapat perubahan remove pada Ionic 4. Perubahan tersebut adalah sebagai berikut :\\
-						Pada Ionic 3 : remove \\
-						Sedangkan pada Ionic 4 untuk menghindari konflik dengan HTML, berubah menjadi : removeIndex 
+						Terdapat perubahan remove pada Ionic 4. Perubahan tersebut adalah sebagai berikut:\\
+						Pada Ionic 3: remove \\
+						Sedangkan pada Ionic 4 untuk menghindari konflik dengan HTML, berubah menjadi: removeIndex 
 
 						\item getActiveChildNavs \\
-						Terdapat perubahan getActiveChildNavs pada Ionic 4. Perubahan tersebut adalah sebagai berikut :\\
-						Pada Ionic 3 : getActiveChildNavs \\
-						Sedangkan pada Ionic 4 menjadi : getChildNavs
+						Terdapat perubahan getActiveChildNavs pada Ionic 4. Perubahan tersebut adalah sebagai berikut:\\
+						Pada Ionic 3: getActiveChildNavs \\
+						Sedangkan pada Ionic 4 menjadi: getChildNavs
 					\end{itemize}
 
 					\item Perubahan Nama Prop \\
-					Terdapat perubahan nama prop pada Ionic 4. Perubahan tersebut adalah sebagai berikut :\\
-					Pada Ionic 3 : swipeBackEnabled   \\
-					Sedangkan pada Ionic 4 menjadi : swipeGesture
+					Terdapat perubahan nama prop pada Ionic 4. Perubahan tersebut adalah sebagai berikut:\\
+					Pada Ionic 3: swipeBackEnabled   \\
+					Sedangkan pada Ionic 4 menjadi: swipeGesture
 				\end{itemize}	
 
-				\item Navbar \\
-				Pada Ionic 4, terdapat penghapusan terhadap komponen \texttt{<ion-navbar>} karena untuk menjaga agar selalu menggunakan \texttt{<ion-toolbar>} dengan {\it back button} yang eksplisit (Kode~\ref{lst:navbarIonic4}).
+\newpage
 
-\newpage				
+				\item Navbar \\
+				Pada Ionic 4, terdapat penghapusan terhadap komponen \texttt{<ion-navbar>} karena untuk menjaga agar selalu menggunakan \texttt{<ion-toolbar>} dengan {\it back button} yang eksplisit (Kode~\ref{lst:navbarIonic4}).				
 				
 				\begin{lstlisting}[label={lst:navbarIonic4}, caption=Penggunaan Navbar pada Ionic 4 dengan {\it Back Button}]
 <ion-toolbar>
@@ -750,6 +793,7 @@ async presentToast() {
 				\end{lstlisting}
 				
 			\end{itemize}
+			\newpage
 			Selain yang telah disebutkan, terdapat beberapa perubahan lainnya yang tidak ditulis seperti Action Sheet, Alert, Colors, Content, Datetime, Dynamic Mode, Fixed Content, Grid, Icon, Infinite Scroll, Item Divider, Item Options, Item Sliding, List Header, Loading, Modal, Option, Popover, Radio, Range, Refresher, Select, Show When, Hide When, Spinner, Tabs, Typography, Therming, dan Toolbar~\footnote{\textit{`Breaking Changes'} https://github.com/ionic-team/ionic-framework/blob/main/angular/BREAKING.md, Diakses pada 13 November 2021. \label{ref:breakingChanges}}.
 		\end{itemize}
 		%---END ITEMIZE MENYALIN BAGIAN BAGIAN APLIKASi---%
@@ -757,7 +801,6 @@ async presentToast() {
 
 	\end{enumerate}
 	%---END ENUM MIGRASI IONIC 3 KE IONIC 4---%
-\newpage
 	\item Migrasi Ionic 4 ke Ionic 5 \\
 	Migrasi aplikasi dari Ionic 4 ke Ionic 5 memerlukan beberapa pembaruan mengenai properti API, CSS, dan {\it package dependencies} yang terpasang. Perubahan-perubahan tersebut yaitu :
 
@@ -790,11 +833,9 @@ ion-action-sheet {
 	--background-hover: #222;
 }
 		\end{lstlisting} 
-		
+		\newpage
 			\item CSS {\it Utilities} \\
-			Karena pada versi sebelumnya, yaitu Ionic versi 4, terdapat masalah dengan menggunakan atribut CSS dengan {\it framework} yang menggunakan JSX dan TypeScript, Ionic {\it Framework} menambahkan dukungan untuk beberapa {\it framework}, dan pada Ionic 5 menambahkan kelas CSS. Ionic versi 5 menghapus atribut CSS dan mendukung konsistensi. Selain itu, Ionic versi 5 juga mengubah ke kelas dengan diawali ion untuk menghindari konflik dengan atribut asli dan CSS dari pengguna (Kode~\ref{lst:CSSUtilities}).
-
-		\newpage			
+			Karena pada versi sebelumnya, yaitu Ionic versi 4, terdapat masalah dengan menggunakan atribut CSS dengan {\it framework} yang menggunakan JSX dan TypeScript, Ionic {\it Framework} menambahkan dukungan untuk beberapa {\it framework}, dan pada Ionic 5 menambahkan kelas CSS. Ionic versi 5 menghapus atribut CSS dan mendukung konsistensi. Selain itu, Ionic versi 5 juga mengubah ke kelas dengan diawali ion untuk menghindari konflik dengan atribut asli dan CSS dari pengguna (Kode~\ref{lst:CSSUtilities}).		
 			
 		\begin{lstlisting}[label={lst:CSSUtilities}, caption=Contoh Kode Kelas CSS {\it Utility} pada Ionic 5]
 <ion-header class="ion-text-center"></ion-header>
@@ -832,9 +873,7 @@ ion-action-sheet {
 </ion-list-header>
 			\end{lstlisting}
 			\item Menu\\
-			Fungsi swipeEnable() telah dihapus di Angular, sebagai gantinya menggunakan swipeGesture(). Lalu nilai {\it left} dan {\it right} telah dihapus, gunakan {\it start} dan {\it end} sebagai gantinya. Selain itu ada penghapusan atribut utama, sebagai gantinya yaitu dengan menggunakan content-id (untuk vanila JS atau Vue) dan contentId (untuk Angular atau React) (Kode~\ref{lst:menu}).
-
-\newpage			
+			Fungsi swipeEnable() telah dihapus di Angular, sebagai gantinya menggunakan swipeGesture(). Lalu nilai {\it left} dan {\it right} telah dihapus, gunakan {\it start} dan {\it end} sebagai gantinya. Selain itu ada penghapusan atribut utama, sebagai gantinya yaitu dengan menggunakan content-id (untuk vanila JS atau Vue) dan contentId (untuk Angular atau React) (Kode~\ref{lst:menu}).			
 			
 			\begin{lstlisting}[label={lst:menu}, caption=Kode Program untuk Menu]
 <ion-menu content-id="main"></ion-menu>
@@ -871,9 +910,8 @@ toast.present();
 }
 			\end{lstlisting}
 		\end{itemize}
+		\newpage
 		Selain yang sudah disebutkan, terdapat beberapa komponen lain yang mendapat perubahan di Ionic 5, namun tidak ditulis di dalam dokumen skripsi ini. Komponen-komponen tersebut antara lain Action Sheet, Anchor, Card, FAB, Item, Menu Button, Nav Link, Radio, Segment, Segment Button, Skeleton Text, Split Pane, dan Tabs~\footnote{\textit{`Breaking Changes'} https://github.com/ionic-team/ionic-framework/blob/main/BREAKING.md, Diakses pada 20 November 2021. \label{ref:breakingChangesIonic5}}.
-
-\newpage
 		\item Warna \\
 		Terdapat perubahan terhadap warna bawaan milik ionic (Tabel~\ref{table:colors}).
 		\begin{table}[H]
@@ -918,9 +956,7 @@ npm install @ionic/angular@6
 		\item \textit{Icon} \\
 		Penghapusan properti ariaLabel dan ariaHidden, dan diganti dengan menggunakan aria-label dan aria-hidden.
 		\item \textit{Input}, \textit{Select}, dan Textarea \\
-		Menggunakan ``undefined'' sebagai nilai untuk diteruskan ke porperti placeholder, dibandingkan dengan menggunakan ``null''.
-
-		\newpage		
+		Menggunakan ``undefined'' sebagai nilai untuk diteruskan ke porperti placeholder, dibandingkan dengan menggunakan ``null''.	
 		
 		\item \textit{Modal} dan \textit{Popover} \\
 		ion-modal (Kode~\ref{lst:updateModal}) dan ion-popover (Kode~\ref{lst:updatePopover}) menggunakan Shadow DOM.
