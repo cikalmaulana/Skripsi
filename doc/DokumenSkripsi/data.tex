@@ -86,7 +86,7 @@
 %\mode{sidangakhir} 	% untuk sidang 2 / sidang pada Skripsi 2(IF)
 %\mode{final} 			% untuk mencetak buku skripsi 
 %=============================================================================
-\mode{sidang}
+\mode{sidangakhir}
 
 %_____________________________________________________________________________
 %=============================================================================
@@ -210,7 +210,7 @@
 %=============================================================================
 \namanpm{Rajasa Cikal Maulana Solihin}{2017730084}
 \tanggal{<<tanggal>>}{<<bulan>>}{2021}         %isi bulan dengan angka
-\pembimbing{<<pembimbing utama/1>>}{<<pembimbing pendamping/2>>}    
+\pembimbing{\pembimbing{\PAN}}{<<pembimbing pendamping/2>>}    
 \penguji{<<penguji 1>>}{<<penguji 2>>} 
 %=============================================================================
 
@@ -228,7 +228,7 @@
 % - judul TIDAK ditulis dengan menggunakan huruf besar seluruhnya !!
 %=============================================================================
 \judulINA{Pembuatan Ulang Aplikasi WSDC 2017 Bali Dengan Ionic 5}
-\judulENG{<<Judul Bahasa Inggris>>}
+\judulENG{Re-creation of WSDC 2017 Bali App with Ionic 5}
 %_____________________________________________________________________________
 %=============================================================================
 % 								BAGIAN X
@@ -240,8 +240,17 @@
 % - hilangkan tanda << & >>, dan isi sesuai dengan data anda
 % - langsung mulai setelah '{' awal, jangan mulai menulis di baris bawahnya
 %=============================================================================
-\abstrakINA{<<Tuliskan abstrak anda di sini, dalam bahasa Indonesia>>}
-\abstrakENG{<<Tuliskan abstrak anda di sini, dalam bahasa Inggris>>} 
+\abstrakINA{\textit{World Schools Debating Championships} (WSDC) merupakan sebuah turnamen debat Bahasa Inggris tahunan untuk tim-tim tingkat sekolah menengah yang mewakili berbagai negara. Pada tahun 2017, WSDC diselenggarakan di Bali, Indonesia. Untuk menunjang acara tersebut, diciptakan sebuah aplikasi WSDC 2017 Bali yang memiliki beberapa fitur seperti melihat jadwal acara, melihat pengumuman acara, melihat lokasi dan peta lokasi acara, dan fitur notifikasi. Aplikasi tersebut dibangun menggunakan Ionic Framework versi 3 dengan Cordova dan diimplementasikan menggunakan kerangka JavaScript Angular. Pada saat skripsi ini dibuat, Ionic Framework versi 3 sudah tidak lagi dikembangkan, dan Ionic Framework sudah mencapai versi 6. Maka dari itu, dibuatlah aplikasi pembaruan aplikasi WSDC 2017 Bali menggunakan Ionic Framework versi 6.
+
+Aplikasi WSDC 2017 Bali dengan Ionic Framework 6 diimplementasikan dengan menggunakan kerangka JavaScript Angular. Lalu untuk menggunakan fitur \textit{native} dari perangkat menggunakan Capacitor. Capacitor memiliki \textit{plugins} untuk mengakses \textit{native} API secara penuh. Beberapa \textit{plugins} yang digunakan pada aplikasi ini yaitu: Geolocation API, Google Maps API, Splash Screen, dan Browser API. Dengan Capacitor pula maka aplikasi WSDC 2017 Bali yang semula ditulis menggunakan bahasa pemrograman web, dapat diimplementasikan untuk berjalan di dalam sistem operasi Android dan iOS. Namun pada skripsi ini hanya akan diuji pada perangkat Android.
+
+Pengujian aplikasi WSDC 2017 Bali dilakukan terhadap beberapa responden dengan cara mengunduh, menginstal, dan membandingkan aplikasi WSDC 2017 Bali terdahulu dan terbaru. Dari pengujian tersebut didapatkan hasil yaitu aplikasi dapat berjalan dengan baik pada perangkat Android mulai dari versi 5.1 sampai dengan versi 11, berikut dengan fitur-fitur yang tersedia. Dengan begitu, aplikasi WSDC 2017 Bali dengan Ionic Framework versi 6 telah berhasil dibangun.}
+
+\abstrakENG{The World Schools Debating Championships (WSDC) is an annual English language debate tournament for high school-level teams representing various countries. In 2017, WSDC was held in Bali, Indonesia. To support the event, a WSDC 2017 Bali application was created which has several features such as viewing the event schedule, displaying announcements, viewing the location and map of the event location, and notification features. The application was built using the Ionic Framework version 3 with Cordova and implemented using the Angular JavaScript framework. At the time this thesis was written, the Ionic Framework version 3 was no longer developed, and the Ionic Framework had reached version 6. Therefore, an update for the WSDC 2017 Bali application will be made using the Ionic Framework version 6.
+
+The WSDC 2017 Bali application with Ionic Framework 6 is implemented using the Angular JavaScript framework. Then to use the native features of devices that use Capacitor. Capacitor has a plugin to access the full native API. Some of the plugins used in this application are: Geolocation API, Google Maps API, Splash Screen, and Browser API. With the Capacitor, the WSDC 2017 Bali application, which was originally created using a web programming language, can be implemented to run on Android and iOS operating systems. However, in this thesis, it will only be tested on Android devices.
+
+Testing of the WSDC 2017 Bali application was carried out on several respondents by downloading, installing, and comparing the previous and latest WSDC 2017 Bali applications. From these tests, the results are that the application can run well on Android devices starting from version 5.1 to version 11, along with the existing features. That way, the recreation of the WSDC 2017 Bali application with the Ionic Framework version 6 has been successfully built.} 
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -253,8 +262,8 @@
 % - kunciENG: keywords in english
 % Petunjuk: hilangkan tanda << & >>, dan isi sesuai dengan data anda.
 %=============================================================================
-\kunciINA{<<Tuliskan di sini kata-kata kunci yang anda gunakan, dalam bahasa Indonesia>>}
-\kunciENG{<<Tuliskan di sini kata-kata kunci yang anda gunakan, dalam bahasa Inggris>>}
+\kunciINA{WSDC. Ionic Framework, Capacitor, Cordova, Angular}
+\kunciENG{WSDC. Ionic Framework, Capacitor, Cordova, Angular}
 %=============================================================================
 
 %_____________________________________________________________________________

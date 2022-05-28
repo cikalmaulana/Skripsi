@@ -16,6 +16,7 @@ Pada aplikasi WSDC 2017 Bali yang akan dibangun menggunakan struktur kelas yang 
     \label{fig:umldiagramkeseluruhan}
 \end{figure}
 
+\newpage
 
 Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 
@@ -33,9 +34,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 			\item \textbf{storage}: Parameter ini digunakan untuk menyimpan API Storage.
 			\item \textbf{toastController}: Parameter ini digunakan untuk menyimpan API ToastController.
 		\end{itemize}
-		\textbf{Kembalian}; tidak ada.
-
-\newpage		
+		\textbf{Kembalian}; tidak ada.	
 		
 		\item \textbf{ngOnInit(): void}\\
 		\textit{Method} ini berfungsi untuk mengambil data \textit{announcements} yang terdapat di dalam \textit{storage}, kemudian menyimpannya ke dalam atribut kelas, yaitu announcements. \\
@@ -51,7 +50,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 		\textit{Method} ini berfungsi untuk menampilkan \textit{toast} yang akan menamipilkan sebuah tulisan ``Failed to refresh information'' selama tiga detik. \textit{Method} ini hanya akan digunakan ketika \textit{method} doRefresh tidak berhasil mengambil data terbaru dari server.\\
 		\textbf{Parameter}: tidak ada.\\
 		\textbf{Kembalian}: tidak ada.
-		
+		\newpage
 		\item \textbf{formatDatetime(sqlDatetime: string)} \\
 		\textit{Method} ini berfungsi untuk mengambil jam, menit, hari, dan bulan dari parameter. \\
 		\textbf{Parameter}: sqlDatetime: detail waktu dan tanggal pada sebuah pengumuman. \\
@@ -123,6 +122,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 			
 		\item \textbf{async showToast(message: string, duration: number=3000)}\\
 			\textit{Method} ini berfungsi untuk menampilkan \textit{toast} yang akan menampilkan pesan dan durasi sesuai dengan yang ada pada parameter.\\
+			\newpage
 			\textbf{Parameter}:
 			\begin{itemize}
 				\item \textbf{message}: pesan yang akan ditampilkan di dalam \textit{toast}.
@@ -146,7 +146,6 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 			\textbf{Kembalian}: tidak ada.
 	\end{itemize}
 	
-	\newpage	
 	
 	\item Komponen Info \\
 		Di dalam komponen info terdapat sebuah kelas InfoPage. Kelas ini berfungsi untuk mengambil data info dari \textit{stroage} dan menyimpannya ke atriubt kelas yang kemudian data tersebut akan ditampilkan ke halaman info. Kelas ini memiliki sebuah atribut, yaitu wsdcInfoData yang bertipe any. Atribut ini digunakan untuk menyimpan data untuk halaman info. Kelas ini hanya memiliki sebuah \textit{method} yaitu \textit{method} constructor. \textit{Method} ini memiliki sebuah parameter, yaitu storage yang bertipe Storage. Constructor pada kelas ini bertujuan untuk mengambil data info dari \textit{storage} dan menyimpannya ke dalam atribut kelas, yaitu wsdcInfoData. 
@@ -165,7 +164,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 					\item \textbf{loadingController}: Parameter ini digunakan untuk menyimpan API LoadingController.
 				\end{itemize}
 				\textbf{Kembalian}: tidak ada.
-			
+			\newpage
 			\item \textbf{ngOnInit()}\\ 
 				\textit{Method} ini dipanggil ketika setelah semua properti telah diinisialisasi. \textit{Method} ini berfungsi untuk mengambil data \textit{result} yang terdapat di dalam \textit{storage}. Data tersebut lalu disimpan ke dalam \textit{child} resultIFrame. Setelah itu \textit{method} ini akan memanggil \textit{method} presentLoading(). \\
 				\textbf{Parameter}: tidak ada. \\
@@ -182,7 +181,6 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 				\textbf{Kembalian}: tidak ada.
 		\end{itemize}
 
-\newpage
 
 		\item Komponen \textit{Schedule}\\
 			Di dalam komponen \textit{schedule} terdapat sebuah kelas SchedulePage. Kelas ini berfungsi untuk mengatur jadwal pada halaman \textit{schedule}, seperti mengatur perpindahan \textit{slides} dan \textit{segment} pada jadwal. 
@@ -202,7 +200,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 					\textit{Method} constructor berfungsi untuk memberikan nilai awal pada saat kelas dibuat. \\
 					\textbf{Parameter}: storage: Parameter ini digunakan untuk menyimpan API Storage.\\
 					\textbf{Kembalian}: tidak ada.
-					
+					\newpage
 				\item \textbf{getDayName(sqlDate: string)}\\
 					\textit{Method} ini berfungsi untuk mengambil hari dari parameter. \\
 					\textbf{Parameter}: sqlDate: Sebuah \textit{string} yang berisi tahun, bulan, dan tanggal.\\
@@ -217,8 +215,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 					\textit{Method} ini dipanggil saat \textit{slides} dipindahkan dengan cara digeser ke kanan atau ke kiri. \textit{Method} ini akan mengubah atribut currentIndex menjadi index \textit{slides} saat ini, kemudian mengubah atribud selectedSegmentIdx menjadi index \textit{slides} saat ini. Hal ini bertujuan agar indeks dari \textit{segment} yang aktif dapat diganti sesuai dengan indeks \textit{slides} yang aktif. Dengan begitu tampilan \textit{segment} dan \textit{slides} yang aktif akan sesuai. \\
 					\textbf{Parameter}: tidak ada. \\
 					\textbf{Kembalian}: tidak ada.
-					
-				\newpage					
+									
 					
 				\item \textbf{onSegmentChanged(segmentButton)}\\
 					\textit{Method} ini berfungsi untuk mengubah \textit{slides} yang aktif sesuai dengan indeks dari \textit{segment} yang sedang aktif. \\
@@ -292,7 +289,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 						\textit{Method} ini digunakan untuk mengarahkan kamera map ke arah lokasi \textit{venues} yang dituju sesuai dengan koordinat pada parameter. \\
 						\textbf{Parameter}: venuesCoordinates: Parameter ini berisi koordinat latitude dan longitude dari lokasi \textit{venues} yang dituju. \\
 						\textbf{Kembalian}: tidak ada.
-						\newpage
+						
 					\item \textbf{computeDistance(lat1, lat2, lon1, lon2)} \\
 						\textit{Method} ini berfungsi untuk menghitung jarak dari posisi perangkat pengguna ke posisi \textit{venues} menggunakan latitude dan longitude dari kedua posisi tersebut.\\
 						\textbf{Parameter}: 
@@ -344,7 +341,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 					
 				\item Halaman \textit{Venues} \\
 					\textit{Content} pada halaman \textit{venues} berisi \textit{grid} dengan \textit{tag} \texttt{<ion-grid>} dengan satu baris menggunakan \textit{tag} \texttt{<ion-row>}. Di dalamnya terdapat sebuah \textit{list} dengan \textit{tag} \texttt{<ion-list>}. \textit{List} tersebut berisi tombol dengan \textit{tag} \texttt{<ion-button>} yang ditandai dengan kotak berwarna hijau pada gambar~\ref{fig:VenuePageWireframe}. Masing-masing tombol digunakan untuk melakukan navigasi ke halaman \textit{venues map}. Setiap tombol berisi ikon dengan \textit{tag} \texttt{<ion-icon>} yang ditandai dengan kotak berwarna biru muda pada gambar~\ref{fig:VenuePageWireframe} dan sebuah \textit{tag} \texttt{<span>} yang berisi nama dari \textit{venues}, ditandai dengan kotak berwarna hitam.
-					
+					\newpage
 				\item Halaman \textit{Venues Map} \\
 					\textit{Content} pada halaman \textit{venues map} berisi \textit{tag} \texttt{<div>} yang digunakan untuk menampung peta dari sebuah kategori \textit{venues} seperti yang ditandai dengan kotak berwarna hijau pada gambar~\ref{fig:VenueMapPageWireframe}. Lalu selain itu terdapat sebuah label dengan \textit{tag} \texttt{<ion-label>} yang berisi nama kategori \textit{venues} yang ditandai dengan kotak berwarna kuning. Kemudian untuk menampilkan nama dan deskripsi sebuah \textit{venues}, serta jarak antara pengguna dengan \textit{venues}, menggunakan \textit{list} dengan \textit{tag} \texttt{<ion-list>} yang ditandai dengan kotak berwarna biru muda. 
 				
