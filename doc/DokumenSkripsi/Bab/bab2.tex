@@ -3,12 +3,12 @@
 \chapter{Landasan Teori}
 \label{chap:teori}
 
-Pada bab ini akan menjelaskan dasar-dasar teori mengenai Ionic, berikut dengan cara untuk melakukan migrasi dari Ionic 3 ke Ionic 5. Akan dibahas pula aplikasi WSDC 2017 Bali saat ini, Angular, Native API berupa Capacitor dan Cordova, dan UI Components.
+Pada bab ini akan menjelaskan dasar-dasar teori mengenai Ionic, berikut dengan cara untuk melakukan migrasi dari Ionic 3 ke Ionic 6. Akan dibahas pula aplikasi WSDC 2017 Bali saat ini, Angular, Native API berupa Capacitor dan Cordova, dan UI Components.
 
 \section{WSDC 2017 Bali}
 \label{sec:wsdc2017bali}
 
-Aplikasi WSDC 2017 Bali digunakan untuk menunjang keberlangsungan acara WSDC 2017 yang diselenggarakan di Bali, Indonesia. Aplikasi WSDC 2017 Bali dapat diunduh untuk sistem operasi {\it android} melalui URL \url{https://play.google.com/store/apps/details?id=org.wsdc2017indonesia.app}. Aplikasi ini dibangun dan dikembangkan oleh PT DNArtworks Komunikasi Visual yang rilis di Play Store pada tanggal 30 Juli 2017, dengan versi terakhir adalah versi 1.1.2 yang rilis pada 1 Agustus 2017. Selain rilis pada perangkat {\it android}, aplikasi ini juga rilis untuk perangkat bergerak berbasis sistem operasi iOS. Namun saat ini aplikasi tersebut sudah diturunkan dari App Store pada perangkat berbasis sistem opearsi iOS. Untuk membuka dan memakai aplikasi WSDC 2017 Bali saat ini, pengguna tidak diperlukan {\it login} agar dapat mengakses seluruh fitur yang tersedia. Lalu, untuk kepentingan skripsi ini, peneliti memiliki akses ke dalam kode program aplikasi WSDC 2017 Bali.
+Aplikasi WSDC 2017 Bali digunakan untuk menunjang keberlangsungan acara WSDC 2017 yang diselenggarakan di Bali, Indonesia. Aplikasi WSDC 2017 Bali dapat diunduh untuk sistem operasi {\it android} melalui URL \url{https://play.google.com/store/apps/details?id=org.wsdc2017indonesia.app}. Aplikasi ini dibangun dan dikembangkan oleh PT DNArtworks Komunikasi Visual yang rilis di Play Store pada tanggal 30 Juli 2017, dengan versi terakhir adalah versi 1.1.2 yang rilis pada 1 Agustus 2017. Selain rilis pada perangkat {\it android}, aplikasi ini juga rilis untuk perangkat bergerak berbasis sistem operasi iOS. Namun saat saat skripsi ini dibuat, aplikasi yang dibuat pada tahun 2017 tersebut sudah diturunkan dari App Store pada perangkat berbasis sistem opearsi iOS. Untuk membuka dan memakai aplikasi WSDC 2017 Bali saat ini, pengguna tidak diperlukan {\it login} agar dapat mengakses seluruh fitur yang tersedia. Lalu, untuk kepentingan skripsi ini, peneliti memiliki akses ke dalam kode program aplikasi WSDC 2017 Bali.
 
 \begin{figure}[H]
      \centering
@@ -331,6 +331,24 @@ const initializeMap = async () => {
 	
 \end{enumerate}
 
+Lalu, dengan Capacitor dapat menambahkan platform \textit{native} ke dalam proyek Ionic, baik untuk sistem operasi Android seperto pada kode~\ref{lst:capaddandroid} maupun iOS seperti pada kode~\ref{lst:capaddios}. Setelah itu, Capacitor akan melakuan instalasi \textit{package} platform Capacitor, dan menyalin \textit{template native} platform ke dalam proyek. Kemudian, Capacitor juga dapat melakukan pembuatan aplikasi \textit{native} dengan menyalin aset web ke dalam \textit{native} platform dengan perintah seperti pada kode~\ref{lst:capbuildios} untuk perangkat berbasis iOS dan perintah pada kode~\ref(lst:capbuildandroid) untuk perangkat berbasis Android. Setelah perintah tersebut dieksekusi, maka Capacitor akan membuka IDE dari proyek \textit{native}, seperti Xcode untuk perangkat berbasis iOS dan Android Studio untuk perangkat berbasis Android.  Dengan begitu, maka aplikasi dapat berjalan secara \textit{native} di dalam perangkat terkait. 
+
+\begin{lstlisting}[label={lst:capaddandroid}, caption=Kode untuk Menambahkan Platform Android]
+ionic capacitor add android
+\end{lstlisting}
+
+\begin{lstlisting}[label={lst:capaddios}, caption=Kode untuk Menambahkan Platform iOS]
+ionic capacitor add ios
+\end{lstlisting}
+
+\begin{lstlisting}[label={lst:capbuildios}, caption=Kode untuk Menginstal \textit{Plugin} Google Maps]
+ionic capacitor build ios
+\end{lstlisting}
+
+\begin{lstlisting}[label={lst:capbuildandroid}, caption=Kode untuk Menginstal \textit{Plugin} Google Maps]
+ionic capacitor build android
+\end{lstlisting}
+
 \subsubsection{Cordova}
 \label{subsec:cordova}
 Cordova merupakan {\it framework open source} yang dapat membuat pengembang untuk menggunakan teknologi seperti HTML, JavaScript, dan CSS untuk membangun aplikasi untuk perangkat bergerak yang dapat berjalan pada beberapa sistem operasi {\it mobile}~\cite{gonsalves:18:evaluating}. Cordova menyediakan antarmuka antara WebView dan lapisan {\it native} pada perangkat~\cite{griffith:17:mobile}. Selain dapat bekerja pada dua platform seluler Android dan iOS,~Cordova~juga~dapat~digunakan~pada~platform~seluler~seperti~Windows~Phone,~Blackberry,~dan~FireOS.
@@ -520,9 +538,9 @@ Dengan Angular, {\it framework} Ionic dapat menggunakan kemampuan Angular dalam 
 	Navigation adalah komponen mandiri yang digunakan untuk membuat komponen baru ke dalam {\it stack}. Navigation tidak terikat kepada {\it router} tertentu, mengakibatkan jika kita membuat komponen Navigation dan melakukan {\it push} komponen lain ke dalam {\it stack}, komponen tersebut tidak akan mempengaruhi router aplikasi secara keseluruhan. Sesuai dengan kasus penggunaan dimana ketika pengguna bisa memilih modal, yang membutuhkan sub-navigasinya sendiri, tanpa membuatnya terikat ke URL aplikasi. 
 	
 	\item Refresher \\
-	Refresher merupakan komponen yang menyediakan fungsionalitas \textit{pull-to-refresh} pada komponen konten dengan \textit{tag} \texttt{<ion-refresher>} (Kode~\ref{}). Refresher digunakan pada saat pengguna menarik layar dari atas ke bawah, maka Refresher akan menyegarkan data atau mendapatkan daftar data untuk mengambil lebih banyak data. 
+	Refresher merupakan komponen yang menyediakan fungsionalitas \textit{pull-to-refresh} pada komponen konten dengan \textit{tag} \texttt{<ion-refresher>} (Kode~\ref{lst:refresherComponent}). Refresher digunakan pada saat pengguna menarik layar dari atas ke bawah, maka Refresher akan menyegarkan data atau mendapatkan daftar data untuk mengambil lebih banyak data. 
 	
-\begin{lstlisting}[label={lst:segmentComponent}, caption=Kode Program dari Refresher]
+\begin{lstlisting}[label={lst:refresherComponent}, caption=Kode Program dari Refresher]
 <ion-content>
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
