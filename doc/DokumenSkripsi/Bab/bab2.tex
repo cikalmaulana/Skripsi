@@ -331,21 +331,21 @@ const initializeMap = async () => {
 	
 \end{enumerate}
 
-Lalu, dengan Capacitor dapat menambahkan platform \textit{native} ke dalam proyek Ionic, baik untuk sistem operasi Android seperto pada kode~\ref{lst:capaddandroid} maupun iOS seperti pada kode~\ref{lst:capaddios}. Setelah itu, Capacitor akan melakuan instalasi \textit{package} platform Capacitor, dan menyalin \textit{template native} platform ke dalam proyek. Kemudian, Capacitor juga dapat melakukan pembuatan aplikasi \textit{native} dengan menyalin aset web ke dalam \textit{native} platform dengan perintah seperti pada kode~\ref{lst:capbuildios} untuk perangkat berbasis iOS dan perintah pada kode~\ref(lst:capbuildandroid) untuk perangkat berbasis Android. Setelah perintah tersebut dieksekusi, maka Capacitor akan membuka IDE dari proyek \textit{native}, seperti Xcode untuk perangkat berbasis iOS dan Android Studio untuk perangkat berbasis Android.  Dengan begitu, maka aplikasi dapat berjalan secara \textit{native} di dalam perangkat terkait. 
+Lalu, dengan Capacitor dapat menambahkan platform \textit{native} ke dalam proyek Ionic, baik untuk sistem operasi Android seperti pada kode~\ref{lst:capaddandroid} maupun iOS seperti pada kode~\ref{lst:capaddios}. Setelah itu, Capacitor akan melakuan instalasi \textit{package} platform Capacitor, dan menyalin \textit{template native} platform ke dalam proyek. Kemudian, Capacitor juga dapat melakukan pembuatan aplikasi \textit{native} dengan menyalin aset web ke dalam \textit{native} platform dengan perintah seperti pada kode~\ref{lst:capbuildios} untuk perangkat berbasis iOS dan perintah pada kode~\ref{lst:capbuildandroid} untuk perangkat berbasis Android. Setelah perintah tersebut dieksekusi, maka Capacitor akan membuka IDE dari proyek \textit{native}, seperti Xcode untuk perangkat berbasis iOS dan Android Studio untuk perangkat berbasis Android.  Dengan begitu, maka aplikasi dapat berjalan secara \textit{native} di dalam perangkat terkait. 
 
-\begin{lstlisting}[label={lst:capaddandroid}, caption=Kode untuk Menambahkan Platform Android]
+\begin{lstlisting}[label={lst:capaddandroid}, caption=Kode untuk Menambahkan Platform Android dengan Capacitor]
 ionic capacitor add android
 \end{lstlisting}
 
-\begin{lstlisting}[label={lst:capaddios}, caption=Kode untuk Menambahkan Platform iOS]
+\begin{lstlisting}[label={lst:capaddios}, caption=Kode untuk Menambahkan Platform iOS dengan Capacitor]
 ionic capacitor add ios
 \end{lstlisting}
 
-\begin{lstlisting}[label={lst:capbuildios}, caption=Kode untuk Menginstal \textit{Plugin} Google Maps]
+\begin{lstlisting}[label={lst:capbuildios}, caption=Kode untuk Membuat Aplikasi Capacitor Untuk Perangkat iOS]
 ionic capacitor build ios
 \end{lstlisting}
 
-\begin{lstlisting}[label={lst:capbuildandroid}, caption=Kode untuk Menginstal \textit{Plugin} Google Maps]
+\begin{lstlisting}[label={lst:capbuildandroid}, caption=Kode untuk Membuat Aplikasi Capacitor Untuk Perangkat Android]
 ionic capacitor build android
 \end{lstlisting}
 
@@ -353,7 +353,9 @@ ionic capacitor build android
 \label{subsec:cordova}
 Cordova merupakan {\it framework open source} yang dapat membuat pengembang untuk menggunakan teknologi seperti HTML, JavaScript, dan CSS untuk membangun aplikasi untuk perangkat bergerak yang dapat berjalan pada beberapa sistem operasi {\it mobile}~\cite{gonsalves:18:evaluating}. Cordova menyediakan antarmuka antara WebView dan lapisan {\it native} pada perangkat~\cite{griffith:17:mobile}. Selain dapat bekerja pada dua platform seluler Android dan iOS,~Cordova~juga~dapat~digunakan~pada~platform~seluler~seperti~Windows~Phone,~Blackberry,~dan~FireOS.
 
-Untuk mengonfigurasi~proyek~Cordova,~saat~ini~dapat~menggunakan~{\it Command Line Tool} (CLI). CLI membuat proyek dasar dan mengonfigurasinya~agar~berfungsi dengan platform seluler apa pun yang didukung yang dapat digunakan. Cordova CLI juga dapat membuat pengembang memliki integrasi dan pengelolaan {\it plug-in}. Selain itu, CLI juga dapat mengkompilasi aplikasi untuk berjalan pada simulator~atau~pada~perangkat {\it native}.~Serupa~dengan~Capacitor,~Cordova membuat pengembang dapat mengakses fitur {\it native} dari sebuah perangkat, seperti kamera, papan ketik, dan geolokasi, menggunakan {\it plugin}. {\it Framework} Ionic~telah~terdapat~berbagai~macam~TypeScript~{\it wrapper}~untuk {\it plugins} Cordova.  Untuk dapat menggunakan Cordova Plugins, yaitu dengan memasang Cordova Plugins terlebih dahulu (Kode~\ref{lst:installCordova}), dan memperbaruinya ke versi terakhir (Kode~\ref{lst:updateCordova}) yang dapat dilakukan melalui CLI. Setiap {\it plugins} memiliki dua komponen, yaitu kode {\it native} (Cordova), dan kode TypeScript (Ionic Native).
+Untuk mengonfigurasi~proyek~Cordova,~saat~ini~dapat~menggunakan~{\it Command Line Tool} (CLI). CLI membuat proyek dasar dan mengonfigurasinya~agar~berfungsi dengan platform seluler apa pun yang didukung yang dapat digunakan. Cordova CLI juga dapat membuat pengembang memliki integrasi dan pengelolaan {\it plug-in}. Selain itu, Cordova CLI juga dapat mengkompilasi aplikasi untuk berjalan pada simulator~atau~pada~perangkat {\it native}.~Serupa~dengan~Capacitor,~Cordova membuat pengembang dapat mengakses fitur {\it native} dari sebuah perangkat, seperti kamera, papan ketik, dan geolokasi, menggunakan {\it plugin}. {\it Framework} Ionic~telah~terdapat~berbagai~macam~TypeScript~{\it wrapper}~untuk {\it plugins} Cordova.  Untuk dapat menggunakan Cordova Plugins, yaitu dengan memasang Cordova Plugins terlebih dahulu (Kode~\ref{lst:installCordova}), dan memperbaruinya ke versi terakhir (Kode~\ref{lst:updateCordova}) yang dapat dilakukan melalui CLI. Setiap {\it plugins} memiliki dua komponen, yaitu kode {\it native} (Cordova), dan kode TypeScript (Ionic Native).
+
+\newpage
 
 \begin{lstlisting}[label={lst:installCordova}, caption=Kode untuk Memasang Cordova Plugins]
 npm install cordova-plugin-name
@@ -376,6 +378,24 @@ cordova plugin add cordova-plugin-googlemaps
   <preference name="GOOGLE_MAPS_ANDROID_API_KEY" value="(api key)" />
   <preference name="GOOGLE_MAPS_IOS_API_KEY" value="(api key)" />
 </widget>
+\end{lstlisting} 
+
+Cordova juga dapat menambahkan platform \textit{native} ke dalam proyek Ionic dengan mengetikan perintah seperti pada kode~\ref{lst:addCordovaAndroid} untuk menambahkan platform Android, dan kode~\ref{lst:addCordovaIOS} untuk menambahkan platform iOS. Lalu untuk menjalankan proyek Ionic dengan Cordova dengan mengetikan perintah seperti pada kode~\ref{lst:runCordovaAndroid} untuk perangkat Android, dan kode~\ref{lst:runCordovaiOS} untuk perangkat iOS. Dengan begitu, Cordova akan membuka IDE sesuai dengan perintah yang dijalankan.
+
+\begin{lstlisting}[label={lst:addCordovaAndroid}, caption=Kode untuk Menambahkan Platform Android dengan Capacitor]
+ionic cordova platform add android
+\end{lstlisting} 
+
+\begin{lstlisting}[label={lst:addCordovaIOS}, caption=Kode untuk Menambahkan Platform iOS dengan Capacitor]
+ionic cordova platform add iOS
+\end{lstlisting} 
+
+\begin{lstlisting}[label={lst:runCordovaAndroid}, caption=Kode untuk Membuat Aplikasi Capacitor Untuk Perangkat Android]
+ionic cordova platform run android
+\end{lstlisting} 
+
+\begin{lstlisting}[label={lst:runCordovaiOS}, caption=Kode untuk Membuat Aplikasi Capacitor Untuk Perangkat iOS]
+ionic cordova platform run iOS
 \end{lstlisting} 
 
 \subsection{UI Component}
