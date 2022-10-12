@@ -111,11 +111,11 @@ import { Storage } from '@ionic/storage';
   styleUrls: ['./draw.page.scss'],
 })
 
-export class DrawPage {
+export class DrawPage implements OnInit {
   @ViewChild('drawIFrame') drawIFrame: ElementRef;
   constructor(private storage: Storage,public loadingController: LoadingController) { }
 
-  ionViewDidLoad() {
+  ngOnInit() {
     this.storage.get('wsdcDataStorage').then((data) => {
       this.drawIFrame.nativeElement.contentWindow.location.assign(data.draws);
     });
@@ -190,11 +190,11 @@ export class HomePage implements OnInit {
 
   constructor(private http: HttpClient,private storage: Storage,private router: Router,public toastController: ToastController) { }
 
-  ionViewDidEnter(){ //runs when the page has fully entered and is now the active page.
+  ionViewDidEnter(){ 
     SplashScreen.hide()
   }
 
-  ngOnInit(): void { //called after Angular has initialized all data-bound properties of a directive
+  ngOnInit(){ 
     this.storage.get('wsdcDataStorage').then((data) => {
       
       if(data == null){
@@ -461,7 +461,7 @@ import { Storage } from '@ionic/storage';
   templateUrl: './schedule.page.html',
   styleUrls: ['./schedule.page.scss'],
 })
-export class SchedulePage{
+export class SchedulePage implements OnInit{
   @ViewChild('scheduleSlider', { static: false }) slider: IonSlides;
   @ViewChild('segmentContainer', { static: false }) segmentContainer: ElementRef;
   schedules: any;
@@ -473,7 +473,10 @@ export class SchedulePage{
   currentIndex:any;
 
   constructor(private storage: Storage) {
-    
+  
+  }
+  
+  ngOnInit(){
     this.storage.get('wsdcDataStorage').then((val) => {
       this.schedules = val.schedules;
       this.selectedSegmentIdx = 0;
@@ -569,10 +572,14 @@ import { Storage } from '@ionic/storage';
   templateUrl: './venues.page.html',
   styleUrls: ['./venues.page.scss'],
 })
-export class VenuesPage{
+export class VenuesPage implements OnInit{
   venuesData: Array<{ id: string, name: string, icon: string, geojson: any, colorIdx: number }>;
   valVenues: any;
   constructor(private router: Router,private storage: Storage) {
+    
+  }
+  
+  ngOnInit(){
     this.storage.get('wsdcDataStorage').then((val) => {
       this.valVenues = val.venues;
       this.venuesData = [];
@@ -647,7 +654,7 @@ import { Geolocation } from '@capacitor/geolocation';
   templateUrl: './venues-map.page.html',
   styleUrls: ['./venues-map.page.scss'],
 })
-export class VenuesMapPage{
+export class VenuesMapPage implements OnInit{
   venuesPage: any;
   venuesMapsDetail: any;
   userCoordinatesLat: any;
@@ -675,12 +682,6 @@ export class VenuesMapPage{
       document.getElementById("pagetitle").style.color = this.pageTitleColors[this.items[0].idcolor-1];
     });
 
-    // Select data from storage
-    this.storage.get('wsdcDataStorage').then((data) => {
-      this.venuesMapsDetail = data.venues;
-      this.venuesMapsDetail = this.venuesMapsDetail.filter(d=> d.id==this.items[0].id);
-    })
-
     //save user lat & lng location
     const printCurrentPosition = async () => {
       const coordinates = await Geolocation.getCurrentPosition();
@@ -690,6 +691,14 @@ export class VenuesMapPage{
     
     printCurrentPosition();
     Geolocation.requestPermissions();
+  }
+  
+  ngOnInit(){
+    // Select data from storage
+    this.storage.get('wsdcDataStorage').then((data) => {
+      this.venuesMapsDetail = data.venues;
+      this.venuesMapsDetail = this.venuesMapsDetail.filter(d=> d.id==this.items[0].id);
+    })
   }
 
   ionViewDidEnter() {

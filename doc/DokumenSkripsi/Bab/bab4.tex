@@ -11,7 +11,7 @@ Pada aplikasi WSDC 2017 Bali yang akan dibangun menggunakan struktur kelas yang 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.43]{Gambar/umldiagram.png}
+    \includegraphics[scale=0.25]{Gambar/umldiagram.png}
     \caption{ Diagram Kelas Keseluruhan}
     \label{fig:umldiagramkeseluruhan}
 \end{figure}
@@ -36,7 +36,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 		\end{itemize}
 		\textbf{Kembalian}; tidak ada.	
 		
-		\item \textbf{ngOnInit(): void}\\
+		\item \textbf{ngOnInit()}\\
 		\textit{Method} ini berfungsi untuk mengambil data \textit{announcements} yang terdapat di dalam \textit{storage}, kemudian menyimpannya ke dalam atribut kelas, yaitu announcements. \\
 		\textbf{Parameter}: tidak ada. \\
 		\textbf{Kembalian}: tidak ada.	
@@ -110,8 +110,8 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 			\textbf{Parameter}: tidak ada. \\
 			\textbf{Kembalian}: tidak ada.
 			
-		\item \textbf{ngOnInit(): void()} \\
-			\textit{Method} ini dipanggil ketika setelah semua properti telah diinisialisasi. \textit{Method} ini berfungsi untuk mengambil data json dari \textit{storage}. Jika data di dalam \textit{storage} tersebut belum pernah dibuat sebelumnya, maka \textit{method} ini akan membuat sebuah data baru di dalam \textit{storage} yang berisi data json yang dibutuhkan untuk aplikasi. Secara \textit{default}, untuk mengantisipasi jika pengguna tidak memiliki koneksi internet, maka pertama kali \textit{method} ini mengambil data adalah dari aset yang berada di \textit{folder} assets. Setelah itu, \textit{method} ini akan mengambil data terbaru dari server. Jika server tidak merespon dan data tidak berhasil didapatkan, maka akan memanggil \textit{method} showToast(). \\
+		\item \textbf{ngOnInit()} \\
+			\textit{Method} ini berfungsi untuk mengambil data json dari \textit{storage}. Jika data di dalam \textit{storage} tersebut belum pernah dibuat sebelumnya, maka \textit{method} ini akan membuat sebuah data baru di dalam \textit{storage} yang berisi data json yang dibutuhkan untuk aplikasi. Secara \textit{default}, untuk mengantisipasi jika pengguna tidak memiliki koneksi internet, maka pertama kali \textit{method} ini mengambil data adalah dari aset yang berada di \textit{folder} assets. Setelah itu, \textit{method} ini akan mengambil data terbaru dari server. Jika server tidak merespon dan data tidak berhasil didapatkan, maka akan memanggil \textit{method} showToast(). \\
 			\textbf{Parameter}: tidak ada. \\
 			\textbf{Kembalian}: tidak ada.
 			
@@ -166,7 +166,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 				\textbf{Kembalian}: tidak ada.
 			\newpage
 			\item \textbf{ngOnInit()}\\ 
-				\textit{Method} ini dipanggil ketika setelah semua properti telah diinisialisasi. \textit{Method} ini berfungsi untuk mengambil data \textit{result} yang terdapat di dalam \textit{storage}. Data tersebut lalu disimpan ke dalam \textit{child} resultIFrame. Setelah itu \textit{method} ini akan memanggil \textit{method} presentLoading(). \\
+				\textit{Method} ini berfungsi untuk mengambil data \textit{result} yang terdapat di dalam \textit{storage}. Data tersebut lalu disimpan ke dalam \textit{child} resultIFrame. Setelah itu \textit{method} ini akan memanggil \textit{method} presentLoading(). \\
 				\textbf{Parameter}: tidak ada. \\
 				\textbf{Kembalian}: tidak ada.
 				
@@ -201,6 +201,12 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 					\textbf{Parameter}: storage: Parameter ini digunakan untuk menyimpan API Storage.\\
 					\textbf{Kembalian}: tidak ada.
 					\newpage
+					
+				\item \textbf{ngOnInit()}\\ 
+				\textit{Method} ini berfungsi untuk mengambil data \textit{schedule} yang terdapat di dalam \textit{storage}. Data tersebut lalu disimpan ke dalam atribut \textit{schedules}. \\
+				\textbf{Parameter}: tidak ada. \\
+				\textbf{Kembalian}: tidak ada.
+				
 				\item \textbf{getDayName(sqlDate: string)}\\
 					\textit{Method} ini berfungsi untuk mengambil hari dari parameter. \\
 					\textbf{Parameter}: sqlDate: Sebuah \textit{string} yang berisi tahun, bulan, dan tanggal.\\
@@ -224,7 +230,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 			\end{itemize}
 			
 			\item Komponen \textit{Venues} \\
-				Di dalam komponen \textit{venues} terdapat sebuah kelas VenuesPage. Kelas ini berfungsi untuk mengambil data \textit{venues} dari \textit{storage} dan menyimpannya ke dalam atribut kelas. Selain itu kelas ini juga berfungsi untuk melakukan navigasi ke halaman \textit{venues map}.
+				Di dalam komponen \textit{venues} terdapat sebuah kelas VenuesPage. Kelas ini berfungsi untuk mengambil data \textit{venues} dari \textit{storage} dan menyimpannya ke dalam atribut kelas. Selain itu kelas ini juga berfungsi melakukan navigasi ke halaman \textit{venues map}.
 				
 				Kelas ini memiliki beberapa atribut, yaitu:
 				\begin{itemize}
@@ -236,12 +242,18 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 				\begin{itemize}
 					\item \textbf{constructor(private router: Router,private storage: Storage)}\\ 
 						\textit{Method} constructor berfungsi untuk memberikan nilai awal pada saat kelas dibuat. \\
+						\newpage
 						\textbf{Parameter}: 
 						\begin{itemize}
 							\item \textbf{router}: Parameter ini berfungsi untuk menyimpan API Router.
 							\item \textbf{storage}: Parameter ini berfungsi untuk menyimpan API Storage.
 						\end{itemize}
 						\textbf{Kembalian}: tidak ada.
+						
+					\item \textbf{ngOnInit()}\\ 
+					\textit{Method} ini berfungsi untuk mengambil data \textit{venues} yang terdapat di dalam \textit{storage}. Data tersebut lalu disimpan ke dalam atribut \textit{valVenues}. \\
+					\textbf{Parameter}: tidak ada. \\
+					\textbf{Kembalian}: tidak ada.
 						
 					\item \textbf{itemTapped(wsdcVenue)} \\
 						\textit{Method} ini berfungsi untuk melakuakn navigasi ke halaman \textit{Venues Maps} dengan bantuan Router milik Angular. \textit{Method} ini akan mengirimkan sebuah data array yang didapatkan dari parameter ke halaman \textit{Venues Maps}. \\
@@ -266,6 +278,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 				Kelas ini memiliki beberapa \textit{method}, diantaranya adalah sebagai berikut:
 				\begin{itemize}
 					\item \textbf{constructor(private activatedRoute: ActivatedRoute, private router: Router, private storage: Storage)} \\
+					\newpage
 						\textit{Method} constructor berfungsi untuk memberikan nilai awal pada saat kelas dibuat. Selain itu, \textit{constructor} juga digunakan untuk mengambil data dari \textit{storage} dan memasukannya ke atribut venuesMapsDetail.\\
 						\textbf{Parameter}:
 						\begin{itemize}
@@ -274,6 +287,11 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 							\item \textbf{storage} : Parameter ini digunakan untuk menyimpan API Storage.
 						\end{itemize}
 						\textbf{Kembalian}: tidak ada.
+						
+					\item \textbf{ngOnInit()}\\ 
+					\textit{Method} ini berfungsi untuk mengambil data \textit{venues} yang terdapat di dalam \textit{storage}. Data tersebut lalu disimpan ke dalam atribut \textit{venuesMapsDetail}. \\
+					\textbf{Parameter}: tidak ada. \\
+					\textbf{Kembalian}: tidak ada.
 						
 					\item \textbf{ionViewDidEnter()} \\
 						\textit{Method} ini dijalankan ketika halaman sudah masuk sepenuhnya. \textit{Method} ini digunakan untuk menginisialisasi peta menggunakan \textit{plugin} Google Maps yang disediakan oleh Capacitor. Peta tersebut menampilkan peta Pulau Bali, lebih tepatnya di Kecamatan Kuta dengan latitude -8.722396 dan longitude 115.17671. \textit{Method} ini juga membuat \textit{marker} yang menandai setiap lokasi \textit{venues} pada satu kategori \textit{venues}. Selain itu \textit{method} ini juga digunakan untuk menyimpan jarak antara posisi perangkat pengguna ke masing-masing posisi \textit{venues}, yang kemudian disimpan ke dalam atibut userDistanceTo.\\
@@ -299,7 +317,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 							\item \textbf{lon1}: koordinat longitude dari pengguna.
 							\item \textbf{lon2}: koordinat longitude dari \textit{venues}.
 						\end{itemize}
-						\textbf{Kembalian}: sebuah \textit{string} yang berisi~jarak~dari~posisi~perangkat~pengguna~ke~posisi~\textit{venues}.
+						\textbf{Kembalian}: \textit{String} jarak~dari~posisi~perangkat~pengguna~ke~posisi~\textit{venues}.
 				\end{itemize}
 \end{enumerate}
 
@@ -312,7 +330,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 	
 	\begin{enumerate}
 		\item \textit{Header} \\
-			\textit{Header} untuk setiap komponen pada umunya memiliki struktur yang serupa namun dibedakan dengan judul dari setiap halaman. \textit{Header} digunakan untuk menampilkan judul dari sebuah halaman, serta menyediakan sebuah \textit{menu button} sebagai salah satu cara untuk membuat \textit{sidebar} untuk melakukan navigasi antar halaman. \textit{Header} dibungkus oleh \textit{tag} \texttt{<ion-header>} yang didalamnya terdapat \textit{tag} \texttt{<ion-toolbar>} yang disediakan Ionic Framework. Kemudian untuk \textit{menu button} dibuat oleh \textit{tag} \texttt{<ion-menu-button>} pada \textit{tag} \texttt{<ion-buttons>}. Selanjutnya untuk judul dari sebuah halaman dibungkus oleh \textit{tag} \texttt{<ion-title>}. Judul akan berbeda beda tergantung dengan halamannya. Salah satu contoh dari penggunaan \textit{header} adalah pada gambar~\ref{fig:homePageWireframe} yang ditandai dengan kotak berwarna biru.
+			\textit{Header} untuk setiap komponen pada umunya memiliki struktur yang serupa namun dibedakan dengan judul dari setiap halaman. \textit{Header} digunakan untuk menampilkan judul dari sebuah halaman, serta menyediakan sebuah \textit{menu button} sebagai salah satu cara untuk membuat \textit{sidemenu} untuk melakukan navigasi antar halaman. \textit{Header} dibungkus oleh \textit{tag} \texttt{<ion-header>} yang didalamnya terdapat \textit{tag} \texttt{<ion-toolbar>} yang disediakan Ionic Framework. Kemudian untuk \textit{menu button} dibuat oleh \textit{tag} \texttt{<ion-menu-button>} pada \textit{tag} \texttt{<ion-buttons>}. Selanjutnya untuk judul dari sebuah halaman dibungkus oleh \textit{tag} \texttt{<ion-title>}. Judul akan berbeda beda tergantung dengan halamannya. Salah satu contoh dari penggunaan \textit{header} adalah pada gambar~\ref{fig:homePageWireframe} yang ditandai dengan kotak berwarna biru.
 			
 		\item \textit{Content} \\
 			\textit{Content} untuk setiap komponen memiliki struktur yang berbeda-beda tergantung dengan isi dari halaman tersebut. Namun \textit{content} untuk setiap komponen dibungkus oleh sebuah \textit{tag} \texttt{<ion-content>}. Salah satu contoh dari penggunaan \textit{content} adalah pada gambar~\ref{fig:homePageWireframe} yang ditandai dengan warna merah. Struktur \textit{content} untuk masing-masing halaman adalah sebagai berikut:
@@ -341,7 +359,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 					
 				\item Halaman \textit{Venues} \\
 					\textit{Content} pada halaman \textit{venues} berisi \textit{grid} dengan \textit{tag} \texttt{<ion-grid>} dengan satu baris menggunakan \textit{tag} \texttt{<ion-row>}. Di dalamnya terdapat sebuah \textit{list} dengan \textit{tag} \texttt{<ion-list>}. \textit{List} tersebut berisi tombol dengan \textit{tag} \texttt{<ion-button>} yang ditandai dengan kotak berwarna hijau pada gambar~\ref{fig:VenuePageWireframe}. Masing-masing tombol digunakan untuk melakukan navigasi ke halaman \textit{venues map}. Setiap tombol berisi ikon dengan \textit{tag} \texttt{<ion-icon>} yang ditandai dengan kotak berwarna biru muda pada gambar~\ref{fig:VenuePageWireframe} dan sebuah \textit{tag} \texttt{<span>} yang berisi nama dari \textit{venues}, ditandai dengan kotak berwarna hitam.
-					\newpage
+
 				\item Halaman \textit{Venues Map} \\
 					\textit{Content} pada halaman \textit{venues map} berisi \textit{tag} \texttt{<div>} yang digunakan untuk menampung peta dari sebuah kategori \textit{venues} seperti yang ditandai dengan kotak berwarna hijau pada gambar~\ref{fig:VenueMapPageWireframe}. Selain itu terdapat sebuah label dengan \textit{tag} \texttt{<ion-label>} yang berisi nama kategori \textit{venues} yang ditandai dengan kotak berwarna kuning. Kemudian untuk menampilkan nama dan deskripsi sebuah \textit{venues}, serta jarak antara pengguna dengan \textit{venues}, menggunakan \textit{list} dengan \textit{tag} \texttt{<ion-list>} yang ditandai dengan kotak berwarna biru muda. 
 				
