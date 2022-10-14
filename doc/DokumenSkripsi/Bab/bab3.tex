@@ -426,6 +426,7 @@ Komponen-komponen yang ada pada aplikasi WSDC 2017 Bali adalah sebagai berikut:
 	
 		\item launch(url: string) \\
 		\textit{Method} ini merupakan sebuah \textit{template statement} dipanggil oleh \textit{event} di dalam tag \texttt{<button>} pada home.html yaitu \textit{event} (click). \textit{Method} ini memiliki sebuah parameter url yang bertipe \textit{stirng}. Parameter tersebut berisi url dari berita yang akan dilihat oleh penggunga. Untuk membuka berita pada url tersebut memanfaatkan \textit{plugin} InAppBrowser yang disediakan oleh Ionic. 
+		\newpage
 		\item formatDatetime(sqlDatetime: string) \\
 		\textit{Method} ini berfungsi untuk membuat format tanggal dan waktu. \textit{Method} ini memiliki sebuah parameter, yaitu sqlDatetime yang bertipe \textit{string}, yang merupakan sebuah \textit{string} tanggal dengan format ``tahun-bulan-hari jam-menit-detik". \textit{Method} ini akan mengembalikan sebuah teks yang berisi waktu, tanggal dan bulan.
 		\item doRefresh(refresher) \\
@@ -801,7 +802,7 @@ Komponen-komponen yang ada pada aplikasi WSDC 2017 Bali adalah sebagai berikut:
 \newpage
 	\begin{itemize}
 		\item \textit{Header} \\
-		 Halaman \textit{venues} memiliki \textit{header} dengan \textit{tag} \texttt{<ion-header>} (Kode~\ref{lst:headerVenuesMap}) seperti pada gambar~\ref{fig:VenueMapPageWireframe}. \textit{Tag} tersebut merupakan komponen \textit{parent} yang menampung komponen navbar seperti yang ditandai dengan kotak berwarna biru. Di dalam navbar tersebut, terdapat sebuah \textit{tag} \texttt{<button>} untuk memunculkan \textit{sidemenu} dan \texttt{<ion-icon>} untuk menampilkan icon. Lalu terdapat \textit{tag} \texttt{<ion-title>}~sebagai~judul~dari~halaman,~yaitu~``Venues''.
+		 Halaman \textit{venues} memiliki \textit{header} dengan \textit{tag} \texttt{<ion-header>} (Kode~\ref{lst:headerVenuesMap}) seperti pada gambar~\ref{fig:VenueMapPageWireframe}. \textit{Tag} tersebut merupakan komponen \textit{parent} yang menampung komponen navbar seperti yang ditandai dengan kotak berwarna biru. Di dalam navbar, terdapat sebuah \textit{tag} \texttt{<button>} untuk memunculkan \textit{sidemenu} dan \texttt{<ion-icon>} untuk menampilkan icon. Lalu terdapat \textit{tag} \texttt{<ion-title>}~sebagai~judul~dari~halaman,~yaitu~``Venues''.
 		
 \begin{lstlisting}[label={lst:headerVenuesMap}, caption=\textit{Header} pada venues\textunderscore map.html]
 <ion-header>
