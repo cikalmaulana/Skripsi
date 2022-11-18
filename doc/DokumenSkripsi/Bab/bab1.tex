@@ -5,25 +5,34 @@
 \section{Latar Belakang}
 \label{sec:label}
 
-Dalam pengembangan suatu aplikasi seluler, setiap vendor perangkat lunak memilki alat-alat yang unik yang hanya dimiliki oleh vendor tersebut, yaitu \textit{Software Development Kit} (SDK)~\cite{yusuf:16:ionic}. Setiap sistem operasi memiliki perangkat \textit{native} masing-masing, yang digunakan sebagai alat untuk memungkinkan pengembang dalam pengembangan aplikasi seluler pihak ketiga. Namun karena SDK yang digunakan berbeda-beda tergantung kepada jenis sistem operasi perangkat seluler, maka terdapat permasalahan, yaitu tidak dapat membuat aplikasi untuk platform yang berbeda, namun dengan baris kode yang sama. Untuk mengatasi masalah tersebut, terdapat sebuah teknologi yang dikembangkan oleh Adobe yaitu Apache Cordova. Apache Cordova memungkinkan aplikasi berbasis web seperti HTML, {\it Cascading Style Sheets} (CSS), dan Javascript, dikemas sebagai aplikasi seluler \textit{native}, dan juga menyediakan akses ke fitur perangkat.
-
-Aplikasi yang dibangun menggunakan Cordova disebut sebagai aplikasi \textit{hybrid}, sebuah aplikasi berbasis web yang berjalan di dalam sebuah tempat dari aplikasi \textit{native}~\cite{yusuf:16:ionic}. Aplikasi \textit{hybrid} yang berjalan merupakan aplikasi \textit{native} yang menjalankan aplikasi berbasis web di tampilan web ponsel. Aplikasi tersebut bersikap dan berperilaku normal seperti aplikasi pada umumnya, dan juga memiliki keseluruhan akses terhadap perangkat. 
-
-Salah satu kerangka kerja yang dapat digunakan untuk mengembangkan aplikasi \textit{hybrid} adalah Ionic Framework. Ionic Framework merupakan sebuah kerangka kerja {\it open source} lintas platform yang memungkinkan untuk mengembangkan aplikasi \textit{hybrid} yang bekerja pada berbagai macam platform seluler seperti Android, iOS, dan Windows~\cite{waranashiwar:18:ionic}. Ionic memiliki berbagai macam \textit{front-end library} dan \textit{User Interface}(UI) {\it Components} yang digunakan untuk  perancangan aplikasi menggunakan teknologi web seperti HTML, CSS, dan Javascript. Dengan Ionic Framework, memungkinkan sebuah aplikasi yang dapat berjalan menggunakan fitur \textit{native} dari sebuah perangkat. 
-
-Ionic Framework mendukung komunikasi dengan menggunakan Native API, yaitu pengembangan aplikasi langsung terintegrasi ke dalam platform~\cite{griffith:17:mobile}. Selain menggunakan Cordova, Capacitor juga merupakan Native API yang terintegrasi untuk menambahkan fungsionalitas ke dalam aplikasi Ionic apapun. Capacitor merupakan penerus dari Cordova yang menyediakan akses ke perangkat {\it native} dan fitur platform, serta untuk menyediakan satu set API untuk mengembangkan aplikasi seluler secara hibrida, {\it Progressive Web Apps} berbasis web, dan aplikasi komputer berbasis Electron~\cite{tor:19:software}.
-
-Pada Ionic 5 ke atas, terdapat beberapa kerangka Javascript yang dapat diimplementasikan menggunakan \textit{framework} Ionic, seperti Angular, React, dan Vue. Angular pada awalnya diciptakan oleh karyawan Google, Misko Hevert dan Adam Abrons pada tahun 2008, yang masih bernama AngularJS dan dikembangkan dalam JavaScript~\cite{wohlgethan:18:supporting}. Pada saat itu sebagian besar situs web menggunakan aplikasi multi-halaman, yaitu ketika pengguna mengklik tautan, maka browser harus mengambil dokumen HTML yang diminta dari server. Namun dengan Angular, digunakannya \textit{Single-page Application} (SPA), yaitu ketika halaman awal dimuat, semua yang dibutuhkan untuk membuat dan menampilkan sebuah halaman diunduh, kemudian ditampilkan kedalam layar. Dengan begitu, browser tidak perlu melakukan \textit{refresh} terhadap halaman tersebut~\cite{scott:15:spa}. React adalah \textit{library} JavaScript {\it open source} untuk membangun antarmuka pengguna, dikelola oleh Facebook, dapat digunakan dalam berbagai skenario termasuk aplikasi iOS dan Android~\cite{wohlgethan:18:supporting}. Vue merupakan \textit{framework} progresif untuk membangun antarmuka pengguna untuk web, yang dapat digunakan baik untuk projek kecil dan untuk {\it Single-Page Applications} (SPAs)~\cite{wohlgethan:18:supporting}.
-
 \textit{World Schools Debating Championships} (WSDC) merupakan sebuah turnamen debat Bahasa Inggris tahunan untuk tim-tim tingkat sekolah menengah yang mewakili berbagai negara~\cite{wsdc}. Pada awalnya, kompetisi universitas dunia akan diselenggarakan di Sydney pada bulan Juli 1988. Anggota Federasi Debat Australia menyadari bahwa tidak ada acara serupa untuk siswa sekolah menengah. Namun kejuaraan universitas dunia ini menunjukkan potensi yang sangat besar untuk kompetisi debat internasional yang melibatkan siswa dari seluruh dunia. Pada tahun 1991, kejuaraan diadakan di Edinburgh. Dan sejak saat itu nama World Schools Debating Championships digunakan dan berlangsung hingga saat ini. 
 
 WSDC yang diselenggarakan di Bali, Indonesia pada tahun 2017 memiliki sebuah aplikasi bernama WSDC 2017 Bali yang dikembangkan oleh PT DNArtworks Komunikasi Visual menggunakan \textit{framework} Ionic 3 untuk menunjang acara tersebut. Terdapat beberapa fungsi penting di dalam aplikasi ini, diantaranya adalah jadwal untuk kegiatan peserta, berita tentang acara WSDC yang sedang berlangsung, pemberitahuan mengenai kegiatan acara kepada peserta, informasi lokasi dan peta lokasi kegiatan acara yang sedang berlangsung, dan notifikasi untuk peserta. 
 
-Aplikasi WSDC 2017 Bali yang dibangun pada tahun 2017 oleh PT DNArtworks Komunikasi Visual menggunakan Ionic versi 3 yang pada saat skripsi ini ditulis sudah tidak mendapat pembaruan lagi. Sedangkan Ionic Framework semakin berkembang dan pada saat skripsi ini dibuat sudah mencapai Ionic versi 6. Selain itu, aplikasi WSDC 2017 Bali untuk sistem operasi iOS telah diturunkan dari App Store dikarenakan tidak mengalami pembaruan dalam jangka waktu tertentu. Maka dari itu diperlukan pembaruan pada aplikasi WSDC 2017 Bali. Pada skripsi ini akan dibuat sebuah aplikasi pembaruan dari aplikasi WSDC 2017 Bali saat ini, dengan menggunakan \textit{framework} Ionic versi 6~\footnote{Saat pertama kali topik skripsi ini dibuat, Ionic Framework terbaru adalah Ionic Framework versi 5. Sedangkan pada bulan Desember 2021 Ionic Framework mengeluarkan versi terbaru, yaitu versi 6. Pembaruan yang semula dari Ionic Framework versi 3 ke Ionic Framework versi 5, sekarang menjadi Ionic Framework versi 6 atas saran dan masukan dari dosen pembimbing dan dosen penguji.}. \textit{Framework} yang lebih baru memungkinkan perawatan yang lebih efisien, serta dukungan teknologi yang lebih terbarukan.
+Ionic Framework merupakan sebuah kerangka kerja {\it open source} lintas platform yang digunakan untuk mengembangkan aplikasi \textit{hybrid} yang bekerja pada berbagai macam platform seluler seperti Android, iOS, dan Windows~\cite{waranashiwar:18:ionic}. Aplikasi \textit{hybrid} merupakan sebuah \textit{web app} yang berjalan di dalam sebuah \textit{container} sehingga aplikasi tersebut menjadi aplikasi \textit{native}~\cite{yusuf:16:ionic}. Dalam kata lain, aplikasi \textit{hybrid} merupakan sebuah aplikasi \textit{native} yang menampilkan \textit{web app} di dalam \textit{web view}. Perbedaan \textit{web app} dengan aplikasi \textit{native} adalah dalam hal penggunaan perangkat keras pada perangkat mobile, dimana aplikasi \textit{native} dapat dengan bebas mendapatkan akses penuh penggunaan perangkat keras sedangkan \textit{web app} tidak.
+
+Salah satu aplikasi \textit{hybrid} yaitu Apache Cordova yang dikembangkan oleh Adobe digunakan untuk memecahkan masalah dimana pada saat mengembangkan suatu aplikasi seluler, setiap vendor perangkat lunak memilki alat-alat yang unik yang hanya dimiliki oleh vendor tersebut, yaitu \textit{Software Development Kit} (SDK)~\cite{yusuf:16:ionic}. Karena SDK yang digunakan berbeda-beda tergantung kepada jenis sistem operasi perangkat seluler, maka tidak dapat membuat aplikasi untuk platform yang berbeda, namun dengan baris kode yang sama. Apache Cordova sebagai aplikasi \textit{hybrid} dapat membuat aplikasi berbasis web seperti HTML, {\it Cascading Style Sheets} (CSS), dan Javascript, dikemas sebagai aplikasi \textit{native} yang dapat mengakses fitur-fitur perangkat keras dari suatu perangkat.
+
+Ionic Framework mendukung komunikasi dengan menggunakan Native API, yaitu pengembangan aplikasi langsung terintegrasi ke dalam platform~\cite{griffith:17:mobile}. Cordova merupakan Native API yang digunakan untuk menambahkan fungsionalitas ke dalam aplikasi Ionic apapun. Selain Cordova, terdapat Native API lain yang didukung oleh Ionic Framework, yaitu Capacitor. Capacitor merupakan penerus dari Cordova yang menyediakan akses ke perangkat {\it native} dan fitur platform, serta untuk menyediakan satu set API untuk mengembangkan aplikasi seluler secara \textit{hybrid}, {\it Progressive Web Apps} berbasis web, dan aplikasi komputer berbasis Electron~\cite{tor:19:software}. Ionic juga memiliki berbagai macam \textit{front-end library} dan \textit{User Interface}(UI) {\it Components} berupa \textit{tag} khusus yang digunakan untuk menambah fungsionalita aplikasi.
+
+Pada Ionic 5 ke atas, terdapat beberapa \textit{framework} Javascript yang dapat diimplementasikan menggunakan \textit{framework} Ionic, yaitu:
+
+\begin{itemize}
+	\item Angular \\
+	Angular pada awalnya diciptakan oleh karyawan Google, Misko Hevert dan Adam Abrons pada tahun 2008, yang masih bernama AngularJS dan dikembangkan dengan JavaScript~\cite{wohlgethan:18:supporting}. Pada saat AngularJS pertama kali diciptakan, sebagian besar situs web menggunakan aplikasi multi-halaman, yaitu ketika pengguna mengklik tautan, maka browser harus mengambil dokumen HTML yang diminta dari server. Angular tidak mengimplementasi hal tersebut, melainkan menggunakan \textit{Single-page Application} (SPA), yaitu ketika halaman awal dimuat, semua yang dibutuhkan untuk membuat dan menampilkan sebuah halaman diunduh, kemudian ditampilkan kedalam layar. Dengan begitu, \textit{browser} tidak perlu  mengunduh ulang yang dibutuhkan saat menampilkan halaman~\cite{scott:15:spa}.
+	
+	\item React \\
+	React adalah \textit{library} JavaScript {\it open source} untuk membangun antarmuka pengguna, dikelola oleh Facebook, dapat digunakan dalam berbagai skenario termasuk aplikasi iOS dan Android~\cite{wohlgethan:18:supporting}.
+	
+	\item Vue \\
+	 Vue merupakan \textit{framework} progresif untuk membangun antarmuka pengguna untuk web, yang dapat digunakan baik untuk projek kecil dan untuk {\it Single-Page Applications} (SPAs)~\cite{wohlgethan:18:supporting}.
+\end{itemize}
+
+Aplikasi WSDC 2017 Bali yang dibangun pada tahun 2017 oleh PT DNArtworks Komunikasi Visual menggunakan Ionic versi 3 yang pada saat skripsi ini ditulis sudah tidak mendapat pembaruan lagi. Sedangkan Ionic Framework semakin berkembang dan pada saat skripsi ini dibuat sudah mencapai Ionic versi 6. Selain itu, aplikasi WSDC 2017 Bali untuk sistem operasi iOS telah diturunkan dari App Store dikarenakan tidak mengalami pembaruan dalam jangka waktu tertentu. Maka dari itu diperlukan pembaruan pada aplikasi WSDC 2017 Bali. Pada skripsi ini akan dibuat sebuah aplikasi WSDC 2017 Bali, yang merupakan sebuah pembaruan dari aplikasi WSDC 2017 Bali saat ini, dengan menggunakan \textit{framework} Ionic versi 6.
 
 \section{Rumusan Masalah}
 \label{sec:rumusan}
-Rumusan masalah yang akan dibahas pada skripsi ini adalah bagaimana melakukan migrasi aplikasi Android WSDC 2017 Bali ke {\it framework} Ionic versi 6?
+Rumusan masalah yang dibahas pada skripsi ini adalah bagaimana melakukan migrasi aplikasi Android WSDC 2017 Bali ke {\it framework} Ionic versi 6?
 
 \section{Tujuan}
 \label{sec:tujuan}
@@ -34,8 +43,10 @@ Tujuan yang ingin dicapai dari penulisan skripsi ini adalah melakukan migrasi ap
 Dalam skripsi ini dibuat batasan-batasan masalah dalam pembuatan perangkat lunak.  Batasan-batasan masalah yang ditetapkan adalah sebagai berikut:
 
 \begin{enumerate}
-    \item Aplikasi ini tidak akan memiliki fitur notifikasi, karena acara WSDC 2017 Bali sudah selesai dan tidak diperlukan kembali fitur notifikasi.
-    \item Walaupun Ionic Framework mendukung pengembangan aplikasi untuk sistem operasi iOS, aplikasi hanya akan diuji pada \textit{platform mobile} berbasis android. Sedangkan pengujian untuk perangkat berbasis iOS akan dilakukan oleh tim yang berbeda.
+    \item Aplikasi ini tidak akan memiliki fitur notifikasi, dikarenakan sudah tidak terdapat \textit{service} dari Ionic dan tidak dikembangkan lagi dari sisi servernya. 
+    
+    \item Walaupun Ionic Framework mendukung pengembangan aplikasi untuk sistem operasi iOS, aplikasi hanya akan diuji pada \textit{platform mobile} berbasis android.
+    
 \end{enumerate}
 
 
@@ -48,7 +59,6 @@ Langkah-langkah yang dilakukan dalam skripsi ini adalah sebagai berikut:
 	\item Melakukan studi mengenai {\it framework} Ionic versi 3 dan versi 6.
 	\item Menganalisis aplikasi WSDC 2017 Bali.
 	\item Mempelajari bagaimana cara melakukan migrasi Ionic versi 3 ke versi 6.
-	\item Mendesain kelas aplikasi.
 	\item Membangun aplikasi WSDC dengan {\it framework} Ionic versi 6. 
 	\item Melakukan pengujian dan eksperimen.
 	\item Menulis dokumen skripsi.

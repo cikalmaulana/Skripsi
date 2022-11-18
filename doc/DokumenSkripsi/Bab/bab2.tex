@@ -8,7 +8,7 @@ Pada bab ini akan menjelaskan dasar-dasar teori mengenai Ionic, berikut dengan c
 \section{WSDC 2017 Bali}
 \label{sec:wsdc2017bali}
 
-Aplikasi WSDC 2017 Bali digunakan untuk menunjang keberlangsungan acara WSDC 2017 yang diselenggarakan di Bali, Indonesia. Aplikasi WSDC 2017 Bali dapat diunduh untuk sistem operasi {\it android} melalui URL \url{https://play.google.com/store/apps/details?id=org.wsdc2017indonesia.app}. Aplikasi ini dibangun dan dikembangkan oleh PT DNArtworks Komunikasi Visual yang rilis di Play Store pada tanggal 30 Juli 2017, dengan versi terakhir adalah versi 1.1.2 yang rilis pada 1 Agustus 2017. Selain rilis pada perangkat {\it android}, aplikasi ini juga rilis untuk perangkat bergerak berbasis sistem operasi iOS. Namun saat saat skripsi ini dibuat, aplikasi yang dibuat pada tahun 2017 tersebut sudah diturunkan dari App Store pada perangkat berbasis sistem opearsi iOS, dikarenakan tidak mengalami pembaruan dalam jangka waktut tertentu. Untuk membuka dan memakai aplikasi WSDC 2017 Bali saat ini, pengguna tidak diperlukan {\it login} agar dapat mengakses seluruh fitur yang tersedia. Untuk kepentingan skripsi ini, peneliti memiliki akses ke dalam kode program aplikasi WSDC 2017 Bali.
+Aplikasi WSDC 2017 Bali digunakan untuk menunjang keberlangsungan acara WSDC 2017 yang diselenggarakan di Bali, Indonesia. Aplikasi WSDC 2017 Bali dapat diunduh untuk sistem operasi {\it android} melalui URL \url{https://play.google.com/store/apps/details?id=org.wsdc2017indonesia.app}. Aplikasi ini dibangun dan dikembangkan oleh PT DNArtworks Komunikasi Visual yang rilis di Play Store pada tanggal 30 Juli 2017, dengan versi terakhir adalah versi 1.1.2 yang rilis pada 1 Agustus 2017. Selain rilis pada perangkat {\it android}, aplikasi ini juga rilis untuk perangkat bergerak berbasis sistem operasi iOS. Namun saat skripsi ini dibuat, aplikasi yang dibuat pada tahun 2017 tersebut sudah diturunkan dari App Store pada perangkat berbasis sistem opearsi iOS, dikarenakan tidak mengalami pembaruan dalam jangka waktut tertentu. Untuk membuka dan memakai aplikasi WSDC 2017 Bali saat ini, pengguna tidak diperlukan {\it login} agar dapat mengakses seluruh fitur yang tersedia. Untuk kepentingan skripsi ini, peneliti memiliki akses ke dalam kode program aplikasi WSDC 2017 Bali.
 
 \begin{figure}[H]
      \centering
@@ -93,28 +93,28 @@ Fitur-fitur yang terdapat di aplikasi WSDC 2017 Bali saat ini yaitu :
 \section{Angular}
 \label{sec:angular} 
 %buku Angular Development with TypeScript
-Angular merupakan kerangka kerja Javascript terbuka yang dikembangkan oleh Google, dan merupakan penerus dari versi sebelumnya yaitu AngularJS~\cite{fain:18:angular}. Angular versi pertama dirilis pada tahun 2016 dengan nama Angular 2. Aplikasi Angular dapat dibangun dengan menggunakan JavaScript, atau TypeScript.
+Angular merupakan \textit{framework} Javascript terbuka yang dikembangkan oleh Google, dan merupakan penerus dari versi sebelumnya yaitu AngularJS~\cite{fain:18:angular}. Angular versi pertama dirilis pada tahun 2016 dengan nama Angular 2. Aplikasi Angular dapat dibangun dengan menggunakan JavaScript, atau TypeScript.
 
 %buku SPA Design and Architecture: Understanding single-page web applications
-Angular dapat digunakan untuk membuat aplikasi Single-page-application (SPA), yaitu ketika halaman awal dimuat, semua yang dibutuhkan untuk membuat dan menampilkan sebuah halaman diunduh, kemudian ditampilkan kedalam layar~\cite{scott:15:spa}. Tampilan pada awalnya merupakan halaman dengan kode-kode HTML yang belum utuh, kemudian tampilan halaman dibuat dan diunduh untuk ditampilkan. Dengan begitu, \textit{browser} tidak perlu melakukan penyegaran tampilan lagi untuk menampilkan halaman baru.
+Angular dapat digunakan untuk membuat aplikasi Single-page-application (SPA), yaitu ketika halaman awal dimuat, semua yang dibutuhkan untuk membuat dan menampilkan sebuah halaman diunduh, kemudian ditampilkan kedalam layar~\cite{scott:15:spa}.  SPA memiliki kemampuan untuk menampilkan halaman web secara dinamis, sehingga pengguna melihat \textit{update} halaman web secara instan. Maka dari itu tidak perlu melakukan \textit{request} kembali ke server.
 
 %Nulis typiscrript
-Angular dapat dibangun dengan menggunakan JavaScript atau TypeScript. Namun, penggunaan TypeScript saat ini menjadi lebih produktif dibandingkan dengan JavaScript~\cite{fain:18:angular}. TypeScript mengikuti perkembangan terakhir dari ECMAScript, dan menambahkan \textit{types}, \textit{interface}, \textit{decorators}, \textit{class member variables}, \textit{generic}, \textit{enum}, dan \textit{keyword} seperti \textit{public}, \textit{protected}, dan \textit{private}. TypeScript juga dapat dimungkinkan untuk mendeklarisasi jenis tipe khusus yang dapat di kustomisasi. Maka dari itu, Framework Angular sendiri ditulis menggunakan TypeScript.
+Angular dapat dibangun dengan menggunakan JavaScript atau TypeScript. Namun, penggunaan TypeScript saat ini menjadi lebih produktif dibandingkan dengan JavaScript~\cite{fain:18:angular}. TypeScript mengikuti perkembangan terakhir dari ECMAScript, yaitu bahasa skrip yang distandarisasi oleh Ecma International dalam spesifikasi ECMA-262 dan ISO/IEC 16262~\cite{rarayan:15:learning}. TypeScript juga menambahkan \textit{types}, \textit{interface}, \textit{decorators}, \textit{class member variables}, \textit{generic}, \textit{enum}, dan \textit{keyword} seperti \textit{public}, \textit{protected}, dan \textit{private} serta dapat digunakan untuk mendeklarisasi jenis tipe khusus yang dapat di kustomisasi. Maka dari itu, Framework Angular sendiri ditulis menggunakan TypeScript.
 
-Kelas TypeScript akan digunakan oleh Angular di dalam sebuah komponen. Komponen pada Angular merupakan sebuah penyusun utama untuk aplikasi Angular. Setiap komponen yang ada pada aplikasi, secara \textit{default} memiliki \textit{critical files} yang terdiri dari \textit{file} HTML untuk mendeklarasi halaman yang akan dimuat, \textit{file} TypeScript, serta \textit{file} css~\cite{gion:18:mastering}. Di dalam komponen terdapat module.ts yang merupakan NgModule dari sebuah komponen, spec.ts yang digunakan untuk menguji komponen, dan routing.module.ts yang berisi definisi untuk bernavigasi antar bagian dalam aplikasi Angular. Penjelasan untuk masing-masing \textit{file} adalah sebagai berikut:
+Angular terdiri dari komponen-komponen yang merupakan sebuah penyusun utama untuk aplikasi Angular. Setiap komponen yang ada pada aplikasi, secara \textit{default} memiliki \textit{critical files} yang terdiri dari \textit{file} HTML untuk mendeklarasi halaman yang akan dimuat, \textit{file} TypeScript, serta \textit{file} css~\cite{gion:18:mastering}. Di dalam komponen terdapat module.ts yang merupakan NgModule dari sebuah komponen, spec.ts yang digunakan untuk menguji komponen, dan routing.module.ts yang berisi definisi untuk bernavigasi antar bagian dalam aplikasi Angular. Penjelasan untuk masing-masing \textit{file} adalah sebagai berikut:
 
 \begin{itemize}
 	\item \textit{File} routing.module.ts \\
-		\textit{File} ini digunakan untuk melakukan navigasi antar komponen. Untuk melakukannya, harus melakukan \textit{import} RouterModule dan Routes sehingga dapat memiliki fungsionalitas \textit{routing}~(Kode~\ref{lst:importroutingmodule}). Selanjutnya lakukan \textit{import} untuk memberikan \textit{router} suatu tempat untuk dituju setelah mengonfigurasi rute.
+		\textit{File} ini digunakan untuk melakukan navigasi antar komponen. Untuk melakukannya, harus melakukan \textit{import} RouterModule dan Routes sehingga dapat memiliki fungsionalitas \textit{routing}~(Kode~\ref{lst:importroutingmodule}). Pada kode tersebut, dilakukan \textit{import} RouterModule dan Routes dari @angular/router. Selanjutnya lakukan \textit{import} untuk komponen lain yang akan dituju untuk melakukan navigasi ke komponen tersebut. Sebagai contoh, pada kode~\ref{lst:importroutingmodule} melakukan \textit{import} untuk komponen ``Heroes``.
 
-\begin{lstlisting}[label={lst:importroutingmodule}, caption=Contoh \textit{import} pada routing.module.ts]
+\begin{lstlisting}[label={lst:importroutingmodule}, caption=Contoh \textit{import} pada routing.module.ts, captionpos=b]
 import { RouterModule, Routes } from '@angular/router';
 import { HeroesComponent } from './heroes/heroes.component';
 \end{lstlisting} 
 
-		Setelah itu, lakukan konfigurasi \textit{routes}~(Kode~\ref{lst:confroutingmodule}). \textit{Routes} akan memberi tahu Router tampilan mana yang akan ditampilkan saat pengguna melakukan navigasi.
+		Setelah itu, lakukan konfigurasi \textit{routes}. Routes kemudian memberi tahu Router tampilan mana yang akan ditampilkan saat pengguna melakukan navigasi. Seperti pada kode~\ref{lst:confroutingmodule}, dengan menggunakan key path dan component. Path digunakan untuk melakukan navigasi di alamat url sesuai dengan path tersebut. Sedangkan component digunakan untuk menampilkan komponen yang dituju.
 		
-\begin{lstlisting}[label={lst:confroutingmodule}, caption=Contoh Konfigurasi \textit{Routes} pada routing.module.ts]
+\begin{lstlisting}[label={lst:confroutingmodule}, caption=Contoh Konfigurasi \textit{Routes} pada routing.module.ts, captionpos=b]
 const routes: Routes = [
   { path: 'heroes', component: HeroesComponent }
 ];
@@ -130,7 +130,7 @@ const routes: Routes = [
 		\textit{File} ini digunakan untuk melakukan pengujian terhadap aplikasi Angular. 
 		
 	\item \textit{File} TypeScript \\
-		Di dalam TypeScript, terdapat sebuah kelas komponen. Kelas tersebut memiliki anotasi dengan sebuah \textit{decorator}~(Kode~\ref{lst:decorator}) yang ditempatkan sesuai dengan komponen UI nya berada. Komponen akan berisi \textit{instance} dari service class yang diimplementasi dari \textit{business logic} tanpa UI. Sebuah service class merupakan implementasi dari \textit{business logic}. Angular akan menempatkan \textit{services} ke dalam komponen atau ke dalam \textit{services} lainnya dengan menggunakan \textit{dependency injection} (DI). 	
+		Di dalam TypeScript, terdapat sebuah kelas komponen. Kelas tersebut memiliki anotasi dengan sebuah \textit{decorator}~(Kode~\ref{lst:decorator}) yang ditempatkan sesuai dengan komponen UI nya berada. Komponen berisi \textit{instance} dari service class yang diimplementasi dari \textit{business logic} tanpa UI. Sebuah service class merupakan implementasi dari \textit{business logic}. Angular akan menempatkan \textit{services} ke dalam komponen atau ke dalam \textit{services} lainnya dengan menggunakan \textit{dependency injection} (DI). 	
 
 \begin{lstlisting}[label={lst:decorator}, caption=Anotasi Komponen dengan \textit{Decorator}]
 @Component({
@@ -141,7 +141,7 @@ export class AppComponent{
 })
 \end{lstlisting} 
 
-		Selain itu, di dalam TypeScript digunakan untuk mereferensikan HTML \textit{template} dan CSS. Pada setiap komponen terdapat HTML \textit{template} yang berada di dalam komponen tersebut, atau di dalam file yang berada di luar file kopmonen yang direferensikan dengan menggunakan properti \textbf{templateUrl} di dalam komponen pada \textit{file} TypeScript. File HTML \textit{template} yang terpisah dengan komponen, memberikan efek kode yang lebih bersih di dalam komponen nya. Selain HTML \textit{template}, file lain seperti file CSS dapat diletakan terpisah dari file komponen dengan menggunakan styleUrls untuk mereferensikan file CSS ke dalam komponen (Kode~\ref{lst:referensiHTMLCSSdiKomponen}). Lalu terdapat juga properti selector untuk mendefinisikan nama dari tag yang bisa digunakan atau dipanggil oleh komponen lain.
+		Pada Angular terdapat decorator @Component yang digunakan untuk memanggil HTML \textit{template} dan CSS untuk komponen. Pada setiap komponen terdapat HTML \textit{template} yang berada di dalam komponen tersebut, atau di dalam file yang berada di luar file kopmonen yang direferensikan dengan menggunakan properti \textbf{templateUrl} di dalam komponen pada \textit{file} TypeScript. File HTML \textit{template} yang terpisah dengan komponen, memberikan efek kode yang lebih bersih di dalam komponen nya. Selain HTML \textit{template}, file lain seperti file CSS dapat diletakan terpisah dari file komponen dengan menggunakan styleUrls untuk mereferensikan file CSS ke dalam komponen (Kode~\ref{lst:referensiHTMLCSSdiKomponen}). Lalu terdapat juga properti selector untuk mendefinisikan nama dari tag yang bisa digunakan atau dipanggil oleh komponen lain.
 
 \begin{lstlisting}[label={lst:referensiHTMLCSSdiKomponen}, caption=Contoh Mereferensikan HTML dan CSS di Dalam Komponen]
 @Component({
@@ -156,8 +156,6 @@ export class SearchComponent{
 
 	\item \textit{File} module.ts \\
 	Komponen-komponen yang ada akan dikelompokkan menjadi Angular modules, yaitu sebuah kelas yang diberi \textbf{@NgModule()}. Angular module biasanya merupakan sebuah kelas kecil yang tidak memiliki isi, kecuali menulis kode bootstrap secara manual ke dalam aplikasi. Contohnya, ketika sebuah aplikasi merupakan turunan dari AngularJS yang lama, \textit{decorator} \textbf{@NgModule()} menampilkan semua komonen dan \textit{artifacts} lain termasuk \textit{services}, \textit{directive}, dan yang lainnya, maka semua itu harus disertakan ke dalam module (Kode~\ref{lst:moduleComponent}). 
-
-\newpage
 
 \begin{lstlisting}[label={lst:moduleComponent}, caption=Module dengan Komponen]
 @NgModule({
@@ -180,7 +178,7 @@ Di dalam aplikasi Angular, terdapat beberapa komponen, seperti Parent Component,
 \section{Ionic Framework}
 \label{sec:ionicframework} 
  
-Ionic Framework merupakan sebuah kerangka kerja {\it open source} lintas platform yang memungkinkan untuk mengembangkan aplikasi hibrida yang bekerja pada berbagai macam platform seluler seperti {\it android}, iOS, dan Windows~\cite{waranashiwar:18:ionic}. Ionic memiliki berbagai macam \textit{front-end library} dan komponen \textit{User Interface}(UI) yang digunakan untuk  perancangan aplikasi menggunakan teknologi web seperti HTML, CSS, dan Javascript, dengan integrasi untuk berbagai \textit{framework} seperti Angular, React, dan Vue. Saat pertama kali dibuat, Ionic menggunakan AngularJS. Namun, seiring saat Angular versi 2 yang menggunakan Typescript dirilis, Ionic versi 2 dan selanjutnya menggunakan Angular. Pada tahun 2019, Ionic mendukung penggunaan \textit{framework} lain selain Angular, yaitu React dan Vue. Di dalam Ionic, Angular digunakan untuk membangun aplikasi dan perutean, sehingga aplikasi dapat sejalan dengan ekosistem Angular lainnya. Ionic menyediakan {\it toolkit} Angular untuk membangun aplikasi dan terintegrasi dengan Angular CLI resmi yang menyediakan fitur khusus untuk aplikasi Ionic Angular. Pada saat skripsi ini dibuat, Ionic versi terbaru adalah Ionic versi 6, dengan dukungan penggunaan Angular versi 12 sampai dengan yang lebih baru.  
+Ionic Framework merupakan sebuah {\it framework open source} lintas platform yang memungkinkan untuk mengembangkan aplikasi hibrida yang bekerja pada berbagai macam platform seluler seperti {\it android}, iOS, dan Windows~\cite{waranashiwar:18:ionic}. Ionic memiliki berbagai macam \textit{front-end library} dan komponen \textit{User Interface}(UI) yang digunakan untuk  perancangan aplikasi menggunakan teknologi web seperti HTML, CSS, dan Javascript, dengan integrasi untuk berbagai \textit{framework} seperti Angular, React, dan Vue. Saat pertama kali dibuat, Ionic menggunakan AngularJS. Namun, pada saat Angular versi 2 yang menggunakan Typescript dirilis, Ionic versi 2 dan selanjutnya menggunakan Angular. Pada tahun 2019, Ionic mendukung penggunaan \textit{framework} lain selain Angular, yaitu React dan Vue. Di dalam Ionic, Angular digunakan untuk membangun aplikasi dan perutean, sehingga aplikasi dapat sejalan dengan ekosistem Angular lainnya. Ionic menyediakan {\it toolkit} Angular untuk membangun aplikasi dan terintegrasi dengan Angular CLI resmi yang menyediakan fitur khusus untuk aplikasi Ionic Angular. Pada saat skripsi ini dibuat, Ionic versi terbaru adalah Ionic versi 6, dengan dukungan penggunaan Angular versi 12 sampai dengan yang lebih baru.  
 
 \subsection{Native API}
 \label{subsec:nativeApi}
@@ -194,7 +192,7 @@ Ionic mendukung komunikasi dengan menggunakan Native API yang terintegrasi untuk
 \label{subsec:capacitor}
 Tujuan dari Capacitor adalah untuk menyediakan akses ke perangkat {\it native} dan fitur platform, serta untuk menyediakan satu set API untuk mengembangkan aplikasi seluler secara hibrida, {\it Progressive Web Apps} berbasis web, dan aplikasi komputer berbasis Electron~\cite{tor:19:software}. Capacitor merupakan penerus dari Cordova, dengan tujuan untuk memungkinkan aplikasi web modern berjalan di semua platform utama. Capacitor juga mendapat dukungan terhadap banyak {\it plugin} Cordova.
 
-Capacitor melakukan pendekatan secara hybrid yang mememungkinkan pembuatan aplikasi seluler untuk beberapa platform dengan hanya dari satu basis kode~\cite{huber:21:pwa}. Capacitor menampilkan aplikasi seluler dalam komponen \textit{native} WebView yang dibungkus di dalam \textit{native app}, menghasilkan komponen antarmuka pengguna yang memiliki tampilan dan rasa yang mirip dengan komponen \textit{native} dari sistem operasi suatu perangkat. Capacitor menjadi sebuah~pembungkus~aplikasi~web~di~dalam~Android~atau~iOS~\textit{native}. Capacitor didasarkan pada aplikasi web yang dibuat dengan \textit{framework} Ionic.
+Capacitor melakukan pendekatan secara hybrid yang mememungkinkan pembuatan aplikasi seluler untuk beberapa platform dengan hanya dari satu basis kode~\cite{huber:21:pwa}. Capacitor menampilkan aplikasi seluler dalam WebView yang dibungkus di dalam \textit{native app}, menghasilkan komponen antarmuka pengguna yang memiliki tampilan dan kemampuan yang mirip dengan aplikasi \textit{native} dari sistem operasi suatu perangkat. Capacitor menjadi sebuah~pembungkus~aplikasi~web~di~dalam~Android~atau~iOS~\textit{native}. Capacitor didasarkan pada aplikasi web yang dibuat dengan \textit{framework} Ionic.
 
 Capacitor memiliki \textit{plugins} untuk mengakses \textit{native} API secara penuh. \textit{Plugins} yang dimiliki oleh Capacitor terbagi menjadi dua, yaitu:
 
@@ -206,7 +204,7 @@ Capacitor memiliki \textit{plugins} untuk mengakses \textit{native} API secara p
 		
 			\item Browser API \\
 				Browser API menyediakan kemampuan untuk membuka browser dalam aplikasi. Untuk menginstal Browser API dapat dilakukan melalui \textit{command line} dengan perintah seperti pada kode~\ref{lst:installBrowsernAPI}. 
-\begin{lstlisting}[label={lst:installBrowsernAPI}, caption=Kode untuk Menginstal Browser API]
+\begin{lstlisting}[label={lst:installBrowsernAPI}, caption=Kode untuk Instalasi Browser API]
 npm install @capacitor/browser
 npx cap sync
 \end{lstlisting}
@@ -280,22 +278,21 @@ await SplashScreen.show({
 });
 \end{lstlisting}
 			
-			Secara \textit{default}, Splash Screen diatur secara otomatis untuk disembunyikan dalam waktu 500ms. Selain itu, pada kondisi tertentu Splash Screen tidak sepenuhnya menutupi layar, seperti pada bagian-bagian sudut-sudut layar. Splash Screen dapat mengatur warna latar belakang, dibandingkan dengan menampilkan warna transparan saat Splash Screen tidak sepenuhnya menutupi layar. Selain itu, Splash Screen juga dapat dibuat untuk menampilkan \textit{spinner} diatas Splash Screen. 
+			Sebagai suatu standar, Splash Screen diatur secara otomatis untuk disembunyikan dalam waktu 500ms. Pada kondisi tertentu Splash Screen tidak sepenuhnya menutupi layar, seperti pada bagian-bagian sudut-sudut layar. Splash Screen dapat mengatur warna latar belakang, dibandingkan dengan menampilkan warna transparan saat Splash Screen tidak sepenuhnya menutupi layar. Splash Screen juga dapat dibuat untuk menampilkan \textit{spinner} diatas Splash Screen. 
 		
 		\end{enumerate}				
 		
 		Selain itu, terdapat beberapa \textit{Official Plugins} lain yang dimiliki Capacitor, yaitu Action Sheet, App, App Launcher, Camera, Clipboard, Device, Dialog, Filesystem, Google Maps, Haptics, Keyboard, Local Notifications, Motion, Network, Push Notifications, Screen Reader, Share, Status Bar, Storage, Text Zoom, dan Toast.
 		\newpage
 	\item \textit{Community Plugins} \\
-		\textit{Community Plugins} merupakan sekumpulan \textit{plugin} yang diciptakan oleh komunitas untuk menambahkan fungsionalitas ke dalam aplikasi. Perbedaan dengan \textit{Official Plugins} adalah dimana tim Capacitor tidak secara resmi melakukan pemeliharaan terhadap \textit{Community Plugins}. Salah satu \textit{plugin} yang diciptakan oleh komunitas adalah \textit{plugin }Google Maps yang menggunakan \textit{native} Google Maps SDK. Untuk menginstal \textit{plugin} Google Maps dapat dilakukan melalui \textit{command line} dengan perintah seperti pada kode~\ref{lst:installGmapsPlugin}.	
+		\textit{Community Plugins} merupakan sekumpulan \textit{plugin} yang diciptakan oleh komunitas untuk menambahkan fungsionalitas ke dalam aplikasi. Perbedaan dengan \textit{Official Plugins} yaitu tim Capacitor tidak secara resmi melakukan pemeliharaan terhadap \textit{Community Plugins}. Salah satu \textit{plugin} yang diciptakan oleh komunitas adalah \textit{plugin }Google Maps yang menggunakan \textit{native} Google Maps SDK. Untuk menginstal \textit{plugin} Google Maps dapat dilakukan melalui \textit{command line} dengan perintah seperti pada kode~\ref{lst:installGmapsPlugin}.	
 		
 \begin{lstlisting}[label={lst:installGmapsPlugin}, caption=Kode untuk Menginstal \textit{Plugin} Google Maps]
 npm i --save @capacitor-community/google-maps
 npx cap sync
 \end{lstlisting}
 
-	Maps SDK merender \textit{native element} (MapView) di belakang aplikasi web (WebView). Maka dari itu, dibutuhkan \textit{boundaries} yang dirender. Maka dari itu Maps SDK menggunakan \textit{native element} dibandingkan HTMLElement. Sebelum dapat menggunakan \textit{plugin} ini, harus dilakukan impor terlebih dahulu. Setelah mengimpor \textit{plugin}, sebuah instance Maps sederhana dapat diinisialisasi (Kode~\ref{lst:codeGmapsPlugin}).
-
+	Maps SDK merender \textit{native element} (MapView) di belakang aplikasi web (WebView). Maka dari itu, dibutuhkan \textit{boundaries} yang dirender. Maka dari itu Maps SDK menggunakan \textit{native element} dibandingkan HTMLElement. Sebelum dapat menggunakan \textit{plugin} ini, harus dilakukan impor terlebih dahulu. Setelah mengimpor \textit{plugin}, sebuah instance Maps sederhana dapat diinisialisasi seperti pada kode~\ref{lst:codeGmapsPlugin}. Pada contoh kode tersebut, Capacitor Google Maps memiliki sebuah \textit{function} createMap yang digunakan untuk membuat peta Google Maps. Di dalam \textit{function} tersebut terdapat sebuah \textit{option} boundingRect yang digunakan sebagai tempat untuk menyimpan peta Google Maps. Peta ditempatkan di dalam sebuah kontainer, maka dari itu pada \textit{option} ini mengambil ukuran \textit{width}, \textit{height}, x, dan y dari kontainer yang sebelumnya sudah didapatkan pada baris ke-10, yang kemudian nilai ukuran peta Google Maps berisi ukuran dari kontainer.
 	
 \begin{lstlisting}[label={lst:codeGmapsPlugin}, caption=Contoh Kode Penggunaan \textit{Plugin} Google Maps]
 const initializeMap = async () => {
@@ -353,9 +350,7 @@ ionic capacitor build android
 \label{subsec:cordova}
 Cordova merupakan {\it framework open source} yang dapat membuat pengembang untuk menggunakan teknologi seperti HTML, JavaScript, dan CSS untuk membangun aplikasi untuk perangkat bergerak yang dapat berjalan pada beberapa sistem operasi {\it mobile}~\cite{gonsalves:18:evaluating}. Cordova menyediakan antarmuka antara WebView dan lapisan {\it native} pada perangkat~\cite{griffith:17:mobile}. Selain dapat bekerja pada dua platform seluler Android dan iOS,~Cordova~juga~dapat~digunakan~pada~platform~seluler~seperti~Windows~Phone,~Blackberry,~dan~FireOS.
 
-Untuk mengonfigurasi~proyek~Cordova,~saat~ini~dapat~menggunakan~{\it Command Line Tool} (CLI). CLI membuat proyek dasar dan mengonfigurasinya~agar~berfungsi dengan platform seluler apa pun yang didukung yang dapat digunakan. Cordova CLI juga dapat membuat pengembang memliki integrasi dan pengelolaan {\it plug-in}. Selain itu, Cordova CLI juga dapat mengkompilasi aplikasi untuk berjalan pada simulator~atau~pada~perangkat {\it native}.~Serupa~dengan~Capacitor,~Cordova membuat pengembang dapat mengakses fitur {\it native} dari sebuah perangkat, seperti kamera, papan ketik, dan geolokasi, menggunakan {\it plugin}. {\it Framework} Ionic~telah~terdapat~berbagai~macam~TypeScript~{\it wrapper}~untuk {\it plugins} Cordova.  Untuk dapat menggunakan Cordova Plugins, yaitu dengan memasang Cordova Plugins terlebih dahulu (Kode~\ref{lst:installCordova}), dan memperbaruinya ke versi terakhir (Kode~\ref{lst:updateCordova}) yang dapat dilakukan melalui CLI. Setiap {\it plugins} memiliki dua komponen, yaitu kode {\it native} (Cordova), dan kode TypeScript (Ionic Native).
-
-\newpage
+Untuk mengonfigurasi~proyek~Cordova,~saat~ini~dapat~menggunakan~{\it Command Line Tool} (CLI). CLI membuat proyek dasar dan mengonfigurasinya~agar~berfungsi dengan platform seluler apa pun yang didukung yang dapat digunakan. Cordova CLI juga dapat membuat pengembang memliki integrasi dan pengelolaan {\it plug-in}. Selain itu, Cordova CLI juga dapat mengkompilasi aplikasi untuk berjalan pada emulator~atau~pada~perangkat {\it native}.~Serupa~dengan~Capacitor,~Cordova membuat pengembang dapat mengakses fitur {\it native} dari sebuah perangkat, seperti kamera, papan ketik, dan geolokasi, menggunakan {\it plugin}. {\it Framework} Ionic~telah~terdapat~berbagai~macam~TypeScript~{\it wrapper}~untuk {\it plugins} Cordova.  Untuk dapat menggunakan Cordova Plugins, yaitu dengan memasang Cordova Plugins terlebih dahulu (Kode~\ref{lst:installCordova}), dan memperbaruinya ke versi terakhir (Kode~\ref{lst:updateCordova}) yang dapat dilakukan melalui CLI. Setiap {\it plugins} memiliki dua komponen, yaitu kode {\it native} (Cordova), dan kode TypeScript (Ionic Native).
 
 \begin{lstlisting}[label={lst:installCordova}, caption=Kode untuk Memasang Cordova Plugins]
 npm install cordova-plugin-name
@@ -382,28 +377,28 @@ cordova plugin add cordova-plugin-googlemaps
 
 Cordova juga dapat menambahkan platform \textit{native} ke dalam proyek Ionic dengan mengetikan perintah seperti pada kode~\ref{lst:addCordovaAndroid} untuk menambahkan platform Android, dan kode~\ref{lst:addCordovaIOS} untuk menambahkan platform iOS. Untuk menjalankan proyek Ionic dengan Cordova dengan mengetikan perintah seperti pada kode~\ref{lst:runCordovaAndroid} untuk perangkat Android, dan kode~\ref{lst:runCordovaiOS} untuk perangkat iOS. Dengan begitu, Cordova akan membuka IDE sesuai dengan perintah yang dijalankan.
 
-\begin{lstlisting}[label={lst:addCordovaAndroid}, caption=Kode untuk Menambahkan Platform Android dengan Capacitor]
+\begin{lstlisting}[label={lst:addCordovaAndroid}, caption=Kode untuk Menambahkan Platform Android dengan Cordova]
 ionic cordova platform add android
 \end{lstlisting} 
 
-\begin{lstlisting}[label={lst:addCordovaIOS}, caption=Kode untuk Menambahkan Platform iOS dengan Capacitor]
+\begin{lstlisting}[label={lst:addCordovaIOS}, caption=Kode untuk Menambahkan Platform iOS dengan Cordova]
 ionic cordova platform add iOS
 \end{lstlisting} 
 
-\begin{lstlisting}[label={lst:runCordovaAndroid}, caption=Kode untuk Membuat Aplikasi Capacitor Untuk Perangkat Android]
+\begin{lstlisting}[label={lst:runCordovaAndroid}, caption=Kode untuk Membuat Aplikasi Cordova Untuk Perangkat Android]
 ionic cordova platform run android
 \end{lstlisting} 
 
-\begin{lstlisting}[label={lst:runCordovaiOS}, caption=Kode untuk Membuat Aplikasi Capacitor Untuk Perangkat iOS]
+\begin{lstlisting}[label={lst:runCordovaiOS}, caption=Kode untuk Membuat Aplikasi Cordova Untuk Perangkat iOS]
 ionic cordova platform run iOS
 \end{lstlisting} 
 
 \subsection{UI Component}
 \label{subsec:uiComponent}
-Dengan Angular, {\it framework} Ionic dapat menggunakan kemampuan Angular dalam memperluas kosakata HTML, yaitu menyertakan {\it tag} khusus untuk menciptakan seluruh rangkaian komponen~\cite{griffith:17:mobile}. Semua komponen memiliki awalan ion, sehingga dapat dikenali dalam markup. Sama seperti {\it tag} HTML standar, komponen Ionic juga dapat menerima berbagai macam atribut sebagai pengaturan dari {\it tag} tersebut, seperti mengatur id atau mendefinisikan kelas CSS tambahan. Terdapat beberapa komponen yang ada pada {\it framework} Ionic versi 6~[\ref{ref:uiComponents}]. Komponen-komponen tersebut yaitu:
+{\it Framework} Ionic dapat menggunakan kemampuan Angular dalam memperluas kosakata HTML, yaitu menyertakan {\it tag} khusus untuk menciptakan seluruh rangkaian komponen~\cite{griffith:17:mobile}. Semua komponen memiliki awalan ion, sehingga dapat dikenali dalam markup. Sama seperti {\it tag} HTML standar, komponen Ionic juga dapat menerima berbagai macam atribut sebagai pengaturan dari {\it tag} tersebut, seperti mengatur id atau mendefinisikan kelas CSS tambahan. Terdapat beberapa komponen yang ada pada {\it framework} Ionic versi 6~[\ref{ref:uiComponents}]. Komponen-komponen tersebut yaitu:
 \begin{itemize}
 	\item Action Sheet \\
-	Merupakan dialog yang menampilkan serangkaian opsi, yang muncul di atas konten aplikasi dan harus ditutup secara manual oleh pengguna sebelum pengguna dapat melanjutkan interaksi dengan aplikasi. Untuk menutup Action Sheet terdapat beberapa cara, termasuk mengetuk latar belakang atau menekan tombol escape di desktop.
+	Merupakan dialog yang menampilkan serangkaian opsi, yang muncul di atas konten aplikasi dan harus ditutup secara manual oleh pengguna sebelum pengguna dapat melanjutkan interaksi dengan aplikasi. Untuk menutup Action Sheet terdapat beberapa cara, termasuk mengetuk bagian selain Action Sheet atau menekan tombol escape di desktop.
 
 	\item Alert \\
 	Alert merupakan dialog yang menampilkan informasi kepada pengguna, atau mengumpulkan informasi dari pengguna menggunakan input. Alert muncul di atas konten aplikasi, dan harus ditutup secara manual oleh pengguna sebelum pengguna dapat melanjutkan interaksi dengan aplikasi. Secara opsional, terdapat header, sub header, dan pesan yang ada pada Alert.
@@ -419,8 +414,8 @@ Dengan Angular, {\it framework} Ionic dapat menggunakan kemampuan Angular dalam 
 \end{lstlisting} 
 
 	\item Card \\
-	Merupakan bagian standar dari tampilan antarmuka yang berfungsi sebagai titik masuk ke dalam informasi yang lebih detail. Card dapat menjadi satu komponen, tetapi sering kali terdiri dari beberapa header, judul, sub judul, dan konten. Penggunaan Card dengan menggunakan {\it tag} \texttt{<ion-card>} yang dapat berisi {\it header}, {\it subtitle}, {\it title}, dan {\it content} (Kode~\ref{lst:cardComponent}).
-	\newpage
+	Merupakan bagian standar dari tampilan antarmuka, yang tampak seperti kartu yang berfungsi sebagai titik masuk ke dalam informasi yang lebih detail. Card dapat menjadi satu komponen, tetapi sering kali terdiri dari beberapa header, judul, sub judul, dan konten. Penggunaan Card dengan menggunakan {\it tag} \texttt{<ion-card>} yang dapat berisi {\it header}, {\it subtitle}, {\it title}, dan {\it content} (Kode~\ref{lst:cardComponent}).
+
 \begin{lstlisting}[label={lst:cardComponent}, caption=Potongan Kode Program dari Card Component]
 <ion-card>
 	<ion-card-header>
@@ -459,7 +454,7 @@ Dengan Angular, {\it framework} Ionic dapat menggunakan kemampuan Angular dalam 
 
 	\item Grid \\
 	Grid digunakan untuk membuat tata letak kustom pada tampilan. Grid terdiri dari tiga bagian, yaitu \textit{grid}, baris, dan kolom. Masing-masing kolom dapat diubah ukurannya menggunakan CSS. Grid digunakan dengan \textit{tag} \texttt{<ion-grid>} (Kode~\ref{lst:GridComponent}).	
-	\newpage	
+
 \begin{lstlisting}[label={lst:GridComponent}, caption=Potongan Kode Program dari Grid Component]
 <ion-row>
 	<ion-col size="6">
@@ -545,7 +540,7 @@ Dengan Angular, {\it framework} Ionic dapat menggunakan kemampuan Angular dalam 
 \end{lstlisting} 
 	\item Modal \\
 	Modal merupakan kotak dialog yang muncul diatas konten aplikasi lain, dan harus diutup secara manual oleh pengguna sebelum pengguna dapat melanjutkan menggunakan aplikasi. Modal berguna sebagai komponen pilihan ketika ada banyak opsi untuk dipilih, atau melakukan penyaringan isi di dalam daftar, serta beberapa kasus serupa lainnya. Modal dapat digunakan dengan \textit{tag} \texttt{<ion-modal>} (Kode~\ref{lst:modalComponent}).
-	\newpage
+
 \begin{lstlisting}[label={lst:modalComponent}, caption=Kode Program dari Modal]
 <ion-modal [isOpen]="true">
   <ng-template>
@@ -582,7 +577,7 @@ Dengan Angular, {\it framework} Ionic dapat menggunakan kemampuan Angular dalam 
 \end{lstlisting}
 	
 	\item Slides \\
-	Komponen Slides merupakan sebuah \textit{multi-section container} yang setiap bagiannya dapat dilakukan \textit{swipe} atau \textit{drag}. Untuk menggunakan komponen ini dengan menggunakan \textit{tag} \texttt{<ion-slides>} (Kode~\ref{lst:slidesComponent}).
+	Komponen Slides merupakan sebuah \textit{multi-section container} yang setiap bagiannya dapat dilakukan \textit{swipe} atau \textit{drag}. Untuk menggunakan komponen ini dengan menggunakan \textit{tag} \texttt{<ion-slides>} seperti pada kode~\ref{lst:slidesComponent} sebagai pembungkus slide. Masing-masing slide menggunakan \textit{tag} \texttt{<ion-slide>} seperti pada baris ke-2. \textit{Tag} tersebut dapat digunakan untuk menggeser slide dari kiri ke kanan, atau sebaliknya.
 	
 \begin{lstlisting}[label={lst:slidesComponent}, caption=Kode Program dari Slides]
 <ion-slides pager="true" [options]="slideOpts">
@@ -678,7 +673,7 @@ ionic start myApp blank
 
 		\item Menyalin Bagian-bagian Aplikasi \\
 		Menyalin keseluruhan bagian yang ada pada aplikasi, baik itu halaman maupun fitur yang ada, dengan ketentuan sebagai berikut :
-\newpage
+
 		%---START ITEMIZE MENYALIN BAGIAN BAGIAN APLIKASi---%
 		\begin{itemize}
 			\item Shadow DOM sudah aktif secara {\it default}.
@@ -737,33 +732,30 @@ ionic start myApp blank
 				Terdapat beberapa perubahan nama pada Ionic 4, yaitu:
 				\begin{itemize}
 					\item Perubahan Nama Properti
-					Terdapat perubahan nama properti pada Ionic 4. Perubahan-perubahan tersebut adalah sebagai berikut: 
-						\begin{itemize}
-							\item swipeEnable \\
-							Terdapat perubahan swipeEnable pada Ionic 4. Perubahan tersebut adalah sebagai berikut: \\
-							Pada Ionic 3: swipeEnabled \\
-							Sedangkan pada Ionic 4 menjadi: swipeGesture						
-
-							\item content \\
-							Terdapat perubahan content pada Ionic 4. Perubahan tersebut adalah sebagai berikut: \\
-							Pada Ionic 3: content \\
-							Sedangkan pada Ionic 4 menjadi: contentId
-						\end{itemize}	
-					
+					Terdapat perubahan nama properti pada Ionic 4. Perubahan-perubahan tersebut adalah sebagai berikut:
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|ll|}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{Properti}} & \multicolumn{2}{c|}{Perubahan}                   \\ \cline{2-3} 
+\multicolumn{1}{|c|}{}                      & \multicolumn{1}{l|}{Ionic 3}      & Ionic 4      \\ \hline
+swipeEnabled                                & \multicolumn{1}{l|}{swipeEnabled} & swipeGesture \\ \hline
+content                                     & \multicolumn{1}{l|}{content}      & contentId    \\ \hline
+\end{tabular}
+\end{table}			
 
 					\item Perubahan Nama Events
 					Terdapat perubahan nama {\it events} pada Ionic 4. Perubahan-perubahan tersebut adalah sebagai berikut :
-						\begin{itemize}
-							\item ionClose \\
-							Terdapat perubahan ionClose pada Ionic 4. Perubahan tersebut adalah sebagai berikut: \\
-							Pada Ionic 3: ionClose \\
-							Sedangkan pada Ionic 4 menjadi: ionDidClose
-
-							\item ionOpen \\
-							Terdapat perubahan ionOpen pada Ionic 4. Perubahan tersebut adalah sebagai berikut: \\
-							Pada Ionic 3: ionOpen \\
-							Sedangkan pada Ionic 4 menjadi: ionDidOpen
-						\end{itemize}	
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|ll|}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{Events}} & \multicolumn{2}{c|}{Perubahan}              \\ \cline{2-3} 
+\multicolumn{1}{|c|}{}                        & \multicolumn{1}{l|}{Ionic 3}  & Ionic 4     \\ \hline
+ionClose                                      & \multicolumn{1}{l|}{ionClose} & ionDidClose \\ \hline
+ionOpen                                       & \multicolumn{1}{l|}{ionOpen}  & ionDidOpen  \\ \hline
+\end{tabular}
+\end{table}
 				\end{itemize}
 
 				\item Nav \\
@@ -771,26 +763,30 @@ ionic start myApp blank
 				\begin{itemize}
 					\item Perubahan Nama Method 
 					Terdapat perubahan nama {\it method} pada Ionic 4. Perubahan-perubahan tersebut adalah sebagai berikut:
-					\begin{itemize}				
-					\newpage
-						\item remove \\
-						Terdapat perubahan remove pada Ionic 4. Perubahan tersebut adalah sebagai berikut:\\
-						Pada Ionic 3: remove \\
-						Sedangkan pada Ionic 4 untuk menghindari konflik dengan HTML, berubah menjadi: removeIndex 
-
-						\item getActiveChildNavs \\
-						Terdapat perubahan getActiveChildNavs pada Ionic 4. Perubahan tersebut adalah sebagai berikut:\\
-						Pada Ionic 3: getActiveChildNavs \\
-						Sedangkan pada Ionic 4 menjadi: getChildNavs
-					\end{itemize}
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|ll|}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{Nama Method}} & \multicolumn{2}{c|}{Perubahan}                         \\ \cline{2-3} 
+\multicolumn{1}{|c|}{}                             & \multicolumn{1}{l|}{Ionic 3}            & Ionic 4      \\ \hline
+remove                                             & \multicolumn{1}{l|}{remove}             & removeIndex  \\ \hline
+getActiveChildNavs                                 & \multicolumn{1}{l|}{getActiveChildNavs} & getChildNavs \\ \hline
+\end{tabular}
+\end{table}					
 
 					\item Perubahan Nama Prop \\
 					Terdapat perubahan nama prop pada Ionic 4. Perubahan tersebut adalah sebagai berikut:\\
-					Pada Ionic 3: swipeBackEnabled   \\
-					Sedangkan pada Ionic 4 menjadi: swipeGesture
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|ll|}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{Nama Prop}} & \multicolumn{2}{c|}{Perubahan}                         \\ \cline{2-3} 
+\multicolumn{1}{|c|}{}                           & \multicolumn{1}{l|}{Ionic 3}            & Ionic 4      \\ \hline
+swipeBackEnabled                                 & \multicolumn{1}{l|}{swipeBackEnabled}   & swipeGesture  \\ \hline
+\end{tabular}
+\end{table}		
 				\end{itemize}	
-
-
 
 				\item Navbar \\
 				Pada Ionic 4, terdapat penghapusan terhadap komponen \texttt{<ion-navbar>} karena untuk menjaga agar selalu menggunakan \texttt{<ion-toolbar>} dengan {\it back button} yang eksplisit (Kode~\ref{lst:navbarIonic4}).				
@@ -901,7 +897,7 @@ ion-action-sheet {
 			
 			\item List Header\\
 			Konten berupa teks apa pun di dalam \texttt{<ion-list-header>} harus dibungkus dengan \texttt{<ion-label>} sesuai dengan gaya desain yang baru (Kode~\ref{lst:listHeader}). Jika label tidak ada, maka perataan tombol di header bisa saja terlihat tidak aktif. 
-			\newpage
+
 \begin{lstlisting}[label={lst:listHeader}, caption=Kode Program untuk List Header]
 <ion-list-header>
 	<ion-label>New This Week</ion-label>
