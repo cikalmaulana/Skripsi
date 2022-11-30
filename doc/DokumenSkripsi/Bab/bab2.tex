@@ -938,7 +938,7 @@ ionic start myApp blank
 \end{lstlisting}
 				
 				\item Overlays \\
-				Pada Ionic 4, semua overlay harus menggunakan async/await. Overlay tersebut adalah Action Sheet, Alert, Loading, Modal, Popover, and Toast (Kode~\ref{lst:overlaysIonic4}). Selain itu, terjadi perubahan nama propert enableBackdropDismiss menjadi backdropDismiss.
+				Pada Ionic 4, semua overlay harus menggunakan async/await. Overlay tersebut adalah Action Sheet, Alert, Loading, Modal, Popover, and Toast (Kode~\ref{lst:overlaysIonic4}). Terjadi perubahan nama properti enableBackdropDismiss menjadi backdropDismiss.
 				
 \begin{lstlisting}[label={lst:overlaysIonic4}, caption=Penggunaan Overlay untuk Toast pada Ionic 4]
 async presentToast() {
@@ -978,7 +978,7 @@ async presentToast() {
 		\item CSS
 		\begin{itemize}
 			\item {\it Activated, Focused, Hover States} \\
-			Kelas .activated secara otomatis ditambahkan ke komponen yang dapat diklik, mengalami perubahan nama menjadi .ion-activated. Selain itu juga memperbarui komponen Action Sheet sehingga variabel akan diawali dengan {\it button}. Hal ini dapat memungkinkan aplikasi tetap memiliki kontrol atas {\it opacity} jika diinginkan, tetapi saat memperbarui status, hanya perlu mengatur variabel utama, yaitu -background-activated, -background-focused, -background-hover. Hal tersebut penting saat mengubah tema global, karena memperbarui warna {\it toolbar} akan secara otomatis memperbarui {\it hover states} untuk semua {\it buttons} di {\it toolbar} (Kode~\ref{lst:hoverStates}). 		
+			Kelas .activated secara otomatis ditambahkan ke komponen yang dapat diklik, mengalami perubahan nama menjadi .ion-activated. Terdapat pembaruan komponen Action Sheet sehingga variabel akan diawali dengan {\it button}. Hal ini dapat memungkinkan aplikasi tetap memiliki kontrol atas {\it opacity} jika diinginkan, tetapi saat memperbarui status, hanya perlu mengatur variabel utama, yaitu -background-activated, -background-focused, -background-hover. Hal tersebut penting saat mengubah tema global, karena memperbarui warna {\it toolbar} akan secara otomatis memperbarui {\it hover states} untuk semua {\it buttons} di {\it toolbar} (Kode~\ref{lst:hoverStates}). 		
 			
 \begin{lstlisting}[label={lst:hoverStates}, caption=Contoh Kode {\it Hover States} pada Ionic 5]
 /* Setting the button background on hover to solid red */
@@ -1004,7 +1004,7 @@ ion-action-sheet {
 \end{lstlisting} 
 
 			\item CSS {\it Utilities} \\
-			Karena pada versi sebelumnya, yaitu Ionic versi 4, terdapat masalah dengan menggunakan atribut CSS dengan {\it framework} yang menggunakan JSX dan TypeScript, Ionic {\it Framework} menambahkan dukungan untuk beberapa {\it framework}, dan pada Ionic 5 menambahkan kelas CSS. Ionic versi 5 menghapus atribut CSS dan mendukung konsistensi. Selain itu, Ionic versi 5 juga mengubah ke kelas dengan diawali ion untuk menghindari konflik dengan atribut asli dan CSS dari pengguna (Kode~\ref{lst:CSSUtilities}).		
+			Karena pada versi sebelumnya, yaitu Ionic versi 4, terdapat masalah dengan menggunakan atribut CSS dengan {\it framework} yang menggunakan JSX dan TypeScript, Ionic {\it Framework} menambahkan dukungan untuk beberapa {\it framework}, dan pada Ionic 5 menambahkan kelas CSS. Ionic versi 5 menghapus atribut CSS dan mendukung konsistensi. Ionic versi 5 juga mengubah ke kelas dengan diawali ion untuk menghindari konflik dengan atribut asli dan CSS dari pengguna (Kode~\ref{lst:CSSUtilities}).		
 			
 \begin{lstlisting}[label={lst:CSSUtilities}, caption=Contoh Kode Kelas CSS {\it Utility} pada Ionic 5]
 <ion-header class="ion-text-center"></ion-header>
@@ -1042,7 +1042,7 @@ ion-action-sheet {
 </ion-list-header>
 \end{lstlisting}
 			\item Menu\\
-			Fungsi swipeEnable() telah dihapus di Angular, sebagai gantinya menggunakan swipeGesture(). Nilai {\it left} dan {\it right} telah dihapus, dan menggunakan {\it start} dan {\it end} sebagai gantinya. Selain itu ada penghapusan atribut utama, sebagai gantinya yaitu dengan menggunakan content-id (untuk vanila JS atau Vue) dan contentId (untuk Angular atau React) (Kode~\ref{lst:menu}).			
+			Fungsi swipeEnable() telah dihapus di Angular, sebagai gantinya menggunakan swipeGesture(). Nilai {\it left} dan {\it right} telah dihapus, dan menggunakan {\it start} dan {\it end} sebagai gantinya. Terdapat penghapusan atribut utama, sebagai gantinya yaitu dengan menggunakan content-id (untuk vanila JS atau Vue) dan contentId (untuk Angular atau React) (Kode~\ref{lst:menu}).			
 			
 \begin{lstlisting}[label={lst:menu}, caption=Kode Program untuk Menu]
 <ion-menu content-id="main"></ion-menu>
