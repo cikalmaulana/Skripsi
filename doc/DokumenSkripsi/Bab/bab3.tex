@@ -2,7 +2,7 @@
 \chapter{Analisis}
 \label{chap:analisis}
 
-Pada bab ini akan dijelaskan analisis aplikasi WSDC 2017 Bali saat ini dan aplikasi WSDC yang akan dibangun. Analisis yang akan dibahas meliputi analisis {\it use case}, analisis kebutuhan sistem, dan analisis pembangunan aplikasi Android menggunakan Ionic.
+Pada bab ini menjelaskan analisis aplikasi WSDC 2017 Bali saat ini dan aplikasi WSDC yang akan dibangun. Analisis yang akan dibahas meliputi analisis {\it use case}, analisis kebutuhan sistem, dan analisis pembangunan aplikasi Android menggunakan Ionic.
 
 \section{Analisis Sistem Kini}
 \label{sec:analisisSistemKini}
@@ -848,7 +848,7 @@ Aplikasi WSDC 2017 Bali yang akan dibangun akan mengadopsi desain dan tata letak
 \newpage
 Struktur yang dibuat akan menggunakan struktur Ionic Framework versi 6, namun menggunakan komponen-komponen yang sama dengan Ionic Framework versi 3. Tapi, karena terdapat beberapa perubahan, maka perubahaan di dalam komponen seperti UI Component, dan CSS akan mengikuti Ionic Framework versi 6. 
 
-UI Component yang akan digunakan akan mengikuti perkembangan pada Ionic Framework versi 6. Pada setiap komponen, akan terdapat sebuah \textit{header} dengan \textit{tag} \texttt{<ion-header>}. \textit{Tag} tersebut akan membungkus \textit{tag} \texttt{<ion-toolbar>} sebagai \textit{toolbar} dari aplikasi. \textit{Tag} ini akan menggantikan \textit{tag} \texttt{<ion-navbar>} yang telah dihapus sejak Ionic versi 4. Didalamn \texttt{<ion-toolbar>} terdapat \textit{tag} \texttt{<ion-buttons>} sebagai pengganti \textit{tag} \texttt{<button>} yang dihapus sejak Ionic versi 4, dan \textit{tag} \texttt{<ion-title>}. Dibandingkan dengan aplikasi sistem kini, terdapat perubahan pada \textit{tag} \texttt{<ion-toolbar>} yang semula bernama \texttt{<ion-navbar>} pada Ionic Framework versi 3. Selain itu ada \textit{tag} \texttt{<ion-buttons>} yang semula bernama \texttt{<button>}. Di dalam \textit{tag} \texttt{<ion-buttons>} akan ada sebuah \textit{tag} \texttt{<ion-menu-button>}.
+UI Component yang digunakan mengikuti perkembangan pada Ionic Framework versi 6. Pada setiap komponen, akan terdapat sebuah \textit{header} dengan \textit{tag} \texttt{<ion-header>}. \textit{Tag} tersebut akan membungkus \textit{tag} \texttt{<ion-toolbar>} sebagai \textit{toolbar} dari aplikasi. \textit{Tag} ini akan menggantikan \textit{tag} \texttt{<ion-navbar>} yang telah dihapus sejak Ionic versi 4. Didalamn \texttt{<ion-toolbar>} terdapat \textit{tag} \texttt{<ion-buttons>} sebagai pengganti \textit{tag} \texttt{<button>} yang dihapus sejak Ionic versi 4, dan \textit{tag} \texttt{<ion-title>}. Dibandingkan dengan aplikasi sistem kini, terdapat perubahan pada \textit{tag} \texttt{<ion-toolbar>} yang semula bernama \texttt{<ion-navbar>} pada Ionic Framework versi 3. Selain itu ada \textit{tag} \texttt{<ion-buttons>} yang semula bernama \texttt{<button>}. Di dalam \textit{tag} \texttt{<ion-buttons>} akan ada sebuah \textit{tag} \texttt{<ion-menu-button>}.
 
 Selain itu, terdapat UI Component lain yang akan diterapkan ke dalam masing-masing komponen di dalam aplikasi yang akan dibangun, diantaranya adalah sebagai berikut :
 
@@ -1303,7 +1303,7 @@ this.storage.get('wsdcDataStorage').then((data) => {
 })
 \end{lstlisting} 
 
-Perubahan-perubahan yang terjadi dari aplikasi WSDC 2017 Bali terdahulu ke aplikasi WSDC 2017 Bali terbaru meliputi perubahan UI Component, Native API dan penggunaan Plugin dari Native API yaitu seperti pada tabel~\ref{table:perubahan}. Selain hal-hal yang berkaitan dengan perubahan-perubahan tersebut, pembuatan aplikasi WSDC 2017 Bali dengan Ionic 6 menggunakan aset yang sama dengan aplikasi WSDC 2017 Bali terdahulu, seperti gambar, file HTML, kelas TypeScript, file SCSS untuk setiap komponen, dan kode warna.
+Perubahan-perubahan yang terjadi dari aplikasi WSDC 2017 Bali terdahulu ke aplikasi WSDC 2017 Bali terbaru meliputi perubahan UI Component, Native API dan penggunaan \textit{plugin} dari Native API yaitu seperti pada tabel~\ref{table:perubahan}. Selain hal-hal yang berkaitan dengan perubahan-perubahan tersebut, pembuatan aplikasi WSDC 2017 Bali dengan Ionic 6 menggunakan aset yang sama dengan aplikasi WSDC 2017 Bali terdahulu, seperti gambar, file HTML, kelas TypeScript, file SCSS untuk setiap komponen, dan kode warna.
 
 \begin{table}[H]
 \centering

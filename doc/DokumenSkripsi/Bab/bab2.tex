@@ -3,7 +3,7 @@
 \chapter{Landasan Teori}
 \label{chap:teori}
 
-Pada bab ini akan menjelaskan dasar-dasar teori mengenai Ionic, berikut dengan cara untuk melakukan migrasi dari Ionic 3 ke Ionic 6. Akan dibahas pula aplikasi WSDC 2017 Bali saat ini, Angular, Native API berupa Capacitor dan Cordova, dan UI Components.
+Pada bab ini menjelaskan dasar-dasar teori mengenai Ionic, berikut dengan cara untuk melakukan migrasi dari Ionic 3 ke Ionic 6. Akan dibahas pula aplikasi WSDC 2017 Bali saat ini, Angular, Native API berupa Capacitor dan Cordova, dan UI Components.
 
 \section{WSDC 2017 Bali}
 \label{sec:wsdc2017bali}
@@ -114,7 +114,7 @@ Angular dapat digunakan untuk membuat aplikasi Single-page-application (SPA), ya
 	    \label{fig:spadesain}
 \end{figure}
 
-Pada desain SPA, pengelolaan tampilan antarmuka dan server terpisah seperti pada Gambar~\ref{fig:spadesain}. Hal tersebut membuat desain SPA hampir sama dengan desain tradisional, namun terdapat perbedaan berupa tidak ada lagi \textit{refresh} pada \textit{browser} untuk mendapatkan tampilan halaman dengan data yang baru, dan \textit{presentation layer} berada di klien yang membuat tugas menggabungkan HTML dan data dipindahkan dari server ke browser. Pada desain SPA, setelah halaman awal dimuat, semua data yang diperlukan untuk membuat dan menampilkan tampilan diunduh dan siap digunakan. Jika diperlukan tampilan baru, tampilan tersebut dibuat secara lokal di browser dan ditampilkan secara dinamis melalui JavaScript sehingga tidak diperlukan \textit{refresh} pada browser.
+Pada desain SPA, pengelolaan tampilan antarmuka dan server terpisah seperti pada Gambar~\ref{fig:spadesain}. Hal tersebut membuat desain SPA hampir sama dengan desain tradisional, namun terdapat perbedaan berupa tidak ada lagi \textit{refresh} pada \textit{browser} untuk mendapatkan tampilan halaman dengan data yang baru, dan \textit{presentation layer} berada di \textit{client} yang membuat tugas menggabungkan HTML dan data dipindahkan dari server ke browser. Pada desain SPA, setelah halaman awal dimuat, semua data yang diperlukan untuk membuat dan menampilkan tampilan diunduh dan siap digunakan. Jika diperlukan tampilan baru, tampilan tersebut dibuat secara lokal di browser dan ditampilkan secara dinamis melalui JavaScript sehingga tidak diperlukan \textit{refresh} pada browser.
 
 %Nulis typiscrript
 Angular dapat dibangun dengan menggunakan JavaScript atau TypeScript. Namun, penggunaan TypeScript saat ini menjadi lebih produktif dibandingkan dengan JavaScript~\cite{fain:18:angular}. TypeScript mengikuti perkembangan terakhir dari ECMAScript, yaitu bahasa skrip yang distandarisasi oleh Ecma International dalam spesifikasi ECMA-262 dan ISO/IEC 16262~\cite{rarayan:15:learning}. TypeScript juga menambahkan \textit{types}, \textit{interface}, \textit{decorators}, \textit{class member variables}, \textit{generic}, \textit{enum}, dan \textit{keyword} seperti \textit{public}, \textit{protected}, dan \textit{private} serta dapat digunakan untuk mendeklarisasi jenis tipe khusus yang dapat di kustomisasi. Maka dari itu, Framework Angular sendiri ditulis menggunakan TypeScript.

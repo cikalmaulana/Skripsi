@@ -2,7 +2,7 @@
 \chapter{Perancangan}
 \label{chap:perancangan}
 
-Pada bab ini akan dijelaskan mengenai perancangan aplikasi yang akan dibangun meliputi perancangan kelas pada masing-masing komponen beserta dengan deskripsi dan fungsinya, dan perancangan struktur HTML. Untuk antarmuka pada aplikasi yang akan dibangun akan memiliki antarmuka yang sama dengan aplikasi WSDC 2017 Bali terdahulu. Penjelasan terkait dengan antarmuka telah dibahas pada bagian~\ref{sec:StrukturIonic3SistemKini}. 
+Pada bab ini menjelaskan mengenai perancangan aplikasi yang akan dibangun meliputi perancangan kelas pada masing-masing komponen beserta dengan deskripsi dan fungsinya, dan perancangan struktur HTML. Untuk antarmuka pada aplikasi yang dibangun memiliki antarmuka yang sama dengan aplikasi WSDC 2017 Bali terdahulu. Penjelasan terkait dengan antarmuka telah dibahas pada bagian~\ref{sec:StrukturIonic3SistemKini}. 
 
 \section{Perancangan Kelas}
 \label{sec:perancanganKelas}
@@ -42,12 +42,12 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 		\textbf{Kembalian}: tidak ada.	
 		
 		\item \textbf{doRefresh(refresher)} \\
-		\textit{Method} ini berfungsi untuk melakukan penyegaran ulang terhadap halaman \textit{Announcements}. Saat melakukan penyegaran ulang, \textit{method} ini akan mengambil data terbaru dari server, kemudian menyimpannya ke dalam atribut kelas, yaitu announcements. Selanjutnya akan dilakukan penghapusan terlebih dahulu terhadap data yang sudah ada di dalam \textit{storage}, kemudian menyimpan data terbaru yang di dapatkan dari server ke dalam \textit{storage}. Jika server tidak merespon dan data tidak dapat diambil, maka akan memanggil \textit{method} presentConnectionAlert() untuk menampilkan \textit{toast}. \\
+		\textit{Method} ini berfungsi untuk melakukan penyegaran ulang terhadap halaman \textit{Announcements}. Saat melakukan penyegaran ulang, \textit{method} ini mengambil data terbaru dari server, kemudian menyimpannya ke dalam atribut kelas, yaitu announcements. Selanjutnya akan dilakukan penghapusan terlebih dahulu terhadap data yang sudah ada di dalam \textit{storage}, kemudian menyimpan data terbaru yang di dapatkan dari server ke dalam \textit{storage}. Jika server tidak merespon dan data tidak dapat diambil, maka akan memanggil \textit{method} presentConnectionAlert() untuk menampilkan \textit{toast}. \\
 		\textbf{Parameter}: \textit{Method} ini memiliki sebuah parameter yaitu refresher, yang berisi \textit{event refresher}.\\
 		\textbf{Kembalian}: tidak ada.
 		
 		\item \textbf{presentConnectionAlert()} \\
-		\textit{Method} ini berfungsi untuk menampilkan \textit{toast} yang akan menamipilkan sebuah tulisan ``Failed to refresh information'' selama tiga detik. \textit{Method} ini hanya akan digunakan ketika \textit{method} doRefresh tidak berhasil mengambil data terbaru dari server.\\
+		\textit{Method} ini berfungsi untuk menampilkan \textit{toast} yang akan menampilkan sebuah tulisan ``Failed to refresh information'' selama tiga detik. \textit{Method} ini hanya akan digunakan ketika \textit{method} doRefresh tidak berhasil mengambil data terbaru dari server.\\
 		\textbf{Parameter}: tidak ada.\\
 		\textbf{Kembalian}: tidak ada.
 		\newpage
@@ -148,7 +148,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 	
 	
 	\item Komponen Info \\
-		Di dalam komponen info terdapat sebuah kelas InfoPage. Kelas ini berfungsi untuk mengambil data info dari \textit{stroage} dan menyimpannya ke atriubt kelas yang kemudian data tersebut akan ditampilkan ke halaman info. Kelas ini memiliki sebuah atribut, yaitu wsdcInfoData yang bertipe any. Atribut ini digunakan untuk menyimpan data untuk halaman info. Kelas ini hanya memiliki sebuah \textit{method} yaitu \textit{method} constructor. \textit{Method} ini memiliki sebuah parameter, yaitu storage yang bertipe Storage. Constructor pada kelas ini bertujuan untuk mengambil data info dari \textit{storage} dan menyimpannya ke dalam atribut kelas, yaitu wsdcInfoData. 
+		Di dalam komponen info terdapat sebuah kelas InfoPage. Kelas ini berfungsi untuk mengambil data info dari \textit{storage} dan menyimpannya ke atribut kelas yang kemudian data tersebut akan ditampilkan ke halaman info. Kelas ini memiliki sebuah atribut, yaitu wsdcInfoData yang bertipe any. Atribut ini digunakan untuk menyimpan data untuk halaman info. Kelas ini hanya memiliki sebuah \textit{method} yaitu \textit{method} constructor. \textit{Method} ini memiliki sebuah parameter, yaitu storage yang bertipe Storage. Constructor pada kelas ini bertujuan untuk mengambil data info dari \textit{storage} dan menyimpannya ke dalam atribut kelas, yaitu wsdcInfoData. 
 		
 	\item Komponen \textit{Result} \\
 		Di dalam komponen \textit{result} terdapat sebuah kelas ResultPage. Kelas ini berfungsi untuk mengambil data \textit{result} dari \textit{storage} yang kemudian data tersebut akan ditampilkan ke halaman \textit{result}. Kelas ini memiliki sebuah atribut yaitu resultIFrame yang bertipe ElementRef. Atribut ini merupakan sebuah @ViewChild yang digunakan untuk memanggil elemen dari komponen \textit{result}, yaitu resultIFrame pada \textit{file} result.page.html. 
@@ -189,7 +189,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 				\item \textbf{slider}: Atribut ini merupakan sebuah @ViewChild yang digunakan untuk memanggil elemen dari komponen \textit{schedule}, yaitu scheduleSlider pada \textit{file} schedule.page.html.
 				\item \textbf{segmentContainer}: Atribut ini merupakan sebuah @ViewChild yang digunakan untuk memanggil elemen dari komponen \textit{schedule}, yaitu segmentContainer pada \textit{file} schedule.page.html.
 				\item \textbf{schedules}: Atribut ini akan menyimpan data \textit{schedules} yang diambil dari \textit{storage}.
-				\item \textbf{slideOpts}: Atriubt ini berisi pengaturan dasar untuk \textit{slides}. Berisi initialSlide untuk mengatur \textit{slides} ke berapa saat pertama kali halaman \textit{schedule} dibuka, dan \textit{speed} untuk mengatur kecepatan transisi antar \textit{slides}.
+				\item \textbf{slideOpts}: Atribut ini berisi pengaturan dasar untuk \textit{slides}. Berisi initialSlide untuk mengatur \textit{slides} ke berapa saat pertama kali halaman \textit{schedule} dibuka, dan \textit{speed} untuk mengatur kecepatan transisi antar \textit{slides}.
 				\item \textbf{selectedSegmentIdx}: Atribut ini digunakan untuk menyimpan index dari \textit{segment} yang sedang aktif.
 				\item \textbf{currentIndex}: Atribut ini digunakan untuk menyimpan index dari \textit{slides} yang sedang aktif.
 			\end{itemize}
@@ -254,7 +254,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 					\textbf{Kembalian}: tidak ada.
 						
 					\item \textbf{itemTapped(wsdcVenue)} \\
-						\textit{Method} ini berfungsi untuk melakuakn navigasi ke halaman \textit{Venues Maps} dengan bantuan Router milik Angular. \textit{Method} ini akan mengirimkan sebuah data array yang didapatkan dari parameter ke halaman \textit{Venues Maps}. \\
+						\textit{Method} ini berfungsi untuk melakukan navigasi ke halaman \textit{Venues Maps} dengan bantuan Router milik Angular. \textit{Method} ini akan mengirimkan sebuah data array yang didapatkan dari parameter ke halaman \textit{Venues Maps}. \\
 						\textbf{Parameter}: wsdcVenue: Parameter ini merupakan sebuah array yang berisi sama seperti atribut venuesData. Isi dari array ini adalah data untuk sebuah \textit{venues} yang ingin dilihat. \\
 						\textbf{Kembalian}: tidak ada.
 				\end{itemize}
@@ -269,7 +269,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 					\item \textbf{userCoordinatesLng} : Atirbut ini digunakan untuk menyimpan koordinat longitude dari perangkat pengguna.
 					\item \textbf{mapid} : Atribut ini digunakan untuk menyimpan id dari peta.
 					\item \textbf{userDistanceTo} : Atribut ini digunakan untuk menyimpan jarak dari posisi perangkat pengguna ke posisi \textit{venues}.
-					\item \textbf{itemCounter} : Atribut ini digunakan sebagai penghitung berapa banyak \textit{venues} dalam sebuah kategori.
+					\item \textbf{itemCounter} : Atribut ini digunakan untuk menyimpan berapa banyak \textit{venues} dalam sebuah kategori.
 					\item \textbf{items} : Atribut ini digunakan untuk menyimpan id dan id warna dari sebuah kategori~\textit{venues}.
 					\item \textbf{pageTitleColors} : Atribut ini merupakan sebuah \textit{array}~yang~berisi~kode~warna~untuk~masing-masing~judul kategori~\textit{venues}.
 				\end{itemize} 
@@ -292,7 +292,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 					\textbf{Kembalian}: tidak ada.
 						
 					\item \textbf{ionViewDidEnter()} \\
-						\textit{Method} ini dijalankan ketika halaman sudah masuk sepenuhnya. \textit{Method} ini digunakan untuk menginisialisasi peta menggunakan \textit{plugin} Google Maps yang disediakan oleh Capacitor. Peta tersebut menampilkan Pulau Bali, lebih tepatnya di Kecamatan Kuta dengan latitude -8.722396 dan longitude 115.17671. \textit{Method} ini juga membuat \textit{marker} yang menandai setiap lokasi \textit{venues} pada satu kategori \textit{venues}. Selain itu \textit{method} ini juga digunakan untuk menyimpan jarak antara posisi perangkat pengguna ke masing-masing posisi \textit{venues}, yang kemudian disimpan ke dalam atibut userDistanceTo.\\
+						\textit{Method} ini dijalankan ketika halaman sudah masuk sepenuhnya. \textit{Method} ini digunakan untuk menginisialisasi peta menggunakan \textit{plugin} Google Maps yang disediakan oleh Capacitor. Peta tersebut menampilkan Pulau Bali, lebih tepatnya di Kecamatan Kuta dengan latitude -8.722396 dan longitude 115.17671. \textit{Method} ini juga membuat \textit{marker} yang menandai setiap lokasi \textit{venues} pada satu kategori \textit{venues}. \textit{Method} ini juga digunakan untuk menyimpan jarak antara posisi perangkat pengguna ke masing-masing posisi \textit{venues}, yang kemudian disimpan ke dalam atibut userDistanceTo.\\
 						\textbf{Parameter}: tidak ada. \\
 						\textbf{Kembalian}: tidak ada.
 						
