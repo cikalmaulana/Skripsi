@@ -121,8 +121,8 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 			\textbf{Kembalian}: tidak ada.
 			
 		\item \textbf{async showToast(message: string, duration: number=3000)}\\
-			\textit{Method} ini berfungsi untuk menampilkan \textit{toast} yang akan menampilkan pesan dan durasi sesuai dengan yang ada pada parameter.\\
-			\newpage
+			\textit{Method} ini berfungsi untuk menampilkan \textit{toast} yang akan menampilkan pesan dan durasi sesuai dengan yang ada pada parameter.
+			
 			\textbf{Parameter}:
 			\begin{itemize}
 				\item \textbf{message}: pesan yang akan ditampilkan di dalam \textit{toast}.
@@ -164,7 +164,6 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 					\item \textbf{loadingController}: Parameter ini digunakan untuk menyimpan API LoadingController.
 				\end{itemize}
 				\textbf{Kembalian}: tidak ada.
-			\newpage
 			\item \textbf{ngOnInit()}\\ 
 				\textit{Method} ini berfungsi untuk mengambil data \textit{result} yang terdapat di dalam \textit{storage}. Data tersebut lalu disimpan ke dalam \textit{child} resultIFrame. Setelah itu \textit{method} ini akan memanggil \textit{method} presentLoading(). \\
 				\textbf{Parameter}: tidak ada. \\
@@ -174,7 +173,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 				\textit{Method} ini berfungsi untuk menampilkan sebuah indikator \textit{loading} dengan pesan ``Please wait...''. \\ 
 				\textbf{Parameter}: tidak ada. \\
 				\textbf{Kembalian}: tidak ada.
-				
+				\newpage
 			\item \textbf{onResultIframeLoad()} \\
 				\textit{Method} ini merupakan sebuah \textit{template statement} yang dipanggil oleh \textit{event} di dalam \textit{tag} \texttt{<iframe>} pada \textit{file} result.page.html. \textit{Method} ini berfungsi untuk menampilkan data \textit{result} yang disimpan di dalam \textit{storage}. \\
 				\textbf{Parameter}: tidak ada. \\
@@ -200,7 +199,6 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 					\textit{Method} constructor berfungsi untuk memberikan nilai awal pada saat kelas dibuat. \\
 					\textbf{Parameter}: storage: Parameter ini digunakan untuk menyimpan API Storage.\\
 					\textbf{Kembalian}: tidak ada.
-					\newpage
 					
 				\item \textbf{ngOnInit()}\\ 
 				\textit{Method} ini berfungsi untuk mengambil data \textit{schedule} yang terdapat di dalam \textit{storage}. Data tersebut lalu disimpan ke dalam atribut \textit{schedules}. \\
@@ -241,8 +239,8 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 				Kelas ini memiliki beberapa \textit{method}, diantaranya yaitu:
 				\begin{itemize}
 					\item \textbf{constructor(private router: Router,private storage: Storage)}\\ 
-						\textit{Method} constructor berfungsi untuk memberikan nilai awal pada saat kelas dibuat. \\
-						\newpage
+						\textit{Method} constructor berfungsi untuk memberikan nilai awal pada saat kelas dibuat.
+						
 						\textbf{Parameter}: 
 						\begin{itemize}
 							\item \textbf{router}: Parameter ini berfungsi untuk menyimpan API Router.
@@ -260,7 +258,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 						\textbf{Parameter}: wsdcVenue: Parameter ini merupakan sebuah array yang berisi sama seperti atribut venuesData. Isi dari array ini adalah data untuk sebuah \textit{venues} yang ingin dilihat. \\
 						\textbf{Kembalian}: tidak ada.
 				\end{itemize}
-				
+				\newpage
 			\item Komponen \textit{Venues Maps}\\ 
 				Di dalam komponen \textit{venues Maps} terdapat sebuah kelas VenuesMapsPage. Kelas ini berfungsi untuk mengambil data \textit{venues} yang dikirimkan dari komponen \textit{Venues}, menampilkan peta \textit{venues}, serta melakukan kalkulasi jarak pengguna dengan \textit{venues}. Kelas ini memiliki beberapa atribut, yaitu:
 				
@@ -278,7 +276,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 				Kelas ini memiliki beberapa \textit{method}, diantaranya adalah sebagai berikut:
 				\begin{itemize}
 					\item \textbf{constructor(private activatedRoute: ActivatedRoute, private router: Router, private storage: Storage)} \\
-					\newpage
+					
 						\textit{Method} constructor berfungsi untuk memberikan nilai awal pada saat kelas dibuat. Selain itu, \textit{constructor} juga digunakan untuk mengambil data dari \textit{storage} dan memasukannya ke atribut venuesMapsDetail.\\
 						\textbf{Parameter}:
 						\begin{itemize}
@@ -294,7 +292,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 					\textbf{Kembalian}: tidak ada.
 						
 					\item \textbf{ionViewDidEnter()} \\
-						\textit{Method} ini dijalankan ketika halaman sudah masuk sepenuhnya. \textit{Method} ini digunakan untuk menginisialisasi peta menggunakan \textit{plugin} Google Maps yang disediakan oleh Capacitor. Peta tersebut menampilkan peta Pulau Bali, lebih tepatnya di Kecamatan Kuta dengan latitude -8.722396 dan longitude 115.17671. \textit{Method} ini juga membuat \textit{marker} yang menandai setiap lokasi \textit{venues} pada satu kategori \textit{venues}. Selain itu \textit{method} ini juga digunakan untuk menyimpan jarak antara posisi perangkat pengguna ke masing-masing posisi \textit{venues}, yang kemudian disimpan ke dalam atibut userDistanceTo.\\
+						\textit{Method} ini dijalankan ketika halaman sudah masuk sepenuhnya. \textit{Method} ini digunakan untuk menginisialisasi peta menggunakan \textit{plugin} Google Maps yang disediakan oleh Capacitor. Peta tersebut menampilkan Pulau Bali, lebih tepatnya di Kecamatan Kuta dengan latitude -8.722396 dan longitude 115.17671. \textit{Method} ini juga membuat \textit{marker} yang menandai setiap lokasi \textit{venues} pada satu kategori \textit{venues}. Selain itu \textit{method} ini juga digunakan untuk menyimpan jarak antara posisi perangkat pengguna ke masing-masing posisi \textit{venues}, yang kemudian disimpan ke dalam atibut userDistanceTo.\\
 						\textbf{Parameter}: tidak ada. \\
 						\textbf{Kembalian}: tidak ada.
 						
@@ -331,7 +329,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 	\begin{enumerate}
 		\item \textit{Header} \\
 			\textit{Header} untuk setiap komponen pada umunya memiliki struktur yang serupa namun dibedakan dengan judul dari setiap halaman. \textit{Header} digunakan untuk menampilkan judul dari sebuah halaman, serta menyediakan sebuah \textit{menu button} sebagai salah satu cara untuk membuat \textit{sidemenu} untuk melakukan navigasi antar halaman. \textit{Header} dibungkus oleh \textit{tag} \texttt{<ion-header>} yang didalamnya terdapat \textit{tag} \texttt{<ion-toolbar>} yang disediakan Ionic Framework. Kemudian untuk \textit{menu button} dibuat oleh \textit{tag} \texttt{<ion-menu-button>} pada \textit{tag} \texttt{<ion-buttons>}. Selanjutnya untuk judul dari sebuah halaman dibungkus oleh \textit{tag} \texttt{<ion-title>}. Judul akan berbeda beda tergantung dengan halamannya. Salah satu contoh dari penggunaan \textit{header} adalah pada gambar~\ref{fig:homePageWireframe} yang ditandai dengan kotak berwarna biru.
-			
+			\newpage
 		\item \textit{Content} \\
 			\textit{Content} untuk setiap komponen memiliki struktur yang berbeda-beda tergantung dengan isi dari halaman tersebut. Namun \textit{content} untuk setiap komponen dibungkus oleh sebuah \textit{tag} \texttt{<ion-content>}. Salah satu contoh dari penggunaan \textit{content} adalah pada gambar~\ref{fig:homePageWireframe} yang ditandai dengan warna merah. Struktur \textit{content} untuk masing-masing halaman adalah sebagai berikut:
 			

@@ -9,9 +9,11 @@
 
 WSDC yang diselenggarakan di Bali, Indonesia pada tahun 2017 memiliki sebuah aplikasi bernama WSDC 2017 Bali yang dikembangkan oleh PT DNArtworks Komunikasi Visual menggunakan \textit{framework} Ionic 3 untuk menunjang acara tersebut. Terdapat beberapa fungsi penting di dalam aplikasi ini, diantaranya adalah jadwal untuk kegiatan peserta, berita tentang acara WSDC yang sedang berlangsung, pemberitahuan mengenai kegiatan acara kepada peserta, informasi lokasi dan peta lokasi kegiatan acara yang sedang berlangsung, dan notifikasi untuk peserta. 
 
-Ionic Framework merupakan sebuah kerangka kerja {\it open source} lintas platform yang digunakan untuk mengembangkan aplikasi \textit{hybrid} yang bekerja pada berbagai macam platform seluler seperti Android, iOS, dan Windows~\cite{waranashiwar:18:ionic}. Aplikasi \textit{hybrid} merupakan sebuah \textit{web app} yang berjalan di dalam sebuah \textit{container} sehingga aplikasi tersebut menjadi aplikasi \textit{native}~\cite{yusuf:16:ionic}. Dalam kata lain, aplikasi \textit{hybrid} merupakan sebuah aplikasi \textit{native} yang menampilkan \textit{web app} di dalam \textit{web view}. Perbedaan \textit{web app} dengan aplikasi \textit{native} adalah dalam hal penggunaan perangkat keras pada perangkat mobile, dimana aplikasi \textit{native} dapat dengan bebas mendapatkan akses penuh penggunaan perangkat keras sedangkan \textit{web app} tidak.
+Ionic Framework merupakan sebuah {\it framework open source} lintas platform yang digunakan untuk mengembangkan aplikasi \textit{hybrid} yang bekerja pada berbagai macam platform seluler seperti Android, iOS, dan Windows~\cite{waranashiwar:18:ionic}. Aplikasi \textit{hybrid} merupakan sebuah \textit{web app} yang berjalan di dalam sebuah \textit{container} sehingga aplikasi tersebut menjadi aplikasi \textit{native}~\cite{yusuf:16:ionic}. Dalam kata lain, aplikasi \textit{hybrid} merupakan sebuah aplikasi \textit{native} yang menampilkan \textit{web app} di dalam \textit{web view}. Perbedaan \textit{web app} dengan aplikasi \textit{native} adalah dalam hal penggunaan perangkat keras pada perangkat mobile, dimana aplikasi \textit{native} dapat dengan bebas mendapatkan akses penuh penggunaan perangkat keras sedangkan \textit{web app} tidak.
 
 Salah satu aplikasi \textit{hybrid} yaitu Apache Cordova yang dikembangkan oleh Adobe digunakan untuk memecahkan masalah dimana pada saat mengembangkan suatu aplikasi seluler, setiap vendor perangkat lunak memilki alat-alat yang unik yang hanya dimiliki oleh vendor tersebut, yaitu \textit{Software Development Kit} (SDK)~\cite{yusuf:16:ionic}. Karena SDK yang digunakan berbeda-beda tergantung kepada jenis sistem operasi perangkat seluler, maka tidak dapat membuat aplikasi untuk platform yang berbeda, namun dengan baris kode yang sama. Apache Cordova sebagai aplikasi \textit{hybrid} dapat membuat aplikasi berbasis web seperti HTML, {\it Cascading Style Sheets} (CSS), dan Javascript, dikemas sebagai aplikasi \textit{native} yang dapat mengakses fitur-fitur perangkat keras dari suatu perangkat.
+
+\newpage
 
 Ionic Framework mendukung komunikasi dengan menggunakan Native API, yaitu pengembangan aplikasi langsung terintegrasi ke dalam platform~\cite{griffith:17:mobile}. Cordova merupakan Native API yang digunakan untuk menambahkan fungsionalitas ke dalam aplikasi Ionic apapun. Selain Cordova, terdapat Native API lain yang didukung oleh Ionic Framework, yaitu Capacitor. Capacitor merupakan penerus dari Cordova yang menyediakan akses ke perangkat {\it native} dan fitur platform, serta untuk menyediakan satu set API untuk mengembangkan aplikasi seluler secara \textit{hybrid}, {\it Progressive Web Apps} berbasis web, dan aplikasi komputer berbasis Electron~\cite{tor:19:software}. Ionic juga memiliki berbagai macam \textit{front-end library} dan \textit{User Interface}(UI) {\it Components} berupa \textit{tag} khusus yang digunakan untuk menambah fungsionalita aplikasi.
 
@@ -28,15 +30,27 @@ Pada Ionic 5 ke atas, terdapat beberapa \textit{framework} Javascript yang dapat
 	 Vue merupakan \textit{framework} progresif untuk membangun antarmuka pengguna untuk web, yang dapat digunakan baik untuk projek kecil dan untuk {\it Single-Page Applications} (SPAs)~\cite{wohlgethan:18:supporting}.
 \end{itemize}
 
-Aplikasi WSDC 2017 Bali yang dibangun pada tahun 2017 oleh PT DNArtworks Komunikasi Visual menggunakan Ionic versi 3 yang pada saat skripsi ini ditulis sudah tidak mendapat pembaruan lagi. Sedangkan Ionic Framework semakin berkembang dan pada saat skripsi ini dibuat sudah mencapai Ionic versi 6. Selain itu, aplikasi WSDC 2017 Bali untuk sistem operasi iOS telah diturunkan dari App Store dikarenakan tidak mengalami pembaruan dalam jangka waktu tertentu. Maka dari itu diperlukan pembaruan pada aplikasi WSDC 2017 Bali. Pada skripsi ini akan dibuat sebuah aplikasi WSDC 2017 Bali, yang merupakan sebuah pembaruan dari aplikasi WSDC 2017 Bali saat ini, dengan menggunakan \textit{framework} Ionic versi 6.
+Aplikasi WSDC 2017 Bali yang dibangun pada tahun 2017 oleh PT DNArtworks Komunikasi Visual untuk perangkat iOS untuk sistem operasi iOS telah diturunkan dari App Store dikarenakan tidak mengalami pembaruan dalam jangka waktu tertentu. Maka dari itu diperlukan pembaruan pada aplikasi WSDC 2017 Bali. Pembaruan tersebut dilakukan dengan memperbarui versi Ionic Framework yang sebelumnya versi 3, menjadi versi 6. Pembaruan Ionic Framework diperlukan karena Ionic versi 3 sudah tidak mendapat dukungan lagi dari tim pengembang Ionic Framwork. Untuk melakukan pembaruan tersebut, maka pada skripsi ini dibuat sebuah aplikasi WSDC 2017 Bali yang baru, yang merupakan sebuah pembaruan dari aplikasi WSDC 2017 Bali. Pembaruan dilakukan dengan cara membuat aplikasi WSDC 2017 Bali baru menggunakan \textit{framework} Ionic versi 6 dan Capacitor dengan fitur-fitur dan halaman yang sama seperti aplikasi sebelumnya. Dilakukan juga penyesuaian pembaruan yang terjadi pada saat melakukan pembaruan dari Ionic 3 ke Ionic 6 serta pembaruan pada saat mengganti Cordova dengan Capacitor. 
+
+\newpage
 
 \section{Rumusan Masalah}
 \label{sec:rumusan}
-Rumusan masalah yang dibahas pada skripsi ini adalah bagaimana melakukan migrasi aplikasi Android WSDC 2017 Bali ke {\it framework} Ionic versi 6?
+Rumusan masalah yang dibahas pada skripsi ini yaitu:
+\begin{enumerate}
+	\item Bagaimana melakukan migrasi aplikasi Android WSDC 2017 Bali ke {\it framework} Ionic versi 6?
+	\item Bagaimana menjalankan aplikasi WSDC 2017 Bali pada perangkat Android setelah dilakukan migrasi?
+\end{enumerate}
+
 
 \section{Tujuan}
 \label{sec:tujuan}
-Tujuan yang ingin dicapai dari penulisan skripsi ini adalah melakukan migrasi aplikasi Android WSDC 2017 Bali ke {\it framework} Ionic versi 6.
+Tujuan yang ingin dicapai dari penulisan skripsi ini yaitu:
+\begin{enumerate}
+	\item Melakukan migrasi aplikasi Android WSDC 2017 Bali ke {\it framework} Ionic versi 6.
+	\item Menjalankan aplikasi WSDC 2017 Bali pada perangkat Android setelah dilakukan migrasi.
+\end{enumerate}
+
 
 \section{Batasan Masalah}
 \label{sec:batasan}
