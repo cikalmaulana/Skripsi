@@ -255,7 +255,7 @@ Hasil implementasi berupa sebuah aplikasi android WSDC 2017 Bali. Sebelum halama
 \subsection{Pengujian Fungsional}
 \label{subsec:pengujianFungsional}
 
-Pengujian fungsional dilakukan untuk mengetahui kesesuaian reaksi perangkat lunak dengan reaksi yang diharapkan berdasarkan aksi pengguna terhadap perangkat lunak. Perangkat yang digunakan untuk melakukan pengujian fungsional ini adalah sebuah perangkat emulator dari Android Studio yaitu Google Pixel 5 dengan versi Android 11, sebuah perangkat emulator Nox Player dengan versi Android 7.1.2, dan sebuah \textit{smartphone} milik penulis yaitu Xiaomi Redmi Note 9 dengan versi Android 11. Pengujian juga dilakukan dengan mode layar lanskap pada ponsel, serta mengecek ukuran teks ketika pengaturan teks pada ponsel diperbesar. Tabel~\ref{table:tabelPengujianFungsional} merupakan hasil dari 22 tes kasus yang diujikan.
+Pengujian fungsional dilakukan untuk mengetahui kesesuaian reaksi perangkat lunak dengan reaksi yang diharapkan berdasarkan aksi pengguna terhadap perangkat lunak. Perangkat yang digunakan untuk melakukan pengujian fungsional ini adalah sebuah perangkat emulator dari Android Studio yaitu Google Pixel 5 dengan versi Android 11, sebuah perangkat emulator Nox Player dengan versi Android 7.1.2, dan sebuah \textit{smartphone} milik penulis yaitu Xiaomi Redmi Note 9 dengan versi Android 11. Pengujian juga dilakukan dengan mode layar lanskap pada ponsel, serta mengecek ukuran teks pada aplikasi ketika pengaturan ukuran teks pada ponsel diperbesar dan diperkecil. Tabel~\ref{table:tabelPengujianFungsional} merupakan hasil dari 22 tes kasus yang diujikan.
 
 \begin{table}[H]
 \caption{Tabel Pengujian Fungsional}
@@ -292,8 +292,9 @@ No & Aksi Pengguna                                                              
 18 & Pengguna memilih menu Result pada Sidemenu                                          & Aplikasi menampilkan halaman Result                                                  & Sesuai                 \\ \hline
 19 & Pengguna memilih menu Info pada Sidemenu                                            & Aplikasi menampilkan halaman Info                                                    & Sesuai                 \\ \hline
 20 & Pengguna menekan nomor telepon pada halama info                                    & Aplikasi mengarahkan pengguna ke aplikasi pemanggilan                                & Sesuai                 \\ \hline
-21 & Teks diperbesar pada pengaturan ponsel         & Ukuran teks ikut membesar sesuai dengan pengaturan pada ponsel & Sesuai                 \\ \hline
-20 & Mencoba mode lanskap                           & Aplikasi ditampilkan dalam mode lanskap & Sesuai                 \\ \hline
+21 & Ukuran teks diperbesar pada pengaturan ponsel         & Ukuran teks pada aplikasi membesar sesuai dengan pengaturan pada ponsel & Sesuai                 \\ \hline
+22 & Ukuran teks diperkecil pada pengaturan ponsel         & Ukuran teks pada aplikasi mengecil sesuai dengan pengaturan pada ponsel & Sesuai                 \\ \hline
+23 & Mencoba mode lanskap                           & Aplikasi ditampilkan dalam mode lanskap & Sesuai                 \\ \hline
 \end{tabular}
 \end{table}
 \subsection{Pengujian Eksperimental}
@@ -306,9 +307,10 @@ Pengujian eksperimental dilakukan terhadap pengguna \textit{smartphone} dengan s
 	Seorang responden menjawab versi Android 5.1, seorang menjawab versi Android 8.0, seorang menjawab versi Android 8.1, seoarang menjawab versi Android 10, dan empat orang menjawab versi Android 11.
 	\item \textbf{Saat pertama kali membuka aplikasi, apakah aplikasi WSDC 2017 Bali terbaru menampilkan logo WSDC?} \\
 	Semua responden menjawab aplikasi WSDC 2017 Bali terbaru menampilkan logo WSDC.
+	\newpage	
 	\item \textbf{Apakah semua halaman memilki isi nya masing-masing, dan tidak ada halaman yang isinya kosong?} \\
 	Semua responden menjawab tidak ada halaman yang tidak memiliki isi.
-\newpage	
+
 	\item \textbf{Apakah tombol GPS, \textit{zoom in}, \textit{zoom out}, dan lokasi \textit{venues} yang terdapat pada menu \textit{Venues} dapat berfungsi dengan baik?} \\
 	Semua responden menjawab semua tombol berfungsi dengan normal.
 	
@@ -329,7 +331,12 @@ Pengujian eksperimental dilakukan terhadap pengguna \textit{smartphone} dengan s
 		\item Pada halaman \textit{Result} diharapkan agar memiliki yang tampilan lebih menarik lagi.
 		\item Ukuran aplikasi bisa dikecilkan.
 		\item Pada halaman \textit{venues} dimana tulisan headline dari list map dijauhkan sedikit dari tulisan body karena terlalu dekat.
+		\newpage
+		% \item Ukuran teks lebih konsisten saat pengaturan teks pada \textit{smartphone} diperbesar agar tidak ikut membesar dan juga sebaliknya.
+		\item Spasi antar baris pada halaman Venues Maps harusnya tetap sama setiap saat dan tidak berubah.
+		\item Membuat aplikasi untuk acara yang masih atau akan berlangsung, karena informasi pada aplikasi WSDC 2017 Bali sudah tidak \textit{update}.
 	\end{enumerate}
+	
 		Namun menurut pengamatan penulis terhadap kritik dan saran pada poin 3, bahwa ukuran aplikasi WSDC 2017 Bali terbaru sudah cukup kecil, yaitu 25MB. Sedangkan untuk poin 1 dan 2 bersifat subjektif, sehingga tidak akan diimplementasikan oleh penulis.
 
 \end{enumerate}
