@@ -50,7 +50,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 		\textit{Method} ini berfungsi untuk menampilkan \textit{toast} yang akan menampilkan sebuah tulisan ``Failed to refresh information'' selama tiga detik. \textit{Method} ini hanya akan digunakan ketika \textit{method} doRefresh tidak berhasil mengambil data terbaru dari server.\\
 		\textbf{Parameter}: tidak ada.\\
 		\textbf{Kembalian}: tidak ada.
-		\newpage
+
 		\item \textbf{formatDatetime(sqlDatetime: string)} \\
 		\textit{Method} ini berfungsi untuk mengambil jam, menit, hari, dan bulan dari parameter. \\
 		\textbf{Parameter}: sqlDatetime: detail waktu dan tanggal pada sebuah pengumuman. \\
@@ -59,7 +59,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 	
 	\item Komponen \textit{Draw} \\
 	Di dalam komponen \textit{announcements} terdapat sebuah kelas DrawPage. Kelas ini berfungsi untuk mengambil data \textit{draw} dari \textit{storage}, serta menampilkan data \textit{draw} ke halaman \textit{draw}. Kelas ini memiliki sebuah atribut, yaitu drawIFrame yang bertipe ElementRef. Atribut ini merupakan sebuah ViewChild yang digunakan untuk memanggil elemen dari komponen \textit{draw}, yaitu drawIFrame pada \textit{file} draw.page.html. 
-	
+	\newpage
 	Kelas ini memiliki beberapa \textit{method}, diantaranya adalah sebagai berikut:
 	
 	\begin{itemize}
@@ -173,7 +173,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 				\textit{Method} ini berfungsi untuk menampilkan sebuah indikator \textit{loading} dengan pesan ``Please wait...''. \\ 
 				\textbf{Parameter}: tidak ada. \\
 				\textbf{Kembalian}: tidak ada.
-				\newpage
+
 			\item \textbf{onResultIframeLoad()} \\
 				\textit{Method} ini merupakan sebuah \textit{template statement} yang dipanggil oleh \textit{event} di dalam \textit{tag} \texttt{<iframe>} pada \textit{file} result.page.html. \textit{Method} ini berfungsi untuk menampilkan data \textit{result} yang disimpan di dalam \textit{storage}. \\
 				\textbf{Parameter}: tidak ada. \\
@@ -258,7 +258,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 						\textbf{Parameter}: wsdcVenue: Parameter ini merupakan sebuah array yang berisi sama seperti atribut venuesData. Isi dari array ini adalah data untuk sebuah \textit{venues} yang ingin dilihat. \\
 						\textbf{Kembalian}: tidak ada.
 				\end{itemize}
-				\newpage
+
 			\item Komponen \textit{Venues Maps}\\ 
 				Di dalam komponen \textit{venues Maps} terdapat sebuah kelas VenuesMapsPage. Kelas ini berfungsi untuk mengambil data \textit{venues} yang dikirimkan dari komponen \textit{Venues}, menampilkan peta \textit{venues}, serta melakukan kalkulasi jarak pengguna dengan \textit{venues}. Kelas ini memiliki beberapa atribut, yaitu:
 				
@@ -329,7 +329,7 @@ Perancangan kelas dari masing-masing komponen adalah sebagai berikut:
 	\begin{enumerate}
 		\item \textit{Header} \\
 			\textit{Header} untuk setiap komponen pada umunya memiliki struktur yang serupa namun dibedakan dengan judul dari setiap halaman. \textit{Header} digunakan untuk menampilkan judul dari sebuah halaman, serta menyediakan sebuah \textit{menu button} sebagai salah satu cara untuk membuat \textit{sidemenu} untuk melakukan navigasi antar halaman. \textit{Header} dibungkus oleh \textit{tag} \texttt{<ion-header>} yang didalamnya terdapat \textit{tag} \texttt{<ion-toolbar>} yang disediakan Ionic Framework. Kemudian untuk \textit{menu button} dibuat oleh \textit{tag} \texttt{<ion-menu-button>} pada \textit{tag} \texttt{<ion-buttons>}. Selanjutnya untuk judul dari sebuah halaman dibungkus oleh \textit{tag} \texttt{<ion-title>}. Judul akan berbeda beda tergantung dengan halamannya. Salah satu contoh dari penggunaan \textit{header} adalah pada gambar~\ref{fig:homePageWireframe} yang ditandai dengan kotak berwarna biru.
-			\newpage
+
 		\item \textit{Content} \\
 			\textit{Content} untuk setiap komponen memiliki struktur yang berbeda-beda tergantung dengan isi dari halaman tersebut. Namun \textit{content} untuk setiap komponen dibungkus oleh sebuah \textit{tag} \texttt{<ion-content>}. Salah satu contoh dari penggunaan \textit{content} adalah pada gambar~\ref{fig:homePageWireframe} yang ditandai dengan warna merah. Struktur \textit{content} untuk masing-masing halaman adalah sebagai berikut:
 			

@@ -161,6 +161,7 @@ export class AppComponent{
 
 		Pada Angular terdapat decorator @Component yang digunakan untuk memanggil HTML \textit{template} dan CSS untuk komponen. Pada setiap komponen terdapat HTML \textit{template} yang berada di dalam komponen tersebut, atau di dalam file yang berada di luar file kopmonen yang direferensikan dengan menggunakan properti \textbf{templateUrl} di dalam komponen pada \textit{file} TypeScript. File HTML \textit{template} yang terpisah dengan komponen, memberikan efek kode yang lebih bersih di dalam komponen nya. Selain HTML \textit{template}, file lain seperti file CSS dapat diletakan terpisah dari file komponen dengan menggunakan styleUrls untuk mereferensikan file CSS ke dalam komponen (Kode~\ref{lst:referensiHTMLCSSdiKomponen}). Lalu terdapat juga properti selector untuk mendefinisikan nama dari tag yang bisa digunakan atau dipanggil oleh komponen lain.
 
+
 \begin{lstlisting}[label={lst:referensiHTMLCSSdiKomponen}, caption=Contoh Mereferensikan HTML dan CSS di Dalam Komponen]
 @Component({
 	selector: 'app-search',
@@ -193,8 +194,6 @@ export class AppModule{
 
 Di dalam aplikasi Angular, terdapat beberapa komponen, seperti Parent Component, dan Child Component. Parent Component dapat mengirimkan data ke properti Child Component-nya. Namun, Child Component tidak tahu siapa yang mengirimkannya. Sedangkan Child Component juga dapat mengirimkan data ke Parent Component, meskipun dia tidak tahu siapa Parent Component-nya. Arsitektur seperti ini dapat membuat komponen menjadi mandiri dan dapat digunakan kembali.
 
-\newpage
-
 Angular menyediakan beberapa \textit{libraries}, yaitu:
 
 \begin{enumerate}
@@ -204,6 +203,7 @@ Angular menyediakan beberapa \textit{libraries}, yaitu:
 	\begin{enumerate}
 		\item Import RouterModule dan Routes ke routing module. \\
 		Pada tahap ini, Angular CLI membuatnya secara otomatis saat pembuatan proyek Angular. Angular CLI membuat array Routes, dan melakukan import serta export array di @NgModule(). Seperti pada contoh kode~\ref{lst:angularRouting} pada baris ke-2 dilakukan import untuk Routes dan RouterModule dari Angular, serta pada baris ke-4 Angular CLI membuat array Routes.
+		
 		
 \begin{lstlisting}[label={lst:angularRouting}, caption={Contoh \textit{Routing} pada Angular}]
 import { NgModule } from '@angular/core';
@@ -264,10 +264,9 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class AppModule {}
 \end{lstlisting}
-
+\newpage
 	HTTPClient memiliki sebuah \textit{method} get() yang digunakan untuk mengambil data dari server. \textit{Method} ini mengirim HTTP Request, dan mengembalikan sebuah data JSON yang ada pada \textit{response body}. Kode~\ref{lst:httpclientsubscribe} adalah contoh untuk mengambil data dari server dengan menggunakan HTTPClient. Pada kode tersebut, terdapat \textit{method subscribe}() seperti pada baris ke-4 yang membuat HTTPClient menulis dan mengirim HTTP Request ke server yang kemudian mendapatkan data untuk digunakan di dalam aplikasi.
 
-\newpage	
 	
 \begin{lstlisting}[label={lst:httpclientsubscribe}, caption={Contoh \textit{Routing} pada Angular}]
 const testData: Data = {name: 'Test Data'};
@@ -298,10 +297,10 @@ Ionic Framework merupakan sebuah {\it framework open source} lintas platform yan
 \label{subsec:nativeApi}
 Native API memungkinkan pengembangan aplikasi langsung terintegrasi ke dalam platform. Pengembang dapat membuat aplikasi pada perangkat {\it mobile} untuk dapat diimplementasikan ke berbagai {\it platform}, seperti iOS dan Android, setelah pengembangan selesai di dalam {\it framework native} tanpa perlu perubahan, dan tidak mempengaruhi peforma dari aplikasi tersebut~\cite{griffith:17:mobile}. 
 
-\newpage
+
 
 Ionic mendukung komunikasi dengan menggunakan Native API yang terintegrasi untuk menambahkan fungsionalitas ke dalam aplikasi Ionic apapun dengan menggunakan Capacitor atau Cordova. Dengan terpasangnya Ionic Native, maka aplikasi akan memiliki antar muka yang diperlukan untuk berinteraksi dengan salah satu {\it plug-in}, yaitu Capacitor atau Cordova.
-
+\newpage
 \subsubsection{Capacitor}
 \label{subsec:capacitor}
 Capacitor adalah Native API yang bertujuan untuk menyediakan akses ke dalam fitur-fitur perangkat \textit{mobile}, serta untuk menyediakan satu set API untuk mengembangkan aplikasi seluler secara \textit{hybrid}, {\it Progressive Web Apps} berbasis web, dan aplikasi komputer berbasis Electron~\cite{tor:19:software}. Capacitor merupakan penerus dari Cordova, dengan tujuan untuk memungkinkan aplikasi web modern berjalan di semua platform utama. Capacitor juga mendapat dukungan terhadap banyak {\it plugin} Cordova.
@@ -327,7 +326,7 @@ npx cap sync
 				\begin{itemize}
 					\item open(): \textit{method} ini digunakan untuk membuka halaman \textit{browser} dengan opsi yang sudah ditentukan.
 					\item close(): \textit{method} ini digunakan untuk menutup halaman \textit{browser} yang sedang dibuka. \textit{Method} ini hanya dapat digunakan pada web dan iOS.
-					\newpage
+					
 					\item addListener(‘browserFinished’, …): \textit{method} ini merupakan sebuah \textit{listener} untuk \textit{browser finished event} dan dipanggil ketika \textit{browser} ditutup oleh pengguna. \textit{Method} ini hanya dapat digunakan pada Android dan iOS.
 					\item addListener(‘browserPageLoaded’, …): \textit{method} ini merupakan sebuah \textit{listener} untuk \textit{page loaded event} dan aktif ketika URL diteruskan ke \textit{method} \textit{finished loading}. \textit{Method} ini hanya dapat digunakan pada Android dan iOS.
 					\item removeAllListeners(): \textit{method} ini digunakan untuk menghapus semua \textit{native listeners} untuk \textit{plugin} ini.
@@ -342,7 +341,7 @@ npx cap sync
 \end{lstlisting}
 
 		Pada perangkat Android, dibutuhkan izin untuk menggunakan Geolocation API~\ref{lst:permissionsGeolocationAPI}. Izin tersebut ditambahkan ke dalam baris kode pada \textit{file} AndroidManifest.xml. Izin tersebut digunakan untuk meminta data lokasi (\textit{fine} dan \textit{coarse}), dan izin untuk menggunakan GPS. Dengan menggunakan GPS, Geolocation API akan mengembalikan koordinat dari perangkat yang berupa latitude dan longitude. Contoh dari penggunaan Geolocation API untuk mengambil koordinat perangkat tertera pada kode~\ref{lst:usingGeolocationAPI}.
-		
+
 \begin{lstlisting}[label={lst:permissionsGeolocationAPI}, caption=\textit{Permissions} Geolocation API pada Android]
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -360,7 +359,7 @@ const printCurrentPosition = async () => {
 \end{lstlisting}
 
 		Untuk mengambil posisi dari perangkat dengan menggunakan \textit{method} getCurrentPosition() seperti pada kode~\ref{lst:usingGeolocationAPI}. Selain itu terdapat beberapa \textit{method} lain yang dapat diimplementasikan, diantaranya yaitu:
-		\newpage
+	
 			\begin{itemize}
 				\item watchPosition(): digunakan untuk mendaftarkan fungsi handler yang akan dipanggil secara otomatis setiap kali posisi perangkat berubah.
 				\item clearWatch(): digunakan untuk membatalkan pendaftaran fungsi handler yang sebelumnya diinstal menggunakan watchPosition().
@@ -391,13 +390,14 @@ await SplashScreen.show({
   autoHide: true
 });
 \end{lstlisting}
-			
+			\newpage
 			Sebagai suatu standar, Splash Screen diatur secara otomatis untuk disembunyikan dalam waktu 500ms. Pada kondisi tertentu Splash Screen tidak sepenuhnya menutupi layar, seperti pada bagian-bagian sudut-sudut layar. Splash Screen dapat mengatur warna latar belakang, dibandingkan dengan menampilkan warna transparan saat Splash Screen tidak sepenuhnya menutupi layar. Splash Screen juga dapat dibuat untuk menampilkan \textit{spinner} diatas Splash Screen. 
 		
 		\end{enumerate}				
 		
 		Selain itu, terdapat beberapa \textit{Official Plugins} lain yang dimiliki Capacitor, yaitu Action Sheet, App, App Launcher, Camera, Clipboard, Device, Dialog, Filesystem, Google Maps, Haptics, Keyboard, Local Notifications, Motion, Network, Push Notifications, Screen Reader, Share, Status Bar, Storage, Text Zoom, dan Toast.
-		\newpage
+
+
 	\item \textit{Community Plugins} \\
 		\textit{Community Plugins} merupakan sekumpulan \textit{plugin} yang diciptakan oleh komunitas untuk menambahkan fungsionalitas ke dalam aplikasi. Perbedaan dengan \textit{Official Plugins} yaitu tim Capacitor tidak secara resmi melakukan pemeliharaan terhadap \textit{Community Plugins}. Salah satu \textit{plugin} yang diciptakan oleh komunitas adalah \textit{plugin }Google Maps yang menggunakan \textit{native} Google Maps SDK. Untuk menginstal \textit{plugin} Google Maps dapat dilakukan melalui \textit{command line} dengan perintah seperti pada kode~\ref{lst:installGmapsPlugin}.	
 		
@@ -491,7 +491,6 @@ npm install cordova-plugin-name@2
 npx cap update
 \end{lstlisting} 
 
-\newpage
 
 Sama seperti Capacitor, Cordova memiliki \textit{plugins} yang menyediakan antarmuka JavaScript ke komponen \textit{native}. Dengan menggunakan \textit{plugin} Cordova, aplikasi dapat menjalankan fitur-fitur perangkat \textit{mobile} seperti kamera,	geolokasi, dan file sistem. Salah satu \textit{plugin} yang tersedia yaitu Google Maps. \textit{Plugin} ini menghasilkan MapView secara \textit{native}, dan menempatkannya di bawah browser. MapView yang dihasilkan bukan merupakan HTMLElements, maka tidak terkait dengan HTML. Sebelum dapat menggunakan \textit{plugin} Google Maps, dilakukan instalasi \textit{plugin} untuk pertama kali pada \textit{command line}~\ref{lst:installGMapsCordova}. Selanjutnya atur Google Maps API Key di dalam \textit{file} config.xml~\ref{lst:apikeyGMapsCordova}. 
 
@@ -596,7 +595,7 @@ ionic cordova platform run iOS
     </ion-col>
 </ion-row>
 \end{lstlisting}
-	\newpage
+
 	\item Infinite Scroll	\\
 	Komponen Infinite Scroll memanggil sebuah action yang akan dilakukan ketika pengguna menggulir dengan jarak tertentu dari bawah atau atas halaman. Penggunaan Infinite Scroll dengan menggunakan {\it tag} \texttt{<ion-infinite-scroll>} (Kode~\ref{lst:InfiteScrollComponent}). 
 	
@@ -624,7 +623,7 @@ ionic cordova platform run iOS
 	</ion-label>
 </ion-item>
 \end{lstlisting} 
-	
+	\newpage
 	\item List \\
 	Komponen List terdiri dari beberapa baris \textit{item} yang dapat berisi teks, tombol, \textit{toggles}, ikon, thumbnails, dan komponen-komponen lainnya menggunakan \textit{tag} \texttt{<ion-list>} (Kode~\ref{lst:listComponent}). List mendukung untuk pengguna melakukan \textit{swiping}, \textit{dragging}, dan penghapusan \textit{item}. 
 	
@@ -680,7 +679,7 @@ ionic cordova platform run iOS
 </ion-modal>
 \end{lstlisting} 
 
-\newpage
+
 
 	\item Navigation \\
 	Navigation adalah komponen mandiri yang digunakan untuk membuat komponen baru ke dalam {\it stack}. Navigation tidak terikat kepada {\it router} tertentu, mengakibatkan jika kita membuat komponen Navigation dan melakukan {\it push} komponen lain ke dalam {\it stack}, komponen tersebut tidak akan mempengaruhi router aplikasi secara keseluruhan. Sesuai dengan kasus penggunaan dimana ketika pengguna bisa memilih modal, yang membutuhkan sub-navigasinya sendiri, tanpa membuatnya terikat ke URL aplikasi. 
@@ -712,7 +711,7 @@ ionic cordova platform run iOS
 	\item Slides \\
 	Komponen Slides merupakan sebuah \textit{multi-section container} yang setiap bagiannya dapat dilakukan \textit{swipe} atau \textit{drag}. Untuk menggunakan komponen ini dengan menggunakan \textit{tag} \texttt{<ion-slides>} seperti pada kode~\ref{lst:slidesComponent} sebagai pembungkus slide. Masing-masing slide menggunakan \textit{tag} \texttt{<ion-slide>} seperti pada baris ke-2. \textit{Tag} tersebut dapat digunakan untuk menggeser slide dari kiri ke kanan, atau sebaliknya.
 
-\newpage	
+
 	
 \begin{lstlisting}[label={lst:slidesComponent}, caption=Kode Program dari Slides]
 <ion-slides pager="true" [options]="slideOpts">
@@ -924,7 +923,7 @@ ionic start myApp blank
 \end{tabular}
 \end{table}		
 				\end{itemize}	
-\newpage
+
 				\item Navbar \\
 				Pada Ionic 4, terdapat penghapusan terhadap komponen \texttt{<ion-navbar>} karena untuk menjaga agar selalu menggunakan \texttt{<ion-toolbar>} dengan {\it back button} yang eksplisit (Kode~\ref{lst:navbarIonic4}).				
 				
@@ -1012,7 +1011,7 @@ ion-action-sheet {
 <ion-label class="ion-text-wrap"></ion-label>
 <ion-item class="ion-wrap"></ion-item>
 \end{lstlisting} 
-  \newpage
+
 			\item {\it Display Classes} \\ 
 			Kelas dari {\it responsive display} yang ditemukan di dalam berkas display.css memiliki kueri media yang diperbarui untuk lebih mencerminkan bagaimana cara kerjanya.
 
@@ -1049,7 +1048,7 @@ ion-action-sheet {
 <ion-content id="main">...</ion-content>
 \end{lstlisting}
 
-\newpage
+
 			\item Select Option \\
 			Properti selected telah dihapus. Sebagai gantinya harus mengatur properti nilai pada ion-select induk agar sesuai dengan opsi terpilih yang diinginkan (Kode~\ref{lst:selectOption}).
 \begin{lstlisting}[label={lst:selectOption}, caption=Kode Program untuk Select Option]
@@ -1088,7 +1087,7 @@ toast.present();
 \begin{lstlisting}[label={lst:packageDependenciesInstall}, caption=Kode untuk Memasang {\it Package} dan {\it Dependencies} pada Angular]
 npm install @ionic/angular@latest @ionic/angular-toolkit@latest --save
 \end{lstlisting}
-\newpage		
+	
 		\item Warna \\
 		Terdapat perubahan terhadap warna bawaan milik ionic (Tabel~\ref{table:colors}).
 		\begin{table}[H]
